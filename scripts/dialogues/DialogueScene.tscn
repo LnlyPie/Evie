@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/dialogues/DialogueBox.gd" type="Script" id=2]
+[ext_resource path="res://sprites/faces/Andus_normal.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "IndicatorAnim"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 744, 112 ), Vector2( 744, 108 ), Vector2( 744, 104 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 752, 107 ) ]
+}
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="DialogueBox" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = 424.0
+margin_right = 896.0
+margin_bottom = 576.0
+script = ExtResource( 2 )
+dialogPath = "res://levels/test_level/dialogue_data/DialogTest.json"
+facesFolder = "res://sprites/faces/"
+
+[node name="Name" type="RichTextLabel" parent="DialogueBox"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 8.0
+margin_right = 272.0
+margin_bottom = 40.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Name Goes Here"
+override_selected_font_color = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Text" type="RichTextLabel" parent="DialogueBox"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 720.0
+margin_bottom = 152.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "And the dialogue text goes here!"
+override_selected_font_color = true
+
+[node name="Indicator" type="Polygon2D" parent="DialogueBox"]
+position = Vector2( 752, 107 )
+scale = Vector2( 2.1875, 2.01481 )
+color = Color( 0, 0, 0, 1 )
+texture_scale = Vector2( 0.1, 0.1 )
+polygon = PoolVector2Array( 7.31427, 0, -7.31427, 0, -7.31427, 15.8824, 7.31427, 15.8823 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueBox/Indicator"]
+anims/IndicatorAnim = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="DialogueBox"]
+
+[node name="Portrait" type="Sprite" parent="DialogueBox"]
+position = Vector2( 48, -40 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
