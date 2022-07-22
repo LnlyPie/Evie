@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/icons/pad_movement_dpad.png" type="Texture" id=4]
 [ext_resource path="res://sprites/icons/pad_movement_ls.png" type="Texture" id=5]
 [ext_resource path="res://sprites/icons/pad_movement_up_ps.png" type="Texture" id=6]
-[ext_resource path="res://theme.tres" type="Theme" id=7]
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 16 )

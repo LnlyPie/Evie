@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://other_scenes/settings/SettingsRes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://other_scenes/settings/SettingsCheckbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/misc/VideoSettings.gd" type="Script" id=4]
+
+[node name="VideoSettings" type="Panel"]
+margin_left = 288.0
+margin_top = 136.0
+margin_right = 736.0
+margin_bottom = 448.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 96.0
+margin_top = 88.0
+margin_right = 351.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="UIResolutionSelector" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 255.0
+margin_bottom = 38.0
+alignment = 1
+
+[node name="UIFullScreenCheckbox" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 42.0
+margin_right = 255.0
+margin_bottom = 80.0
+alignment = 1
+title = "Full Screen"
+
+[node name="UIVSyncCheckbox" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 84.0
+margin_right = 255.0
+margin_bottom = 122.0
+alignment = 1
+title = "VSync"
+
+[node name="ApplyButton" type="Button" parent="."]
+margin_left = 96.0
+margin_top = 264.0
+margin_right = 352.0
+margin_bottom = 308.0
+theme = ExtResource( 1 )
+text = "Apply"
+flat = true
+
+[node name="VidLabel" type="Label" parent="."]
+margin_left = 112.0
+margin_right = 337.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "Video Settings
+(Not working)"
+align = 1
+
+[connection signal="resolution_changed" from="VBoxContainer/UIResolutionSelector" to="." method="_on_UIResolutionSelector_resolution_changed"]
+[connection signal="toggled" from="VBoxContainer/UIFullScreenCheckbox" to="." method="_on_UIFullScreenCheckbox_toggled"]
+[connection signal="toggled" from="VBoxContainer/UIVSyncCheckbox" to="." method="_on_UIVSyncCheckbox_toggled"]

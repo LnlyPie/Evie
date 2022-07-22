@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/m5x7/m5x7.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/dialogues/DialogueBox.gd" type="Script" id=2]
 [ext_resource path="res://sprites/faces/Andus_normal.png" type="Texture" id=3]
 
