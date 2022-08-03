@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://scripts/misc/Credits.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
 
 [node name="CreditsScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -132,6 +135,11 @@ margin_bottom = 600.0
 theme = ExtResource( 2 )
 custom_colors/font_color_focus = Color( 0, 0.603922, 0.839216, 1 )
 custom_colors/font_color_hover = Color( 0.0745098, 0.737255, 1, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
 text = "Back"
 flat = true
 align = 0

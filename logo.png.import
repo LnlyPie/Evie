@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pad_movement_up_ps.png-183149510ab6f87298de4d947975171c.stex"
+path="res://.import/logo.png-cca8726399059c8d4f806e28e356b14d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/pad_movement_up_ps.png"
-dest_files=[ "res://.import/pad_movement_up_ps.png-183149510ab6f87298de4d947975171c.stex" ]
+source_file="res://logo.png"
+dest_files=[ "res://.import/logo.png-cca8726399059c8d4f806e28e356b14d.stex" ]
 
 [params]
 

@@ -1,6 +1,7 @@
 extends Control
 
 onready var gameVerFile = "res://version.txt"
+var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
 	
@@ -8,16 +9,18 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://levels/test_level/LevelTest.tscn")
+	SceneTransition.change_scene("res://other_scenes/player/Player.tscn")
 
 func _on_OptionsButton_pressed():
-	$CanvasLayer/VideoSettings.visible = true
+	#$CanvasLayer/VideoSettings.visible = true
+	$AudioPlayer2D.stream = blockedSound
+	$AudioPlayer2D.play()
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
 func _on_CreditsButton_pressed():
-	get_tree().change_scene("res://other_scenes/Credits.tscn")
+	SceneTransition.change_scene("res://other_scenes/Credits.tscn")
 
 func update_settings(settings: Dictionary) -> void:
 	OS.window_fullscreen = settings.fullscreen
