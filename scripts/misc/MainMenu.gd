@@ -4,12 +4,11 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
-	
 	$HBoxContainer/GameVersion.text = get_ver(gameVerFile)
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	SceneTransition.change_scene("res://other_scenes/player/Player.tscn")
+	SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn")
 
 func _on_OptionsButton_pressed():
 	#$CanvasLayer/VideoSettings.visible = true
