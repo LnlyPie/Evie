@@ -4,8 +4,8 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
-	$HBoxContainer/GameVersion.text = get_ver(gameVerFile)
-	$VBoxContainer/StartButton.grab_focus()
+	$GameInfo/GameVersion.text = get_ver(gameVerFile)
+	$Buttons/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn")

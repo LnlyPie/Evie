@@ -45,17 +45,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="GameInfo" type="HBoxContainer" parent="."]
 margin_right = 458.0
 margin_bottom = 76.0
 
-[node name="GameName" type="Label" parent="HBoxContainer"]
+[node name="GameName" type="Label" parent="GameInfo"]
 margin_right = 378.0
 margin_bottom = 76.0
 theme = ExtResource( 5 )
 text = "Project Evie"
 
-[node name="GameVersion" type="Label" parent="HBoxContainer"]
+[node name="GameVersion" type="Label" parent="GameInfo"]
 margin_left = 382.0
 margin_top = 25.0
 margin_right = 458.0
@@ -63,7 +63,7 @@ margin_bottom = 51.0
 theme = ExtResource( 6 )
 text = "Version"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 12.0
@@ -73,7 +73,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="Buttons"]
 margin_right = 116.0
 margin_bottom = 38.0
 focus_neighbour_top = NodePath("../QuitButton")
@@ -83,7 +83,7 @@ text = "Start"
 flat = true
 align = 0
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Buttons"]
 margin_top = 42.0
 margin_right = 116.0
 margin_bottom = 80.0
@@ -100,7 +100,7 @@ text = "Options"
 flat = true
 align = 0
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Buttons"]
 margin_top = 84.0
 margin_right = 116.0
 margin_bottom = 122.0
@@ -133,7 +133,8 @@ custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "Credits"
 flat = true
-align = 2
+clip_text = true
+icon_align = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -143,7 +144,7 @@ custom_styles/panel = SubResource( 11 )
 
 [node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
