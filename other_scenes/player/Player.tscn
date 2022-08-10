@@ -175,6 +175,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+modulate = Color( 1, 1, 1, 0.498039 )
 current = true
 zoom = Vector2( 0.55, 0.55 )
 smoothing_enabled = true
