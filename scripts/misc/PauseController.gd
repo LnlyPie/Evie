@@ -1,6 +1,7 @@
 extends Node
 
 export(bool) var can_toogle_pause: bool = true # Probably won't be needed
+var paused: bool = false
 
 func _ready():
 	$Panel.visible = false
@@ -13,16 +14,18 @@ func _process(delta):
 			pause(false)
 		else:
 			pause(true)
-			
+
 func pause(isPaused: bool):
 	if can_toogle_pause:
 		if !isPaused:
 			$Panel.visible = true
 			$Panel/VBoxContainer/ResumeButton.grab_focus()
 			get_tree().set_deferred("paused", true)
+			paused = true
 		else:
 			$Panel.visible = false
 			get_tree().set_deferred("paused", false)
+			paused = false
 
 func _on_ResumeButton_pressed():
 	pause(true)

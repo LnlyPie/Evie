@@ -168,7 +168,7 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 44, 24 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.6, 1.6 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

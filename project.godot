@@ -8,22 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "CanvasLayer",
-"class": "DebugOverlay",
-"language": "GDScript",
-"path": "res://addons/debug-overlay/DebugOverlay.gd"
-}, {
-"base": "Resource",
-"class": "DialogueResource",
-"language": "GDScript",
-"path": "res://addons/dialogue_manager/dialogue_resource.gd"
-} ]
-_global_script_class_icons={
-"DebugOverlay": "",
-"DialogueResource": ""
-}
-
 [application]
 
 config/name="Evie"
@@ -33,7 +17,6 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneTransition="*res://other_scenes/misc/SceneTransition.tscn"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -42,10 +25,6 @@ mouse_cursor/custom_image="res://arrow.png"
 mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/dialogue_manager/plugin.cfg" )
 
 [global]
 

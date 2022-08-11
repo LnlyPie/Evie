@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export(int) var normalSpeed = 100.0
-export(int) var sprintMultiplier = 2.0
+export(float) var sprintMultiplier = 1.5
 var speed = normalSpeed
 
 func _process(delta):
