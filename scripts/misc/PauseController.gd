@@ -3,10 +3,13 @@ extends Node
 export(bool) var can_toogle_pause: bool = true # Probably won't be needed
 var paused: bool = false
 
+export(int) var actNum: int = 0
+export(String) var actName: String = "Some Act"
+
 func _ready():
 	$Panel.visible = false
 	$Panel/LevelName.text = get_tree().get_current_scene().get_name()
-	$Panel/ActNumber.text = "Act (num)"
+	$Panel/ActNumber.text = "Act " + str(actNum) + ": " + actName
 
 func _process(delta):
 	if Input.is_action_just_pressed("debug_pause"):

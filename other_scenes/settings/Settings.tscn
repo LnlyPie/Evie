@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://themes/Settings.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/misc/Settings.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.164706, 0.164706, 0.164706, 0.333333 )
+
+[node name="Settings" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 128.0
+margin_top = 64.0
+margin_right = 960.0
+margin_bottom = 544.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="Video And Audio" type="Tabs" parent="Panel/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 26.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Video And Audio"]
+margin_left = 256.0
+margin_right = 576.0
+margin_bottom = 454.0
+alignment = 1
+
+[node name="FullScreenBtn" type="CheckButton" parent="Panel/TabContainer/Video And Audio/VBoxContainer"]
+margin_top = 195.0
+margin_right = 320.0
+margin_bottom = 229.0
+text = "Fullscreen"
+icon_align = 1
+
+[node name="HBoxScreenRes" type="HBoxContainer" parent="Panel/TabContainer/Video And Audio/VBoxContainer"]
+margin_top = 233.0
+margin_right = 320.0
+margin_bottom = 259.0
+custom_constants/separation = 28
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
+margin_right = 184.0
+margin_bottom = 26.0
+theme = ExtResource( 2 )
+text = "Screen Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
+margin_left = 212.0
+margin_right = 312.0
+margin_bottom = 26.0
+disabled = true
+text = "1080x1920"
+align = 1
+icon_align = 1
+
+[node name="Controls" type="Tabs" parent="Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[connection signal="toggled" from="Panel/TabContainer/Video And Audio/VBoxContainer/FullScreenBtn" to="." method="_on_FullScreenBtn_toggled"]

@@ -7,8 +7,8 @@ draw_center = false
 
 [resource]
 default_font = ExtResource( 1 )
-Button/colors/font_color_focus = Color( 0, 0.603922, 0.839216, 1 )
-Button/colors/font_color_hover = Color( 0.0745098, 0.737255, 1, 1 )
+Button/colors/font_color_focus = Color( 0.890196, 0.988235, 0.192157, 1 )
+Button/colors/font_color_hover = Color( 0.890196, 0.988235, 0.192157, 1 )
 Button/styles/disabled = SubResource( 1 )
 Button/styles/focus = SubResource( 1 )
 Button/styles/hover = SubResource( 1 )

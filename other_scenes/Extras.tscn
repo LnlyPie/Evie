@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/misc/Extras.gd" type="Script" id=1]
+[ext_resource path="res://addons/CheatCoder/Presets/Konami.tres" type="Resource" id=2]
+[ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=3]
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=4]
+[ext_resource path="res://scripts/extras/eastereggs/dontopen_spoilers/Konami.gd" type="Script" id=5]
+
+[node name="Extras" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Konami" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 1088.0
+margin_bottom = 128.0
+theme = ExtResource( 4 )
+bbcode_enabled = true
+script = ExtResource( 5 )
+
+[node name="KonamiListener" type="Node" parent="Konami"]
+script = ExtResource( 3 )
+code = ExtResource( 2 )
+
+[connection signal="cheat_activated" from="Konami/KonamiListener" to="Konami" method="_on_CheatCodeListener_cheat_activated"]
