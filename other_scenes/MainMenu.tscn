@@ -81,7 +81,7 @@ align = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 960.0
-margin_top = 504.0
+margin_top = 544.0
 margin_right = 1088.0
 margin_bottom = 584.0
 alignment = 1
@@ -89,16 +89,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ExtrasButton" type="Button" parent="VBoxContainer"]
-margin_right = 128.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-text = "Extras"
-
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
-margin_top = 42.0
+margin_top = 1.0
 margin_right = 128.0
-margin_bottom = 80.0
+margin_bottom = 39.0
 theme = ExtResource( 3 )
 text = "Credits"
 flat = true
@@ -112,5 +106,4 @@ icon_align = 1
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExtrasButton" to="." method="_on_ExtrasButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]

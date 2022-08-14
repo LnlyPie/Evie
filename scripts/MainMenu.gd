@@ -29,9 +29,6 @@ func _on_QuitButton_pressed():
 func _on_CreditsButton_pressed():
 	SceneTransition.change_scene("res://other_scenes/Credits.tscn")
 
-func _on_ExtrasButton_pressed():
-	SceneTransition.change_scene("res://other_scenes/Extras.tscn")
-
 func get_ver(file):
 	var f = File.new()
 	f.open(file, File.READ)

@@ -1,5 +1,10 @@
-extends Sprite
+extends Node2D
 
 func _ready():
-	yield(get_tree().create_timer(1), "timeout")
+	randomize()
+	var prob = randi()%100
+	if prob == 1:
+		$Sprite.texture = load("res://sprites/logo-egg.png")
+		$RichTextLabel.bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LaughingPie and Co.[/shake][/tornado][/rainbow][/center]\n"
+	yield(get_tree().create_timer(2), "timeout")
 	SceneTransition.change_scene("res://other_scenes/MainMenu.tscn")
