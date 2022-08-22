@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://other_scenes/misc/PauseController.tscn" type="PackedScene" id=1]
-[ext_resource path="res://other_scenes/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://other_scenes/TileMaps/GrassTileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/misc/PauseController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/TileMaps/GrassTileMap.tscn" type="PackedScene" id=3]
 
 [node name="TestLevel" type="Node2D"]
 

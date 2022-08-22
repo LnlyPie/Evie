@@ -20,9 +20,9 @@ align = 1
 valign = 1
 
 [node name="CreditContainer" type="VBoxContainer" parent="."]
-margin_left = 896.0
-margin_right = 1024.0
-margin_bottom = 64.0
+margin_left = 960.0
+margin_right = 1088.0
+margin_bottom = 68.0
 rect_pivot_offset = Vector2( 720, -96 )
 __meta__ = {
 "_edit_group_": true
@@ -106,9 +106,9 @@ theme = ExtResource( 2 )
 text = "Translator"
 
 [node name="FontCreator" type="VBoxContainer" parent="."]
-margin_left = 856.0
+margin_left = 920.0
 margin_top = 528.0
-margin_right = 1024.0
+margin_right = 1088.0
 margin_bottom = 600.0
 rect_pivot_offset = Vector2( 720, -96 )
 __meta__ = {
@@ -133,8 +133,6 @@ margin_top = 568.0
 margin_right = 64.0
 margin_bottom = 600.0
 theme = ExtResource( 2 )
-custom_colors/font_color_focus = Color( 0, 0.603922, 0.839216, 1 )
-custom_colors/font_color_hover = Color( 0.0745098, 0.737255, 1, 1 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )

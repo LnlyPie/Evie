@@ -4,6 +4,9 @@ export(int) var normalSpeed = 100.0
 export(float) var sprintMultiplier = 1.5
 var speed = normalSpeed
 
+func _ready():
+	$CanvasLayer/Settings/Panel.visible = false
+
 func _process(delta):
 	var velocity = Vector2.ZERO
 	# Basic Movement

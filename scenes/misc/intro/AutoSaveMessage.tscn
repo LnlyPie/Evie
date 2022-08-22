@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/icons/pad_movement_dpad.png" type="Texture" id=2]
+[ext_resource path="res://scripts/misc/intro/AutoSaveMessage.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_bottom = 1.0
+margin_right = 1088.0
+margin_bottom = 192.0
+theme = ExtResource( 1 )
+text = "This game uses AutoSave.
+ When you'll see this image DON'T exit the game."
+align = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 544, 288 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = 384.0
+margin_right = 704.0
+margin_bottom = 512.0
+theme = ExtResource( 1 )
+text = "/\\
+Placeholder"
+align = 1

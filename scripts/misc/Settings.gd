@@ -1,5 +1,7 @@
 extends Node
 
+var settingsShowed = false
+
 func _on_FullScreenBtn_toggled(button_pressed):
 	if button_pressed:
 		fullscreen(true)

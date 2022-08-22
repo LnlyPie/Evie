@@ -18,21 +18,36 @@ _global_script_classes=[ {
 "class": "CheatCodeListener",
 "language": "GDScript",
 "path": "res://addons/CheatCoder/CheatCodeListener.gd"
+}, {
+"base": "Node",
+"class": "GameJoltAPIPromise",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_promise/GameJoltAPIPromise.gd"
+}, {
+"base": "HTTPRequest",
+"class": "GameJoltAPIRequest",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_request/GameJoltAPIRequest.gd"
 } ]
 _global_script_class_icons={
 "CheatCode": "",
-"CheatCodeListener": ""
+"CheatCodeListener": "",
+"GameJoltAPIPromise": "",
+"GameJoltAPIRequest": ""
 }
 
 [application]
 
 config/name="Evie"
-run/main_scene="res://other_scenes/misc/Intro.tscn"
+run/main_scene="res://scenes/misc/intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-SceneTransition="*res://other_scenes/misc/SceneTransition.tscn"
+SceneTransition="*res://scenes/misc/SceneTransition.tscn"
+Cursor="*res://scripts/Cursor.gd"
+Settings="*res://scripts/misc/Settings.gd"
+GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 
 [display]
 
@@ -45,7 +60,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg" )
 
 [global]
 
@@ -171,6 +186,10 @@ debug_console={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+
+[network]
+
+ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
 
 [physics]
 

@@ -6,7 +6,7 @@
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
-[ext_resource path="res://other_scenes/settings/Settings.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
