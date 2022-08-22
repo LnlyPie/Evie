@@ -46,9 +46,8 @@ config/icon="res://icon.png"
 
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
 Cursor="*res://scripts/Cursor.gd"
-GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 Settings="*res://scripts/misc/Settings.gd"
-Auth="*res://addons/gamejolt_api/auth/auth.gd"
+GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 
 [display]
 

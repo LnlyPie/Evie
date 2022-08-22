@@ -99,13 +99,6 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="GameJoltButton" type="Button" parent="."]
-margin_left = 832.0
-margin_right = 1088.0
-margin_bottom = 48.0
-theme = ExtResource( 3 )
-text = "GameJolt Login"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource( 7 )]
@@ -114,4 +107,3 @@ text = "GameJolt Login"
 [connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
-[connection signal="pressed" from="GameJoltButton" to="." method="_on_GameJoltButton_pressed"]
