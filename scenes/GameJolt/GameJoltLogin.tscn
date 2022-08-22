@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/GameJolt/gj-logo.png" type="Texture" id=2]
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/GameJolt/gj-bolt.png" type="Texture" id=4]
+[ext_resource path="res://scenes/GameJolt/GameJoltLogin.gd" type="Script" id=5]
+
+[node name="GameJoltLogin" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1088.0
+margin_bottom = 600.0
+
+[node name="Logo" type="Sprite" parent="Panel"]
+position = Vector2( 544, 96 )
+scale = Vector2( 1.17073, 1.18519 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 256.0
+margin_top = 192.0
+margin_right = 832.0
+margin_bottom = 448.0
+
+[node name="GJNameLabel" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 576.0
+margin_bottom = 26.0
+theme = ExtResource( 1 )
+text = "Username"
+align = 1
+
+[node name="GJName" type="TextEdit" parent="Panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 576.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 576, 50 )
+theme = ExtResource( 3 )
+
+[node name="GJTokenLabel" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 84.0
+margin_right = 576.0
+margin_bottom = 110.0
+theme = ExtResource( 1 )
+text = "Game Token"
+align = 1
+
+[node name="GJToken" type="TextEdit" parent="Panel/VBoxContainer"]
+margin_top = 114.0
+margin_right = 576.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 576, 50 )
+theme = ExtResource( 3 )
+
+[node name="LoginButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 168.0
+margin_right = 576.0
+margin_bottom = 206.0
+theme = ExtResource( 3 )
+text = "Login"
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="Panel"]
+margin_top = 560.0
+margin_right = 72.0
+margin_bottom = 600.0
+theme = ExtResource( 3 )
+text = "Back"

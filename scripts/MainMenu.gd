@@ -4,6 +4,7 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
+	auth()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	$CanvasLayer/Settings/Panel.visible = false
 	$Buttons/StartButton.grab_focus()
@@ -29,6 +30,9 @@ func _on_QuitButton_pressed():
 func _on_CreditsButton_pressed():
 	SceneTransition.change_scene("res://scenes/Credits.tscn")
 
+func _on_GameJoltButton_pressed():
+	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
+
 func get_ver(file):
 	var f = File.new()
 	f.open(file, File.READ)
@@ -45,3 +49,7 @@ func showSettings(show: bool):
 		$CanvasLayer/Settings/Panel.visible = false
 		$Buttons/StartButton.grab_focus()
 		Settings.settingsShowed = false
+
+func auth():
+	Auth.set_game_creds()
+	Auth.try_autologin()
