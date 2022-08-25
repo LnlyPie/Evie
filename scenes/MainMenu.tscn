@@ -25,15 +25,15 @@ __meta__ = {
 }
 
 [node name="GameName" type="Label" parent="GameInfo"]
-margin_right = 378.0
+margin_right = 126.0
 margin_bottom = 76.0
 theme = ExtResource( 5 )
-text = "Project Evie"
+text = "Evie"
 
 [node name="GameVersion" type="Label" parent="GameInfo"]
-margin_left = 382.0
+margin_left = 130.0
 margin_top = 25.0
-margin_right = 458.0
+margin_right = 206.0
 margin_bottom = 51.0
 theme = ExtResource( 6 )
 text = "Version"
@@ -104,6 +104,7 @@ margin_left = 832.0
 margin_right = 1088.0
 margin_bottom = 48.0
 theme = ExtResource( 3 )
+disabled = true
 text = "GameJolt Login"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -53,3 +53,9 @@ func showSettings(show: bool):
 func auth():
 	Auth.set_game_creds()
 	Auth.try_autologin()
+	if GameJoltAPI.username != null:
+		var sign_in_trophy = GameJoltAPI.add_achieved({
+			"username": GameJoltAPI.username,
+			"user_token": GameJoltAPI.user_token,
+			"trophy_id": "158932"
+		})
