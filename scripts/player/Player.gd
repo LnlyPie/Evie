@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(float) var normalSpeed = 100.0
 export(float) var sprintMultiplier = 1.5
 var speed = normalSpeed
+var speedChangedDebug = false
 
 func _ready():
 	$CanvasLayer/Settings/Panel.visible = false
@@ -22,7 +23,8 @@ func _process(_delta):
 	if Input.is_action_pressed("player_sprint"):
 		speed = (normalSpeed*sprintMultiplier)
 	else:
-		speed = normalSpeed
+		if !speedChangedDebug:
+			speed = normalSpeed
 	velocity = velocity.normalized()
 	
 	# Debug
