@@ -28,6 +28,7 @@ func _process(_delta):
 	# Debug
 	if Input.is_action_just_pressed("debug_console"):
 		get_parent().add_child(load("res://scenes/misc/debug/DebugConsole.tscn").instance())
+		get_tree().paused = true
 	
 	# Animations
 	if velocity == Vector2.ZERO:
