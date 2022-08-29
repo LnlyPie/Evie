@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
-export(int) var normalSpeed = 100.0
+export(float) var normalSpeed = 100.0
 export(float) var sprintMultiplier = 1.5
 var speed = normalSpeed
 
 func _ready():
 	$CanvasLayer/Settings/Panel.visible = false
 
-func _process(delta):
+func _process(_delta):
 	var velocity = Vector2.ZERO
 	# Basic Movement
 	if Input.is_action_pressed("player_right"):
@@ -24,6 +24,10 @@ func _process(delta):
 	else:
 		speed = normalSpeed
 	velocity = velocity.normalized()
+	
+	# Debug
+	if Input.is_action_just_pressed("debug_console"):
+		get_parent().add_child(load("res://scenes/misc/debug/DebugConsole.tscn").instance())
 	
 	# Animations
 	if velocity == Vector2.ZERO:

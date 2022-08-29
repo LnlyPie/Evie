@@ -9,7 +9,7 @@ func _ready():
 	$CanvasLayer/Settings/Panel.visible = false
 	$Buttons/StartButton.grab_focus()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause"):
 		if Settings.settingsShowed:
 			showSettings(false)

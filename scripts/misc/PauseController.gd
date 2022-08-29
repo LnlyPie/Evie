@@ -11,7 +11,7 @@ func _ready():
 	$Panel/LevelName.text = get_tree().get_current_scene().get_name()
 	$Panel/ActNumber.text = "Act " + str(actNum) + ": " + actName
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause"):
 		if get_tree().paused:
 			if Settings.settingsShowed:
