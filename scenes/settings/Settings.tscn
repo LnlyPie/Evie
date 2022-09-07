@@ -27,7 +27,7 @@ theme = ExtResource( 1 )
 [node name="Video And Audio" type="Tabs" parent="Panel/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 26.0
+margin_top = 30.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Video And Audio"]
 margin_left = 256.0
@@ -36,39 +36,45 @@ margin_bottom = 454.0
 alignment = 1
 
 [node name="FullScreenBtn" type="CheckButton" parent="Panel/TabContainer/Video And Audio/VBoxContainer"]
-margin_top = 199.0
+margin_top = 194.0
 margin_right = 320.0
-margin_bottom = 225.0
+margin_bottom = 226.0
 theme = ExtResource( 2 )
 text = "Fullscreen"
 icon_align = 1
 
 [node name="HBoxScreenRes" type="HBoxContainer" parent="Panel/TabContainer/Video And Audio/VBoxContainer"]
-margin_top = 229.0
+margin_top = 230.0
 margin_right = 320.0
-margin_bottom = 255.0
+margin_bottom = 260.0
 custom_constants/separation = 28
 
 [node name="Label" type="Label" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
 margin_right = 184.0
-margin_bottom = 26.0
+margin_bottom = 30.0
 theme = ExtResource( 2 )
 text = "Screen Resolution"
 
 [node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
 margin_left = 212.0
 margin_right = 280.0
-margin_bottom = 26.0
+margin_bottom = 30.0
 theme = ExtResource( 4 )
 disabled = true
 text = "1920x1080"
 align = 1
-icon_align = 1
 
 [node name="Controls" type="Tabs" parent="Panel/TabContainer"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 26.0
+margin_top = 30.0
+
+[node name="Extra" type="Tabs" parent="Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
 
 [connection signal="toggled" from="Panel/TabContainer/Video And Audio/VBoxContainer/FullScreenBtn" to="." method="_on_FullScreenBtn_toggled"]

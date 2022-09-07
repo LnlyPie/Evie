@@ -31,7 +31,7 @@ wrap_enabled = true
 [node name="InputBox" type="LineEdit" parent="DebugConsole/Console"]
 margin_top = 224.0
 margin_right = 704.0
-margin_bottom = 260.0
+margin_bottom = 264.0
 rect_min_size = Vector2( 704, 30 )
 placeholder_text = "Enter Command..."
 placeholder_alpha = 0.4

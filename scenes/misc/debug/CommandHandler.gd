@@ -1,6 +1,8 @@
 extends Node
 
 onready var player = get_parent().get_parent().get_parent().get_node("Player")
+onready var camera2d = player.get_node("Camera2D")
+onready var level = get_parent().get_parent().get_parent()
 
 enum {
 	ARG_INT,
@@ -12,12 +14,16 @@ enum {
 const valid_commands = [
 	["set_speed",
 		[ARG_FLOAT]],
+	["photo_cam",
+		[]],
+	["quit",
+		[]],
 	["help",
 		[]]
 ]
 
 func help():
-	return str("Avaliable Commands:\n help - Shows this message\n set_speed (num) - sets player speed")
+	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam [true/false] - turns on/off photo cam mode\n quit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -29,3 +35,18 @@ func set_speed(speed):
 			return "Speed set to default."
 		return str("Successfully changed speed to ", speed, ".")
 	return "The speed value must be between 1 and 1000."
+
+func photo_cam():
+	if !player.photoCam:
+		camera2d.current = false
+		player.photoCam = true
+		level.add_child(load("res://scenes/misc/PhotoCam.tscn").instance())
+		return "Photo Camera On\nTo Make a screenshot use P (on Keyboard) or R1 (on DualShock)"
+	else:
+		camera2d.make_current()
+		player.photoCam = false
+		level.remove_child(level.get_node("PhotoCam"))
+		return "Photo Camera Off"
+
+func quit():
+	get_tree().quit()

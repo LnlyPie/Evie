@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
-[ext_resource path="res://scripts/Intro.gd" type="Script" id=2]
+[ext_resource path="res://scripts/misc/intro/Intro.gd" type="Script" id=2]
 [ext_resource path="res://logo.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]

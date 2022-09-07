@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/icons/camera.png" type="Texture" id=2]
+
+[node name="PhotoCam" type="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1040, 560 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_right = 56.0
+margin_bottom = 30.0
+theme = ExtResource( 1 )
+text = "Evie"
