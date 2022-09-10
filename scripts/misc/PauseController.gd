@@ -52,6 +52,7 @@ func _on_SettingsButton_pressed():
 func _on_QuitButton_pressed():
 	if !exitscreen:
 		$QuitPanel.visible = true
+		$QuitPanel/PleaseDont.visible = false
 		$QuitPanel/ButtonsContainer/MenuButton.grab_focus()
 	else:
 		$QuitPanel.visible = false
@@ -88,3 +89,11 @@ func clockTimerInit():
 
 func _on_Timer_timeout():
 	$Panel/SystemTime.text = String(OS.get_time()["hour"]) + ":" + String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
+
+
+func _on_ExitButton_focus_entered():
+	$QuitPanel/PleaseDont.visible = true
+
+
+func _on_ExitButton_focus_exited():
+	$QuitPanel/PleaseDont.visible = false

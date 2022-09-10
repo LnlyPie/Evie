@@ -5,6 +5,10 @@ var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
 	auth()
+	if GameJoltAPI.username == "":
+		$GJAcc.text = "GameJolt Account:\nnot connected"
+	else:
+		$GJAcc.text = "GameJolt Account:\n" + GameJoltAPI.username
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	$CanvasLayer/Settings/Panel.visible = false
 	$Buttons/StartButton.grab_focus()
