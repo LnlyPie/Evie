@@ -6,6 +6,7 @@ var speed = normalSpeed
 var speedChangedDebug = false
 
 var photoCam = false
+var debugInfo = false
 var blockMovement = false
 
 func _ready():

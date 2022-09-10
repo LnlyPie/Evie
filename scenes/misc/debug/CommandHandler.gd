@@ -16,6 +16,8 @@ const valid_commands = [
 		[ARG_FLOAT]],
 	["photo_cam",
 		[]],
+	["debug_info",
+		[]],
 	["quit",
 		[]],
 	["help",
@@ -23,7 +25,7 @@ const valid_commands = [
 ]
 
 func help():
-	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam [true/false] - turns on/off photo cam mode\n quit - closes the game\n help - Shows this message")
+	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam [true/false] - turns on/off photo cam mode\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -47,6 +49,16 @@ func photo_cam():
 		player.photoCam = false
 		level.remove_child(level.get_node("PhotoCam"))
 		return "Photo Camera Off"
+
+func debug_info():
+	if !player.debugInfo:
+		level.add_child(load("res://scenes/misc/debug/DebugInfo.tscn").instance())
+		player.debugInfo = true
+		return "Showing Debug Info"
+	else:
+		level.remove_child(level.get_node("DebugInfo"))
+		player.debugInfo = false
+		return "Hiding Debug Info"
 
 func quit():
 	get_tree().quit()

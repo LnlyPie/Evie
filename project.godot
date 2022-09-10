@@ -229,6 +229,10 @@ screenshot={
  ]
 }
 
+[locale]
+
+locale_filter=[ 1, [  ] ]
+
 [network]
 
 ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"

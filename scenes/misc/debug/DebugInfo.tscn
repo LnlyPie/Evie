@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/misc/debug/DebugInfo.gd" type="Script" id=2]
+
+[node name="DebugInfo" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="DebugInfoLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+theme = ExtResource( 1 )
+text = "FPS: 1000000000"
