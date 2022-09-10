@@ -38,7 +38,10 @@ func _process(_delta):
 	# Screenshots
 	if Input.is_action_just_pressed("screenshot"):
 		if photoCam:
+			get_parent().get_node("PhotoCam").get_node("UseText").visible = false
+			yield(get_tree().create_timer(0.5), "timeout")
 			Utils.screenshot()
+			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
 	
 	# Animations
 	if velocity == Vector2.ZERO:

@@ -2,6 +2,7 @@ extends Node
 
 func set_game_creds():
 	# Change empty_auth.gd to auth.gd
+	# Add to autoload
 	# You don't need to fill that up (empty auth.gd was made only for the try_autologin() function)
 	GameJoltAPI.set_game_credentials({
 		"game_id": "",
