@@ -26,3 +26,18 @@ func getDateAndTime():
 	# Return it
 	var date_and_time = date_return + "_" + time_return
 	return date_and_time
+
+func saveSettings():
+	# Laaaater
+	var fullscreen = Settings.fullscreen
+
+func sendNotification():
+	# To do laaaater
+	add_child(load("res://scenes/misc/miscmisc/Notification.tscn").instance())
+	var test = get_parent()
+	print(test)
+	#$Panel/NotTitle.text = title
+	#$Panel/NotDesc.text = desc
+	#if icon == "gj":
+	#	$Panel/Sprite.texture = load("res://gj.png")
+	#$AnimationPlayer.play("Notification")

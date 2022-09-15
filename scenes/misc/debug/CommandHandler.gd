@@ -42,7 +42,7 @@ func photo_cam():
 	if !player.photoCam:
 		camera2d.current = false
 		player.photoCam = true
-		level.add_child(load("res://scenes/misc/PhotoCam.tscn").instance())
+		level.add_child(load("res://scenes/misc/miscmisc/PhotoCam.tscn").instance())
 		return "Photo Camera On\nTo Make a screenshot use P (on Keyboard) or R1 (on DualShock)"
 	else:
 		camera2d.make_current()

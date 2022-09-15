@@ -4,6 +4,7 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
+	Utils.sendNotification()
 	auth()
 	if GameJoltAPI.username == "":
 		$GJAcc.text = "GameJolt Account:\nnot connected"
