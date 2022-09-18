@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/controller_icons/objects/TextureRect.gd"
 }, {
+"base": "Resource",
+"class": "DialogueResource",
+"language": "GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
 "base": "Node",
 "class": "GameJoltAPIPromise",
 "language": "GDScript",
@@ -58,6 +63,31 @@ _global_script_classes=[ {
 "class": "GameJoltAPIRequest",
 "language": "GDScript",
 "path": "res://addons/gamejolt_api/gamejolt_api_request/GameJoltAPIRequest.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationData.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationKeys",
+"language": "GDScript",
+"path": "res://localization/LocalizationKeys.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationPlaceholders",
+"language": "GDScript",
+"path": "res://localization/LocalizationPlaceholders.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationPlaceholdersData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationPlaceholdersData.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationSave",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationSave.gd"
 } ]
 _global_script_class_icons={
 "CheatCode": "",
@@ -68,8 +98,14 @@ _global_script_class_icons={
 "ControllerSprite": "",
 "ControllerSprite3D": "",
 "ControllerTextureRect": "",
+"DialogueResource": "",
 "GameJoltAPIPromise": "",
-"GameJoltAPIRequest": ""
+"GameJoltAPIRequest": "",
+"LocalizationData": "",
+"LocalizationKeys": "",
+"LocalizationPlaceholders": "",
+"LocalizationPlaceholdersData": "",
+"LocalizationSave": ""
 }
 
 [application]
@@ -90,6 +126,8 @@ Auth="*res://addons/gamejolt_api/auth/auth.gd"
 CommandHistory="*res://scenes/misc/debug/CommandHistory.gd"
 Utils="*res://scripts/misc/Utils.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
 [display]
 
@@ -102,7 +140,11 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/localization_editor/plugin.cfg" )
+
+[gdnative]
+
+singletons=[  ]
 
 [global]
 
@@ -232,6 +274,7 @@ screenshot={
 [locale]
 
 locale_filter=[ 1, [  ] ]
+translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation" )
 
 [network]
 

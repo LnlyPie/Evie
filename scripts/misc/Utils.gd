@@ -31,6 +31,13 @@ func saveSettings():
 	# Laaaater
 	var fullscreen = Settings.fullscreen
 
+func showDialogue(dialogueFile: String, dialogueNode: String):
+	var file = load(dialogueFile)
+	DialogueManager.show_example_dialogue_balloon(\
+		dialogueNode, \
+		file
+	)
+
 func sendNotification():
 	# To do laaaater
 	add_child(load("res://scenes/misc/miscmisc/Notification.tscn").instance())

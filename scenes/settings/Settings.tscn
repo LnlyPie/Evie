@@ -40,7 +40,7 @@ margin_top = 194.0
 margin_right = 320.0
 margin_bottom = 226.0
 theme = ExtResource( 2 )
-text = "Fullscreen"
+text = "S_FULLSCREEN"
 icon_align = 1
 
 [node name="HBoxScreenRes" type="HBoxContainer" parent="Panel/TabContainer/Video And Audio/VBoxContainer"]
@@ -50,14 +50,14 @@ margin_bottom = 260.0
 custom_constants/separation = 28
 
 [node name="Label" type="Label" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
-margin_right = 184.0
+margin_right = 60.0
 margin_bottom = 30.0
 theme = ExtResource( 2 )
-text = "Screen Resolution"
+text = "S_RES"
 
 [node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Video And Audio/VBoxContainer/HBoxScreenRes"]
-margin_left = 212.0
-margin_right = 280.0
+margin_left = 88.0
+margin_right = 156.0
 margin_bottom = 30.0
 theme = ExtResource( 4 )
 disabled = true

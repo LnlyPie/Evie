@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/TileMaps/GrassTileMap.tscn" type="PackedScene" id=3]
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel_0-Some*Test*Act" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
 

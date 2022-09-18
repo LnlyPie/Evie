@@ -6,14 +6,15 @@ var exitscreen: bool = false
 
 var clockTimer = null
 
-export(int) var actNum: int = 0
-export(String) var actName: String = "Some Act"
-
 func _ready():
+	var levelName = get_tree().get_current_scene().get_name().split("_", true, 1)
+	var act = levelName[1].split("-", true, 1)
+	var actNum = act[0]
+	var actName = act[1].replace("*", " ")
 	$Panel.visible = false
 	$QuitPanel.visible = false
-	$Panel/LevelName.text = get_tree().get_current_scene().get_name()
-	$Panel/ActNumber.text = "Act " + str(actNum) + ": " + actName
+	$Panel/LevelName.text = levelName[0]
+	$Panel/ActNumber.text = "Act " + actNum + ": " + actName
 	clockTimerInit()
 
 func _process(_delta):
@@ -97,3 +98,7 @@ func _on_ExitButton_focus_entered():
 
 func _on_ExitButton_focus_exited():
 	$QuitPanel/PleaseDont.visible = false
+
+
+func _on_PhotoButton_pressed():
+	pass

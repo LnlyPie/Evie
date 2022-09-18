@@ -1,0 +1,95 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 5
+syntax_version = 2
+raw_text = "~ node
+
+Andus: Hi! This is some dialogue
+Andus: Here! Have some options
+- This is great!
+	Andus: Right!?
+- Start again => node
+- End the conversation => END"
+errors = [  ]
+titles = {
+"node": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "node",
+"type": "title"
+},
+"2": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Hi! This is some dialogue",
+"time": null,
+"translation_key": "Hi! This is some dialogue",
+"type": "dialogue"
+},
+"3": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Here! Have some options",
+"time": null,
+"translation_key": "Here! Have some options",
+"type": "dialogue"
+},
+"4": {
+"next_id": "5",
+"next_id_after": "end!",
+"replacements": [  ],
+"responses": PoolStringArray( "4", "6", "7" ),
+"text": "This is great!",
+"translation_key": "This is great!",
+"type": "response"
+},
+"5": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "end!",
+"parent_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Right!?",
+"time": null,
+"translation_key": "Right!?",
+"type": "dialogue"
+},
+"6": {
+"next_id": "2",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "Start again",
+"translation_key": "Start again",
+"type": "response"
+},
+"7": {
+"next_id": "end",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "End the conversation",
+"translation_key": "End the conversation",
+"type": "response"
+}
+}
