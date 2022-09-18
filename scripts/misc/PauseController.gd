@@ -107,3 +107,4 @@ func getLangs():
 	if !$Settings/Panel/Other/LangButton.get_item_id(1):
 		$Settings/Panel/Other/LangButton.add_item("English", 1)
 		$Settings/Panel/Other/LangButton.add_item("Polski", 2)
+		$Settings/Panel/Other/LangButton.add_item("Deutsch", 3)

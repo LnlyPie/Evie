@@ -23,3 +23,5 @@ func _on_LangButton_item_selected(index):
 		TranslationServer.set_locale("en")
 	if index == 1:
 		TranslationServer.set_locale("pl")
+	if index == 2:
+		TranslationServer.set_locale("de")

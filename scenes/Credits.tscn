@@ -15,7 +15,7 @@ script = ExtResource( 4 )
 margin_right = 115.0
 margin_bottom = 42.0
 theme = ExtResource( 1 )
-text = "KEY_CREDITS"
+text = "CREDITS"
 align = 1
 valign = 1
 

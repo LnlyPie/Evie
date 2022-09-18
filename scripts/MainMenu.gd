@@ -69,3 +69,4 @@ func getLangs():
 	if !$CanvasLayer/Settings/Panel/Other/LangButton.get_item_id(1):
 		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("English", 1)
 		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Polski", 2)
+		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Deutsch", 2)

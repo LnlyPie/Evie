@@ -1,18 +1,18 @@
-keys,en,pl
-PLAY,Play,Graj
-OPTIONS,Options,Ustawienia
-EXIT,Exit,Wyjdź
-EXTRAS,Extras,Dodatki
-CREDITS,Credits,Autorzy
-GJLOGIN,GameJolt Login,Konto GameJolt
-S_VAA,Video And Audio,Wideo i Audio
-S_FULLSCREEN,Fullscreen,Pełny Ekran
-S_RES,Screen Resolution,Rozdzielczość Ekranu
-S_OTHER,Other,Inne
-S_LANG,Language,Język
-RESUME,Resume,Wznów
-SAE,Save and Exit to:,Zapisz i Wyjdź do:
-PLEASED,please dont,prosze nie
-MAINMENU,Main Menu,Menu Główne
-CANCEL,Cancel,Anuluj
-PHOTOMODE,Photo Mode,Tryb Zdjęć
+keys,en,pl,de
+PLAY,Play,Graj,Spielen
+OPTIONS,Options,Ustawienia,Optionen
+EXIT,Exit,Wyjdź,Ausgang
+EXTRAS,Extras,Dodatki,Extras
+CREDITS,Credits,Autorzy,Kredite
+GJLOGIN,GameJolt Login,Konto GameJolt,GameJolt-Anmeldung
+S_VAA,Video And Audio,Wideo i Audio,Video und Audio
+S_FULLSCREEN,Fullscreen,Pełny Ekran,Ganzer Bildschirm
+S_RES,Screen Resolution,Rozdzielczość Ekranu,Bildschirmauflösung
+S_OTHER,Other,Inne,Sonstiges
+S_LANG,Language,Język,Sprache
+RESUME,Resume,Wznów,Fortsetzen
+SAE,Save and Exit to:,Zapisz i Wyjdź do:,Speichern und beenden zu:
+PLEASED,please dont,prosze nie,bitte nicht
+MAINMENU,Main Menu,Menu Główne,Hauptmenü
+CANCEL,Cancel,Anuluj,Absagen
+PHOTOMODE,Photo Mode,Tryb Zdjęć,Fotomodus
