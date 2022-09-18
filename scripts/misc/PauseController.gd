@@ -30,16 +30,15 @@ func _process(_delta):
 			pause(true)
 
 func pause(pause: bool):
-	if can_toogle_pause:
-		if pause:
-			$Panel.visible = true
-			$Panel/VBoxContainer/ResumeButton.grab_focus()
-			get_tree().set_deferred("paused", true)
-			paused = true
-		else:
-			$Panel.visible = false
-			get_tree().set_deferred("paused", false)
-			paused = false
+	if pause:
+		$Panel.visible = true
+		$Panel/VBoxContainer/ResumeButton.grab_focus()
+		get_tree().set_deferred("paused", true)
+		paused = true
+	else:
+		$Panel.visible = false
+		get_tree().set_deferred("paused", false)
+		paused = false
 
 func _on_ResumeButton_pressed():
 	pause(false)
@@ -72,8 +71,9 @@ func _on_CancelButton_pressed():
 
 func showSettings(show: bool):
 	if show:
+		getLangs()
 		$Settings/Panel.visible = true
-		$"Settings/Panel/TabContainer/Video And Audio/VBoxContainer/FullScreenBtn".grab_focus()
+		$Settings/Panel/VAA/FullScreenBtn.grab_focus()
 		Settings.settingsShowed = true
 	else:
 		$Settings/Panel.visible = false
@@ -102,3 +102,8 @@ func _on_ExitButton_focus_exited():
 
 func _on_PhotoButton_pressed():
 	pass
+
+func getLangs():
+	if !$Settings/Panel/Other/LangButton.get_item_id(1):
+		$Settings/Panel/Other/LangButton.add_item("English", 1)
+		$Settings/Panel/Other/LangButton.add_item("Polski", 2)

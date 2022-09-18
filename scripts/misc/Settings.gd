@@ -17,3 +17,9 @@ func fullscreen(full: bool):
 	else:
 		OS.window_fullscreen = false
 		fullscreen = false
+
+func _on_LangButton_item_selected(index):
+	if index == 0:
+		TranslationServer.set_locale("en")
+	if index == 1:
+		TranslationServer.set_locale("pl")

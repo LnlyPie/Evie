@@ -46,8 +46,9 @@ func get_ver(file):
 
 func showSettings(show: bool):
 	if show:
+		getLangs()
 		$CanvasLayer/Settings/Panel.visible = true
-		$"CanvasLayer/Settings/Panel/TabContainer/Video And Audio/VBoxContainer/FullScreenBtn".grab_focus()
+		$"CanvasLayer/Settings/Panel/VAA/FullScreenBtn".grab_focus()
 		Settings.settingsShowed = true
 	else:
 		$CanvasLayer/Settings/Panel.visible = false
@@ -63,3 +64,8 @@ func auth():
 			"user_token": GameJoltAPI.user_token,
 			"trophy_id": "158932"
 		})
+
+func getLangs():
+	if !$CanvasLayer/Settings/Panel/Other/LangButton.get_item_id(1):
+		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("English", 1)
+		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Polski", 2)
