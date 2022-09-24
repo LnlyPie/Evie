@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+
+[node name="Saves" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="SavesContainer" type="VBoxContainer" parent="Panel"]
+anchor_bottom = 1.0
+margin_right = 96.0
+alignment = 1
+
+[node name="SaveBtn1" type="Button" parent="Panel/SavesContainer"]
+margin_top = 102.0
+margin_right = 96.0
+margin_bottom = 178.0
+theme = ExtResource( 3 )
+text = "1"
+
+[node name="SaveBtn2" type="Button" parent="Panel/SavesContainer"]
+margin_top = 182.0
+margin_right = 96.0
+margin_bottom = 258.0
+theme = ExtResource( 3 )
+text = "2"
+
+[node name="SaveBtn3" type="Button" parent="Panel/SavesContainer"]
+margin_top = 262.0
+margin_right = 96.0
+margin_bottom = 338.0
+theme = ExtResource( 3 )
+text = "3"
+
+[node name="SaveBtn4" type="Button" parent="Panel/SavesContainer"]
+margin_top = 342.0
+margin_right = 96.0
+margin_bottom = 418.0
+theme = ExtResource( 3 )
+text = "4"
+
+[node name="SaveBtn5" type="Button" parent="Panel/SavesContainer"]
+margin_top = 422.0
+margin_right = 96.0
+margin_bottom = 498.0
+theme = ExtResource( 3 )
+text = "5"
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -91.5
+margin_right = 91.5
+margin_bottom = 48.0
+theme = ExtResource( 2 )
+text = "Game Saves"
+align = 1
+valign = 1
+
+[node name="SaveInfo" type="Panel" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -88.0
+margin_right = 192.0
+margin_bottom = 88.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="SaveLabel" type="Label" parent="Panel/SaveInfo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "SAV_NAME: SaveName
+SAV_SAVEAT: day-month-year
+SAV_TIME: 1h 4min"
+align = 1
+valign = 1

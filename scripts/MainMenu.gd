@@ -9,12 +9,13 @@ func _ready():
 		$GJAcc.text = "GameJolt:\nnot connected"
 	else:
 		$GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
+	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	$CanvasLayer/Settings/Panel.visible = false
 	$Buttons/StartButton.grab_focus()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("debug_pause"):
+	if Input.is_action_just_pressed("debug_pause") or Input.is_action_just_pressed("ui_cancel"):
 		if Settings.settingsShowed:
 			showSettings(false)
 
@@ -36,6 +37,15 @@ func _on_CreditsButton_pressed():
 
 func _on_GameJoltButton_pressed():
 	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
+
+func _on_GithubButton_pressed():
+	OS.shell_open("https://github.com/lnlypie/evie")
+
+func _on_BugsButton_pressed():
+	OS.shell_open("https://github.com/lnlypie/evie/issues")
+
+func _on_WebsiteButton_pressed():
+	OS.shell_open("https://lpie.andus.dev/")
 
 func get_ver(file):
 	var f = File.new()
@@ -69,4 +79,12 @@ func getLangs():
 	if !$CanvasLayer/Settings/Panel/Other/LangButton.get_item_id(1):
 		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("English", 1)
 		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Polski", 2)
-		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Deutsch", 2)
+		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Deutsch", 3)
+
+func splashtext():
+	var random_splash = Utils.get_random_word_from_file("res://splashes.txt")
+	return random_splash
+
+func _on_SplashCheatCode_cheat_activated():
+	$Splashes.text = "The cake is a lie"
+	$Splash/Sprite.visible = true

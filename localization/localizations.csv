@@ -2,6 +2,8 @@ keys,en,pl,de
 PLAY,Play,Graj,Spielen
 OPTIONS,Options,Ustawienia,Optionen
 EXIT,Exit,Wyjdź,Ausgang
+MM_BUGS,Bugs,Błędy,Fehler
+MM_WEB,Website,Strona,Webseite
 EXTRAS,Extras,Dodatki,Extras
 CREDITS,Credits,Autorzy,Kredite
 GJLOGIN,GameJolt Login,Konto GameJolt,GameJolt-Anmeldung
@@ -10,6 +12,9 @@ S_FULLSCREEN,Fullscreen,Pełny Ekran,Ganzer Bildschirm
 S_RES,Screen Resolution,Rozdzielczość Ekranu,Bildschirmauflösung
 S_OTHER,Other,Inne,Sonstiges
 S_LANG,Language,Język,Sprache
+SAV_NAME:,Name:,Nazwa:,Name:
+SAV_SAVEAT:,Saved at:,Zapisano:,Gespeichert bei:
+SAV_TIME:,Time played:,Czas gry:,Spielzeit:
 RESUME,Resume,Wznów,Fortsetzen
 SAE,Save and Exit to:,Zapisz i Wyjdź do:,Speichern und beenden zu:
 PLEASED,please dont,prosze nie,bitte nicht

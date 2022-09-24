@@ -27,10 +27,6 @@ func getDateAndTime():
 	var date_and_time = date_return + "_" + time_return
 	return date_and_time
 
-func saveSettings():
-	# Laaaater
-	var fullscreen = Settings.fullscreen
-
 func showDialogue(dialogueFile: String, dialogueNode: String):
 	var file = load(dialogueFile)
 	DialogueManager.show_example_dialogue_balloon(\
@@ -38,13 +34,15 @@ func showDialogue(dialogueFile: String, dialogueNode: String):
 		file
 	)
 
-func sendNotification():
-	# To do laaaater
-	add_child(load("res://scenes/misc/miscmisc/Notification.tscn").instance())
-	var test = get_parent()
-	print(test)
-	#$Panel/NotTitle.text = title
-	#$Panel/NotDesc.text = desc
-	#if icon == "gj":
-	#	$Panel/Sprite.texture = load("res://gj.png")
-	#$AnimationPlayer.play("Notification")
+func load_file(file_path):
+	var file = File.new()
+	file.open(file_path, file.READ)
+	var text = file.get_as_text()
+	return text
+
+func get_random_word_from_file(file_path):
+	var text = load_file(file_path).strip_edges()
+	var words = text.split(",")
+	for i in range(words.size()):
+		words[i] = words[i].replace(",", "")
+	return words[randi() % words.size()]
