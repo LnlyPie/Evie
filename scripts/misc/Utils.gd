@@ -42,7 +42,7 @@ func load_file(file_path):
 
 func get_random_word_from_file(file_path):
 	var text = load_file(file_path).strip_edges()
-	var words = text.split(",")
+	var words = text.split("|")
 	for i in range(words.size()):
-		words[i] = words[i].replace(",", "")
+		words[i] = words[i].replace("|", "")
 	return words[randi() % words.size()]

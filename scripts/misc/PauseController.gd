@@ -91,20 +91,16 @@ func clockTimerInit():
 func _on_Timer_timeout():
 	$Panel/SystemTime.text = String(OS.get_time()["hour"]) + ":" + String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
 
-
 func _on_ExitButton_focus_entered():
 	$QuitPanel/PleaseDont.visible = true
 
-
 func _on_ExitButton_focus_exited():
 	$QuitPanel/PleaseDont.visible = false
-
 
 func _on_PhotoButton_pressed():
 	pass
 
 func getLangs():
-	if !$Settings/Panel/Other/LangButton.get_item_id(1):
-		$Settings/Panel/Other/LangButton.add_item("English", 1)
-		$Settings/Panel/Other/LangButton.add_item("Polski", 2)
-		$Settings/Panel/Other/LangButton.add_item("Deutsch", 3)
+	$Settings/Panel/Other/LangButton.add_item("English", 1)
+	$Settings/Panel/Other/LangButton.add_item("Polski", 2)
+	$Settings/Panel/Other/LangButton.add_item("Deutsch", 3)

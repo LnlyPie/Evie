@@ -98,8 +98,9 @@ text = "SystemTime"
 align = 2
 
 [node name="PhotoButton" type="Button" parent="Panel"]
-margin_left = 920.0
-margin_right = 1088.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -168.0
 margin_bottom = 40.0
 theme = ExtResource( 2 )
 disabled = true

@@ -11,6 +11,7 @@ func _ready():
 		$GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
+	ifHTML()
 	$CanvasLayer/Settings/Panel.visible = false
 	$Buttons/StartButton.grab_focus()
 
@@ -88,3 +89,9 @@ func splashtext():
 func _on_SplashCheatCode_cheat_activated():
 	$Splashes.text = "The cake is a lie"
 	$Splash/Sprite.visible = true
+
+func ifHTML():
+	var os = OS.get_name()
+	if os == "HTML5":
+		$Splashes.text = "So you're a web gamer huh?"
+		$GameInfo/GameVersion.text = "v. Always latest B)"
