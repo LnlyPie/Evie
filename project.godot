@@ -114,6 +114,7 @@ config/name="Evie"
 run/main_scene="res://scenes/misc/intro/Intro.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="EvieGame"
+config/project_settings_override="Settings.cfg"
 config/icon="res://icon.png"
 
 [autoload]
@@ -273,6 +274,7 @@ screenshot={
 
 [locale]
 
+test="pl"
 locale_filter=[ 1, [  ] ]
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
 

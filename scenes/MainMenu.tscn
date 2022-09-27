@@ -109,10 +109,18 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -136.0
-margin_top = -80.0
+margin_top = -122.0
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="ModsButton" type="Button" parent="VBoxContainer"]
+visible = false
+margin_right = 136.0
+margin_bottom = 38.0
+theme = ExtResource( 3 )
+disabled = true
+text = "MODS"
 
 [node name="ExtrasButton" type="Button" parent="VBoxContainer"]
 margin_right = 136.0

@@ -6,6 +6,7 @@ var speed = normalSpeed
 var speedChangedDebug = false
 
 var photoCam = false
+var gb_filter = false
 var debugInfo = false
 var blockMovement = false
 
@@ -36,6 +37,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("debug_console"):
 		get_parent().add_child(load("res://scenes/misc/debug/DebugConsole.tscn").instance())
 		get_tree().paused = true
+	if gb_filter:
+		$CanvasLayer/GB_Filter.visible = true
+		OS.set_window_title("Evie - GameBoy Edition")
+	else:
+		$CanvasLayer/GB_Filter.visible = false
+		OS.set_window_title("Evie")
 	# Screenshots
 	if Input.is_action_just_pressed("screenshot"):
 		if photoCam:

@@ -16,6 +16,8 @@ const valid_commands = [
 		[ARG_FLOAT]],
 	["photo_cam",
 		[]],
+	["gb_filter",
+		[]],
 	["debug_info",
 		[]],
 	["quit",
@@ -25,7 +27,7 @@ const valid_commands = [
 ]
 
 func help():
-	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam [true/false] - turns on/off photo cam mode\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
+	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam - turns on/off photo cam mode\n gb_filter - Turns on GameBoy Filter\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -49,6 +51,14 @@ func photo_cam():
 		player.photoCam = false
 		level.remove_child(level.get_node("PhotoCam"))
 		return "Photo Camera Off"
+
+func gb_filter():
+	if !player.gb_filter:
+		player.gb_filter = true
+		return "GameBoy Filter On"
+	else:
+		player.gb_filter = false
+		return "GameBoy Filter Off"
 
 func debug_info():
 	if !player.debugInfo:

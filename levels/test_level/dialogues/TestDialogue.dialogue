@@ -1,0 +1,8 @@
+~ node
+
+Andus: Hi! This is some dialogue
+Andus: Here! Have some options
+- This is great!
+	Andus: Right!?
+- Start again => node
+- End the conversation => END

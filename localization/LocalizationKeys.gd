@@ -25,6 +25,8 @@ const PLEASED = "PLEASED"
 const MAINMENU = "MAINMENU"
 const CANCEL = "CANCEL"
 const PHOTOMODE = "PHOTOMODE"
+const MODS = "MODS"
+const MODS_LOAD = "MODS_LOAD"
 
 const KEYS = [
  "PLAY",
@@ -48,5 +50,7 @@ const KEYS = [
  "PLEASED",
  "MAINMENU",
  "CANCEL",
- "PHOTOMODE"
+ "PHOTOMODE",
+ "MODS",
+ "MODS_LOAD"
 ]
