@@ -34,9 +34,22 @@ func _process(_delta):
 		velocity = velocity.normalized()
 	
 	# Debug
+	debug()
+	
+	# Animations
+	if velocity == Vector2.ZERO:
+		$AnimationTree.get("parameters/playback").travel("Idle")
+	else:
+		$AnimationTree.get("parameters/playback").travel("Walk")
+		$AnimationTree.set("parameters/Walk/blend_position", velocity)
+		move_and_slide(velocity * speed)
+
+func debug():
+	# Debug Console
 	if Input.is_action_just_pressed("debug_console"):
 		get_parent().add_child(load("res://scenes/misc/debug/DebugConsole.tscn").instance())
 		get_tree().paused = true
+	# GameBoy Filter
 	if gb_filter:
 		$CanvasLayer/GB_Filter.visible = true
 		OS.set_window_title("Evie - GameBoy Edition")
@@ -50,11 +63,3 @@ func _process(_delta):
 			yield(get_tree().create_timer(0.5), "timeout")
 			Utils.screenshot()
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
-	
-	# Animations
-	if velocity == Vector2.ZERO:
-		$AnimationTree.get("parameters/playback").travel("Idle")
-	else:
-		$AnimationTree.get("parameters/playback").travel("Walk")
-		$AnimationTree.set("parameters/Walk/blend_position", velocity)
-		move_and_slide(velocity * speed)

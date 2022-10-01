@@ -3,6 +3,8 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
+const int type = 0;
+
 uniform vec4 darkest : hint_color;
 uniform vec4 dark : hint_color;
 uniform vec4 light : hint_color;

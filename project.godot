@@ -130,6 +130,10 @@ ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
+[debug]
+
+gdscript/warnings/enable=false
+
 [display]
 
 window/size/width=1088
@@ -274,7 +278,6 @@ screenshot={
 
 [locale]
 
-test="pl"
 locale_filter=[ 1, [  ] ]
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
 
