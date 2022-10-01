@@ -24,6 +24,13 @@ _(GameJolt is a better option if you want to have auto updates with GameJolt Cli
  - You can add Evie to steam library too for convenience
 
 ## Other:
-Game Settings and Screenshots folder:
+### Game folder:
  - _Windows:_ `%APPDATA%\EvieGame`
  - _Linux:_ `~/.local/share/EvieGame`
+### Supported Controllers (with UI icons):
+ - ![](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white) 360-Series
+ - ![](https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white) 3-5
+ - ![](https://img.shields.io/badge/Switch-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white) Controller
+ - ![](https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white) Deck/Controller
+ - ![](https://img.shields.io/badge/Amazon-00A8E1?style=for-the-badge&logo=amazon&logoColor=white) Luna
+ - ![](https://img.shields.io/badge/Stadia-CD2640?style=for-the-badge&logo=stadia&logoColor=white) Controller
