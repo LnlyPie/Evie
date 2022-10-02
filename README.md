@@ -26,7 +26,7 @@ _(GameJolt is a better option if you want to have auto updates with GameJolt Cli
 ## Other:
 ### Game folder:
  - _Windows:_ `%APPDATA%\EvieGame`
- - _Linux:_ `~/.local/share/EvieGame`
+ - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
 ### Supported Controllers (with UI icons):
  - ![](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white) 360-Series
  - ![](https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white) 3-5
