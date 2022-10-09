@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m5x7/m5x7.tres" type="DynamicFont" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
 [ext_resource path="res://logo.png" type="Texture" id=9]
 [ext_resource path="res://addons/CheatCoder/Presets/Konami.tres" type="Resource" id=10]
+[ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=11]
+[ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=12]
+[ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=13]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -106,11 +109,12 @@ align = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 margin_left = -136.0
-margin_top = -88.0
+margin_top = 178.0
+margin_bottom = 266.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -127,6 +131,7 @@ text = "MODS"
 margin_right = 136.0
 margin_bottom = 38.0
 theme = ExtResource( 3 )
+disabled = true
 text = "EXTRAS"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
@@ -151,6 +156,50 @@ text = "GJLOGIN"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="Input" type="HBoxContainer" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_top = -40.0
+margin_right = 4.0
+
+[node name="ControllerTextureRect" type="TextureRect" parent="CanvasLayer/Input"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 11 )
+expand = true
+script = ExtResource( 12 )
+path = "ui_accept"
+
+[node name="UseLabel" type="Label" parent="CanvasLayer/Input"]
+margin_left = 44.0
+margin_top = 5.0
+margin_right = 80.0
+margin_bottom = 35.0
+theme = ExtResource( 6 )
+text = "USE"
+
+[node name="ControllerTextureRect2" type="TextureRect" parent="CanvasLayer/Input"]
+margin_left = 84.0
+margin_right = 124.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 13 )
+expand = true
+script = ExtResource( 12 )
+path = "ui_cancel"
+
+[node name="BackLabel" type="Label" parent="CanvasLayer/Input"]
+margin_left = 128.0
+margin_top = 5.0
+margin_right = 176.0
+margin_bottom = 35.0
+theme = ExtResource( 6 )
+text = "BACK"
 
 [node name="GJAcc" type="Label" parent="."]
 anchor_left = 0.5
