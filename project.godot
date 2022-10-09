@@ -137,6 +137,7 @@ gdscript/warnings/enable=false
 [display]
 
 window/size/width=1088
+window/size/fullscreen=true
 window/vsync/use_vsync=false
 mouse_cursor/custom_image="res://arrow.png"
 mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )

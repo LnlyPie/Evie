@@ -4,17 +4,23 @@ export(bool) var can_toogle_pause: bool = true # Probably won't be needed
 var paused: bool = false
 var exitscreen: bool = false
 
+var date = OS.get_date()
+var time = OS.get_time()
 var clockTimer = null
 
 func _ready():
+	# Get Chapter Name
 	var levelName = get_tree().get_current_scene().get_name().split("_", true, 1)
 	var act = levelName[1].split("-", true, 1)
 	var actNum = act[0]
 	var actName = act[1].replace("*", " ")
+	# Set Chapter Name
 	$Panel.visible = false
 	$QuitPanel.visible = false
 	$Panel/LevelName.text = levelName[0]
 	$Panel/ActNumber.text = "Act " + actNum + ": " + actName
+	# Set Date & Time
+	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." + String(date["month"]) + "." + String(date["year"])
 	clockTimerInit()
 
 func _process(_delta):
@@ -89,7 +95,7 @@ func clockTimerInit():
 	clockTimer.start()
 
 func _on_Timer_timeout():
-	$Panel/SystemTime.text = String(OS.get_time()["hour"]) + ":" + String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
+	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" + String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
 
 func _on_ExitButton_focus_entered():
 	$QuitPanel/PleaseDont.visible = true
