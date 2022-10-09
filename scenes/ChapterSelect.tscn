@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
+
+[node name="ChapterSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -117.0
+margin_right = 117.0
+margin_bottom = 38.0
+theme = ExtResource( 1 )
+text = "Select Chapter:"
+
+[node name="Prologue" type="ColorRect" parent="Panel"]
+margin_left = 24.0
+margin_top = 128.0
+margin_right = 216.0
+margin_bottom = 488.0
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
+
+[node name="ChapterName" type="Label" parent="Panel/Prologue"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -44.0
+margin_top = -30.0
+margin_right = 44.0
+theme = ExtResource( 2 )
+text = "Prologue"
+
+[node name="Art" type="Label" parent="Panel/Prologue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -15.0
+margin_right = 95.0
+margin_bottom = 15.0
+theme = ExtResource( 2 )
+text = "(Chapter Art Here)"
+
+[node name="ChapterOne" type="ColorRect" parent="Panel"]
+margin_left = 240.0
+margin_top = 128.0
+margin_right = 432.0
+margin_bottom = 488.0
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
+
+[node name="ChapterName" type="Label" parent="Panel/ChapterOne"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.0
+margin_top = -30.0
+margin_right = 63.0
+theme = ExtResource( 2 )
+text = "Chapter One"
+
+[node name="Art" type="Label" parent="Panel/ChapterOne"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -15.0
+margin_right = 95.0
+margin_bottom = 15.0
+theme = ExtResource( 2 )
+text = "(Chapter Art Here)"
