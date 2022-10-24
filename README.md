@@ -5,11 +5,18 @@ You're playing as a girl named Evie. Soon you'll discover that the king is locki
 **Andus:** Developer ([Twitter](https://twitter.com/anduseee), [GameJolt](https://gamejolt.com/@Andusee), [Website](https://andus.dev/))</br>
 **LucePric:** Story Writing ([GameJolt](https://gamejolt.com/@LucePric))</br>
 **Creta:** Art/Sprites</br>
-**Made With** [Godot Engine v3.5](https://godotengine.org/)
+**Made With** [Godot Engine v3.5.1](https://godotengine.org/)
+
 ## where download ;-;?
 You can get latest builds from [GameJolt](https://gamejolt.com/games/projectevie/699766)</br>
 Or latest and older from [Github Releases](https://github.com/LnlyPie/Evie/releases)</br>
 _(GameJolt is a better option if you want to have auto updates with GameJolt Client)_
+
+## Contributing/Modding:
+### Contributing:
+See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing) on Andus Docs
+### Modding:
+See [Evie/modding](https://docs.andus.dev/lonelypie-games/evie#modding) on Andus Docs
 
 ## How to install the game?
 ### ![](https://img.shields.io/badge/-0078D6?style=for-the-badge&logo=windows&logoColor=white) Windows:
