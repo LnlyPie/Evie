@@ -5,10 +5,6 @@ var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
 	auth()
-	if GameJoltAPI.username == "":
-		$GJAcc.text = "GameJolt:\nnot connected"
-	else:
-		$GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	ifHTML()
@@ -75,6 +71,10 @@ func auth():
 			"user_token": GameJoltAPI.user_token,
 			"trophy_id": "158932"
 		})
+	if GameJoltAPI.username == "":
+		$GJAcc.text = "GameJolt:\nnot connected"
+	else:
+		$GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
 
 func getLangs():
 	if !$CanvasLayer/Settings/Panel/Other/LangButton.get_item_id(1):
