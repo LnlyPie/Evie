@@ -17,7 +17,7 @@ _(GameJolt is a better option if you want to have auto updates with GameJolt Cli
 See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing) on Andus Docs
 ### Modding:
 See [Evie/modding](https://docs.andus.dev/lonelypie-games/evie#modding) on Andus Docs for setting up modding environment
-And [Evie Modding Guide(docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.
+And [Evie Modding Guide](docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.
 
 ## How to install the game?
 ### ![](https://img.shields.io/badge/-0078D6?style=for-the-badge&logo=windows&logoColor=white) Windows:
