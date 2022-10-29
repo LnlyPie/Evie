@@ -4,12 +4,15 @@ var dir = Directory.new()
 
 var photosFolder = "user://screenshots/"
 var settingsFolder = "user://settings/"
+var modsFolder = "user://mods/"
 
 func _ready():
 	if !dir.file_exists(photosFolder):
 		dir.make_dir(photosFolder)
 	if !dir.file_exists(settingsFolder):
 		dir.make_dir(settingsFolder)
+	if !dir.file_exists(modsFolder):
+		dir.make_dir(modsFolder)
 
 func screenshot():
 	var image = get_viewport().get_texture().get_data()
@@ -46,3 +49,36 @@ func get_random_word_from_file(file_path):
 	for i in range(words.size()):
 		words[i] = words[i].replace("|", "")
 	return words[randi() % words.size()]
+
+func give_trophy(id: String):
+	if Mod.isModded:
+		if Mod.enableGameJolt:
+			if !GameJoltAPI.username == "":
+				var trophy = GameJoltAPI.add_achieved({
+					"username": GameJoltAPI.username,
+					"user_token": GameJoltAPI.user_token,
+					"trophy_id": id
+				})
+	else:
+		if !GameJoltAPI.username == "":
+			var trophy = GameJoltAPI.add_achieved({
+					"username": GameJoltAPI.username,
+					"user_token": GameJoltAPI.user_token,
+					"trophy_id": id
+				})
+
+func checkIfModded():
+	if Mod.isModded:
+		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		.get_node("ModName").text = Mod.modName
+		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		.get_node("ModVersion").text = Mod.modVersion
+		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
+		.get_node("ModCredit").text = Mod.modAuthor
+	else:
+		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		.get_node("ModName").visible = false
+		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		.get_node("ModVersion").visible = false
+		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
+		.get_node("ModCredit").visible = false

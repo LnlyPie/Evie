@@ -129,6 +129,7 @@ Utils="*res://scripts/misc/Utils.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
+Mod="*res://Mod.gd"
 
 [debug]
 

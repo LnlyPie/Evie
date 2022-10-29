@@ -10,14 +10,20 @@ var clockTimer = null
 
 func _ready():
 	# Get Chapter Name
-	var levelName = get_tree().get_current_scene().get_name().split("_", true, 1)
-	var act = levelName[1].split("-", true, 1)
+	# For example 'Chapter*1-Chapter*Name_2-Act*Name'
+	#              Chapter 1: Chapter Name
+	#              Act 2: Act Name
+	var level = get_tree().get_current_scene().get_name().split("_", true, 1)
+	var levelN = level[0].split("-", true, 1)
+	var levelNum = levelN[0].replace("*", " ")
+	var levelName = levelN[1].replace("*", " ")
+	var act = level[1].split("-", true, 1)
 	var actNum = act[0]
 	var actName = act[1].replace("*", " ")
 	# Set Chapter Name
 	$Panel.visible = false
 	$QuitPanel.visible = false
-	$Panel/LevelName.text = levelName[0]
+	$Panel/LevelName.text = levelNum + ": " + levelName
 	$Panel/ActNumber.text = "Act " + actNum + ": " + actName
 	# Set Date & Time
 	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." + String(date["month"]) + "." + String(date["year"])

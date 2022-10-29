@@ -8,8 +8,9 @@ func _ready():
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	ifHTML()
+	Utils.checkIfModded()
 	$CanvasLayer/Settings/Panel.visible = false
-	$Buttons/StartButton.grab_focus()
+	$MainButtons/StartButton.grab_focus()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause") or Input.is_action_just_pressed("ui_cancel"):
@@ -66,11 +67,7 @@ func auth():
 	Auth.set_game_creds()
 	Auth.try_autologin()
 	if GameJoltAPI.username != null:
-		var sign_in_trophy = GameJoltAPI.add_achieved({
-			"username": GameJoltAPI.username,
-			"user_token": GameJoltAPI.user_token,
-			"trophy_id": "158932"
-		})
+		Utils.give_trophy("158932")
 	if GameJoltAPI.username == "":
 		$GJAcc.text = "GameJolt:\nnot connected"
 	else:
@@ -88,7 +85,6 @@ func splashtext():
 
 func _on_SplashCheatCode_cheat_activated():
 	$Splashes.text = "The cake is a lie"
-	$Splash/Sprite.visible = true
 
 func ifHTML():
 	var os = OS.get_name()

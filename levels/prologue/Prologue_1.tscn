@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/misc/PauseController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
 
-[node name="Prologue_1-The*Bar" type="Node2D"]
+[node name="Prologue-Journey*Starts_1-The*Bar" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
