@@ -20,6 +20,8 @@ const valid_commands = [
 		[]],
 	["debug_info",
 		[]],
+	["run_dialogue",
+		[ARG_STRING, ARG_STRING]],
 	["quit",
 		[]],
 	["help",
@@ -51,6 +53,10 @@ func photo_cam():
 		player.photoCam = false
 		level.remove_child(level.get_node("PhotoCam"))
 		return "Photo Camera Off"
+
+func run_dialogue(dialogueName, dialogueNode):
+	# Ex. prologue/dialogues/imokayida, im_okay_ida
+	Utils.showDialogue("res://levels/" + dialogueName + ".tres", dialogueNode)
 
 func gb_filter():
 	if !player.gb_filter:

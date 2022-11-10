@@ -1,0 +1,283 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 5
+syntax_version = 2
+raw_text = "~ im_okay_ida
+
+Person 1: Dude, have you heard what the king is said to have done?
+Person 2: Yeah. Everyone is talking about it now! I can't believe king did this to the Elves!
+After these words, I decided to come closer to hear better.
+Person 1: They say, he has already expelled 7 innocent Elven families from the Kingdom.
+WHAT?! King expells Elves from the kingdom?
+B-but why? King Cyril was known for his tolerance to other races.
+Relax Evie. It's just giibberish, it's definitely not true.
+???: Evie! Your shift's finished, leave your apron in the back and you can go home.
+I looked at the clock
+7:30 PM already? When did it flew by?
+Evie: O-ok, I'm going.
+???: Did something happen? You look pale. Do you want me to walk you home?
+Evie: No Ida, everything's fine.
+Ida: Ok, just be careful.
+Evie: Ok, mooom.
+I smiled under my breath.
+Ida is my 5 years older friend from work. Since I came here she is very caring for me.
+Still pale, I left the bar. I decided to go to the forest. I need to cool down and think about what i found out.
+"
+errors = [  ]
+titles = {
+"im_okay_ida": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "im_okay_ida",
+"type": "title"
+},
+"10": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "11",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "I looked at the clock",
+"time": null,
+"translation_key": "I looked at the clock",
+"type": "dialogue"
+},
+"11": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "12",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "7:30 PM already? When did it flew by?",
+"time": null,
+"translation_key": "7:30 PM already? When did it flew by?",
+"type": "dialogue"
+},
+"12": {
+"character": "Evie",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "13",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "O-ok, I'm going.",
+"time": null,
+"translation_key": "O-ok, I'm going.",
+"type": "dialogue"
+},
+"13": {
+"character": "???",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "14",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Did something happen? You look pale. Do you want me to walk you home?",
+"time": null,
+"translation_key": "Did something happen? You look pale. Do you want me to walk you home?",
+"type": "dialogue"
+},
+"14": {
+"character": "Evie",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "15",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "No Ida, everything's fine.",
+"time": null,
+"translation_key": "No Ida, everything's fine.",
+"type": "dialogue"
+},
+"15": {
+"character": "Ida",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "16",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Ok, just be careful.",
+"time": null,
+"translation_key": "Ok, just be careful.",
+"type": "dialogue"
+},
+"16": {
+"character": "Evie",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "17",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Ok, mooom.",
+"time": null,
+"translation_key": "Ok, mooom.",
+"type": "dialogue"
+},
+"17": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "18",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "I smiled under my breath.",
+"time": null,
+"translation_key": "I smiled under my breath.",
+"type": "dialogue"
+},
+"18": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "19",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Ida is my 5 years older friend from work. Since I came here she is very caring for me.",
+"time": null,
+"translation_key": "Ida is my 5 years older friend from work. Since I came here she is very caring for me.",
+"type": "dialogue"
+},
+"19": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Still pale, I left the bar. I decided to go to the forest. I need to cool down and think about what i found out.",
+"time": null,
+"translation_key": "Still pale, I left the bar. I decided to go to the forest. I need to cool down and think about what i found out.",
+"type": "dialogue"
+},
+"2": {
+"character": "Person 1",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Dude, have you heard what the king is said to have done?",
+"time": null,
+"translation_key": "Dude, have you heard what the king is said to have done?",
+"type": "dialogue"
+},
+"3": {
+"character": "Person 2",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Yeah. Everyone is talking about it now! I can't believe king did this to the Elves!",
+"time": null,
+"translation_key": "Yeah. Everyone is talking about it now! I can't believe king did this to the Elves!",
+"type": "dialogue"
+},
+"4": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "5",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "After these words, I decided to come closer to hear better.",
+"time": null,
+"translation_key": "After these words, I decided to come closer to hear better.",
+"type": "dialogue"
+},
+"5": {
+"character": "Person 1",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "6",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "They say, he has already expelled 7 innocent Elven families from the Kingdom.",
+"time": null,
+"translation_key": "They say, he has already expelled 7 innocent Elven families from the Kingdom.",
+"type": "dialogue"
+},
+"6": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "7",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "WHAT?! King expells Elves from the kingdom?",
+"time": null,
+"translation_key": "WHAT?! King expells Elves from the kingdom?",
+"type": "dialogue"
+},
+"7": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "8",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "B-but why? King Cyril was known for his tolerance to other races.",
+"time": null,
+"translation_key": "B-but why? King Cyril was known for his tolerance to other races.",
+"type": "dialogue"
+},
+"8": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "9",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Relax Evie. It's just giibberish, it's definitely not true.",
+"time": null,
+"translation_key": "Relax Evie. It's just giibberish, it's definitely not true.",
+"type": "dialogue"
+},
+"9": {
+"character": "???",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "10",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Evie! Your shift's finished, leave your apron in the back and you can go home.",
+"time": null,
+"translation_key": "Evie! Your shift's finished, leave your apron in the back and you can go home.",
+"type": "dialogue"
+}
+}
