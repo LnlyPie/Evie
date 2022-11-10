@@ -10,7 +10,7 @@ You're playing as a girl named Evie. Soon you'll discover that the king is locki
 ## where download ;-;?
 ### Recommended:
 You can get latest builds from [GameJolt](https://gamejolt.com/games/projectevie/699766) (recommended with Game Jolt Client)</br>
-Or get the "Evie Launcher" if you'd like automatic updates without Game Jolt Account. [Get the launcher](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct)</br>
+Or get the "Evie Launcher" if you'd like automatic updates without Game Jolt Account. [Windows](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct) & [Linux](https://dl.patchkit.net/d/36l9jt95lwj382uwhpkl8/direct)
 ### Other Options:
 You can get latest and older builds from [Github Releases](https://github.com/LnlyPie/Evie/releases)
 
