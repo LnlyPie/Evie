@@ -8,9 +8,11 @@ You're playing as a girl named Evie. Soon you'll discover that the king is locki
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## where download ;-;?
-You can get latest builds from [GameJolt](https://gamejolt.com/games/projectevie/699766)</br>
-Or latest and older from [Github Releases](https://github.com/LnlyPie/Evie/releases)</br>
-_(GameJolt is a better option if you want to have auto updates with GameJolt Client)_
+### Recommended:
+You can get latest builds from [GameJolt](https://gamejolt.com/games/projectevie/699766) (recommended with Game Jolt Client)</br>
+Or get the "Evie Launcher" if you'd like automatic updates without Game Jolt Account. [Get the launcher](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct)</br>
+### Other Options:
+You can get latest and older builds from [Github Releases](https://github.com/LnlyPie/Evie/releases)
 
 ## Contributing/Modding:
 ### Contributing:
