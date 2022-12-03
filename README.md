@@ -18,6 +18,7 @@ You can get latest and older builds from [Github Releases](https://github.com/Ln
 ### Contributing:
 See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing) on Andus Docs
 ### Modding:
+[List of verified mods](https://github.com/LnlyPie/evie-verified-mods) (add your own mod by making a pull request to README.md)</br>
 See [Evie/modding](https://docs.andus.dev/lonelypie-games/evie#modding) on Andus Docs for setting up modding environment</br>
 And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.
 
