@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
-[ext_resource path="res://sprites/icons/save.png" type="Texture" id=2]
+[ext_resource path="res://sprites/icons/other/save.png" type="Texture" id=2]
 [ext_resource path="res://scripts/misc/intro/AutoSaveMessage.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]

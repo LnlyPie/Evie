@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/save-noanim.png-3066cfb7ec7893fce793201946e97177.stex"
+path="res://.import/date.png-549364e2db2a9e23216b3d6129d34d6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/save-noanim.png"
-dest_files=[ "res://.import/save-noanim.png-3066cfb7ec7893fce793201946e97177.stex" ]
+source_file="res://sprites/icons/gui/date.png"
+dest_files=[ "res://.import/date.png-549364e2db2a9e23216b3d6129d34d6d.stex" ]
 
 [params]
 

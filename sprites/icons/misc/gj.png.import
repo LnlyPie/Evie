@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/time.png-5521def641873430ef7313b0c372a41e.stex"
+path="res://.import/gj.png-38d1d46855cd6eca1dde847071aa5484.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/time.png"
-dest_files=[ "res://.import/time.png-5521def641873430ef7313b0c372a41e.stex" ]
+source_file="res://sprites/icons/misc/gj.png"
+dest_files=[ "res://.import/gj.png-38d1d46855cd6eca1dde847071aa5484.stex" ]
 
 [params]
 

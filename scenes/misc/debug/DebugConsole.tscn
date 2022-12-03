@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/debug/DebugConsole.gd" type="Script" id=2]
-[ext_resource path="res://scenes/misc/debug/CommandHandler.gd" type="Script" id=3]
+[ext_resource path="res://scripts/misc/debug/CommandHandler.gd" type="Script" id=3]
 
 [node name="DebugConsole" type="CanvasLayer"]
 pause_mode = 2

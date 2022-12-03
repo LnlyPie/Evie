@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/save.png-ad1444386418e3dc81e6389f2398351f.stex"
+path="res://.import/save-noanim.png-1b3ff42c757459f81ff112f11e698430.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/save.png"
-dest_files=[ "res://.import/save.png-ad1444386418e3dc81e6389f2398351f.stex" ]
+source_file="res://sprites/icons/other/save-noanim.png"
+dest_files=[ "res://.import/save-noanim.png-1b3ff42c757459f81ff112f11e698430.stex" ]
 
 [params]
 

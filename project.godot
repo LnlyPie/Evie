@@ -124,16 +124,22 @@ Cursor="*res://scripts/Cursor.gd"
 GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 Settings="*res://scripts/misc/Settings.gd"
 Auth="*res://addons/gamejolt_api/auth/auth.gd"
-CommandHistory="*res://scenes/misc/debug/CommandHistory.gd"
+CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 Utils="*res://scripts/misc/Utils.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 Mod="*res://Mod.gd"
+Notification="*res://scenes/misc/other/Notification.tscn"
 
 [debug]
 
 gdscript/warnings/enable=false
+
+[discord_presence]
+
+second_button/label="LonelyPie"
+second_button/url="https://lpie.andus.dev"
 
 [display]
 

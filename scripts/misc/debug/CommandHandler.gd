@@ -22,6 +22,8 @@ const valid_commands = [
 		[]],
 	["run_dialogue",
 		[ARG_STRING, ARG_STRING]],
+	["send_notification",
+		[ARG_STRING, ARG_STRING, ARG_STRING]],
 	["quit",
 		[]],
 	["help",
@@ -29,7 +31,7 @@ const valid_commands = [
 ]
 
 func help():
-	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam - turns on/off photo cam mode\n gb_filter - Turns on GameBoy Filter\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
+	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -46,8 +48,8 @@ func photo_cam():
 	if !player.photoCam:
 		camera2d.current = false
 		player.photoCam = true
-		level.add_child(load("res://scenes/misc/miscmisc/PhotoCam.tscn").instance())
-		return "Photo Camera On\nTo Make a screenshot use P (on Keyboard) or R1 (on DualShock)"
+		level.add_child(load("res://scenes/misc/other/PhotoCam.tscn").instance())
+		return "Photo Camera On\nGo Make a screenshot!"
 	else:
 		camera2d.make_current()
 		player.photoCam = false
@@ -57,6 +59,11 @@ func photo_cam():
 func run_dialogue(dialogueName, dialogueNode):
 	# Ex. prologue/dialogues/imokayida, im_okay_ida
 	Utils.showDialogue("res://levels/" + dialogueName + ".tres", dialogueNode)
+	return "Dialogue Shown"
+
+func send_notification(title, desc, icon):
+	Utils.send_notification(title, desc, icon)
+	return "Close debug console to see the notification"
 
 func gb_filter():
 	if !player.gb_filter:

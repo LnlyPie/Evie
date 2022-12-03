@@ -37,6 +37,9 @@ func showDialogue(dialogueFile: String, dialogueNode: String):
 		file
 	)
 
+func send_notification(title, desc, icon):
+	Notification.send_notification(title, desc, icon)
+
 func load_file(file_path):
 	var file = File.new()
 	file.open(file_path, file.READ)
