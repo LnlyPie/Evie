@@ -32,7 +32,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Unpack
  - Run Evie.x86_64
 ### ![](https://img.shields.io/badge/mac%20os%20(untested)-000000?style=for-the-badge&logo=apple&logoColor=white):
- - Download Evie_osx.zip
+ - Download Evie_osx.zip (v. 0.2 and up)
  - Unpack
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
