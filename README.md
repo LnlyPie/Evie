@@ -44,9 +44,9 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
  - _MacOS:_ `~/Library/Application Support/EvieGame`
 ### Supported Controllers (with UI icons):
- - ![](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white) 360-Series
- - ![](https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white) 3-5
- - ![](https://img.shields.io/badge/Switch-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white) Controller
- - ![](https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white) Deck/Controller
- - ![](https://img.shields.io/badge/Amazon-00A8E1?style=for-the-badge&logo=amazon&logoColor=white) Luna
- - ![](https://img.shields.io/badge/Stadia-CD2640?style=for-the-badge&logo=stadia&logoColor=white) Controller
+ - ![](https://img.shields.io/badge/Xbox-360/One/Series-107C10?style=for-the-badge&logo=xbox&logoColor=white)
+ - ![](https://img.shields.io/badge/PlayStation-3/4/5-003791?style=for-the-badge&logo=playstation&logoColor=white)
+ - ![](https://img.shields.io/badge/Switch-Controller-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white)
+ - ![](https://img.shields.io/badge/Steam-Deck/Controller-000000?style=for-the-badge&logo=steam&logoColor=white)
+ - ![](https://img.shields.io/badge/Amazon%20Luna-Controller-9146FF?style=for-the-badge&logo=amazon&logoColor=white)
+ - ![](https://img.shields.io/badge/Stadia-Controller-CD2640?style=for-the-badge&logo=stadia&logoColor=white)
