@@ -1,26 +1,25 @@
 # Evie
 ## A Top-Down Adventure Game
-You're playing as a girl named Evie. Soon you'll discover that the king is locking up Elves in Jail. Although you're just a Citizen you decide to help them out, and break them out of prison.
+You're playing as a girl named Evie. Soon you'll discover that the king is locking up Elves in Jail. Although you're just a Citizen you decide to help them out, and break them out of prison. _More will be detailed later_
 ## Credits:
-**Andus:** Developer ([Twitter](https://twitter.com/anduseee), [GameJolt](https://gamejolt.com/@Andusee), [Website](https://andus.dev/))</br>
-**LucePric:** Story Writing ([GameJolt](https://gamejolt.com/@LucePric))</br>
-**Creta:** Art/Sprites</br>
+**LonelyPie:** Andus _(Developer)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## where download ;-;?
-### Recommended:
-You can get latest builds from [GameJolt](https://gamejolt.com/games/projectevie/699766) (recommended with Game Jolt Client)</br>
-Or get the "Evie Launcher" if you'd like automatic updates without Game Jolt Account. [Windows](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct) & [Linux](https://dl.patchkit.net/d/36l9jt95lwj382uwhpkl8/direct)
-### Other Options:
-You can get latest and older builds from [Github Releases](https://github.com/LnlyPie/Evie/releases)
+### Latest builds:
+**[GameJolt](https://gamejolt.com/games/evie/699766)**</br>
+**Evie Launcher:** [Windows](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct) & [Linux](https://dl.patchkit.net/d/36l9jt95lwj382uwhpkl8/direct)
+### Latest and older builds:
+**[Github Releases](https://github.com/LnlyPie/Evie/releases)**
 
 ## Contributing/Modding:
 ### Contributing:
-See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing) on Andus Docs
+See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing)
 ### Modding:
-[List of verified mods](https://github.com/LnlyPie/evie-verified-mods) (add your own mod by making a pull request to README.md)</br>
-See [Evie/modding](https://docs.andus.dev/lonelypie-games/evie#modding) on Andus Docs for setting up modding environment</br>
-And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.
+See [Evie/Modding](https://docs.andus.dev/lonelypie-games/evie#modding) for setting up modding environment</br>
+And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.</br>
+
+[List of verified mods](https://github.com/LnlyPie/evie-verified-mods) (add your own mod by making a pull request to README.md)
 
 ## How to install the game?
 Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
