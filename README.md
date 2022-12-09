@@ -23,21 +23,27 @@ See [Evie/modding](https://docs.andus.dev/lonelypie-games/evie#modding) on Andus
 And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.
 
 ## How to install the game?
-### ![](https://img.shields.io/badge/-0078D6?style=for-the-badge&logo=windows&logoColor=white) Windows:
- - Download Evie_win.zip from [Github Releases](https://github.com/LnlyPie/Evie/releases) or [GameJolt](https://gamejolt.com/games/projectevie/699766)
+Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
+### ![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white):
+ - Download Evie_win.zip
  - Unpack
  - Run Evie.exe
-### ![](https://img.shields.io/badge/-111927?style=for-the-badge&logo=linux&logoColor=white) Linux:
- - Download Evie_linux.zip and unpack same as on Windows
+### ![](https://img.shields.io/badge/Linux-111927?style=for-the-badge&logo=linux&logoColor=white) ![](https://img.shields.io/badge/Steam%20Deck%20(untested)-000000?style=for-the-badge&logo=steamdeck&logoColor=white):
+ - Download Evie_linux.zip
+ - Unpack
  - Run Evie.x86_64
-### ![](https://img.shields.io/badge/-000000?style=for-the-badge&logo=steamdeck&logoColor=white) Steam Deck _(untested)_:
- - You should download and run it as in [Linux method](#-linux)
- - You can add Evie to steam library too for convenience
+### ![](https://img.shields.io/badge/mac%20os%20(untested)-000000?style=for-the-badge&logo=apple&logoColor=white):
+ - Download Evie_osx.zip
+ - Unpack
+ - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
+ - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
+ - Evie should now run normally
 
 ## Other:
 ### Game folder:
  - _Windows:_ `%APPDATA%\EvieGame`
  - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
+ - _MacOS:_ `~/Library/Application Support/EvieGame`
 ### Supported Controllers (with UI icons):
  - ![](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white) 360-Series
  - ![](https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white) 3-5
