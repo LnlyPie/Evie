@@ -9,10 +9,7 @@ var time = OS.get_time()
 var clockTimer = null
 
 func _ready():
-	# Get Chapter Name
-	# For example 'Chapter*1-Chapter*Name_2-Act*Name'
-	#              Chapter 1: Chapter Name
-	#              Act 2: Act Name
+	# Get Chapter and Act
 	var level = get_tree().get_current_scene().get_name().split("_", true, 1)
 	var levelN = level[0].split("-", true, 1)
 	var levelNum = levelN[0].replace("*", " ")
@@ -23,8 +20,8 @@ func _ready():
 	# Set Chapter Name
 	$Panel.visible = false
 	$QuitPanel.visible = false
-	$Panel/LevelName.text = levelNum + ": " + levelName
-	$Panel/ActNumber.text = "Act " + actNum + ": " + actName
+	$Panel/LevelInfoContainer/LevelName.text = levelNum + ": " + levelName
+	$Panel/LevelInfoContainer/ActNumber.text = "Act " + actNum + ": " + actName
 	# Set Date & Time
 	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." + String(date["month"]) + "." + String(date["year"])
 	clockTimerInit()
@@ -32,11 +29,8 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause"):
 		if get_tree().paused:
-			if Settings.settingsShowed:
-				showSettings(false)
-			else:
-				Cursor.show_cursor(false)
-				pause(false)
+			Cursor.show_cursor(false)
+			pause(false)
 		else:
 			Cursor.show_cursor(true)
 			pause(true)
@@ -47,7 +41,10 @@ func pause(pause: bool):
 		$Panel/VBoxContainer/ResumeButton.grab_focus()
 		get_tree().set_deferred("paused", true)
 		paused = true
+		$AnimationPlayer.play("onload")
 	else:
+		$AnimationPlayer.play_backwards("onload")
+		
 		$Panel.visible = false
 		get_tree().set_deferred("paused", false)
 		paused = false

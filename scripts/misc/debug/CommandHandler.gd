@@ -31,7 +31,10 @@ const valid_commands = [
 ]
 
 func help():
-	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
+	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n " \
+	+ "photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n " \
+	+ "send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n " \
+	+ "debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)

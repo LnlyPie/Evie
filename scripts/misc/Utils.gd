@@ -56,19 +56,27 @@ func get_random_word_from_file(file_path):
 func give_trophy(id: String):
 	if Mod.isModded:
 		if Mod.enableGameJolt:
-			if !GameJoltAPI.username == "":
-				var trophy = GameJoltAPI.add_achieved({
-					"username": GameJoltAPI.username,
-					"user_token": GameJoltAPI.user_token,
-					"trophy_id": id
-				})
+			give_trophy_ext(id)
 	else:
-		if !GameJoltAPI.username == "":
-			var trophy = GameJoltAPI.add_achieved({
-					"username": GameJoltAPI.username,
-					"user_token": GameJoltAPI.user_token,
-					"trophy_id": id
-				})
+		give_trophy_ext(id)
+
+func give_trophy_ext(id: String):
+	if !GameJoltAPI.username == "":
+		var fetch_achieved = GameJoltAPI.fetch_trophy({
+			"username": GameJoltAPI.username,
+			"user_token": GameJoltAPI.user_token,
+			"achieved": false,
+			"trophy_id": id
+		})
+		fetch_achieved.connect("api_request_completed", self, "_on_trophy_achieved")
+		var trophy = GameJoltAPI.add_achieved({
+			"username": GameJoltAPI.username,
+			"user_token": GameJoltAPI.user_token,
+			"trophy_id": id
+		})
+
+func _on_trophy_achieved(data: Array):
+	send_notification("Trophy Achieved!", data[0].title + "\n" + data[0].description, "gj")
 
 func checkIfModded():
 	if Mod.isModded:

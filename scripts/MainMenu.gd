@@ -8,6 +8,7 @@ func _ready():
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	Utils.checkIfModded()
+	$AnimationPlayer.play("onload")
 	$CanvasLayer/Settings/Panel.visible = false
 	$MainButtons/StartButton.grab_focus()
 
@@ -65,6 +66,7 @@ func showSettings(show: bool):
 func auth():
 	Auth.set_game_creds()
 	Auth.try_autologin()
+	Auth.debug_login()
 	if GameJoltAPI.username != null:
 		Utils.give_trophy("158932")
 	if GameJoltAPI.username == "":

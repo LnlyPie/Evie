@@ -119,6 +119,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
 Cursor="*res://scripts/Cursor.gd"
 GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
@@ -128,7 +129,6 @@ CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 Utils="*res://scripts/misc/Utils.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 Mod="*res://Mod.gd"
 Notification="*res://scenes/misc/other/Notification.tscn"
 
@@ -286,8 +286,9 @@ screenshot={
 
 [locale]
 
-locale_filter=[ 1, [  ] ]
+test="en"
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
+locale_filter=[ Resource( "res://localization/localizations.en.translation"), Resource( "res://localization/localizations.pl.translation"), Resource( "res://localization/localizations.de.translation") ]
 
 [network]
 

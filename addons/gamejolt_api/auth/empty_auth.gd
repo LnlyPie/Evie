@@ -12,3 +12,10 @@ func set_game_creds():
 # Works only when on GameJolt Client
 func try_autologin():
 	GameJoltAPI.get_user_credentials()
+
+# Although auth.gd won't get onto github
+# Don't forget to remove your credentials
+# Just for safety ;)
+func debug_login():
+	GameJoltAPI.username = "Your username without @"
+	GameJoltAPI.user_token = "Your user token"
