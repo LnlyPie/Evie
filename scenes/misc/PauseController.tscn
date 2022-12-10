@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/misc/other/PauseController.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Panel/VBoxContainer:modulate")
@@ -43,7 +43,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Panel/LevelInfoContainer:modulate")
@@ -92,6 +92,33 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("QuitPanel:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 320, -88 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("QuitPanel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, -88 ), Vector2( 320, 304 ), Vector2( 320, 256 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -180,7 +207,6 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -247,7 +273,6 @@ text = "ActNumber"
 valign = 1
 
 [node name="PhotoButton" type="Button" parent="Panel"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -265,11 +290,13 @@ expand_icon = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -136.0
+margin_left = -160.0
 margin_bottom = 30.0
+alignment = 2
 
 [node name="Date" type="HBoxContainer" parent="Panel/DateTime"]
-margin_right = 60.0
+margin_left = 54.0
+margin_right = 114.0
 margin_bottom = 30.0
 
 [node name="DateIcon" type="TextureRect" parent="Panel/DateTime/Date"]
@@ -287,8 +314,8 @@ theme = ExtResource( 3 )
 text = "0.0.0000"
 
 [node name="Time" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 64.0
-margin_right = 106.0
+margin_left = 118.0
+margin_right = 160.0
 margin_bottom = 30.0
 
 [node name="TimeIcon" type="TextureRect" parent="Panel/DateTime/Time"]
@@ -355,16 +382,14 @@ text = "BACK"
 [node name="Settings" parent="." instance=ExtResource( 4 )]
 
 [node name="QuitPanel" type="Panel" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -224.0
-margin_top = -36.0
-margin_right = 224.0
-margin_bottom = 49.0
+margin_left = 320.0
+margin_top = -88.0
+margin_right = 768.0
+margin_bottom = -6.10352e-05
 custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ExitLabel" type="Label" parent="QuitPanel"]
 anchor_left = 0.5
@@ -423,6 +448,7 @@ text = "CANCEL"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
+anims/exit = SubResource( 6 )
 anims/onload = SubResource( 5 )
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]

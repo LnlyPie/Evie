@@ -27,11 +27,18 @@ func _ready():
 	clockTimerInit()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("debug_pause"):
+	if Input.is_action_just_pressed("debug_pause") || Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().paused:
-			Cursor.show_cursor(false)
-			pause(false)
-		else:
+			if $QuitPanel.visible == false:
+				Cursor.show_cursor(false)
+				pause(false)
+			else:
+				$AnimationPlayer.play_backwards("exit")
+				yield(get_tree().create_timer(1), "timeout")
+				$QuitPanel.visible = false
+				$Panel/VBoxContainer/ResumeButton.grab_focus()
+	if Input.is_action_just_pressed("debug_pause"):
+		if !get_tree().paused:
 			Cursor.show_cursor(true)
 			pause(true)
 
@@ -44,7 +51,7 @@ func pause(pause: bool):
 		$AnimationPlayer.play("onload")
 	else:
 		$AnimationPlayer.play_backwards("onload")
-		
+		yield(get_tree().create_timer(0.5), "timeout")
 		$Panel.visible = false
 		get_tree().set_deferred("paused", false)
 		paused = false
@@ -63,6 +70,7 @@ func _on_QuitButton_pressed():
 		$QuitPanel.visible = true
 		$QuitPanel/PleaseDont.visible = false
 		$QuitPanel/ButtonsContainer/MenuButton.grab_focus()
+		$AnimationPlayer.play("exit")
 	else:
 		$QuitPanel.visible = false
 		$Panel/VBoxContainer/ResumeButton.grab_focus()
@@ -75,6 +83,8 @@ func _on_ExitButton_pressed():
 	get_tree().quit()
 
 func _on_CancelButton_pressed():
+	$AnimationPlayer.play_backwards("exit")
+	yield(get_tree().create_timer(1), "timeout")
 	$QuitPanel.visible = false
 	$Panel/VBoxContainer/ResumeButton.grab_focus()
 

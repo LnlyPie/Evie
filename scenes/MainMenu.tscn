@@ -8,217 +8,9 @@
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
+[ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
 [ext_resource path="res://addons/CheatCoder/Presets/Konami.tres" type="Resource" id=10]
-
-[sub_resource type="Animation" id=1]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("MainButtons:margin_left")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -136.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("MainButtons:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -136, 480 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ExtraButtons:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1096, 520 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("GameInfo:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 8, -80 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("ModInfo:rect_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 8, 64 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Splashes:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -216, 96 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("BottomButtons:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 408, 600 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("GJAcc:rect_position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 448, -64 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("CreditsContainer:rect_position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1096, 0 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "onload"
-tracks/0/type = "value"
-tracks/0/path = NodePath("MainButtons:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -136, 480 ), Vector2( 8, 480 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ExtraButtons:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1096, 520 ), Vector2( 944, 520 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("GameInfo:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 8, -80 ), Vector2( 8, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ModInfo:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -192, 65 ), Vector2( 8, 64 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Splashes:rect_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -216, 97 ), Vector2( 8, 96 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("BottomButtons:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 408, 600 ), Vector2( 408, 560 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("GJAcc:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 448, -64 ), Vector2( 448, 0 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("CreditsContainer:rect_position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1096, 0 ), Vector2( 936, 0 ) ]
-}
+[ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=11]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -231,8 +23,8 @@ position = Vector2( 544, 320 )
 [node name="CreditsContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 8.0
-margin_right = 152.0
+margin_left = -152.0
+margin_right = -8.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_group_": true
@@ -255,9 +47,8 @@ align = 2
 
 [node name="GameInfo" type="HBoxContainer" parent="."]
 margin_left = 8.0
-margin_top = -80.0
 margin_right = 216.0
-margin_bottom = -4.0
+margin_bottom = 76.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -300,9 +91,9 @@ text = "ModVersion"
 [node name="Splashes" type="Label" parent="."]
 anchor_top = 0.12
 anchor_bottom = 0.12
-margin_left = -216.0
+margin_left = 8.0
 margin_top = 24.0
-margin_right = -8.0
+margin_right = 216.0
 margin_bottom = 55.9998
 theme = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0.647059, 1, 1 )
@@ -317,16 +108,16 @@ code = ExtResource( 10 )
 [node name="MainButtons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = -136.0
+margin_left = 8.0
 margin_top = -120.0
-margin_right = 134.0
+margin_right = 278.0
 margin_bottom = 2.0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StartButton" type="Button" parent="MainButtons"]
-margin_right = 126.0
+margin_right = 270.0
 margin_bottom = 38.0
 focus_neighbour_top = NodePath("../QuitButton")
 theme = ExtResource( 6 )
@@ -337,7 +128,7 @@ align = 0
 
 [node name="OptionsButton" type="Button" parent="MainButtons"]
 margin_top = 42.0
-margin_right = 126.0
+margin_right = 270.0
 margin_bottom = 80.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 2 )
@@ -348,7 +139,7 @@ align = 0
 
 [node name="QuitButton" type="Button" parent="MainButtons"]
 margin_top = 84.0
-margin_right = 126.0
+margin_right = 270.0
 margin_bottom = 122.0
 focus_neighbour_bottom = NodePath("../StartButton")
 theme = ExtResource( 4 )
@@ -362,9 +153,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -80.0
-margin_right = 144.001
+margin_left = -144.0
+margin_top = -120.0
+margin_right = -7.99878
+margin_bottom = -40.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -394,8 +186,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -136.0
+margin_top = -40.0
 margin_right = 136.0
-margin_bottom = 40.0
 theme = ExtResource( 6 )
 custom_constants/separation = 13
 alignment = 1
@@ -427,6 +219,44 @@ custom_colors/font_color_focus = Color( 0, 0.368627, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0.368627, 1, 1 )
 text = "MM_WEB"
 
+[node name="BugHaters" type="Label" parent="."]
+visible = false
+margin_left = 488.0
+margin_top = 552.0
+margin_right = 576.0
+margin_bottom = 566.0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "We hate bugs >:("
+
+[node name="Input" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -184.0
+margin_top = -40.0
+margin_right = -4.0
+alignment = 2
+
+[node name="ControllerTextureRect" type="TextureRect" parent="Input"]
+margin_left = 100.0
+margin_right = 140.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 11 )
+expand = true
+script = ExtResource( 9 )
+path = "ui_accept"
+
+[node name="UseLabel" type="Label" parent="Input"]
+margin_left = 144.0
+margin_top = 5.0
+margin_right = 180.0
+margin_bottom = 35.0
+theme = ExtResource( 6 )
+text = "USE"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource( 7 )]
@@ -435,16 +265,14 @@ text = "MM_WEB"
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -96.0
-margin_top = -64.0
 margin_right = 96.0
+margin_bottom = 64.0
 theme = ExtResource( 6 )
 text = "GameJolt:
 not connected"
 align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/onload = SubResource( 2 )
 
 [connection signal="cheat_activated" from="Splash/SplashCheatCode" to="." method="_on_SplashCheatCode_cheat_activated"]
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_StartButton_pressed"]
@@ -452,5 +280,7 @@ anims/onload = SubResource( 2 )
 [connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="ExtraButtons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="BottomButtons/GithubButton" to="." method="_on_GithubButton_pressed"]
+[connection signal="focus_entered" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_entered"]
+[connection signal="focus_exited" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_exited"]
 [connection signal="pressed" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_pressed"]
 [connection signal="pressed" from="BottomButtons/WebsiteButton" to="." method="_on_WebsiteButton_pressed"]

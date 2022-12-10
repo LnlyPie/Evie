@@ -8,9 +8,10 @@ func _ready():
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	Utils.checkIfModded()
-	$AnimationPlayer.play("onload")
 	$CanvasLayer/Settings/Panel.visible = false
 	$MainButtons/StartButton.grab_focus()
+	# Early Build trophy (will be there until the release of Prologue)
+	Utils.give_trophy("179883")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause") or Input.is_action_just_pressed("ui_cancel"):
@@ -86,3 +87,9 @@ func splashtext():
 
 func _on_SplashCheatCode_cheat_activated():
 	$Splashes.text = "The cake is a lie"
+
+func _on_BugsButton_focus_entered() -> void:
+	$BugHaters.visible = true
+
+func _on_BugsButton_focus_exited() -> void:
+	$BugHaters.visible = false

@@ -88,3 +88,4 @@ func debug_info():
 
 func quit():
 	get_tree().quit()
+	return "Quitting..."

@@ -163,7 +163,6 @@ singletons=[  ]
 
 window=false
 full=false
-discord=false
 use=false
 vsync=false
 
@@ -288,7 +287,7 @@ screenshot={
 
 test="en"
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
-locale_filter=[ Resource( "res://localization/localizations.en.translation"), Resource( "res://localization/localizations.pl.translation"), Resource( "res://localization/localizations.de.translation") ]
+locale_filter=[ Resource( "res://localization/localizations.en.translation"), Resource( "res://localization/localizations.pl.translation"), Resource( "res://localization/localizations.de.translation"), 0, [  ], 0, [  ], 0, [  ], 0, [  ] ]
 
 [network]
 
