@@ -1,10 +1,6 @@
 # Evie
 ## A Top-Down Adventure Game
 You're playing as a girl named Evie. Soon you'll discover that the king is locking up Elves in Jail. Although you're just a Citizen you decide to help them out, and break them out of prison. _More will be detailed later_
-## Credits:
-**LonelyPie:** Andus _(Developer)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
-**Addons:** (later)</br>
-**Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## where download ;-;?
 ### Latest builds:
@@ -38,6 +34,11 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
+
+## Credits:
+**LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
+**Addons:** [GameJolt API Plugin](https://github.com/sarturodev/gamejolt-api-plugin), [Controller Icons](https://github.com/rsubtil/controller_icons), [CheatCoder](https://github.com/Hugo4IT/CheatCoder), [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager), [Localization Editor](https://github.com/VP-GAMES/LocalizationEditor)</br>
+**Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## Other:
 ### Game folder:
