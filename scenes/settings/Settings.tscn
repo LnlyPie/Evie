@@ -1,14 +1,43 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
-[ext_resource path="res://scripts/misc/Settings.gd" type="Script" id=3]
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node
+
+var settingsShowed = false
+
+var fullscreen = false
+
+func _on_FullScreenBtn_toggled(button_pressed):
+	if button_pressed:
+		fullscreen(true)
+	else:
+		fullscreen(false)
+		
+func fullscreen(full: bool):
+	if full:
+		OS.window_fullscreen = true
+		fullscreen = true
+	else:
+		OS.window_fullscreen = false
+		fullscreen = false
+
+func _on_LangButton_item_selected(index):
+	if index == 0:
+		TranslationServer.set_locale(\"en\")
+	if index == 1:
+		TranslationServer.set_locale(\"pl\")
+	if index == 2:
+		TranslationServer.set_locale(\"de\")
+"
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.164706, 0.164706, 0.164706, 0.333333 )
 
 [node name="Settings" type="Node"]
-script = ExtResource( 3 )
+script = SubResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
 visible = false

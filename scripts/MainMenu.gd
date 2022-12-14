@@ -13,20 +13,12 @@ func _ready():
 	# Early Build trophy (will be there until the release of Prologue)
 	Utils.give_trophy("179883")
 
-func _process(_delta):
-	if Input.is_action_just_pressed("debug_pause") or Input.is_action_just_pressed("ui_cancel"):
-		if Settings.settingsShowed:
-			showSettings(false)
-
 func _on_StartButton_pressed():
 	Cursor.show_cursor(false)
 	SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn")
 
 func _on_OptionsButton_pressed():
-	if !Settings.settingsShowed:
-		showSettings(true)
-	else:
-		showSettings(false)
+	pass
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
@@ -53,33 +45,15 @@ func get_ver(file):
 	f.close()
 	return ver
 
-func showSettings(show: bool):
-	if show:
-		getLangs()
-		$CanvasLayer/Settings/Panel.visible = true
-		$"CanvasLayer/Settings/Panel/VAA/FullScreenBtn".grab_focus()
-		Settings.settingsShowed = true
-	else:
-		$CanvasLayer/Settings/Panel.visible = false
-		$Buttons/StartButton.grab_focus()
-		Settings.settingsShowed = false
-
 func auth():
 	Auth.set_game_creds()
 	Auth.try_autologin()
-	Auth.debug_login()
 	if GameJoltAPI.username != null:
 		Utils.give_trophy("158932")
 	if GameJoltAPI.username == "":
-		$GJAcc.text = "GameJolt:\nnot connected"
+		$GameJoltContainer/GJAcc.text = "GameJolt:\nnot connected"
 	else:
-		$GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
-
-func getLangs():
-	if !$CanvasLayer/Settings/Panel/Other/LangButton.get_item_id(1):
-		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("English", 1)
-		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Polski", 2)
-		$CanvasLayer/Settings/Panel/Other/LangButton.add_item("Deutsch", 3)
+		$GameJoltContainer/GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
 
 func splashtext():
 	var random_splash = Utils.get_random_word_from_file("res://splashes.txt")
@@ -93,3 +67,6 @@ func _on_BugsButton_focus_entered() -> void:
 
 func _on_BugsButton_focus_exited() -> void:
 	$BugHaters.visible = false
+
+#func _on_LoginWithGJ_pressed() -> void:
+#	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")

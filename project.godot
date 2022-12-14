@@ -119,27 +119,24 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Settings="*res://scripts/misc/settings/Settings.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
-Cursor="*res://scripts/Cursor.gd"
+Mod="*res://Mod.gd"
 GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
-Settings="*res://scripts/misc/Settings.gd"
 Auth="*res://addons/gamejolt_api/auth/auth.gd"
 CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 Utils="*res://scripts/misc/Utils.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Mod="*res://Mod.gd"
 Notification="*res://scenes/misc/other/Notification.tscn"
+Quests="*res://scripts/misc/Quests.gd"
+Cursor="*res://scripts/Cursor.gd"
+TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 
 [debug]
 
 gdscript/warnings/enable=false
-
-[discord_presence]
-
-second_button/label="LonelyPie"
-second_button/url="https://lpie.andus.dev"
 
 [display]
 
@@ -287,7 +284,7 @@ screenshot={
 
 test="en"
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
-locale_filter=[ Resource( "res://localization/localizations.en.translation"), Resource( "res://localization/localizations.pl.translation"), Resource( "res://localization/localizations.de.translation"), 0, [  ], 0, [  ], 0, [  ], 0, [  ] ]
+locale_filter=[ Resource( "res://localization/localizations.en.translation"), Resource( "res://localization/localizations.pl.translation"), Resource( "res://localization/localizations.de.translation"), 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ], 0, [  ] ]
 
 [network]
 
@@ -303,3 +300,102 @@ quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 environment/default_clear_color=Color( 0.054902, 0.054902, 0.054902, 1 )
 environment/default_environment="res://default_env.tres"
+_global_script_classes=[ {
+"base": "Resource",
+"class": "CheatCode",
+"language": "GDScript",
+"path": "res://addons/CheatCoder/CheatCode.gd"
+}, {
+"base": "Node",
+"class": "CheatCodeListener",
+"language": "GDScript",
+"path": "res://addons/CheatCoder/CheatCodeListener.gd"
+}, {
+"base": "Button",
+"class": "ControllerButton",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Button.gd"
+}, {
+"base": "Node",
+"class": "ControllerMapper",
+"language": "GDScript",
+"path": "res://addons/controller_icons/Mapper.gd"
+}, {
+"base": "Resource",
+"class": "ControllerSettings",
+"language": "GDScript",
+"path": "res://addons/controller_icons/Settings.gd"
+}, {
+"base": "Sprite",
+"class": "ControllerSprite",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Sprite.gd"
+}, {
+"base": "Sprite3D",
+"class": "ControllerSprite3D",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Sprite3D.gd"
+}, {
+"base": "TextureRect",
+"class": "ControllerTextureRect",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/TextureRect.gd"
+}, {
+"base": "Resource",
+"class": "DialogueResource",
+"language": "GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
+"base": "Node",
+"class": "GameJoltAPIPromise",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_promise/GameJoltAPIPromise.gd"
+}, {
+"base": "HTTPRequest",
+"class": "GameJoltAPIRequest",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_request/GameJoltAPIRequest.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationData.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationKeys",
+"language": "GDScript",
+"path": "res://localization/LocalizationKeys.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationPlaceholders",
+"language": "GDScript",
+"path": "res://localization/LocalizationPlaceholders.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationPlaceholdersData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationPlaceholdersData.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationSave",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationSave.gd"
+} ]
+_global_script_class_icons={
+"CheatCode": "",
+"CheatCodeListener": "",
+"ControllerButton": "",
+"ControllerMapper": "",
+"ControllerSettings": "",
+"ControllerSprite": "",
+"ControllerSprite3D": "",
+"ControllerTextureRect": "",
+"DialogueResource": "",
+"GameJoltAPIPromise": "",
+"GameJoltAPIRequest": "",
+"LocalizationData": "",
+"LocalizationKeys": "",
+"LocalizationPlaceholders": "",
+"LocalizationPlaceholdersData": "",
+"LocalizationSave": ""
+}

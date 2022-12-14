@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Notification"
-length = 6.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel:rect_position")
 tracks/0/interp = 1
@@ -15,10 +15,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 5, 6 ),
+"times": PoolRealArray( 0, 1, 4, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1088, 528 ), Vector2( 768, 528 ), Vector2( 768, 528 ), Vector2( 1088, 528 ) ]
+"values": [ Vector2( 1088, 0 ), Vector2( 768, 0 ), Vector2( 768, 0 ), Vector2( 1088, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -37,6 +37,7 @@ tracks/0/keys = {
 }
 
 [node name="Notification" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 4 )
 
 [node name="Panel" type="Panel" parent="."]

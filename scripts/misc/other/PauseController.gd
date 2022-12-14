@@ -23,7 +23,8 @@ func _ready():
 	$Panel/LevelInfoContainer/LevelName.text = levelNum + ": " + levelName
 	$Panel/LevelInfoContainer/ActNumber.text = "Act " + actNum + ": " + actName
 	# Set Date & Time
-	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." + String(date["month"]) + "." + String(date["year"])
+	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." \
+	+ String(date["month"]) + "." + String(date["year"])
 	clockTimerInit()
 
 func _process(_delta):
@@ -36,7 +37,7 @@ func _process(_delta):
 				$AnimationPlayer.play_backwards("exit")
 				yield(get_tree().create_timer(1), "timeout")
 				$QuitPanel.visible = false
-				$Panel/VBoxContainer/ResumeButton.grab_focus()
+				$Panel/Buttons/ResumeButton.grab_focus()
 	if Input.is_action_just_pressed("debug_pause"):
 		if !get_tree().paused:
 			Cursor.show_cursor(true)
@@ -45,7 +46,7 @@ func _process(_delta):
 func pause(pause: bool):
 	if pause:
 		$Panel.visible = true
-		$Panel/VBoxContainer/ResumeButton.grab_focus()
+		$Panel/Buttons/ResumeButton.grab_focus()
 		get_tree().set_deferred("paused", true)
 		paused = true
 		$AnimationPlayer.play("onload")
@@ -60,10 +61,7 @@ func _on_ResumeButton_pressed():
 	pause(false)
 
 func _on_SettingsButton_pressed():
-	if !Settings.settingsShowed:
-		showSettings(true)
-	else:
-		showSettings(false)
+	pass
 
 func _on_QuitButton_pressed():
 	if !exitscreen:
@@ -73,7 +71,7 @@ func _on_QuitButton_pressed():
 		$AnimationPlayer.play("exit")
 	else:
 		$QuitPanel.visible = false
-		$Panel/VBoxContainer/ResumeButton.grab_focus()
+		$Panel/Buttons/ResumeButton.grab_focus()
 
 func _on_MenuButton_pressed():
 	pause(false)
@@ -86,18 +84,7 @@ func _on_CancelButton_pressed():
 	$AnimationPlayer.play_backwards("exit")
 	yield(get_tree().create_timer(1), "timeout")
 	$QuitPanel.visible = false
-	$Panel/VBoxContainer/ResumeButton.grab_focus()
-
-func showSettings(show: bool):
-	if show:
-		getLangs()
-		$Settings/Panel.visible = true
-		$Settings/Panel/VAA/FullScreenBtn.grab_focus()
-		Settings.settingsShowed = true
-	else:
-		$Settings/Panel.visible = false
-		$Panel/VBoxContainer/ResumeButton.grab_focus()
-		Settings.settingsShowed = false
+	$Panel/Buttons/ResumeButton.grab_focus()
 
 func clockTimerInit():
 	clockTimer = Timer.new()
@@ -108,7 +95,8 @@ func clockTimerInit():
 	clockTimer.start()
 
 func _on_Timer_timeout():
-	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" + String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
+	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" \
+	+ String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
 
 func _on_ExitButton_focus_entered():
 	$QuitPanel/PleaseDont.visible = true
@@ -118,8 +106,3 @@ func _on_ExitButton_focus_exited():
 
 func _on_PhotoButton_pressed():
 	pass
-
-func getLangs():
-	$Settings/Panel/Other/LangButton.add_item("English", 1)
-	$Settings/Panel/Other/LangButton.add_item("Polski", 2)
-	$Settings/Panel/Other/LangButton.add_item("Deutsch", 3)

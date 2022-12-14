@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/1/path = NodePath("Panel/Buttons:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -125,7 +125,7 @@ tracks/0/keys = {
 resource_name = "onload"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/0/path = NodePath("Panel/Buttons:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -206,7 +206,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -217,7 +217,7 @@ margin_right = 96.0
 margin_bottom = 49.0
 alignment = 2
 
-[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Panel/Buttons"]
 margin_right = 192.0
 margin_bottom = 30.0
 theme = ExtResource( 2 )
@@ -228,7 +228,7 @@ custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 text = "RESUME"
 
-[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="Panel/Buttons"]
 margin_top = 34.0
 margin_right = 192.0
 margin_bottom = 64.0
@@ -241,7 +241,7 @@ custom_styles/normal = SubResource( 1 )
 disabled = true
 text = "OPTIONS"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/Buttons"]
 margin_top = 68.0
 margin_right = 192.0
 margin_bottom = 98.0
@@ -382,6 +382,7 @@ text = "BACK"
 [node name="Settings" parent="." instance=ExtResource( 4 )]
 
 [node name="QuitPanel" type="Panel" parent="."]
+visible = false
 margin_left = 320.0
 margin_top = -88.0
 margin_right = 768.0
@@ -451,9 +452,9 @@ anims/RESET = SubResource( 4 )
 anims/exit = SubResource( 6 )
 anims/onload = SubResource( 5 )
 
-[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Panel/Buttons/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Panel/Buttons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Panel/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="Panel/PhotoButton" to="." method="_on_PhotoButton_pressed"]
 [connection signal="pressed" from="QuitPanel/ButtonsContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="focus_entered" from="QuitPanel/ButtonsContainer/ExitButton" to="." method="_on_ExitButton_focus_entered"]

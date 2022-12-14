@@ -49,17 +49,17 @@ __meta__ = {
 }
 
 [node name="Name" type="Label" parent="Andus"]
-margin_right = 128.0
+margin_right = 140.0
 margin_bottom = 38.0
 theme = ExtResource( 3 )
 text = "Andus"
 
 [node name="Job" type="Label" parent="Andus"]
 margin_top = 42.0
-margin_right = 128.0
+margin_right = 140.0
 margin_bottom = 72.0
 theme = ExtResource( 2 )
-text = "Developer"
+text = "Developer/Art"
 
 [node name="LucePric" type="VBoxContainer" parent="."]
 margin_top = 256.0
@@ -103,7 +103,7 @@ margin_top = 42.0
 margin_right = 128.0
 margin_bottom = 72.0
 theme = ExtResource( 2 )
-text = "Translator"
+text = "Art"
 
 [node name="FontCreator" type="VBoxContainer" parent="."]
 margin_left = 920.0
