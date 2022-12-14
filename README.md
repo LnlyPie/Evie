@@ -3,6 +3,7 @@
 You're playing as a girl named Evie. Soon you'll discover that the king is locking up Elves in Jail. Although you're just a Citizen you decide to help them out, and break them out of prison. _More will be detailed later_
 ## Credits:
 **LonelyPie:** Andus _(Developer)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
+**Addons:** (later)</br>
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## where download ;-;?
