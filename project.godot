@@ -288,6 +288,11 @@ ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
 
 common/enable_pause_aware_picking=true
 
+[locale]
+
+test="en"
+translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
