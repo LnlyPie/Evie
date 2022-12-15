@@ -280,6 +280,11 @@ screenshot={
  ]
 }
 
+[locale]
+
+test="en"
+translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
+
 [network]
 
 ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
@@ -287,11 +292,6 @@ ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[locale]
-
-test="en"
-translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
 
 [rendering]
 
