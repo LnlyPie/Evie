@@ -3,7 +3,6 @@ extends Control
 func _ready():
 	Utils.checkFiles()
 	Settings.apply()
-	Notification.send_notification("test", "Some small test of new resolution", "quest")
 	randomize()
 	var prob = randi()%100
 	if prob == 1:
