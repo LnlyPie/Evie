@@ -1,18 +1,25 @@
 extends Node
 
 var dir = Directory.new()
+var file = File.new()
 
 var photosFolder = "user://screenshots/"
 var settingsFolder = "user://settings/"
 var modsFolder = "user://mods/"
 
-func _ready():
+var settingsFile = "user://settings/settings.cfg"
+
+func checkFiles():
+	# Create directories
 	if !dir.file_exists(photosFolder):
 		dir.make_dir(photosFolder)
 	if !dir.file_exists(settingsFolder):
 		dir.make_dir(settingsFolder)
 	if !dir.file_exists(modsFolder):
 		dir.make_dir(modsFolder)
+	# Create files
+	if !file.file_exists(settingsFile):
+		Settings.save()
 
 func screenshot():
 	var image = get_viewport().get_texture().get_data()

@@ -1,6 +1,9 @@
-extends Node2D
+extends Control
 
 func _ready():
+	Utils.checkFiles()
+	Settings.apply()
+	Notification.send_notification("test", "Some small test of new resolution", "quest")
 	randomize()
 	var prob = randi()%100
 	if prob == 1:
@@ -12,3 +15,4 @@ func _ready():
 	#	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 	# else:
 	SceneTransition.change_scene("res://scenes/misc/intro/AutoSaveMessage.tscn")
+	

@@ -7,7 +7,7 @@
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -21,10 +21,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Save"
-length = 0.9
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,13 +35,17 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-anchor_bottom = 1.0
-margin_right = 1088.0
-margin_bottom = 192.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -544.0
+margin_right = 544.0
+margin_bottom = 88.0
 theme = ExtResource( 1 )
 text = "This game uses AutoSave.
  When you'll see this image DON'T exit the game."
@@ -52,8 +55,8 @@ align = 1
 anims/RESET = SubResource( 1 )
 anims/Save = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
-position = Vector2( 544, 288 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 512 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 hframes = 9

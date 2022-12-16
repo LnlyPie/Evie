@@ -1,27 +1,29 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/intro/Intro.gd" type="Script" id=2]
 [ext_resource path="res://logo.png" type="Texture" id=3]
 [ext_resource path="res://sprites/icons/misc/godot_logo.svg" type="Texture" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="LonelyPieLogo" type="Sprite" parent="."]
-position = Vector2( 512, 300 )
-scale = Vector2( 2, 2 )
+position = Vector2( 960, 512 )
+scale = Vector2( 2.66667, 2.66667 )
 texture = ExtResource( 3 )
 
 [node name="LonelyPieLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 280.0
-margin_top = 512.0
-margin_right = 752.0
-margin_bottom = 600.0
+anchor_bottom = 1.0
+margin_left = -344.0
+margin_top = -312.0
+margin_right = 344.0
+margin_bottom = -224.0
 theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LonelyPie Studio[/shake][/tornado][/rainbow][/center]"
@@ -29,6 +31,6 @@ text = "LonelyPie Studio"
 scroll_active = false
 
 [node name="GodotLogo" type="Sprite" parent="."]
-position = Vector2( 67.9819, 572 )
-scale = Vector2( 0.132848, 0.135266 )
+position = Vector2( 160, 1016 )
+scale = Vector2( 0.3125, 0.309179 )
 texture = ExtResource( 4 )

@@ -8,6 +8,7 @@ const OPTIONS = "OPTIONS"
 const EXIT = "EXIT"
 const MM_BUGS = "MM_BUGS"
 const MM_WEB = "MM_WEB"
+const MM_BUGHATERS = "MM_BUGHATERS"
 const EXTRAS = "EXTRAS"
 const CREDITS = "CREDITS"
 const GJLOGIN = "GJLOGIN"
@@ -34,6 +35,7 @@ const KEYS = [
  "EXIT",
  "MM_BUGS",
  "MM_WEB",
+ "MM_BUGHATERS",
  "EXTRAS",
  "CREDITS",
  "GJLOGIN",
