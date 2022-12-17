@@ -8,11 +8,6 @@
 
 [node name="PhotoCam" type="CanvasLayer"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1040, 560 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 2 )
-
 [node name="GameName" type="Label" parent="."]
 margin_left = 8.0
 margin_right = 56.0
@@ -38,3 +33,19 @@ texture = ExtResource( 4 )
 expand = true
 script = ExtResource( 5 )
 path = "screenshot"
+
+[node name="Sprite" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -80.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+position = Vector2( 40, 40 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )

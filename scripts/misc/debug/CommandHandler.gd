@@ -24,7 +24,7 @@ const valid_commands = [
 		[ARG_STRING, ARG_STRING]],
 	["send_notification",
 		[ARG_STRING, ARG_STRING, ARG_STRING]],
-	["quit",
+	["exit",
 		[]],
 	["help",
 		[]]
@@ -34,7 +34,7 @@ func help():
 	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n " \
 	+ "photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n " \
 	+ "send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n " \
-	+ "debug_info - shows debug info\n quit - closes the game\n help - Shows this message")
+	+ "debug_info - shows debug info\n exit - closes the game\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -86,6 +86,6 @@ func debug_info():
 		player.debugInfo = false
 		return "Hiding Debug Info"
 
-func quit():
+func exit():
 	get_tree().quit()
-	return "Quitting..."
+	return "Exitting..."

@@ -90,12 +90,10 @@ theme = ExtResource( 4 )
 text = "ModVersion"
 
 [node name="Splashes" type="Label" parent="."]
-anchor_top = 0.12
-anchor_bottom = 0.12
 margin_left = 8.0
-margin_top = 24.0
+margin_top = 96.0
 margin_right = 216.0
-margin_bottom = 55.9998
+margin_bottom = 128.0
 theme = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0.647059, 1, 1 )
 text = "Splash Text"

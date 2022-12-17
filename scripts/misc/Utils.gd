@@ -92,7 +92,7 @@ func checkIfModded():
 		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModVersion").text = Mod.modVersion
 		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
-		.get_node("ModCredit").text = Mod.modAuthor
+		.get_node("ModCredit").text = "Mod made by: " + Mod.modAuthor
 	else:
 		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModName").visible = false

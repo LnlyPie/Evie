@@ -14,4 +14,3 @@ func _ready():
 	#	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 	# else:
 	SceneTransition.change_scene("res://scenes/misc/intro/AutoSaveMessage.tscn")
-	
