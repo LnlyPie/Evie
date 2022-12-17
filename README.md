@@ -35,10 +35,9 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
 ### Other:
-#### ![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white): 
- See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
-#### Consoles (Homebrew):
- See [Evie Homebrew Ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
+![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
+
+**Consoles (Homebrew)** See [Evie Homebrew Ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
