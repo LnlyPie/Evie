@@ -34,6 +34,11 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
+### Other:
+#### ![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white): 
+ See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
+#### Consoles (Homebrew):
+ See [Evie Homebrew Ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
@@ -46,6 +51,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
  - _MacOS:_ `~/Library/Application Support/EvieGame`
 ### Supported Controllers (with UI icons):
+Controllers which are automatically supported, but are not limited to:
  - ![](https://img.shields.io/badge/Xbox-360/One/Series-107C10?style=for-the-badge&logo=xbox&logoColor=white)
  - ![](https://img.shields.io/badge/PlayStation-3/4/5-003791?style=for-the-badge&logo=playstation&logoColor=white)
  - ![](https://img.shields.io/badge/Switch-Controller-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white)
