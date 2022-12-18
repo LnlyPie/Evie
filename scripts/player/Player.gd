@@ -32,6 +32,11 @@ func _process(_delta):
 			if !speedChangedDebug:
 				speed = normalSpeed
 		velocity = velocity.normalized()
+	# If dialogue is playing
+	if DialogueManager.is_dialogue_running:
+		blockMovement == true
+	else:
+		blockMovement == false
 	
 	# Debug
 	debug()

@@ -12,11 +12,18 @@ const MM_BUGHATERS = "MM_BUGHATERS"
 const EXTRAS = "EXTRAS"
 const CREDITS = "CREDITS"
 const GJLOGIN = "GJLOGIN"
-const S_VAA = "S_VAA"
+const S_C_AUDIO = "S_C_AUDIO"
+const S_C_VIDEO = "S_C_VIDEO"
 const S_FULLSCREEN = "S_FULLSCREEN"
 const S_RES = "S_RES"
-const S_OTHER = "S_OTHER"
+const S_C_OTHER = "S_C_OTHER"
 const S_LANG = "S_LANG"
+const S_LANG_EN = "S_LANG_EN"
+const S_LANG_PL = "S_LANG_PL"
+const S_LANG_DE = "S_LANG_DE"
+const S_SAVE = "S_SAVE"
+const S_SAVE_SAE = "S_SAVE_SAE"
+const S_SAVE_EXIT = "S_SAVE_EXIT"
 const SAV_NAME: = "SAV_NAME:"
 const SAV_SAVEAT: = "SAV_SAVEAT:"
 const SAV_TIME: = "SAV_TIME:"
@@ -39,11 +46,18 @@ const KEYS = [
  "EXTRAS",
  "CREDITS",
  "GJLOGIN",
- "S_VAA",
+ "S_C_AUDIO",
+ "S_C_VIDEO",
  "S_FULLSCREEN",
  "S_RES",
- "S_OTHER",
+ "S_C_OTHER",
  "S_LANG",
+ "S_LANG_EN",
+ "S_LANG_PL",
+ "S_LANG_DE",
+ "S_SAVE",
+ "S_SAVE_SAE",
+ "S_SAVE_EXIT",
  "SAV_NAME:",
  "SAV_SAVEAT:",
  "SAV_TIME:",

@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://fonts/m5x7/m5x7.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=5]
@@ -108,28 +107,27 @@ code = ExtResource( 10 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
-margin_top = -136.0
-margin_right = 288.0
-margin_bottom = -8.0
-theme = ExtResource( 5 )
+margin_top = -134.0
+margin_right = 192.0
+margin_bottom = -12.0
+theme = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StartButton" type="Button" parent="MainButtons"]
-margin_right = 272.0
+margin_right = 176.0
 margin_bottom = 38.0
 focus_neighbour_top = NodePath("../QuitButton")
-custom_fonts/font = ExtResource( 2 )
+focus_neighbour_bottom = NodePath("../QuitButton")
 text = "PLAY"
 flat = true
 align = 0
 
 [node name="OptionsButton" type="Button" parent="MainButtons"]
 margin_top = 42.0
-margin_right = 272.0
+margin_right = 176.0
 margin_bottom = 80.0
-custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "OPTIONS"
 flat = true
@@ -137,10 +135,10 @@ align = 0
 
 [node name="QuitButton" type="Button" parent="MainButtons"]
 margin_top = 84.0
-margin_right = 272.0
+margin_right = 176.0
 margin_bottom = 122.0
+focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../StartButton")
-custom_fonts/font = ExtResource( 2 )
 text = "EXIT"
 flat = true
 align = 0
@@ -150,7 +148,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -152.0
+margin_left = -168.0
 margin_top = -136.0
 margin_right = -8.0
 margin_bottom = -56.0
@@ -160,7 +158,7 @@ __meta__ = {
 }
 
 [node name="ExtrasButton" type="Button" parent="ExtraButtons"]
-margin_right = 144.0
+margin_right = 160.0
 margin_bottom = 38.0
 disabled = true
 text = "EXTRAS"
@@ -168,7 +166,7 @@ align = 2
 
 [node name="CreditsButton" type="Button" parent="ExtraButtons"]
 margin_top = 42.0
-margin_right = 144.0
+margin_right = 160.0
 margin_bottom = 80.0
 text = "CREDITS"
 flat = true
@@ -182,7 +180,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -136.0
-margin_top = -56.0
+margin_top = -46.0
 margin_right = 136.0
 margin_bottom = -16.0
 theme = ExtResource( 6 )
@@ -195,7 +193,7 @@ __meta__ = {
 [node name="GithubButton" type="Button" parent="BottomButtons"]
 margin_left = 3.0
 margin_right = 67.0
-margin_bottom = 40.0
+margin_bottom = 30.0
 focus_neighbour_left = NodePath("../../MainButtons/QuitButton")
 custom_colors/font_color_focus = Color( 0, 0.368627, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0.368627, 1, 1 )
@@ -204,7 +202,7 @@ text = "Github"
 [node name="BugsButton" type="Button" parent="BottomButtons"]
 margin_left = 80.0
 margin_right = 172.0
-margin_bottom = 40.0
+margin_bottom = 30.0
 custom_colors/font_color_focus = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
 text = "MM_BUGS"
@@ -212,13 +210,12 @@ text = "MM_BUGS"
 [node name="WebsiteButton" type="Button" parent="BottomButtons"]
 margin_left = 185.0
 margin_right = 269.0
-margin_bottom = 40.0
+margin_bottom = 30.0
 custom_colors/font_color_focus = Color( 0, 0.368627, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0.368627, 1, 1 )
 text = "MM_WEB"
 
 [node name="BugHaters" type="Label" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -309,6 +306,8 @@ text = "Login With Game Jolt"
 [connection signal="pressed" from="BottomButtons/GithubButton" to="." method="_on_GithubButton_pressed"]
 [connection signal="focus_entered" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_entered"]
 [connection signal="focus_exited" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_exited"]
+[connection signal="mouse_entered" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_entered"]
+[connection signal="mouse_exited" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_exited"]
 [connection signal="pressed" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_pressed"]
 [connection signal="pressed" from="BottomButtons/WebsiteButton" to="." method="_on_WebsiteButton_pressed"]
 [connection signal="pressed" from="GameJoltContainer/LoginWithGJ" to="." method="_on_LoginWithGJ_pressed"]

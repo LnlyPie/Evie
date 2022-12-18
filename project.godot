@@ -118,20 +118,22 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Settings="*res://scripts/misc/settings/Settings.gd"
-LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
-Mod="*res://Mod.gd"
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
+Settings="*res://scripts/misc/settings/Settings.gd"
 GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 Auth="*res://addons/gamejolt_api/auth/auth.gd"
-CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
+Mod="*res://Mod.gd"
 Utils="*res://scripts/misc/Utils.gd"
+Save="*res://scripts/misc/settings/Save.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Notification="*res://scenes/misc/other/Notification.tscn"
 Quests="*res://scripts/misc/Quests.gd"
 Cursor="*res://scripts/Cursor.gd"
+PlayerConsts="*res://scripts/player/PlayerConstants.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
+CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 
 [debug]
 

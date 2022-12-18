@@ -20,7 +20,7 @@ __meta__ = {
 
 [node name="OutputBox" type="TextEdit" parent="DebugConsole/Console"]
 margin_right = 896.0
-margin_bottom = 270.0
+margin_bottom = 220.0
 rect_min_size = Vector2( 704, 220 )
 focus_mode = 0
 text = "Debug Console"
@@ -28,9 +28,9 @@ readonly = true
 wrap_enabled = true
 
 [node name="InputBox" type="LineEdit" parent="DebugConsole/Console"]
-margin_top = 280.0
+margin_top = 224.0
 margin_right = 896.0
-margin_bottom = 320.0
+margin_bottom = 264.0
 rect_min_size = Vector2( 704, 30 )
 placeholder_text = "Enter Command..."
 placeholder_alpha = 0.4

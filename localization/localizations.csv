@@ -4,15 +4,22 @@ OPTIONS,Options,Ustawienia,Optionen
 EXIT,Exit,Wyjdź,Ausgang
 MM_BUGS,Bugs,Błędy,Fehler
 MM_WEB,Website,Strona,Webseite
-MM_BUGHATERS,We Hate Bugs >:(,Nie lubimy Błędów >:(,
+MM_BUGHATERS,We Hate Bugs >:(,Nie lubimy Błędów >:(,Wir hassen Fehler >:(
 EXTRAS,Extras,Dodatki,Extras
 CREDITS,Credits,Autorzy,Kredite
 GJLOGIN,GameJolt Login,Konto GameJolt,GameJolt-Anmeldung
-S_VAA,Video And Audio,Wideo i Audio,Video und Audio
+S_C_AUDIO,Audio,Audio,Audio
+S_C_VIDEO,Video,Grafika,Video
 S_FULLSCREEN,Fullscreen,Pełny Ekran,Ganzer Bildschirm
 S_RES,Screen Resolution,Rozdzielczość Ekranu,Bildschirmauflösung
-S_OTHER,Other,Inne,Sonstiges
+S_C_OTHER,Other,Inne,Sonstiges
 S_LANG,Language,Język,Sprache
+S_LANG_EN,English (en),Angielski (en),Englisch (en)
+S_LANG_PL,Polish (pl),Polski (pl),Polieren (pl)
+S_LANG_DE,German (de),Niemiecki (de),Deutsch (de)
+S_SAVE,Save,Zapisz,Speichern
+S_SAVE_SAE,Save & Close,Zapisz i Zamknij,Speichern & schließen
+S_SAVE_EXIT,Close,Zamknij,Nahe
 SAV_NAME:,Name:,Nazwa:,Name:
 SAV_SAVEAT:,Saved at:,Zapisano:,Gespeichert bei:
 SAV_TIME:,Time played:,Czas gry:,Spielzeit:

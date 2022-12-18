@@ -24,6 +24,8 @@ const valid_commands = [
 		[ARG_STRING, ARG_STRING]],
 	["send_notification",
 		[ARG_STRING, ARG_STRING, ARG_STRING]],
+	["clear",
+		[]],
 	["exit",
 		[]],
 	["help",
@@ -85,6 +87,10 @@ func debug_info():
 		level.remove_child(level.get_node("DebugInfo"))
 		player.debugInfo = false
 		return "Hiding Debug Info"
+
+func clear():
+	level.get_node("DebugConsole/DebugConsole/Console/OutputBox").text = "Cleared"
+	return ""
 
 func exit():
 	get_tree().quit()

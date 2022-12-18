@@ -21,9 +21,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -344.0
-margin_top = -312.0
+margin_top = -208.0
 margin_right = 344.0
-margin_bottom = -224.0
+margin_bottom = -120.0
 theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LonelyPie Studio[/shake][/tornado][/rainbow][/center]"

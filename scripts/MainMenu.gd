@@ -4,6 +4,7 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
+	$BugHaters.visible = false
 	auth()
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)

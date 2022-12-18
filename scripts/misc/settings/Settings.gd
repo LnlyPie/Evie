@@ -40,11 +40,20 @@ func load():
 	# Gameplay
 	language = cfg.get_value("Gameplay", "language")
 	autosave = cfg.get_value("Gameplay", "autosave")
+	apply()
 
 func apply():
-	Settings.load()
 	# Screen
+	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,\
+	 SceneTree.STRETCH_ASPECT_EXPAND, Vector2(screen_height,screen_width))
+	Engine.set_target_fps(framerate_cap)
+	OS.window_fullscreen = fullscreen
+	# Audio
 	
 	# Gameplay
 	TranslationServer.set_locale(language)
 	
+
+func apply_onstart():
+	Settings.load()
+	apply()
