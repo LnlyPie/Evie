@@ -13,6 +13,7 @@ func _ready():
 	$MainButtons/StartButton.grab_focus()
 	# Early Build trophy (will be there until the release of Prologue)
 	Utils.give_trophy("179883")
+	Utils.open_settings()
 
 func _on_StartButton_pressed():
 	Cursor.show_cursor(false)

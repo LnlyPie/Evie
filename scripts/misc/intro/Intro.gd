@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	Utils.checkFiles()
-	Settings.apply()
+	Settings.apply_onstart()
 	randomize()
 	var prob = randi()%100
 	if prob == 1:

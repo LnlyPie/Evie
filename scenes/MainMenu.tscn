@@ -51,15 +51,16 @@ __meta__ = {
 }
 
 [node name="GameName" type="Label" parent="GameInfo"]
-margin_right = 126.0
-margin_bottom = 76.0
+margin_top = 12.0
+margin_right = 84.0
+margin_bottom = 63.0
 theme = ExtResource( 5 )
 text = "Evie"
 
 [node name="GameVersion" type="Label" parent="GameInfo"]
-margin_left = 130.0
+margin_left = 88.0
 margin_top = 23.0
-margin_right = 206.0
+margin_right = 164.0
 margin_bottom = 53.0
 theme = ExtResource( 6 )
 text = "Version"

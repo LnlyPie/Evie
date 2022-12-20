@@ -47,8 +47,7 @@ margin_left = -544.0
 margin_right = 544.0
 margin_bottom = 88.0
 theme = ExtResource( 1 )
-text = "This game uses AutoSave.
- When you'll see this image DON'T exit the game."
+text = "AUTOSAVEMSG"
 align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

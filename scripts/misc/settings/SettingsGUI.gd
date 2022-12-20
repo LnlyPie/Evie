@@ -1,6 +1,7 @@
 extends Node
 
 func _ready() -> void:
+	$AnimationPlayer.play("onload")
 	if Settings.fullscreen:
 		$Panel/Settings/VideoSettings/FullscreenCheckButton.pressed = true
 	$Panel/Settings/VideoSettings/Resoultions/FullHD.grab_focus()

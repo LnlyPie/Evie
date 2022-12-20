@@ -100,3 +100,6 @@ func checkIfModded():
 		.get_node("ModVersion").visible = false
 		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
 		.get_node("ModCredit").visible = false
+
+func open_settings():
+	add_child(load("res://scenes/settings/Settings.tscn").instance())

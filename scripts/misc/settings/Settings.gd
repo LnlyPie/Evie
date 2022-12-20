@@ -15,6 +15,9 @@ var master_volume = 1 # ex. 0.5 = 50%
 var language = "en"
 var autosave = true
 
+# Vars
+var seenAutoMsg = false
+
 func save():
 	# Screen
 	cfg.set_value("Screen", "width", screen_width)
@@ -26,6 +29,8 @@ func save():
 	# Gameplay
 	cfg.set_value("Gameplay", "language", language)
 	cfg.set_value("Gameplay", "autosave", autosave)
+	# Vars
+	cfg.set_value("Variables", "seen_autosave_message", seenAutoMsg)
 	cfg.save("user://settings/settings.cfg")
 
 func load():
@@ -40,12 +45,14 @@ func load():
 	# Gameplay
 	language = cfg.get_value("Gameplay", "language")
 	autosave = cfg.get_value("Gameplay", "autosave")
+	# Vars
+	cfg.get_value("Variables", "seen_autosave_message", seenAutoMsg)
 	apply()
 
 func apply():
 	# Screen
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,\
-	 SceneTree.STRETCH_ASPECT_EXPAND, Vector2(screen_height,screen_width))
+	 SceneTree.STRETCH_ASPECT_EXPAND, Vector2(screen_width, screen_height))
 	Engine.set_target_fps(framerate_cap)
 	OS.window_fullscreen = fullscreen
 	# Audio
