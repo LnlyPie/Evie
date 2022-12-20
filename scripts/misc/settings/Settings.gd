@@ -59,7 +59,6 @@ func apply():
 	
 	# Gameplay
 	TranslationServer.set_locale(language)
-	
 
 func apply_onstart():
 	Settings.load()

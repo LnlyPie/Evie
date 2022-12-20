@@ -134,6 +134,7 @@ Cursor="*res://scripts/Cursor.gd"
 PlayerConsts="*res://scripts/player/PlayerConstants.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
+ModVars="*res://ModVars.gd"
 
 [debug]
 

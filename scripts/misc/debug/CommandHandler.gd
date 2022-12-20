@@ -11,7 +11,7 @@ enum {
 	ARG_FLOAT
 }
 
-const valid_commands = [
+var valid_commands = [
 	["set_speed",
 		[ARG_FLOAT]],
 	["photo_cam",
@@ -95,3 +95,9 @@ func clear():
 func exit():
 	get_tree().quit()
 	return "Exitting..."
+
+
+# Adding a Command (for mods)
+func add_debug_command(command: String, exec: String, desc: String):
+	valid_commands += "[\"" + command + "\", []]"
+	# Adding command func later.

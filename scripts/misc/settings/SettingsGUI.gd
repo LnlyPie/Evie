@@ -34,6 +34,9 @@ func _on_Polish_pressed() -> void:
 func _on_German_pressed() -> void:
 	Settings.language = "de"
 
-func _on_SaveButton_pressed() -> void:
+func _on_SaveExitButton_pressed() -> void:
 	Settings.save()
 	Settings.load()
+
+func _on_ExitButton_pressed() -> void:
+	get_parent().remove_child(Settings)

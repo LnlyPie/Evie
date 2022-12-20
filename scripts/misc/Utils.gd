@@ -61,8 +61,8 @@ func get_random_word_from_file(file_path):
 	return words[randi() % words.size()]
 
 func give_trophy(id: String):
-	if Mod.isModded:
-		if Mod.enableGameJolt:
+	if ModVars.isModded:
+		if ModVars.enableGameJolt:
 			give_trophy_ext(id)
 	else:
 		give_trophy_ext(id)
@@ -86,13 +86,13 @@ func _on_trophy_achieved(data: Array):
 	send_notification("Trophy Achieved!", data[0].title + "\n" + data[0].description, "gj")
 
 func checkIfModded():
-	if Mod.isModded:
+	if ModVars.isModded:
 		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModName").text = Mod.modName
+		.get_node("ModName").text = ModVars.modName
 		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModVersion").text = Mod.modVersion
+		.get_node("ModVersion").text = ModVars.modVersion
 		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
-		.get_node("ModCredit").text = "Mod made by: " + Mod.modAuthor
+		.get_node("ModCredit").text = "Mod made by: " + ModVars.modAuthor
 	else:
 		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModName").visible = false
@@ -101,5 +101,6 @@ func checkIfModded():
 		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
 		.get_node("ModCredit").visible = false
 
+# Need to find a way to close this thing
 func open_settings():
 	add_child(load("res://scenes/settings/Settings.tscn").instance())
