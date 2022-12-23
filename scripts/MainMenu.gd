@@ -4,23 +4,22 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
+	$MainButtons/StartButton.grab_focus()
 	$BugHaters.visible = false
 	auth()
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	Utils.checkIfModded()
 	$CanvasLayer/Settings/Panel.visible = false
-	$MainButtons/StartButton.grab_focus()
 	# Early Build trophy (will be there until the release of Prologue)
 	Utils.give_trophy("179883")
-	Utils.open_settings()
 
 func _on_StartButton_pressed():
 	Cursor.show_cursor(false)
 	SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn")
 
 func _on_OptionsButton_pressed():
-	pass
+	SettingsGUI.toggle()
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
@@ -49,7 +48,8 @@ func get_ver(file):
 
 func auth():
 	Auth.set_game_creds()
-	Auth.try_autologin()
+	if GameJoltAPI.username == "":
+		Auth.try_autologin()
 	if GameJoltAPI.username != null:
 		Utils.give_trophy("158932")
 	if GameJoltAPI.username == "":
@@ -70,5 +70,5 @@ func _on_BugsButton_focus_entered() -> void:
 func _on_BugsButton_focus_exited() -> void:
 	$BugHaters.visible = false
 
-#func _on_LoginWithGJ_pressed() -> void:
-#	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
+func _on_LoginWithGJ_pressed() -> void:
+	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")

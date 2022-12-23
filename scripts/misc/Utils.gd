@@ -2,11 +2,9 @@ extends Node
 
 var dir = Directory.new()
 var file = File.new()
-
 var photosFolder = "user://screenshots/"
 var settingsFolder = "user://settings/"
 var modsFolder = "user://mods/"
-
 var settingsFile = "user://settings/settings.cfg"
 
 func checkFiles():
@@ -100,7 +98,3 @@ func checkIfModded():
 		.get_node("ModVersion").visible = false
 		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
 		.get_node("ModCredit").visible = false
-
-# Need to find a way to close this thing
-func open_settings():
-	add_child(load("res://scenes/settings/Settings.tscn").instance())

@@ -1,7 +1,9 @@
 extends Node
 
+var shown = false
+signal settings_closed
+
 func _ready() -> void:
-	$AnimationPlayer.play("onload")
 	if Settings.fullscreen:
 		$Panel/Settings/VideoSettings/FullscreenCheckButton.pressed = true
 	$Panel/Settings/VideoSettings/Resoultions/FullHD.grab_focus()
@@ -37,6 +39,20 @@ func _on_German_pressed() -> void:
 func _on_SaveExitButton_pressed() -> void:
 	Settings.save()
 	Settings.load()
+	toggle()
 
 func _on_ExitButton_pressed() -> void:
-	get_parent().remove_child(Settings)
+	toggle()
+
+func toggle():
+	if !shown:
+		shown = true
+		$Panel.visible = true
+		$AnimationPlayer.play("onload")
+		$Panel/Settings/VideoSettings/Resoultions/FullHD.grab_focus()
+	else:
+		shown = false
+		$AnimationPlayer.play_backwards("onload")
+		yield(get_tree().create_timer(1), "timeout")
+		$Panel.visible = false
+		emit_signal("settings_closed")

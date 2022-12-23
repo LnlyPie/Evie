@@ -1,27 +1,66 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/GameJolt/gj-logo.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://scenes/GameJolt/GameJoltLogin.gd" type="Script" id=5]
 
-[node name="GameJoltLogin" type="Node2D"]
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 960, -32 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "onload"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, -32 ), Vector2( 960, 160 ), Vector2( 960, 96 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 1088.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Logo" type="Sprite" parent="Panel"]
-position = Vector2( 544, 96 )
+position = Vector2( 960, -32 )
 scale = Vector2( 1.17073, 1.18519 )
 texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-margin_left = 256.0
-margin_top = 192.0
-margin_right = 832.0
-margin_bottom = 448.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -128.0
+margin_right = 288.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="GJNameLabel" type="Label" parent="Panel/VBoxContainer"]
 margin_right = 576.0
@@ -61,11 +100,16 @@ text = "Login"
 expand_icon = true
 
 [node name="BackButton" type="Button" parent="Panel"]
-margin_top = 560.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
 margin_right = 72.0
-margin_bottom = 600.0
 theme = ExtResource( 3 )
 text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/onload = SubResource( 2 )
 
 [connection signal="pressed" from="Panel/VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
