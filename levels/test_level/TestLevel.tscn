@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/misc/PauseController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://addons/controller_icons/objects/Sprite.gd" type="Script" id=6]
 [ext_resource path="res://levels/test_level/level_scripts/NPCTest.gd" type="Script" id=7]
+[ext_resource path="res://logo.png" type="Texture" id=8]
+[ext_resource path="res://levels/test_level/level_scripts/logo1.gd" type="Script" id=9]
+[ext_resource path="res://levels/test_level/level_scripts/logo2.gd" type="Script" id=10]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.0
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 40.7922
@@ -30,6 +36,48 @@ margin_top = 166.0
 margin_right = 418.0
 margin_bottom = 180.0
 text = "Test Quest >"
+
+[node name="Logo1" type="Area2D" parent="."]
+position = Vector2( -29, 165 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Logo" type="Sprite" parent="Logo1"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Logo1"]
+shape = SubResource( 4 )
+
+[node name="ControllerSprite" type="Sprite" parent="Logo1"]
+position = Vector2( -3.8147e-06, -41 )
+scale = Vector2( 0.365, 0.385 )
+texture = ExtResource( 4 )
+script = ExtResource( 6 )
+path = "player_interact"
+
+[node name="Logo2" type="Area2D" parent="."]
+position = Vector2( 32, 448 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Logo" type="Sprite" parent="Logo2"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Logo2"]
+shape = SubResource( 4 )
+
+[node name="ControllerSprite" type="Sprite" parent="Logo2"]
+position = Vector2( -3.8147e-06, -41 )
+scale = Vector2( 0.365, 0.385 )
+texture = ExtResource( 4 )
+script = ExtResource( 6 )
+path = "player_interact"
 
 [node name="NPCTest" type="Area2D" parent="."]
 position = Vector2( 448, 192 )
@@ -76,3 +124,10 @@ shape = SubResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseController" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[connection signal="body_entered" from="Logo1" to="Logo1" method="_on_Logo1_body_entered"]
+[connection signal="body_exited" from="Logo1" to="Logo1" method="_on_Logo1_body_exited"]
+[connection signal="body_entered" from="Logo2" to="Logo2" method="_on_Logo2_body_entered"]
+[connection signal="body_exited" from="Logo2" to="Logo2" method="_on_Logo2_body_exited"]
+[connection signal="body_entered" from="NPCTest" to="NPCTest" method="_on_NPCTest_body_entered"]
+[connection signal="body_exited" from="NPCTest" to="NPCTest" method="_on_NPCTest_body_exited"]

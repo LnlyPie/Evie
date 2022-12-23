@@ -8,14 +8,14 @@ func new(name: String, description: String, maxprogress: int = 100):
 		"name": name,
 		"description": description,
 		"progress": 0,
-		"max_progress": 100,
+		"max_progress": maxprogress,
 		"completed": false
 	}
 	quests[name] = quest
 	Utils.send_notification("New Quest Avaliable!", name + "\n" + description, "quest")
 
-func set_progress(name, progress: int):
-	quests[name]["progress"] = progress
+func add_progress(name, progress: int):
+	quests[name]["progress"] += progress
 
 func complete(name):
 	quests[name]["completed"] = true
@@ -29,3 +29,14 @@ func get_desc(name):
 
 func get_progress(name):
 	return quests[name]["progress"]
+
+func get_max_progress(name):
+	return quests[name]["max_progress"]
+
+func _process(delta):
+	_check_quests()
+
+func _check_quests():
+	for quest in quests:
+		if get_progress(quest) == get_max_progress(quest):
+			complete(quest)

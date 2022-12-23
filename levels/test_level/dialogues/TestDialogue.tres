@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 22
+resource_version = 25
 syntax_version = 2
 raw_text = "~ node
 
@@ -20,17 +20,11 @@ if has_talked_testnpc == false
 	NPC: Hi. Do you want a quest?
 	- Yeah!
 		do addquest()
-		set has_talked_testnpc = true
 	- Nah, not really. => END
-	NPC: Alright! To complete the quest talk to me again.
+	NPC: Alright! To complete the quest find 2 LonelyPie logos.
 else
-	NPC: Do you want to complete the quest?
-	- Yes
-		do completequest()
-		set has_talked_testnpc = false
-		NPC: You've completed your quest!
-	- No.
-		NPC: Okay maybe next time.
+	NPC: I gave you a quest already
+
 => END"
 errors = [  ]
 titles = {
@@ -56,9 +50,9 @@ lines = {
 "value": false
 } ]
 },
-"next_conditional_id": "17",
+"next_conditional_id": "16",
 "next_id": "11",
-"next_id_after": "25",
+"next_id_after": "19",
 "type": "condition"
 },
 "11": {
@@ -78,10 +72,10 @@ lines = {
 },
 "12": {
 "next_id": "13",
-"next_id_after": "16",
+"next_id_after": "15",
 "parent_id": "10",
 "replacements": [  ],
-"responses": PoolStringArray( "12", "15" ),
+"responses": PoolStringArray( "12", "14" ),
 "text": "Yeah!",
 "translation_key": "Yeah!",
 "type": "response"
@@ -94,81 +88,58 @@ lines = {
 "value": [  ]
 } ]
 },
-"next_id": "14",
+"next_id": "15",
 "parent_id": "12",
 "type": "mutation"
 },
 "14": {
-"mutation": {
-"expression": [ {
-"type": "variable",
-"value": "has_talked_testnpc"
-}, {
-"type": "assignment",
-"value": "="
-}, {
-"type": "bool",
-"value": true
-} ]
-},
-"next_id": "16",
-"parent_id": "12",
-"type": "mutation"
-},
-"15": {
 "next_id": "end",
-"next_id_after": "16",
+"next_id_after": "15",
 "parent_id": "10",
 "replacements": [  ],
 "text": "Nah, not really.",
 "translation_key": "Nah, not really.",
 "type": "response"
 },
-"16": {
+"15": {
 "character": "NPC",
 "character_replacements": [  ],
 "inline_mutations": [  ],
-"next_id": "25",
+"next_id": "19",
 "parent_id": "10",
 "pauses": {
 },
 "replacements": [  ],
 "speeds": [  ],
-"text": "Alright! To complete the quest talk to me again.",
+"text": "Alright! To complete the quest find 2 LonelyPie logos.",
 "time": null,
-"translation_key": "Alright! To complete the quest talk to me again.",
+"translation_key": "Alright! To complete the quest find 2 LonelyPie logos.",
 "type": "dialogue"
 },
-"17": {
-"next_conditional_id": "25",
-"next_id": "18",
-"next_id_after": "25",
+"16": {
+"next_conditional_id": "19",
+"next_id": "17",
+"next_id_after": "19",
 "type": "condition"
 },
-"18": {
+"17": {
 "character": "NPC",
 "character_replacements": [  ],
 "inline_mutations": [  ],
 "next_id": "19",
-"parent_id": "17",
+"parent_id": "16",
 "pauses": {
 },
 "replacements": [  ],
 "speeds": [  ],
-"text": "Do you want to complete the quest?",
+"text": "I gave you a quest already",
 "time": null,
-"translation_key": "Do you want to complete the quest?",
+"translation_key": "I gave you a quest already",
 "type": "dialogue"
 },
 "19": {
-"next_id": "20",
-"next_id_after": "25",
-"parent_id": "17",
-"replacements": [  ],
-"responses": PoolStringArray( "19", "23" ),
-"text": "Yes",
-"translation_key": "Yes",
-"type": "response"
+"next_id": "end",
+"type": "goto"
 },
 "2": {
 "character": "Andus",
@@ -183,78 +154,6 @@ lines = {
 "time": null,
 "translation_key": "Hi! This is some dialogue",
 "type": "dialogue"
-},
-"20": {
-"mutation": {
-"expression": [ {
-"function": "completequest",
-"type": "function",
-"value": [  ]
-} ]
-},
-"next_id": "21",
-"parent_id": "19",
-"type": "mutation"
-},
-"21": {
-"mutation": {
-"expression": [ {
-"type": "variable",
-"value": "has_talked_testnpc"
-}, {
-"type": "assignment",
-"value": "="
-}, {
-"type": "bool",
-"value": false
-} ]
-},
-"next_id": "22",
-"parent_id": "19",
-"type": "mutation"
-},
-"22": {
-"character": "NPC",
-"character_replacements": [  ],
-"inline_mutations": [  ],
-"next_id": "25",
-"parent_id": "19",
-"pauses": {
-},
-"replacements": [  ],
-"speeds": [  ],
-"text": "You've completed your quest!",
-"time": null,
-"translation_key": "You've completed your quest!",
-"type": "dialogue"
-},
-"23": {
-"next_id": "24",
-"next_id_after": "25",
-"parent_id": "17",
-"replacements": [  ],
-"text": "No.",
-"translation_key": "No.",
-"type": "response"
-},
-"24": {
-"character": "NPC",
-"character_replacements": [  ],
-"inline_mutations": [  ],
-"next_id": "25",
-"parent_id": "23",
-"pauses": {
-},
-"replacements": [  ],
-"speeds": [  ],
-"text": "Okay maybe next time.",
-"time": null,
-"translation_key": "Okay maybe next time.",
-"type": "dialogue"
-},
-"25": {
-"next_id": "end",
-"type": "goto"
 },
 "3": {
 "character": "Andus",
