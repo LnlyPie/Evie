@@ -39,4 +39,5 @@ func _process(delta):
 func _check_quests():
 	for quest in quests:
 		if get_progress(quest) == get_max_progress(quest):
-			complete(quest)
+			if !is_completed(quest):
+				complete(quest)
