@@ -20,15 +20,15 @@ And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-gui
 
 ## How to install the game?
 Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
-### ![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white):
+### Windows ![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white):
  - Download Evie_win.zip
  - Unpack
  - Run Evie.exe
-### ![](https://img.shields.io/badge/Linux-111927?style=for-the-badge&logo=linux&logoColor=white) ![](https://img.shields.io/badge/Steam%20Deck%20(untested)-000000?style=for-the-badge&logo=steamdeck&logoColor=white):
+### Linux ![](https://img.shields.io/badge/Linux-111927?style=for-the-badge&logo=linux&logoColor=white) ![](https://img.shields.io/badge/Steam%20Deck%20(untested)-000000?style=for-the-badge&logo=steamdeck&logoColor=white):
  - Download Evie_linux.zip
  - Unpack
  - Run Evie.x86_64
-### ![](https://img.shields.io/badge/mac%20os%20(untested)-000000?style=for-the-badge&logo=apple&logoColor=white):
+### MacOS ![](https://img.shields.io/badge/mac%20os%20(untested)-000000?style=for-the-badge&logo=apple&logoColor=white):
  - Download Evie_osx.zip (v. 0.2 and up)
  - Unpack
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
@@ -36,8 +36,6 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Evie should now run normally
 ### Other:
 ![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
-
-**Consoles (Homebrew)** See [Evie Homebrew Ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
