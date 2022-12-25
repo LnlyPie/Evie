@@ -15,7 +15,8 @@ func new(name: String, description: String, maxprogress: int = 100):
 	Utils.send_notification("New Quest Avaliable!", name + "\n" + description, "quest")
 
 func add_progress(name, progress: int):
-	quests[name]["progress"] += progress
+	if quests[name]["progress"] != quests[name]["max_progress"]:
+		quests[name]["progress"] += progress
 
 func complete(name):
 	quests[name]["completed"] = true
@@ -23,6 +24,9 @@ func complete(name):
 
 func is_completed(name):
 	return quests[name]["completed"]
+
+func exists(name):
+	return quests.has(name)
 
 func get_desc(name):
 	return quests[name]["description"]

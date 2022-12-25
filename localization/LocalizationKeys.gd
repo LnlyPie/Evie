@@ -12,6 +12,7 @@ const MM_BUGHATERS = "MM_BUGHATERS"
 const EXTRAS = "EXTRAS"
 const CREDITS = "CREDITS"
 const GJLOGIN = "GJLOGIN"
+const PAUSE = "PAUSE"
 const S_C_AUDIO = "S_C_AUDIO"
 const S_C_VIDEO = "S_C_VIDEO"
 const S_FULLSCREEN = "S_FULLSCREEN"
@@ -47,6 +48,7 @@ const KEYS = [
  "EXTRAS",
  "CREDITS",
  "GJLOGIN",
+ "PAUSE",
  "S_C_AUDIO",
  "S_C_VIDEO",
  "S_FULLSCREEN",

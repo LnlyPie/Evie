@@ -10,9 +10,6 @@ var gb_filter = false
 var debugInfo = false
 var blockMovement = false
 
-func _ready():
-	$CanvasLayer/Settings/Panel.visible = false
-
 func _process(_delta):
 	var velocity = Vector2.ZERO
 	# Basic Movement

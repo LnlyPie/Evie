@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
+
+[node name="Saving" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -64.0
+margin_right = 320.0
+margin_bottom = -8.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[color=aqua][wave freq=4][fade]Saving...[/fade][/wave][/color]"
+text = "Saving..."

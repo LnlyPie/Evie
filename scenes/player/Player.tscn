@@ -1,9 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/characters/player/player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
-[ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=3]
 [ext_resource path="res://scenes/misc/other/gb_layer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=5]
+[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 7.03126 )
@@ -165,8 +167,10 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 44, 24 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )
@@ -207,4 +211,31 @@ parameters/Walk/blend_position = Vector2( 0.00150156, 1 )
 [node name="GB_Filter" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false
 
-[node name="Settings" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Input" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -128.0
+margin_bottom = 40.0
+
+[node name="Pause" type="HBoxContainer" parent="CanvasLayer/Input"]
+margin_right = 128.0
+margin_bottom = 40.0
+alignment = 2
+
+[node name="ControllerTextureRect" type="TextureRect" parent="CanvasLayer/Input/Pause"]
+margin_left = 24.0
+margin_right = 64.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 5 )
+expand = true
+script = ExtResource( 3 )
+path = "debug_pause"
+
+[node name="Label" type="Label" parent="CanvasLayer/Input/Pause"]
+margin_left = 68.0
+margin_top = 5.0
+margin_right = 128.0
+margin_bottom = 35.0
+theme = ExtResource( 6 )
+text = "PAUSE"
