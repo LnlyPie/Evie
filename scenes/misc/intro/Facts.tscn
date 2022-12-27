@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=2]
+[ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=3]
+[ext_resource path="res://scripts/misc/intro/Facts.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ControllerTextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_button"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ControllerTextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Fact" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -156.0
+margin_right = 448.0
+margin_bottom = 164.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave amp=200]Some random fact here[/wave]"
+text = "Some random fact here"
+fit_content_height = true
+
+[node name="ControllerTextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -88.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+path = "ui_accept"
+
+[node name="YouKnewIt\?" type="RichTextLabel" parent="."]
+margin_right = 384.0
+margin_bottom = 64.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]Did you know:[/b]"
+text = "Did you know:"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/show_button = SubResource( 2 )

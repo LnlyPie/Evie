@@ -46,8 +46,7 @@ func load():
 	language = cfg.get_value("Gameplay", "language")
 	autosave = cfg.get_value("Gameplay", "autosave")
 	# Vars
-	cfg.get_value("Variables", "seen_autosave_message", seenAutoMsg)
-	apply()
+	seenAutoMsg = cfg.get_value("Variables", "seen_autosave_message")
 
 func apply():
 	# Screen
