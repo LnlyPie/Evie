@@ -89,16 +89,16 @@ func _on_trophy_achieved(data: Array):
 
 func checkIfModded():
 	if ModVars.isModded:
-		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		get_parent().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModName").text = ModVars.modName
-		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		get_parent().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModVersion").text = ModVars.modVersion
-		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
+		get_parent().get_node("MainMenu").get_node("CreditsContainer")\
 		.get_node("ModCredit").text = "Mod made by: " + ModVars.modAuthor
 	else:
-		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		get_parent().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModName").visible = false
-		get_tree().get_root().get_node("MainMenu").get_node("ModInfo")\
+		get_parent().get_node("MainMenu").get_node("ModInfo")\
 		.get_node("ModVersion").visible = false
-		get_tree().get_root().get_node("MainMenu").get_node("CreditsContainer")\
+		get_parent().get_node("MainMenu").get_node("CreditsContainer")\
 		.get_node("ModCredit").visible = false
