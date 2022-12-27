@@ -14,7 +14,7 @@ func _process(delta):
 		found = true
 
 func _on_Logo1_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !found:
 		active = true
 
 func _on_Logo1_body_exited(body):

@@ -29,11 +29,6 @@ func _process(_delta):
 			if !speedChangedDebug:
 				speed = normalSpeed
 		velocity = velocity.normalized()
-	# If dialogue is playing
-	if DialogueManager.is_dialogue_running:
-		blockMovement == true
-	else:
-		blockMovement == false
 	
 	# Debug
 	debug()
@@ -44,7 +39,7 @@ func _process(_delta):
 	else:
 		$AnimationTree.get("parameters/playback").travel("Walk")
 		$AnimationTree.set("parameters/Walk/blend_position", velocity)
-		move_and_slide(velocity * speed)
+	move_and_slide(velocity * speed)
 
 func debug():
 	# Debug Console

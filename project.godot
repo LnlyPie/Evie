@@ -135,6 +135,7 @@ PlayerConsts="*res://scripts/player/PlayerConstants.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
+ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 
 [debug]
 

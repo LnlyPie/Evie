@@ -2,9 +2,11 @@ extends Node
 
 var dir = Directory.new()
 var file = File.new()
+
 var photosFolder = "user://screenshots/"
 var settingsFolder = "user://settings/"
 var modsFolder = "user://mods/"
+var savesFolder = "user://saves/"
 var settingsFile = "user://settings/settings.cfg"
 
 func checkFiles():
@@ -15,6 +17,8 @@ func checkFiles():
 		dir.make_dir(settingsFolder)
 	if !dir.file_exists(modsFolder):
 		dir.make_dir(modsFolder)
+	if !dir.file_exists(savesFolder):
+		dir.make_dir(savesFolder)
 	# Create files
 	if !file.file_exists(settingsFile):
 		Settings.save()

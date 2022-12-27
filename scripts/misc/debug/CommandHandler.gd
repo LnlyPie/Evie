@@ -26,6 +26,10 @@ var valid_commands = [
 		[ARG_STRING, ARG_STRING, ARG_STRING]],
 	["clear",
 		[]],
+	["save_game",
+		[ARG_INT]],
+	["load_game",
+		[ARG_INT]],
 	["exit",
 		[]],
 	["help",
@@ -91,6 +95,14 @@ func debug_info():
 func clear():
 	level.get_node("DebugConsole/DebugConsole/Console/OutputBox").text = "Cleared"
 	return ""
+
+func save_game():
+	Save.save(1)
+	return "Saved game on slot "
+
+func load_game():
+	Save.load(1)
+	return "Loaded game from slot "
 
 func exit():
 	get_tree().quit()

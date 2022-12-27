@@ -31,9 +31,7 @@ shader_param/dark = Color( 0.203922, 0.407843, 0.337255, 1 )
 shader_param/light = Color( 0.533333, 0.752941, 0.439216, 1 )
 shader_param/lightest = Color( 0.878431, 0.972549, 0.815686, 1 )
 
-[node name="GB_Filter" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="GB_Filter" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 2 )
