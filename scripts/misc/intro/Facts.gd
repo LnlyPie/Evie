@@ -16,5 +16,5 @@ func _random_fact():
 		$Fact.bbcode_text = "That [color=lime]Avocados[/color] are a fruit?"
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("mouse_left"):
 		SceneTransition.change_scene("res://scenes/MainMenu.tscn")

@@ -10,6 +10,7 @@ const MM_BUGS = "MM_BUGS"
 const MM_WEB = "MM_WEB"
 const MM_BUGHATERS = "MM_BUGHATERS"
 const EXTRAS = "EXTRAS"
+const MODS = "MODS"
 const CREDITS = "CREDITS"
 const GJLOGIN = "GJLOGIN"
 const PAUSE = "PAUSE"
@@ -46,6 +47,7 @@ const KEYS = [
  "MM_WEB",
  "MM_BUGHATERS",
  "EXTRAS",
+ "MODS",
  "CREDITS",
  "GJLOGIN",
  "PAUSE",
