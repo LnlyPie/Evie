@@ -2,19 +2,23 @@ extends Control
 
 func _ready():
 	_random_fact()
-	$ControllerTextureRect.visible = false
 	yield(get_tree().create_timer(2), "timeout")
-	$ControllerTextureRect.visible = true
+	$InputContainer.visible = true
 	$AnimationPlayer.play("show_button")
+	yield(get_tree().create_timer(0.7), "timeout")
+	$AnimationPlayer.play("button_pulsating")
 
 func _random_fact():
 	randomize()
 	var fact = randi()%2+1
 	if fact == 1:
-		$Fact.bbcode_text = "That earlier versions of Evie were inspired by [wave amp=100][color=aqua]Celeste[/color]?[/wave]"
+		$Fact.bbcode_text = _read_facts()["fact1"]
 	if fact == 2:
-		$Fact.bbcode_text = "That [color=lime]Avocados[/color] are a fruit?"
+		$Fact.bbcode_text = _read_facts()["fact2"]
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("mouse_left"):
 		SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+
+func _read_facts():
+	return Utils.read_json("res://other/jsons/facts.json")

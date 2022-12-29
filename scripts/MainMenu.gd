@@ -24,6 +24,9 @@ func _on_OptionsButton_pressed():
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
+func _on_ModsButton_pressed():
+	SceneTransition.change_scene("res://scenes/misc/mods/ModSelector.tscn")
+
 func _on_CreditsButton_pressed():
 	SceneTransition.change_scene("res://scenes/Credits.tscn")
 

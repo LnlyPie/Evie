@@ -38,6 +38,7 @@ const PHOTOMODE = "PHOTOMODE"
 const USE = "USE"
 const BACK = "BACK"
 const AUTOSAVEMSG = "AUTOSAVEMSG"
+const MODS_APPLY = "MODS_APPLY"
 
 const KEYS = [
  "PLAY",
@@ -74,5 +75,6 @@ const KEYS = [
  "PHOTOMODE",
  "USE",
  "BACK",
- "AUTOSAVEMSG"
+ "AUTOSAVEMSG",
+ "MODS_APPLY"
 ]

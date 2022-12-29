@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
-[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
@@ -44,32 +44,33 @@ align = 2
 
 [node name="GameInfo" type="HBoxContainer" parent="."]
 margin_left = 8.0
-margin_right = 216.0
-margin_bottom = 76.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 84.0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="GameName" type="Label" parent="GameInfo"]
-margin_top = 12.0
-margin_right = 84.0
-margin_bottom = 63.0
-theme = ExtResource( 5 )
-text = "Evie"
+[node name="GameName" type="TextureRect" parent="GameInfo"]
+margin_right = 162.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 162, 76 )
+texture = ExtResource( 2 )
+expand = true
 
 [node name="GameVersion" type="Label" parent="GameInfo"]
-margin_left = 88.0
+margin_left = 166.0
 margin_top = 23.0
-margin_right = 164.0
+margin_right = 242.0
 margin_bottom = 53.0
 theme = ExtResource( 6 )
 text = "Version"
 
 [node name="ModInfo" type="HBoxContainer" parent="."]
-margin_left = 8.0
-margin_top = 64.0
-margin_right = 216.0
-margin_bottom = 96.0
+margin_left = 16.0
+margin_top = 75.0
+margin_right = 224.0
+margin_bottom = 107.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -90,10 +91,10 @@ theme = ExtResource( 4 )
 text = "ModVersion"
 
 [node name="Splashes" type="Label" parent="."]
-margin_left = 8.0
-margin_top = 96.0
-margin_right = 216.0
-margin_bottom = 128.0
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 224.0
+margin_bottom = 136.0
 theme = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0.647059, 1, 1 )
 text = "Splash Text"
@@ -150,7 +151,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -168.0
-margin_top = -136.0
+margin_top = -178.0
 margin_right = -8.0
 margin_bottom = -56.0
 theme = ExtResource( 3 )
@@ -165,15 +166,22 @@ disabled = true
 text = "EXTRAS"
 align = 2
 
-[node name="CreditsButton" type="Button" parent="ExtraButtons"]
+[node name="ModsButton" type="Button" parent="ExtraButtons"]
 margin_top = 42.0
 margin_right = 160.0
 margin_bottom = 80.0
-focus_neighbour_top = NodePath(".")
-focus_neighbour_bottom = NodePath(".")
+focus_neighbour_top = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
+text = "MODS"
+align = 2
+
+[node name="CreditsButton" type="Button" parent="ExtraButtons"]
+margin_top = 84.0
+margin_right = 160.0
+margin_bottom = 122.0
+focus_neighbour_top = NodePath("../ModsButton")
+focus_neighbour_bottom = NodePath("../ModsButton")
 text = "CREDITS"
-flat = true
-clip_text = true
 align = 2
 icon_align = 1
 
@@ -307,6 +315,7 @@ text = "Login With Game Jolt"
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MainButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="ExtraButtons/ModsButton" to="." method="_on_ModsButton_pressed"]
 [connection signal="pressed" from="ExtraButtons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="BottomButtons/GithubButton" to="." method="_on_GithubButton_pressed"]
 [connection signal="focus_entered" from="BottomButtons/BugsButton" to="." method="_on_BugsButton_focus_entered"]

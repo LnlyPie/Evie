@@ -295,6 +295,9 @@ mouse_left={
 
 test="en"
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pl.translation", "res://localization/localizations.de.translation" )
+translation_remaps={
+"res://sprites/gui/mods/mods.png": [ "res://sprites/gui/mods/mods.png:en", "res://sprites/locale_remaps/pl/gui/mods/mods.png:pl", "res://sprites/gui/mods/mods.png:de" ]
+}
 
 [network]
 

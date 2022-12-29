@@ -62,6 +62,14 @@ func get_random_word_from_file(file_path):
 		words[i] = words[i].replace("|", "")
 	return words[randi() % words.size()]
 
+func read_json(path):
+	var file = File.new()
+	file.open(path, file.READ)
+	var json = file.get_as_text()
+	var json_result = JSON.parse(json).result
+	file.close()
+	return json_result
+
 func give_trophy(id: String):
 	if ModVars.isModded:
 		if ModVars.enableGameJolt:
