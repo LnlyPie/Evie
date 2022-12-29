@@ -10,11 +10,8 @@ func _ready():
 
 func _random_fact():
 	randomize()
-	var fact = randi()%2+1
-	if fact == 1:
-		$Fact.bbcode_text = _read_facts()["fact1"]
-	if fact == 2:
-		$Fact.bbcode_text = _read_facts()["fact2"]
+	var fact = randi()%4+1
+	$Fact.bbcode_text = _read_facts()["fact" + str(fact)]
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("mouse_left"):

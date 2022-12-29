@@ -1,4 +1,6 @@
 {
     "fact1": "That earlier versions of Evie were inspired by [wave amp=100][color=aqua]Celeste[/color]?[/wave]",
-    "fact2": "That [color=lime]Avocados[/color] are a fruit?"
+    "fact2": "That [color=lime]Avocados[/color] are a fruit?",
+    "fact3": "That Evie is made using [tornado radius=15 freq=5][color=aqua]Godot Engine[/color]?[/tornado]",
+    "fact4": "That Evie has [rainbow]built-in mod support[/rainbow]?"
 }
