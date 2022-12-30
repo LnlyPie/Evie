@@ -27,16 +27,27 @@ func load_mod(mod_dir):
 func _ready():
 	dir.open(Utils.modsFolder)
 	dir.list_dir_begin()
-
+	
 	while true:
 		var file = dir.get_next()
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			# If there is a folder named "START_LOADONLY_modname"
-			# It will be LOADED on start (without opening Mod.tscn scene)
-			if file.begins_with("START_LOADONLY_"):
+			# If there is a folder named "LOADONLY_modname"
+			# It will be LOADED on start (will not open Mod.tscn scene)
+			if file.begins_with("LOADONLY_"):
 				load_mod(file)
-			# This will be LOADED and APPLIED on start
-			elif file.begins_with("START_APPLY_"):
+
+func apply_check():
+	dir.open(Utils.modsFolder)
+	dir.list_dir_begin()
+	
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with("."):
+			# If there is a folder named "APPLY_modname"
+			# It will be LOADED and APPLIED on start (will open Mod.tscn scene)
+			if file.begins_with("APPLY_"):
 				apply_mod(file)

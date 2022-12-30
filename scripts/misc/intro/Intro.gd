@@ -14,4 +14,5 @@ func _ready():
 	if facts == 1:
 		SceneTransition.change_scene("res://scenes/misc/intro/Facts.tscn")
 	else:
+		ModLoader.apply_check()
 		SceneTransition.change_scene("res://scenes/MainMenu.tscn")

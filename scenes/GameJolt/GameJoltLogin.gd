@@ -9,5 +9,4 @@ func _on_BackButton_pressed():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 
 func _on_LoginButton_pressed():
-	GameJoltAPI.username = $Panel/VBoxContainer/GJName.text
-	GameJoltAPI.user_token = $Panel/VBoxContainer/GJToken.text
+	Auth.login($Panel/VBoxContainer/GJName.text, $Panel/VBoxContainer/GJToken.text)

@@ -4,6 +4,7 @@ onready var gameVerFile = "res://version.txt"
 var blockedSound = preload("res://sounds/gui/blocked.wav")
 
 func _ready():
+	
 	$MainButtons/StartButton.grab_focus()
 	$BugHaters.visible = false
 	auth()

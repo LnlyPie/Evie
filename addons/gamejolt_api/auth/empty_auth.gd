@@ -13,6 +13,10 @@ func set_game_creds():
 func try_autologin():
 	GameJoltAPI.get_user_credentials()
 
+func login(username: String, token: String):
+	GameJoltAPI.username = username
+	GameJoltAPI.user_token = token
+
 # Although auth.gd won't get onto github
 # Don't forget to remove your credentials
 # Just for safety ;)
