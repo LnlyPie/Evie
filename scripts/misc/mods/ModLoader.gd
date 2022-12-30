@@ -33,9 +33,9 @@ func _ready():
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			# If there is a folder named "LOADONLY_modname"
+			# If there is a folder named "LOAD_modname"
 			# It will be LOADED on start (will not open Mod.tscn scene)
-			if file.begins_with("LOADONLY_"):
+			if file.begins_with("LOAD_"):
 				load_mod(file)
 
 func apply_check():
