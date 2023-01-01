@@ -4,11 +4,6 @@ var file = File.new()
 var dir = Directory.new()
 var cfg = ConfigFile.new()
 
-# Loads the mod AND opens Mod.tscn scene
-func apply_mod(mod_dir):
-	load_mod(mod_dir)
-	SceneTransition.change_scene("res://Mod.tscn")
-
 # Only loads the mod
 func load_mod(mod_dir):
 	var mod = Utils.modsFolder + mod_dir + "/Mod.pck"
@@ -24,6 +19,13 @@ func load_mod(mod_dir):
 		else:
 			printerr("Could not load mod: " + mod)
 
+# Loads the mod AND runs yourmodname.gd
+# The mod name is from Mod.cfg file
+func apply_mod(mod_dir):
+	load_mod(mod_dir)
+	var mod_script = load("res://" + ModVars.modName + ".gd")
+	_load_mod_script(mod_script)
+
 func _ready():
 	dir.open(Utils.modsFolder)
 	dir.list_dir_begin()
@@ -33,8 +35,6 @@ func _ready():
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			# If there is a folder named "LOAD_modname"
-			# It will be LOADED on start (will not open Mod.tscn scene)
 			if file.begins_with("LOAD_"):
 				load_mod(file)
 
@@ -47,7 +47,9 @@ func apply_check():
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			# If there is a folder named "APPLY_modname"
-			# It will be LOADED and APPLIED on start (will open Mod.tscn scene)
 			if file.begins_with("APPLY_"):
 				apply_mod(file)
+
+func _load_mod_script(mod_script):
+	var script_instance = mod_script.new()
+	get_node("/root").add_child(script_instance)
