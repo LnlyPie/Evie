@@ -13,8 +13,8 @@ You're playing as a girl named Evie. Soon you'll discover that the king is locki
 ### Contributing:
 See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing)
 ### Modding:
-See [Evie/Modding](https://docs.andus.dev/lonelypie-games/evie#modding) for setting up modding environment</br>
-And [Evie Modding Guide](https://docs.andus.dev/lonelypie-games/evie-modding-guide) to understand how various things in Evie work.</br>
+See [Installing Mods](https://ldocs.andus.dev/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
+See [Modding Evie](https://ldocs.andus.dev/evie/evie-modding#making-mods-for-evie) for setting up modding environment</br>
 
 [List of verified mods](https://github.com/LnlyPie/evie-verified-mods) (add your own mod by making a pull request to README.md)
 
