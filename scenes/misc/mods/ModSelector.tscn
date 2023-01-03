@@ -29,7 +29,6 @@ custom_styles/bg = SubResource( 2 )
 auto_height = true
 max_columns = 4
 icon_mode = 0
-icon_scale = 2.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 8.0

@@ -3,11 +3,12 @@ extends Node
 var dir = Directory.new()
 var file = File.new()
 
+# Folders/Directories
 var photosFolder = "user://screenshots/"
 var settingsFolder = "user://settings/"
 var modsFolder = "user://mods/"
 var savesFolder = "user://saves/"
-var settingsFile = "user://settings/settings.cfg"
+var settingsFile = settingsFolder + "settings.cfg"
 
 func checkFiles():
 	# Create directories
@@ -27,6 +28,13 @@ func screenshot():
 	var image = get_viewport().get_texture().get_data()
 	image.flip_y()
 	image.save_png(photosFolder + "screenshot-" + getDateAndTime() + ".png")
+
+func makeImg(path):
+	var image = Image.new()
+	image.load(path)
+	var t = ImageTexture.new()
+	t.create_from_image(image)
+	return t
 
 func getDateAndTime():
 	# Get Time and Date

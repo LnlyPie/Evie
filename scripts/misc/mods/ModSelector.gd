@@ -4,6 +4,7 @@ var selected = 0
 
 func _ready():
 	_list_mods()
+	$ItemList.grab_focus()
 
 func _list_mods():
 	var files = []
@@ -20,12 +21,15 @@ func _list_mods():
 		elif not file.begins_with("."):
 			if !files.has(file):
 				var modinfo = Utils.modsFolder + file + "/Mod.cfg"
+				var modicon = Utils.modsFolder + file + "/Mod.png"
 				if dir.file_exists(modinfo):
 					cfg.load(modinfo)
 					$ItemList.add_item(str(cfg.get_value("ModInfo", "name")) + " " + \
 					 str(cfg.get_value("ModInfo", "version")) + " - " + \
 					 str(cfg.get_value("ModInfo", "author")), load("res://sprites/gui/mods/modicon.png"))
 					$ItemList.set_item_metadata(listid, file)
+					if dir.file_exists(modicon):
+						$ItemList.set_item_icon(listid, Utils.makeImg(modicon))
 					files.append(file)
 					listid += 1
 	dir.list_dir_end()
