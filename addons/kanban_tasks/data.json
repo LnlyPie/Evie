@@ -1,0 +1,183 @@
+{
+  "settings": {
+    "show_details_preview": true
+  },
+  "categories": [
+    {
+      "title": "Task",
+      "color": "6495ed"
+    },
+    {
+      "title": "Bug",
+      "color": "ff0000"
+    }
+  ],
+  "columns": [
+    {
+      "stages": [
+        0
+      ]
+    },
+    {
+      "stages": [
+        1
+      ]
+    },
+    {
+      "stages": [
+        2
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "title": "Todo",
+      "tasks": [
+        12,
+        8,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "title": "Doing",
+      "tasks": [
+        20,
+        21,
+        9,
+        19
+      ]
+    },
+    {
+      "title": "Done",
+      "tasks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        18
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "category": 0,
+      "title": "Basic movement",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Menus",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "GameJolt Integration",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Debug Console",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Game Settings (Script)",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Scene Transitions",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Save System",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Dialogues",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Battle System",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Game Settings menu not closing",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Test Enemies",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Player's GUI",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Death System",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "More Custom Scene Transitions",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Prettier Menus",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Prettier GUI",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Cutscene Manager",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Adding Story to the game",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Mods Support",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Downloading Mods From In The Game",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Debug Console not working with int(s)",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Check if connected with GameJolt",
+      "details": ""
+    }
+  ]
+}

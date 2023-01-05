@@ -39,6 +39,7 @@ const USE = "USE"
 const BACK = "BACK"
 const AUTOSAVEMSG = "AUTOSAVEMSG"
 const MODS_APPLY = "MODS_APPLY"
+const MODS_DOWNLOAD = "MODS_DOWNLOAD"
 
 const KEYS = [
  "PLAY",
@@ -76,5 +77,6 @@ const KEYS = [
  "USE",
  "BACK",
  "AUTOSAVEMSG",
- "MODS_APPLY"
+ "MODS_APPLY",
+ "MODS_DOWNLOAD"
 ]
