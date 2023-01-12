@@ -63,7 +63,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="DownloadButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -79,3 +79,4 @@ align = 0
 [connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="ApplyButton" to="." method="_on_ApplyButton_pressed"]
+[connection signal="pressed" from="DownloadButton" to="." method="_on_DownloadButton_pressed"]

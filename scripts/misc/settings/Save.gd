@@ -3,6 +3,9 @@ extends Node
 var file = File.new()
 var json = JSON
 
+# Data
+var player
+
 func save(slot: int):
 	var save_data = {
 		"player_health": PlayerConsts.player_health,

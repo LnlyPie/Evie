@@ -96,12 +96,12 @@ func clear():
 	level.get_node("DebugConsole/DebugConsole/Console/OutputBox").text = "Cleared"
 	return ""
 
-func save_game():
-	Save.save(1)
+func save_game(slot: int):
+	Save.save(slot)
 	return "Saved game on slot "
 
-func load_game():
-	Save.load(1)
+func load_game(slot: int):
+	Save.load(slot)
 	return "Loaded game from slot "
 
 func exit():

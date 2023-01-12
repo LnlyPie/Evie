@@ -8,5 +8,5 @@ var player_health = 5
 # Chapter player is now playing
 var chapter = -1
 # Player's position in chapter
-var player_x
-var player_y
+var player_x = 0
+var player_y = 0
