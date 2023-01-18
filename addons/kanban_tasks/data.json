@@ -51,7 +51,8 @@
     {
       "title": "Doing",
       "tasks": [
-        6
+        6,
+        23
       ]
     },
     {
@@ -189,6 +190,11 @@
     {
       "category": 0,
       "title": "Lives System",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Chapter Selector",
       "details": ""
     }
   ]

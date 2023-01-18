@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://sprites/gui/chapters/test_thumbnail.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ChapterSelect.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="ChapterSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
@@ -14,68 +19,97 @@ anchor_bottom = 1.0
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -117.0
-margin_right = 117.0
-margin_bottom = 38.0
-theme = ExtResource( 1 )
+margin_left = -156.0
+margin_right = 156.0
+margin_bottom = 51.0
+theme = ExtResource( 2 )
 text = "Select Chapter:"
 
-[node name="Prologue" type="ColorRect" parent="Panel"]
-margin_left = 24.0
-margin_top = 128.0
-margin_right = 216.0
-margin_bottom = 488.0
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
+[node name="Chapters" type="TabContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 144.0
+margin_right = -64.0
+margin_bottom = -56.0
+theme = ExtResource( 1 )
+custom_constants/hseparation = 20
+custom_styles/panel = SubResource( 1 )
 
-[node name="ChapterName" type="Label" parent="Panel/Prologue"]
+[node name="Test Level" type="Tabs" parent="Panel/Chapters"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Test Level"]
+margin_left = 8.0
+margin_top = 128.0
+margin_right = 888.0
+margin_bottom = 640.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/Chapters/Test Level"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -832.0
+margin_top = 128.0
+margin_right = -64.0
+margin_bottom = 640.0
+theme = ExtResource( 1 )
+text = "A level to test if quests, hearts, battles, cutscenes, scene transitions, movement, etc.
+
+If you found any bugs, make an issue on GitHub, or write it on our Discord Server.
+
+ Thanks <3"
+autowrap = true
+
+[node name="PlayButton" type="Button" parent="Panel/Chapters/Test Level"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -44.0
-margin_top = -30.0
-margin_right = 44.0
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = -64.0
 theme = ExtResource( 2 )
-text = "Prologue"
+text = "Play"
 
-[node name="Art" type="Label" parent="Panel/Prologue"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -95.0
-margin_top = -15.0
-margin_right = 95.0
-margin_bottom = 15.0
-theme = ExtResource( 2 )
-text = "(Chapter Art Here)"
+[node name="Prologue" type="Tabs" parent="Panel/Chapters"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
 
-[node name="ChapterOne" type="ColorRect" parent="Panel"]
-margin_left = 240.0
+[node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Prologue"]
+margin_left = 8.0
 margin_top = 128.0
-margin_right = 432.0
-margin_bottom = 488.0
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
+margin_right = 888.0
+margin_bottom = 640.0
+expand = true
 
-[node name="ChapterName" type="Label" parent="Panel/ChapterOne"]
+[node name="Label" type="Label" parent="Panel/Chapters/Prologue"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -832.0
+margin_top = 128.0
+margin_right = -64.0
+margin_bottom = 640.0
+theme = ExtResource( 1 )
+autowrap = true
+
+[node name="PlayButton" type="Button" parent="Panel/Chapters/Prologue"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -63.0
-margin_top = -30.0
-margin_right = 63.0
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = -64.0
 theme = ExtResource( 2 )
-text = "Chapter One"
+disabled = true
+text = "Play"
 
-[node name="Art" type="Label" parent="Panel/ChapterOne"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -95.0
-margin_top = -15.0
-margin_right = 95.0
-margin_bottom = 15.0
-theme = ExtResource( 2 )
-text = "(Chapter Art Here)"
+[connection signal="pressed" from="Panel/Chapters/Test Level/PlayButton" to="." method="_on_TestLevel_PlayButton_pressed"]

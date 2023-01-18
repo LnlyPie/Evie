@@ -16,8 +16,7 @@ func _ready():
 	Utils.give_trophy("179883")
 
 func _on_StartButton_pressed():
-	Cursor.show_cursor(false)
-	SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn")
+	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
 
 func _on_OptionsButton_pressed():
 	SettingsGUI.toggle()
