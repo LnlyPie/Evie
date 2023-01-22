@@ -51,8 +51,7 @@
     {
       "title": "Doing",
       "tasks": [
-        6,
-        23
+        24
       ]
     },
     {
@@ -65,12 +64,14 @@
         4,
         5,
         7,
-        18
+        18,
+        23
       ]
     },
     {
       "title": "Waiting",
       "tasks": [
+        6,
         9,
         19
       ]
@@ -196,6 +197,11 @@
       "category": 0,
       "title": "Chapter Selector",
       "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Quests Progress",
+      "details": "Show Quest progress in pause menu"
     }
   ]
 }
