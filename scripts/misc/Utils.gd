@@ -10,7 +10,19 @@ var modsFolder = "user://mods/"
 var savesFolder = "user://saves/"
 var settingsFile = settingsFolder + "settings.cfg"
 
+var execDir = OS.get_executable_path().get_base_dir() + "/"
+var portable = execDir + "portable"
+
+func isPortable():
+	if file.file_exists(portable):
+		photosFolder = execDir + "screenshots/"
+		settingsFolder = execDir + "settings/"
+		modsFolder = execDir + "mods/"
+		savesFolder = execDir + "saves/"
+		settingsFile = execDir + "settings/settings.cfg"
+
 func checkFiles():
+	isPortable()
 	# Create directories
 	if !dir.file_exists(photosFolder):
 		dir.make_dir(photosFolder)

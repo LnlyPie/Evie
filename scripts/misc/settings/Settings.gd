@@ -31,10 +31,10 @@ func save():
 	cfg.set_value("Gameplay", "autosave", autosave)
 	# Vars
 	cfg.set_value("Variables", "seen_autosave_message", seenAutoMsg)
-	cfg.save("user://settings/settings.cfg")
+	cfg.save(Utils.settingsFile)
 
 func load():
-	cfg.load("user://settings/settings.cfg")
+	cfg.load(Utils.settingsFile)
 	# Screen
 	screen_width = cfg.get_value("Screen", "width")
 	screen_height = cfg.get_value("Screen", "height")
