@@ -9,4 +9,5 @@ data_*/
 
 # GameJolt Private Things
 addons/gamejolt_api/auth/auth.gd
+# Ridiculous addon.
 addons/ridiculous_coding/

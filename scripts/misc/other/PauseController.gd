@@ -96,13 +96,10 @@ func clockTimerInit():
 
 func _on_Timer_timeout():
 	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" \
-	+ String(OS.get_time()["minute"]) + ":" + String(OS.get_time()["second"])
+	+ String(OS.get_time()["minute"])
 
 func _on_ExitButton_focus_entered():
 	$QuitPanel/PleaseDont.visible = true
 
 func _on_ExitButton_focus_exited():
 	$QuitPanel/PleaseDont.visible = false
-
-func _on_PhotoButton_pressed():
-	pass

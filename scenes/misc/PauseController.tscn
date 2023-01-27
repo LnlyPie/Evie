@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/misc/other/PauseController.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=7]
 [ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=8]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
-[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=10]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.156863, 0.156863, 0.156863, 0.560784 )
@@ -23,7 +22,7 @@ bg_color = Color( 0.2, 0.2, 0.2, 0.572549 )
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/PhotoButton:modulate")
+tracks/0/path = NodePath("Panel/Buttons:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -35,7 +34,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/Buttons:modulate")
+tracks/1/path = NodePath("Panel/LevelInfoContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -47,7 +46,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Panel/LevelInfoContainer:modulate")
+tracks/2/path = NodePath("Panel/DateTime:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -56,10 +55,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Panel/DateTime:modulate")
+tracks/3/path = NodePath("Panel/Input:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -71,7 +70,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Panel/Input:modulate")
+tracks/4/path = NodePath("Panel:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -80,27 +79,15 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Panel:modulate")
+tracks/5/path = NodePath("QuitPanel:rect_position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("QuitPanel:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -150,7 +137,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Panel/PhotoButton:modulate")
+tracks/2/path = NodePath("Panel/DateTime:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -162,7 +149,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Panel/DateTime:modulate")
+tracks/3/path = NodePath("Panel/Input:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -174,24 +161,12 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Panel/Input:modulate")
+tracks/4/path = NodePath("Panel:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Panel:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -203,7 +178,6 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 2 )
@@ -277,19 +251,6 @@ theme = ExtResource( 3 )
 text = "ActNumber"
 valign = 1
 
-[node name="PhotoButton" type="Button" parent="Panel"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -48.0
-margin_right = 176.0
-margin_bottom = -8.0
-theme = ExtResource( 10 )
-disabled = true
-text = "PHOTOMODE"
-align = 2
-expand_icon = true
-
 [node name="DateTime" type="HBoxContainer" parent="Panel"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
@@ -299,8 +260,8 @@ margin_bottom = 34.0
 alignment = 2
 
 [node name="Date" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 86.0
-margin_right = 146.0
+margin_left = 94.0
+margin_right = 154.0
 margin_bottom = 34.0
 
 [node name="DateIcon" type="TextureRect" parent="Panel/DateTime/Date"]
@@ -318,7 +279,7 @@ theme = ExtResource( 3 )
 text = "0.0.0000"
 
 [node name="Time" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 150.0
+margin_left = 158.0
 margin_right = 192.0
 margin_bottom = 34.0
 
@@ -331,10 +292,10 @@ stretch_mode = 4
 [node name="TimeLabel" type="Label" parent="Panel/DateTime/Time"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 42.0
+margin_right = 34.0
 margin_bottom = 23.0
 theme = ExtResource( 3 )
-text = "0:0:0"
+text = "0:0"
 
 [node name="Input" type="HBoxContainer" parent="Panel"]
 modulate = Color( 1, 1, 1, 0 )
@@ -461,7 +422,6 @@ anims/onload = SubResource( 5 )
 [connection signal="pressed" from="Panel/Buttons/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Panel/Buttons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Panel/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="Panel/PhotoButton" to="." method="_on_PhotoButton_pressed"]
 [connection signal="pressed" from="QuitPanel/ButtonsContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="focus_entered" from="QuitPanel/ButtonsContainer/ExitButton" to="." method="_on_ExitButton_focus_entered"]
 [connection signal="focus_exited" from="QuitPanel/ButtonsContainer/ExitButton" to="." method="_on_ExitButton_focus_exited"]

@@ -15,7 +15,8 @@
   "columns": [
     {
       "stages": [
-        0
+        0,
+        4
       ]
     },
     {
@@ -34,7 +35,6 @@
     {
       "title": "Todo",
       "tasks": [
-        20,
         22,
         12,
         8,
@@ -51,6 +51,7 @@
     {
       "title": "Doing",
       "tasks": [
+        20,
         24
       ]
     },
@@ -72,7 +73,12 @@
       "title": "Waiting",
       "tasks": [
         6,
-        9,
+        9
+      ]
+    },
+    {
+      "title": "Todo in future",
+      "tasks": [
         19
       ]
     }
@@ -110,7 +116,7 @@
     },
     {
       "category": 0,
-      "title": "Rewrite Save System",
+      "title": "Rewrite/fix Save System",
       "details": ""
     },
     {

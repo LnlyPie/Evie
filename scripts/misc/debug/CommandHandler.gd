@@ -40,7 +40,8 @@ func help():
 	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n " \
 	+ "photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n " \
 	+ "send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n " \
-	+ "debug_info - shows debug info\n exit - closes the game\n help - Shows this message")
+	+ "debug_info - shows debug info\n exit - closes the game\n " \
+	+ "clear - clears the console\n help - Shows this message")
 
 func set_speed(speed):
 	speed = float(speed)
@@ -93,9 +94,9 @@ func debug_info():
 		return "Hiding Debug Info"
 
 func clear():
-	level.get_node("DebugConsole/DebugConsole/Console/OutputBox").text = "Cleared"
+	level.get_node("DebugConsole").get_node("DebugConsole").get_node("Console").get_node("OutputBox").text = "Cleared"
 	return ""
-
+	
 func save_game(slot: int):
 	Save.save(slot)
 	return "Saved game on slot "
@@ -107,9 +108,3 @@ func load_game(slot: int):
 func exit():
 	get_tree().quit()
 	return "Exitting..."
-
-
-# Adding a Command (for mods)
-func add_debug_command(command: String, exec: String, desc: String):
-	valid_commands += "[\"" + command + "\", []]"
-	# Adding command func later.
