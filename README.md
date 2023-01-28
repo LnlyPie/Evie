@@ -2,6 +2,8 @@
 ## A Top-Down Adventure Game
 You're playing as a girl named Evie. Soon you'll discover that the king is locking up Elves in Jail. Although you're just a Citizen you decide to help them out, and break them out of prison. _More will be detailed later_
 
+![GitHub Downloads](https://img.shields.io/github/downloads-pre/lnlypie/evie/latest/total?color=lightblue&label=downloads%20%28latest%29&logo=github&style=for-the-badge) 
+
 ## where download ;-;?
 ### Latest builds:
 **[GameJolt](https://gamejolt.com/games/evie/699766)**</br>
