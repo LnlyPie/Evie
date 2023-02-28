@@ -119,7 +119,6 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
-LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 Settings="*res://scripts/misc/settings/Settings.gd"
 GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 Auth="*res://addons/gamejolt_api/auth/auth.gd"
@@ -131,11 +130,11 @@ SettingsGUI="*res://scenes/settings/Settings.tscn"
 Notification="*res://scenes/misc/other/Notification.tscn"
 Quests="*res://scripts/misc/Quests.gd"
 CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
-PlayerConsts="*res://scripts/player/PlayerConstants.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
 [debug]
 

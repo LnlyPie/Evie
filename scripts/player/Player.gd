@@ -30,6 +30,8 @@ func _process(_delta):
 				speed = normalSpeed
 		velocity = velocity.normalized()
 	
+	_save_player_loc()
+	
 	# Debug
 	debug()
 	
@@ -60,3 +62,13 @@ func debug():
 			yield(get_tree().create_timer(0.5), "timeout")
 			Utils.screenshot()
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
+
+func _ready():
+	if Save.exists(Save.slot_picked):
+		Save.load_data(Save.slot_picked)
+		if Save.player_data["last_location"] != "":
+			set_position(Utils.str_to_vector2(Save.player_data["last_location"]))
+
+func _save_player_loc():
+	Save.player_data["last_location"] = position
+	Save.save_data(Save.slot_picked)

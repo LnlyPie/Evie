@@ -9,19 +9,8 @@ var time = OS.get_time()
 var clockTimer = null
 
 func _ready():
-	# Get Chapter and Act
-	var level = get_tree().get_current_scene().get_name().split("_", true, 1)
-	var levelN = level[0].split("-", true, 1)
-	var levelNum = levelN[0].replace("*", " ")
-	var levelName = levelN[1].replace("*", " ")
-	var act = level[1].split("-", true, 1)
-	var actNum = act[0]
-	var actName = act[1].replace("*", " ")
-	# Set Chapter Name
-	$Panel.visible = false
-	$QuitPanel.visible = false
-	$Panel/LevelInfoContainer/LevelName.text = levelNum + ": " + levelName
-	$Panel/LevelInfoContainer/ActNumber.text = "Act " + actNum + ": " + actName
+	# Set Chapter Info
+	chapterInfo()
 	# Set Date & Time
 	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." \
 	+ String(date["month"]) + "." + String(date["year"])
@@ -45,8 +34,12 @@ func _process(_delta):
 
 func pause(pause: bool):
 	if pause:
+		# Change visibility
 		$Panel.visible = true
 		$Panel/Buttons/ResumeButton.grab_focus()
+		# Get Active Quests
+		_get_quests()
+		# Show Panel
 		get_tree().set_deferred("paused", true)
 		paused = true
 		$AnimationPlayer.play("onload")
@@ -93,6 +86,29 @@ func clockTimerInit():
 	clockTimer.set_wait_time(1.0)
 	clockTimer.set_one_shot(false)
 	clockTimer.start()
+
+func chapterInfo():
+	# Get Chapter and Act
+	var scene = get_tree().get_current_scene().get_name()
+	var level = scene.split("_", true, 1)
+	var levelN = level[0].split("-", true, 1)
+	var levelNum = levelN[0].replace("*", " ")
+	var levelName = levelN[1].replace("*", " ")
+	var act = level[1].split("-", true, 1)
+	var actNum = act[0]
+	var actName = act[1].replace("*", " ")
+	# Set Chapter Name
+	$Panel.visible = false
+	$QuitPanel.visible = false
+	$Panel/LevelInfoContainer/LevelName.text = levelNum + ": " + levelName
+	$Panel/LevelInfoContainer/ActNumber.text = "Act " + actNum + ": " + actName
+
+func _get_quests():
+	var questInt:int = 0
+	for quest in Quests.quests:
+		$Panel/ActiveQuests/QuestsPanel/QuestsList.add_item(quest)
+		$Panel/ActiveQuests/QuestsPanel/QuestsList.set_item_tooltip(questInt, Quests.get_desc(quest))
+		questInt += 1
 
 func _on_Timer_timeout():
 	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" \

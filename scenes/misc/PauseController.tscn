@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/misc/other/PauseController.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
@@ -15,6 +15,9 @@ bg_color = Color( 0.156863, 0.156863, 0.156863, 0.560784 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.2, 0.2, 0.2, 0.572549 )
@@ -253,15 +256,14 @@ valign = 1
 
 [node name="DateTime" type="HBoxContainer" parent="Panel"]
 modulate = Color( 1, 1, 1, 0 )
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -192.0
-margin_bottom = 34.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -34.0
+margin_right = 98.0
 alignment = 2
 
 [node name="Date" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 94.0
-margin_right = 154.0
+margin_right = 60.0
 margin_bottom = 34.0
 
 [node name="DateIcon" type="TextureRect" parent="Panel/DateTime/Date"]
@@ -279,8 +281,8 @@ theme = ExtResource( 3 )
 text = "0.0.0000"
 
 [node name="Time" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 158.0
-margin_right = 192.0
+margin_left = 64.0
+margin_right = 98.0
 margin_bottom = 34.0
 
 [node name="TimeIcon" type="TextureRect" parent="Panel/DateTime/Time"]
@@ -343,6 +345,46 @@ margin_right = 180.0
 margin_bottom = 35.0
 theme = ExtResource( 2 )
 text = "BACK"
+
+[node name="ActiveQuests" type="VBoxContainer" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -192.0
+margin_bottom = 192.0
+
+[node name="LabelPanel" type="Panel" parent="Panel/ActiveQuests"]
+margin_right = 192.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 192, 40 )
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Panel/ActiveQuests/LabelPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.0
+margin_top = -14.5
+margin_right = 73.0
+margin_bottom = 15.5
+theme = ExtResource( 2 )
+text = "Active Quests:"
+align = 1
+valign = 1
+
+[node name="QuestsPanel" type="Panel" parent="Panel/ActiveQuests"]
+margin_top = 44.0
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 148 )
+
+[node name="QuestsList" type="ItemList" parent="Panel/ActiveQuests/QuestsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_text_lines = 3
 
 [node name="Settings" parent="." instance=ExtResource( 4 )]
 

@@ -1,34 +1,55 @@
 extends Node
 
-var file = File.new()
-var json = JSON
+var cfg = ConfigFile.new()
+var slot_picked:int = 0
+var player_data = {
+	"name": "Evie",
+	"health": 5,
+	"inventory": [],
+	"last_location": "",
+	"quests_completed": []
+}
+var save_info = {
+	"save_name": "Evie",
+	"save_creation": Utils.get_date_and_time(1),
+	"last_saved": Utils.get_date_and_time()
+}
 
-# Data
-var player
+func save_data(slot):
+	var file = File.new()
+	var dir = Directory.new()
+	dir.make_dir(Utils.savesFolder + "save" + str(slot))
+	# Save save.dat
+	file.open(Utils.savesFolder + "save" + str(slot) + "/" + "save.dat", File.WRITE)
+	var json = JSON.print(player_data)
+	file.store_string(json)
+	file.close()
+	# Save save.cfg
+	cfg.set_value("Info", "name", save_info["save_name"])
+	cfg.set_value("Info", "created", save_info["save_creation"])
+	cfg.set_value("Info", "last_saved", save_info["last_saved"])
+	cfg.save(Utils.savesFolder + "save" + str(slot) + "/" + "save.cfg")
 
-func save(slot: int):
-	var save_data = {
-		"player_health": PlayerConsts.player_health,
-		"player_posx": PlayerConsts.player_x,
-		"player_posy": PlayerConsts.player_y,
-		"game_chapter": PlayerConsts.chapter
-	}
-	
-	var json_data = json.print(save_data)
-	
-	if file.open("user://saves/saveslot_" + str(slot) + ".json", File.WRITE):
-		file.store_string(json_data)
+func load_data(slot):
+	var file = File.new()
+	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/" + "save.dat"):
+		file.open(Utils.savesFolder + "save" + str(slot) + "/" + "save.dat", File.READ)
+		var json = file.get_as_text()
+		player_data = JSON.parse(json).result
 		file.close()
+	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/" + "save.cfg"):
+		cfg.load(Utils.savesFolder + "save" + str(slot) + "/" + "save.dat")
+		save_info["save_name"] = cfg.get_value("Info", "name")
+		save_info["save_creation"] = cfg.get_value("Info", "created")
+		save_info["last_saved"] = cfg.get_value("Info", "last_saved")
 
-func load(slot: int):
-	if file.open("user://saves/saveslot_" + str(slot) + ".json", File.READ):
-		var json_data = file.get_as_text()
-		
-		var save_data = json.parse(json_data)
-		
-		PlayerConsts.player_health = save_data["player_health"]
-		PlayerConsts.player_x = save_data["player_posx"]
-		PlayerConsts.player_y = save_data["player_posy"]
-		PlayerConsts.chapter = save_data["game_chapter"]
-		
-		file.close()
+func exists(slot, type = 0):
+	var file = File.new()
+	if type == 0:
+		if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/" + "save.dat"):
+			return true
+	if type == 1:
+		if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/" + "save.cfg"):
+			return true
+	else:
+		return false

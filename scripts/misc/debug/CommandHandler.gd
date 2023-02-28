@@ -27,9 +27,9 @@ var valid_commands = [
 	["clear",
 		[]],
 	["save_game",
-		[ARG_INT]],
+		[ARG_STRING]],
 	["load_game",
-		[ARG_INT]],
+		[ARG_STRING]],
 	["exit",
 		[]],
 	["help",
@@ -40,6 +40,7 @@ func help():
 	return str("Avaliable Commands:\n set_speed [number] - sets player speed\n " \
 	+ "photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n " \
 	+ "send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n " \
+	+ "save_game [slot] - save the game\n load_game - load the game\n " \
 	+ "debug_info - shows debug info\n exit - closes the game\n " \
 	+ "clear - clears the console\n help - Shows this message")
 
@@ -97,12 +98,12 @@ func clear():
 	level.get_node("DebugConsole").get_node("DebugConsole").get_node("Console").get_node("OutputBox").text = "Cleared"
 	return ""
 	
-func save_game(slot: int):
-	Save.save(slot)
+func save_game(slot):
+	Save.save_data(slot)
 	return "Saved game on slot "
 
-func load_game(slot: int):
-	Save.load(slot)
+func load_game(slot):
+	Save.load_data(slot)
 	return "Loaded game from slot "
 
 func exit():

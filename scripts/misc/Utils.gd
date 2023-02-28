@@ -39,7 +39,7 @@ func checkFiles():
 func screenshot():
 	var image = get_viewport().get_texture().get_data()
 	image.flip_y()
-	image.save_png(photosFolder + "screenshot-" + getDateAndTime() + ".png")
+	image.save_png(photosFolder + "screenshot-" + get_date_and_time() + ".png")
 
 func makeImg(path):
 	var image = Image.new()
@@ -48,16 +48,29 @@ func makeImg(path):
 	t.create_from_image(image)
 	return t
 
-func getDateAndTime():
+func get_date_and_time(onlyone:int = 0, removeseconds = false):
 	# Get Time and Date
 	var systemDate = OS.get_date()
 	var systemTime = OS.get_time()
 	# Translate it to anything readable (ex. 2022-07-12_12:58:12)
-	var date_return = String(systemDate.year) + "-" + String(systemDate.month) + "-" + String(systemDate.day)
-	var time_return = String(systemTime.hour) + ":" + String(systemTime.minute) + ":" + String(systemTime.second)
-	# Return it
-	var date_and_time = date_return + "_" + time_return
-	return date_and_time
+	if onlyone == 0:
+		var date_return = String(systemDate.year) + "-" + String(systemDate.month) + "-" + String(systemDate.day)
+		var time_return = String(systemTime.hour) + ":" + String(systemTime.minute) + ":" + String(systemTime.second)
+		# Return it
+		var date_and_time = date_return + "_" + time_return
+		return date_and_time
+	elif onlyone == 1:
+		var date = String(systemDate.year) + "-" + String(systemDate.month) + "-" + String(systemDate.day)
+		return date
+	elif onlyone == 2:
+		var time
+		if !removeseconds:
+			time = String(systemTime.hour) + ":" + String(systemTime.minute) + ":" + String(systemTime.second)
+		else:
+			time = String(systemTime.hour) + ":" + String(systemTime.minute)
+		return time
+	else:
+		return "failed"
 
 func showDialogue(dialogueFile: String, dialogueNode: String):
 	var file = load(dialogueFile)
@@ -89,6 +102,14 @@ func read_json(path):
 	var json_result = JSON.parse(json).result
 	file.close()
 	return json_result
+
+func str_to_vector2(cords):
+	cords.erase(cords.find("("),1)
+	cords.erase(cords.find(")"),1)
+	cords.erase(cords.find(","),1)
+	var x = cords.left(cords.find(" "))
+	var y = cords.right(cords.find(" "))
+	return Vector2(x,y)
 
 func give_trophy(id: String):
 	if ModVars.isModded:
