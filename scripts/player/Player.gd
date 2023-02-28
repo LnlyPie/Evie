@@ -64,11 +64,10 @@ func debug():
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
 
 func _ready():
-	if Save.exists(Save.slot_picked):
+	if Save.exists(Save.slot_picked, 0):
 		Save.load_data(Save.slot_picked)
 		if Save.player_data["last_location"] != "":
 			set_position(Utils.str_to_vector2(Save.player_data["last_location"]))
 
 func _save_player_loc():
 	Save.player_data["last_location"] = position
-	Save.save_data(Save.slot_picked)
