@@ -2,16 +2,16 @@ extends Node
 
 var slot_picked:int = 0
 var player_data = {
-	"name": "Evie",
+	"name": "Evie", # How NPCs refer to you in-game
 	"health": 5,
 	"inventory": [],
 	"last_location": "",
 	"quests_completed": []
 }
 var save_info = {
-	"save_name": "Evie",
-	"save_creation": Utils.get_date_and_time(1),
-	"last_saved": Utils.get_date_and_time()
+	"save_name": "Evie", # Name in saves menu
+	"save_creation": null, # When save was created
+	"last_saved": null # When save was last saved
 }
 
 func save_data(slot):
@@ -20,6 +20,10 @@ func save_data(slot):
 	var cfg = ConfigFile.new()
 	if !dir.dir_exists(Utils.savesFolder + "save" + str(slot)):
 		dir.make_dir(Utils.savesFolder + "save" + str(slot))
+	
+	if save_info["save_creation"] == null:
+		save_info["save_creation"] = Utils.get_date_and_time(1)
+	save_info["last_saved"] = Utils.get_date_and_time()
 	# Save save.dat
 	file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.WRITE)
 	var json = JSON.print(player_data)

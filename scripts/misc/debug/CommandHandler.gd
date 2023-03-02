@@ -30,6 +30,8 @@ var valid_commands = [
 		[ARG_STRING]],
 	["load_game",
 		[ARG_STRING]],
+	["set_health",
+		[ARG_INT]],
 	["exit",
 		[]],
 	["help",
@@ -41,6 +43,7 @@ func help():
 	+ "photo_cam - turns on/off photo cam mode\n run_dialogue [name] [node] - shows dialogue\n " \
 	+ "send_notification [title] [description] [icon] - sends a notification\n gb_filter - Turns on GameBoy Filter\n " \
 	+ "save_game [slot] - save the game\n load_game - load the game\n " \
+	+ "set_health [quantity] - sets player health from 1-5" \
 	+ "debug_info - shows debug info\n exit - closes the game\n " \
 	+ "clear - clears the console\n help - Shows this message")
 
@@ -100,11 +103,19 @@ func clear():
 	
 func save_game(slot):
 	Save.save_data(slot)
-	return "Saved game on slot "
+	return ("Saved game on slot " + slot)
 
 func load_game(slot):
 	Save.load_data(slot)
-	return "Loaded game from slot "
+	return ("Loaded game from slot " + slot)
+
+func set_health(quantity):
+	quantity = int(quantity)
+	if quantity >= 1 && quantity <= 5:
+		player.health = quantity
+		return ("Player's health set to " + str(quantity))
+	else:
+		return "Too big number of health"
 
 func exit():
 	get_tree().quit()

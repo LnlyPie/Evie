@@ -88,6 +88,11 @@ _global_script_classes=[ {
 "class": "LocalizationSave",
 "language": "GDScript",
 "path": "res://addons/localization_editor/model/LocalizationSave.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/player/Player.gd"
 } ]
 _global_script_class_icons={
 "CheatCode": "",
@@ -105,7 +110,8 @@ _global_script_class_icons={
 "LocalizationKeys": "",
 "LocalizationPlaceholders": "",
 "LocalizationPlaceholdersData": "",
-"LocalizationSave": ""
+"LocalizationSave": "",
+"Player": ""
 }
 
 [application]

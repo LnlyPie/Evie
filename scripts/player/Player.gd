@@ -1,14 +1,17 @@
+class_name Player
 extends KinematicBody2D
 
 export(float) var normalSpeed = 100.0
 export(float) var sprintMultiplier = 1.5
 var speed = normalSpeed
 var speedChangedDebug = false
+var health = 5
 
 var photoCam = false
 var gb_filter = false
 var debugInfo = false
 var blockMovement = false
+var debugTim = Timer.new()
 
 func _process(_delta):
 	var velocity = Vector2.ZERO
@@ -64,10 +67,19 @@ func debug():
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
 
 func _ready():
-	if Save.exists(Save.slot_picked, 0):
+	var locTim = Timer.new()
+	locTim.one_shot = false
+	locTim.connect("timeout", self, "_loctim_timout")
+	locTim.start(5)
+	
+	if Save.exists(Save.slot_picked):
 		Save.load_data(Save.slot_picked)
 		if Save.player_data["last_location"] != "":
 			set_position(Utils.str_to_vector2(Save.player_data["last_location"]))
+		health = Save.player_data["health"]
 
 func _save_player_loc():
 	Save.player_data["last_location"] = position
+
+func _loctim_timout():
+	_save_player_loc()
