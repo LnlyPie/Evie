@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource path="res://fonts/m5x7/m5x7_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/m5x7/m5x7_smaller.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 draw_center = false

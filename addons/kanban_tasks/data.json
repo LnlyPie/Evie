@@ -35,7 +35,6 @@
     {
       "title": "Todo",
       "tasks": [
-        22,
         12,
         8,
         10,
@@ -51,7 +50,7 @@
     {
       "title": "Doing",
       "tasks": [
-        20
+        22
       ]
     },
     {
@@ -73,6 +72,7 @@
     {
       "title": "Waiting",
       "tasks": [
+        20,
         9
       ]
     },

@@ -15,9 +15,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 960, 512 )
@@ -186,6 +183,7 @@ focus_neighbour_top = NodePath("../ModsButton")
 focus_neighbour_bottom = NodePath("../ModsButton")
 text = "CREDITS"
 align = 2
+icon_align = 1
 
 [node name="BottomButtons" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -209,6 +207,7 @@ margin_right = 67.0
 margin_bottom = 30.0
 focus_neighbour_left = NodePath("../../MainButtons/QuitButton")
 focus_neighbour_top = NodePath("../../GameJoltContainer/LoginWithGJ")
+custom_colors/font_color_focus = Color( 0, 0.368627, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0.368627, 1, 1 )
 text = "Github"
 
@@ -217,6 +216,7 @@ margin_left = 80.0
 margin_right = 172.0
 margin_bottom = 30.0
 focus_neighbour_top = NodePath("../../GameJoltContainer/LoginWithGJ")
+custom_colors/font_color_focus = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
 text = "MM_BUGS"
 
@@ -225,6 +225,7 @@ margin_left = 185.0
 margin_right = 269.0
 margin_bottom = 30.0
 focus_neighbour_top = NodePath("../../GameJoltContainer/LoginWithGJ")
+custom_colors/font_color_focus = Color( 0, 0.368627, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0.368627, 1, 1 )
 text = "MM_WEB"
 
@@ -302,6 +303,7 @@ margin_top = 67.0
 margin_right = 256.0
 margin_bottom = 97.0
 theme = ExtResource( 6 )
+custom_colors/font_color_focus = Color( 0, 0.576471, 0.156863, 1 )
 custom_colors/font_color = Color( 0, 1, 0.27451, 1 )
 custom_colors/font_color_hover = Color( 0, 0.576471, 0.156863, 1 )
 custom_colors/font_color_pressed = Color( 0, 0.576471, 0.156863, 1 )

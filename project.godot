@@ -160,11 +160,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-<<<<<<< Updated upstream
 enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg" )
-=======
-enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg" )
->>>>>>> Stashed changes
 
 [gdnative]
 
