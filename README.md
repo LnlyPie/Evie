@@ -6,8 +6,7 @@ You're playing as a girl named Evie. Soon you'll discover that the king is locki
 
 ## where download ;-;?
 ### Latest builds:
-**[GameJolt](https://gamejolt.com/games/evie/699766)**</br>
-**Evie Launcher:** [Windows](https://dl.patchkit.net/d/ay93hlxixgu7hvu3vwoy/direct) & [Linux](https://dl.patchkit.net/d/36l9jt95lwj382uwhpkl8/direct)
+**[GameJolt](https://gamejolt.com/games/evie/699766)**
 ### Latest and older builds:
 **[Github Releases](https://github.com/LnlyPie/Evie/releases)**
 
@@ -37,7 +36,8 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
 ### Other:
-![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
+#### Console ports:
+[Homebrew ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
