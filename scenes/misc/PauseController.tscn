@@ -109,7 +109,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 736, -88 ), Vector2( 736, 520 ), Vector2( 736, 496 ) ]
+"values": [ Vector2( 256, -88 ), Vector2( 256, 257 ), Vector2( 256, 232 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -389,12 +389,11 @@ max_text_lines = 3
 [node name="Settings" parent="." instance=ExtResource( 4 )]
 
 [node name="QuitPanel" type="Panel" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -224.0
+margin_left = 256.0
 margin_top = -88.0
-margin_right = 224.0
+margin_right = 704.0
 margin_bottom = -0.00012207
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
