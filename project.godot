@@ -130,7 +130,6 @@ GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 Auth="*res://addons/gamejolt_api/auth/auth.gd"
 Utils="*res://scripts/misc/Utils.gd"
 Save="*res://scripts/misc/settings/Save.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 SettingsGUI="*res://scenes/settings/Settings.tscn"
 Notification="*res://scenes/misc/other/Notification.tscn"
@@ -140,6 +139,7 @@ TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
 [debug]
@@ -160,7 +160,11 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
+<<<<<<< Updated upstream
 enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg" )
+=======
+enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg" )
+>>>>>>> Stashed changes
 
 [gdnative]
 
