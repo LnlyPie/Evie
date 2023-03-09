@@ -4,12 +4,12 @@
 [ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
+[ext_resource path="res://addons/controller_icons/assets/ps3/cross.png" type="Texture" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
 [ext_resource path="res://addons/CheatCoder/Presets/Konami.tres" type="Resource" id=10]
-[ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=11]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -263,10 +263,10 @@ margin_left = 32.0
 margin_right = 72.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-texture = ExtResource( 11 )
+texture = ExtResource( 5 )
 expand = true
 script = ExtResource( 9 )
-path = "ui_accept"
+path = "ps3/cross"
 
 [node name="UseLabel" type="Label" parent="Input"]
 margin_left = 76.0
