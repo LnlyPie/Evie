@@ -22,7 +22,7 @@ position = Vector2( 960, 512 )
 [node name="CreditsContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -272.0
+margin_left = -352.0
 margin_bottom = 64.0
 theme = ExtResource( 6 )
 __meta__ = {
@@ -30,14 +30,14 @@ __meta__ = {
 }
 
 [node name="LonelyPieCredit" type="Label" parent="CreditsContainer"]
-margin_right = 272.0
+margin_right = 352.0
 margin_bottom = 30.0
 text = "Evie made by: LonelyPie"
 align = 2
 
 [node name="ModCredit" type="Label" parent="CreditsContainer"]
 margin_top = 34.0
-margin_right = 272.0
+margin_right = 352.0
 margin_bottom = 64.0
 text = "Mod made by: ModCreator"
 align = 2
