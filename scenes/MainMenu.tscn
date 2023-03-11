@@ -15,12 +15,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 960, 512 )
+position = Vector2( 640, 345 )
 
 [node name="CreditsContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
@@ -87,9 +84,9 @@ text = "ModName"
 
 [node name="ModVersion" type="Label" parent="ModInfo"]
 margin_left = 96.0
-margin_top = 9.0
-margin_right = 154.0
-margin_bottom = 22.0
+margin_top = 1.0
+margin_right = 212.0
+margin_bottom = 31.0
 theme = ExtResource( 4 )
 text = "ModVersion"
 
