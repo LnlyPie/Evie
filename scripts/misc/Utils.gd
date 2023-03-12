@@ -112,13 +112,6 @@ func str_to_vector2(cords):
 	return Vector2(x,y)
 
 func give_trophy(id: String):
-	if ModVars.isModded:
-		if ModVars.enableGameJolt:
-			give_trophy_ext(id)
-	else:
-		give_trophy_ext(id)
-
-func give_trophy_ext(id: String):
 	if !GameJoltAPI.username == "":
 		var fetch_achieved = GameJoltAPI.fetch_trophy({
 			"username": GameJoltAPI.username,
@@ -135,19 +128,3 @@ func give_trophy_ext(id: String):
 
 func _on_trophy_achieved(data: Array):
 	send_notification("Trophy Achieved!", data[0].title + "\n" + data[0].description, "gj")
-
-func checkIfModded():
-	if ModVars.isModded:
-		get_parent().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModName").text = ModVars.modName
-		get_parent().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModVersion").text = ModVars.modVersion
-		get_parent().get_node("MainMenu").get_node("CreditsContainer")\
-		.get_node("ModCredit").text = "Mod made by: " + ModVars.modAuthor
-	else:
-		get_parent().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModName").visible = false
-		get_parent().get_node("MainMenu").get_node("ModInfo")\
-		.get_node("ModVersion").visible = false
-		get_parent().get_node("MainMenu").get_node("CreditsContainer")\
-		.get_node("ModCredit").visible = false

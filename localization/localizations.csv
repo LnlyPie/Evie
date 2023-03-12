@@ -34,5 +34,5 @@ PHOTOMODE,Photo Mode,Tryb Zdjęć,Fotomodus
 USE,Use,Użyj,Verwenden
 BACK,Back,Wstecz,Der Rücken
 AUTOSAVEMSG,This game uses Auto Save.\nWhen you'll see this image DON'T exit the game.,"Ta gra korzysta z automatycznego zapisywania.\nKiedy zobaczysz ten obraz, NIE wychodź z gry.","Dieses Spiel verwendet die automatische Speicherung.\nWenn Sie dieses Bild sehen, verlassen Sie das Spiel NICHT."
-MODS_APPLY,Apply Mod,Zastosuj Mody,Mod anwenden
+MODS_LOAD,Load Mod,Wczytaj Mod,Mod anwenden
 MODS_DOWNLOAD,Download Mods,Pobierz Mody,Mods herunterladen

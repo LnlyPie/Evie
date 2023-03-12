@@ -4,6 +4,8 @@ var file = File.new()
 var dir = Directory.new()
 var cfg = ConfigFile.new()
 
+var mods_loaded = []
+
 # Only loads the mod
 func load_mod(mod_dir):
 	var mod = Utils.modsFolder + mod_dir + "/Mod.pck"
@@ -15,7 +17,7 @@ func load_mod(mod_dir):
 			ModVars.modName = cfg.get_value("ModInfo", "name")
 			ModVars.modVersion = cfg.get_value("ModInfo", "version")
 			ModVars.modAuthor = cfg.get_value("ModInfo", "author")
-			ModVars.isModded = true
+			mods_loaded.append(ModVars.modName + "/" + ModVars.modAuthor)
 		else:
 			printerr("Could not load mod: " + mod)
 

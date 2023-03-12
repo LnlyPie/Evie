@@ -58,7 +58,7 @@ margin_top = -56.0
 margin_right = 80.0
 margin_bottom = -16.0
 theme = ExtResource( 1 )
-text = "MODS_APPLY"
+text = "MODS_LOAD"
 __meta__ = {
 "_editor_description_": ""
 }
