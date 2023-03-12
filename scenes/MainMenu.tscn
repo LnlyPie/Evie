@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
-[ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://addons/controller_icons/assets/ps3/cross.png" type="Texture" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
@@ -286,9 +285,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -92.0
-margin_bottom = 116.0
+margin_left = -192.0
+margin_top = -88.0
+margin_bottom = 84.0
 theme = ExtResource( 6 )
 max_text_lines = 2
 
