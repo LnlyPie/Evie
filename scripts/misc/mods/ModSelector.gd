@@ -35,7 +35,7 @@ func _list_mods():
 	dir.list_dir_end()
 
 func _on_ApplyButton_pressed():
-	ModLoader.apply_mod(selected)
+	ModLoader.load_mod(selected)
 
 func _on_BackButton_pressed():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

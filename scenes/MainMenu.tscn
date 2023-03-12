@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
-[ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
@@ -35,13 +34,6 @@ margin_bottom = 30.0
 text = "Evie made by: LonelyPie"
 align = 2
 
-[node name="ModCredit" type="Label" parent="CreditsContainer"]
-margin_top = 34.0
-margin_right = 272.0
-margin_bottom = 64.0
-text = "Mod made by: ModCreator"
-align = 2
-
 [node name="GameInfo" type="HBoxContainer" parent="."]
 margin_left = 8.0
 margin_top = 8.0
@@ -65,30 +57,6 @@ margin_right = 242.0
 margin_bottom = 53.0
 theme = ExtResource( 6 )
 text = "Version"
-
-[node name="ModInfo" type="HBoxContainer" parent="."]
-margin_left = 16.0
-margin_top = 75.0
-margin_right = 224.0
-margin_bottom = 107.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ModName" type="Label" parent="ModInfo"]
-margin_top = 1.0
-margin_right = 92.0
-margin_bottom = 31.0
-theme = ExtResource( 6 )
-text = "ModName"
-
-[node name="ModVersion" type="Label" parent="ModInfo"]
-margin_left = 96.0
-margin_top = 9.0
-margin_right = 154.0
-margin_bottom = 22.0
-theme = ExtResource( 4 )
-text = "ModVersion"
 
 [node name="Splashes" type="Label" parent="."]
 margin_left = 16.0
@@ -310,6 +278,18 @@ custom_colors/font_color_pressed = Color( 0, 0.576471, 0.156863, 1 )
 text = "Login With Game Jolt"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="ModList" type="ItemList" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -92.0
+margin_bottom = 116.0
+theme = ExtResource( 6 )
+max_text_lines = 2
 
 [connection signal="cheat_activated" from="Splash/SplashCheatCode" to="." method="_on_SplashCheatCode_cheat_activated"]
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_StartButton_pressed"]

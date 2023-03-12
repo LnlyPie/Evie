@@ -37,6 +37,9 @@ func get_progress(name):
 func get_max_progress(name):
 	return quests[name]["max_progress"]
 
+func get_progress_now_max(name):
+	return str(quests[name]["progress"]) + "/" + str(quests[name]["max_progress"])
+
 func _process(delta):
 	_check_quests()
 

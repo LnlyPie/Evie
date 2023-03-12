@@ -104,11 +104,14 @@ func chapterInfo():
 	$Panel/LevelInfoContainer/ActNumber.text = "Act " + actNum + ": " + actName
 
 func _get_quests():
+	$Panel/ActiveQuests/QuestsPanel/QuestsList.clear()
 	var questInt:int = 0
 	for quest in Quests.quests:
-		$Panel/ActiveQuests/QuestsPanel/QuestsList.add_item(quest)
-		$Panel/ActiveQuests/QuestsPanel/QuestsList.set_item_tooltip(questInt, Quests.get_desc(quest))
-		questInt += 1
+		if Quests.quests[quest]["completed"] == false:
+			$Panel/ActiveQuests/QuestsPanel/QuestsList.add_item(quest + " - " \
+			 + Quests.get_progress_now_max(quest))
+			$Panel/ActiveQuests/QuestsPanel/QuestsList.set_item_tooltip(questInt, Quests.get_desc(quest))
+			questInt += 1
 
 func _on_Timer_timeout():
 	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" \
