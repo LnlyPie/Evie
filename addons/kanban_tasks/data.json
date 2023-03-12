@@ -35,23 +35,19 @@
     {
       "title": "Todo",
       "tasks": [
-        22,
-        12,
         8,
         10,
         11,
+        12,
         13,
         14,
         15,
-        16,
-        21,
-        17
+        16
       ]
     },
     {
       "title": "Doing",
       "tasks": [
-        20
       ]
     },
     {
@@ -64,22 +60,24 @@
         4,
         5,
         7,
-        18,
-        23,
+        17,
+        21,
         6,
-        24
+        22
       ]
     },
     {
       "title": "Waiting",
       "tasks": [
+        19,
         9
       ]
     },
     {
       "title": "Todo in future",
       "tasks": [
-        19
+        18,
+        20
       ]
     }
   ],
@@ -146,11 +144,6 @@
     },
     {
       "category": 0,
-      "title": "Death System",
-      "details": ""
-    },
-    {
-      "category": 0,
       "title": "More Custom Scene Transitions",
       "details": ""
     },
@@ -193,11 +186,6 @@
       "category": 1,
       "title": "Check if actually connected with GameJolt Account",
       "details": "When logging in there's no confirmation that credentials are valid"
-    },
-    {
-      "category": 0,
-      "title": "Lives System",
-      "details": ""
     },
     {
       "category": 0,

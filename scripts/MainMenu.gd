@@ -9,8 +9,8 @@ func _ready():
 	auth()
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
-	Utils.checkIfModded()
 	$CanvasLayer/Settings/Panel.visible = false
+#	_list_mods()
 	# Early Build trophy (will be there until the release of Prologue)
 	Utils.give_trophy("179883")
 
@@ -74,3 +74,15 @@ func _on_BugsButton_focus_exited() -> void:
 
 func _on_LoginWithGJ_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
+
+#func _list_mods(): # For future versions
+#	var modid = 0
+#
+#	if !ModLoader.mods_loaded.empty():
+#		while true:
+#			if ModLoader.mods_loaded.size() > modid:
+#				break
+#			else:
+#				var mod = ModLoader.mods_loaded[modid]
+#				$ModList.add_item(ModLoader.mods_loaded[modid])
+#				modid += 1
