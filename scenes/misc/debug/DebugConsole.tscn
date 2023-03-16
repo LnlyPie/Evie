@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/debug/DebugConsole.gd" type="Script" id=2]
 [ext_resource path="res://scripts/misc/debug/CommandHandler.gd" type="Script" id=3]
+[ext_resource path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" type="Script" id=4]
+[ext_resource path="res://fonts/m5x7/m5x7_small.tres" type="DynamicFont" id=5]
 
 [node name="DebugConsole" type="CanvasLayer"]
 pause_mode = 2
@@ -36,6 +38,15 @@ placeholder_text = "Enter Command..."
 placeholder_alpha = 0.4
 caret_blink = true
 caret_blink_speed = 0.4
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="DebugConsole/Console"]
+margin_top = 258.0
+margin_right = 704.0
+margin_bottom = 483.0
+rect_min_size = Vector2( 704, 225 )
+script = ExtResource( 4 )
+customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_default.json"
+font = ExtResource( 5 )
 
 [node name="CommandHandler" type="Node" parent="DebugConsole"]
 script = ExtResource( 3 )
