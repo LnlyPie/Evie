@@ -2,20 +2,12 @@
 ## A Top-Down Adventure Game
 ![GitHub Downloads](https://img.shields.io/github/downloads-pre/lnlypie/evie/latest/total?color=lightblue&label=downloads%20%28latest%29&logo=github&style=for-the-badge) 
 
-## where download ;-;?
-### Latest builds:
-**[GameJolt](https://gamejolt.com/games/evie/699766)**
-### Latest and older builds:
-**[Github Releases](https://github.com/LnlyPie/Evie/releases)**
-
 ## Contributing/Modding:
 ### Contributing:
 See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing)
 ### Modding:
 See [Installing Mods](https://ldocs.andus.dev/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
-See [Modding Evie](https://ldocs.andus.dev/evie/evie-modding#making-mods-for-evie) for setting up modding environment</br>
-
-[List of verified mods](https://github.com/LnlyPie/evie-verified-mods) (add your own mod by making a pull request to README.md)
+See [Modding Evie](https://ldocs.andus.dev/evie/evie-modding#making-mods-for-evie) for setting up modding environment
 
 ## How to install the game?
 Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
@@ -33,9 +25,14 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
-### Other:
-#### Console ports:
+### Console ports:
 [Homebrew ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
+### RetroPie:
+ - Install [RetroPie Godot Engine Emulator](https://github.com/hiulit/RetroPie-Godot-Engine-Emulator)
+ - Download Evie_linux.zip
+ - Unpack
+ - Copy Evie.pck into roms/godot-engine folder on Raspberry Pi's SD Card
+ - Run Evie from Godot menu in EmulationStation
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
@@ -43,15 +40,4 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
 ## Other:
-### Game folder:
- - _Windows:_ `%APPDATA%\EvieGame`
- - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
- - _MacOS:_ `~/Library/Application Support/EvieGame`
-### Supported Controllers (with UI icons):
-Controllers which are automatically supported, but are not limited to:
- - ![](https://img.shields.io/badge/Xbox-360/One/Series-107C10?style=for-the-badge&logo=xbox&logoColor=white)
- - ![](https://img.shields.io/badge/PlayStation-3/4/5-003791?style=for-the-badge&logo=playstation&logoColor=white) (tested)
- - ![](https://img.shields.io/badge/Switch-Controller-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white)
- - ![](https://img.shields.io/badge/Steam-Deck/Controller-000000?style=for-the-badge&logo=steam&logoColor=white)
- - ![](https://img.shields.io/badge/Amazon%20Luna-Controller-9146FF?style=for-the-badge&logo=amazon&logoColor=white)
- - ![](https://img.shields.io/badge/Stadia-Controller-CD2640?style=for-the-badge&logo=stadia&logoColor=white) (tested)
+[Other Info here](https://github.com/LnlyPie/Evie/blob/main/OtherInfo.md)
