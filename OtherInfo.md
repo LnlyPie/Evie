@@ -1,6 +1,6 @@
 # Game folder:
  - _Windows:_ `%APPDATA%\EvieGame`
- - _Linux/Steam Deck:_ `~/.local/share/EvieGame`
+ - _Linux/Steam Deck/RetroPie:_ `~/.local/share/EvieGame`
  - _MacOS:_ `~/Library/Application Support/EvieGame`
 # Supported Controllers (with UI icons):
 Controllers which are automatically supported, but are not limited to:
