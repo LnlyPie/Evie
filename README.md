@@ -27,7 +27,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Evie should now run normally
 ### Console ports:
 [Homebrew ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
-### RetroPie:
+### RetroPie <img src="https://retropie.org.uk/wp-content/uploads/2016/04/RetroPie_Logo.png" height="24">:
  - Install [RetroPie Godot Engine Emulator](https://github.com/hiulit/RetroPie-Godot-Engine-Emulator)
  - Download Evie_linux.zip
  - Unpack
