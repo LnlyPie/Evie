@@ -15,10 +15,11 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Download Evie_win.zip
  - Unpack
  - Run Evie.exe
-### Linux ![](https://img.shields.io/badge/-111927?style=for-the-badge&logo=linux&logoColor=white) ![](https://img.shields.io/badge/(untested)-000000?style=for-the-badge&logo=steamdeck&logoColor=white):
+### Linux ![](https://img.shields.io/badge/-111927?style=for-the-badge&logo=linux&logoColor=white) ![](https://img.shields.io/badge/-000000?style=for-the-badge&logo=steamdeck&logoColor=white):
  - Download Evie_linux.zip
  - Unpack
  - Run Evie.x86_64
+ - _(On Steam Deck you can also add it to steam)_
 ### MacOS ![](https://img.shields.io/badge/(untested)-000000?style=for-the-badge&logo=apple&logoColor=white):
  - Download Evie_osx.zip (v. 0.2 and up)
  - Unpack
