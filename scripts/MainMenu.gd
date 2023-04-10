@@ -6,13 +6,10 @@ var blockedSound = preload("res://sounds/gui/blocked.wav")
 func _ready():
 	$MainButtons/StartButton.grab_focus()
 	$BugHaters.visible = false
-	auth()
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	$CanvasLayer/Settings/Panel.visible = false
 #	_list_mods()
-	# Early Build trophy (will be there until the release of Prologue)
-	Utils.give_trophy("179883")
 
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
@@ -39,7 +36,7 @@ func _on_BugsButton_pressed():
 	OS.shell_open("https://github.com/lnlypie/evie/issues")
 
 func _on_WebsiteButton_pressed():
-	OS.shell_open("https://lpie.andus.dev/")
+	OS.shell_open("https://lonelypie.net/")
 
 func get_ver(file):
 	var f = File.new()
@@ -47,17 +44,6 @@ func get_ver(file):
 	var ver = f.get_line()
 	f.close()
 	return ver
-
-func auth():
-	Auth.set_game_creds()
-	if GameJoltAPI.username == "":
-		Auth.try_autologin()
-	if GameJoltAPI.username != null:
-		Utils.give_trophy("158932")
-	if GameJoltAPI.username == "":
-		$GameJoltContainer/GJAcc.text = "GameJolt:\nnot connected"
-	else:
-		$GameJoltContainer/GJAcc.text = "GameJolt:\n" + GameJoltAPI.username
 
 func splashtext():
 	var random_splash = Utils.get_random_word_from_file("res://splashes.txt")
@@ -71,9 +57,6 @@ func _on_BugsButton_focus_entered() -> void:
 
 func _on_BugsButton_focus_exited() -> void:
 	$BugHaters.visible = false
-
-func _on_LoginWithGJ_pressed() -> void:
-	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
 
 #func _list_mods(): # For future versions
 #	var modid = 0
