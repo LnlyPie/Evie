@@ -34,9 +34,6 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Unpack
  - Copy Evie.pck into roms/godot-engine folder on Raspberry Pi's SD Card
  - Run Evie from Godot menu in EmulationStation
-=======
-### Other:
-![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) See [Evie Android Port](https://github.com/LnlyPie/EvieAndroidPort)
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
