@@ -50,9 +50,6 @@ anchor_right = 1.0
 margin_left = 960.0
 margin_right = 1472.0
 margin_bottom = 128.0
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Panel"]
 position = Vector2( 63.0588, 64.5 )

@@ -35,9 +35,14 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie.app for the first time. You'll get a dialog about it can't be opened.
  - Open `System Preferences -> Security & Privacy -> General -> open Anyway` or right-click the file and select "Open" from the menu
  - Evie should now run normally
-### Other:
-#### Console ports:
+### Console ports:
 [Homebrew ports](https://github.com/LnlyPie/Evie-Homebrew-Ports)
+### RetroPie <img src="https://retropie.org.uk/wp-content/uploads/2016/04/RetroPie_Logo.png" height="24">:
+ - Install [RetroPie Godot Engine Emulator](https://github.com/hiulit/RetroPie-Godot-Engine-Emulator)
+ - Download Evie_linux.zip
+ - Unpack
+ - Copy Evie.pck into roms/godot-engine folder on Raspberry Pi's SD Card
+ - Run Evie from Godot menu in EmulationStation
 
 ## Credits:
 **LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
