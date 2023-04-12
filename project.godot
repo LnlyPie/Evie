@@ -54,16 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogue_manager/dialogue_resource.gd"
 }, {
-"base": "Node",
-"class": "GameJoltAPIPromise",
-"language": "GDScript",
-"path": "res://addons/gamejolt_api/gamejolt_api_promise/GameJoltAPIPromise.gd"
-}, {
-"base": "HTTPRequest",
-"class": "GameJoltAPIRequest",
-"language": "GDScript",
-"path": "res://addons/gamejolt_api/gamejolt_api_request/GameJoltAPIRequest.gd"
-}, {
 "base": "Resource",
 "class": "LocalizationData",
 "language": "GDScript",
@@ -104,8 +94,6 @@ _global_script_class_icons={
 "ControllerSprite3D": "",
 "ControllerTextureRect": "",
 "DialogueResource": "",
-"GameJoltAPIPromise": "",
-"GameJoltAPIRequest": "",
 "LocalizationData": "",
 "LocalizationKeys": "",
 "LocalizationPlaceholders": "",
