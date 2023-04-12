@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=2]
 [ext_resource path="res://sprites/gui/chapters/test_thumbnail.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ChapterSelect.gd" type="Script" id=4]
+[ext_resource path="res://fonts/m5x7/SmallerTextTheme.tres" type="Theme" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -15,6 +16,9 @@ script = ExtResource( 4 )
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.5
@@ -26,15 +30,20 @@ theme = ExtResource( 2 )
 text = "Select Chapter:"
 
 [node name="Chapters" type="TabContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = 144.0
-margin_right = -64.0
-margin_bottom = -56.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -576.0
+margin_top = -305.0
+margin_right = 576.0
+margin_bottom = 305.0
 theme = ExtResource( 1 )
-custom_constants/hseparation = 20
 custom_styles/panel = SubResource( 1 )
+custom_constants/hseparation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Test Level" type="Tabs" parent="Panel/Chapters"]
 anchor_right = 1.0
@@ -42,39 +51,47 @@ anchor_bottom = 1.0
 margin_top = 48.0
 
 [node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Test Level"]
-margin_left = 8.0
-margin_top = 128.0
-margin_right = 888.0
-margin_bottom = 640.0
+anchor_top = 0.1
+anchor_bottom = 0.1
+margin_top = 12.0
+margin_right = 872.0
+margin_bottom = 524.0
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Panel/Chapters/Test Level"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -832.0
-margin_top = 128.0
-margin_right = -64.0
-margin_bottom = 640.0
-theme = ExtResource( 1 )
+margin_left = -256.0
+margin_top = 73.0
+margin_bottom = 466.0
+theme = ExtResource( 5 )
 text = "A level to test if quests, hearts, battles, cutscenes, scene transitions, movement, etc.
 
 If you found any bugs, make an issue on GitHub, or write it on our Discord Server.
 
  Thanks <3"
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" type="Button" parent="Panel/Chapters/Test Level"]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -128.0
-margin_right = 128.0
-margin_bottom = -64.0
+margin_left = -256.0
+margin_top = -88.0
+margin_bottom = -24.0
 theme = ExtResource( 2 )
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Prologue" type="Tabs" parent="Panel/Chapters"]
 visible = false
@@ -83,33 +100,42 @@ anchor_bottom = 1.0
 margin_top = 48.0
 
 [node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Prologue"]
-margin_left = 8.0
-margin_top = 128.0
-margin_right = 888.0
-margin_bottom = 640.0
+anchor_top = 0.1
+anchor_bottom = 0.1
+margin_top = 12.0
+margin_right = 872.0
+margin_bottom = 524.0
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Panel/Chapters/Prologue"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -832.0
-margin_top = 128.0
-margin_right = -64.0
-margin_bottom = 640.0
-theme = ExtResource( 1 )
+margin_left = -256.0
+margin_top = 73.0
+margin_bottom = 466.0
+theme = ExtResource( 5 )
+text = "Soon."
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" type="Button" parent="Panel/Chapters/Prologue"]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -128.0
-margin_right = 128.0
-margin_bottom = -64.0
+margin_left = -256.0
+margin_top = -88.0
+margin_bottom = -24.0
 theme = ExtResource( 2 )
 disabled = true
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Panel/Chapters/Test Level/PlayButton" to="." method="_on_TestLevel_PlayButton_pressed"]

@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 7.03126 )
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=2]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=3]
 resource_name = "walk_down"
 loop = true
 tracks/0/type = "value"
@@ -42,7 +42,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 1 ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=4]
 resource_name = "walk_left"
 loop = true
 tracks/0/type = "value"
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "values": [ 3, 4, 5, 4 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=5]
 resource_name = "walk_right"
 loop = true
 tracks/0/type = "value"
@@ -74,7 +74,7 @@ tracks/0/keys = {
 "values": [ 6, 7, 8, 7 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=6]
 resource_name = "walk_up"
 loop = true
 tracks/0/type = "value"
@@ -90,66 +90,66 @@ tracks/0/keys = {
 "values": [ 9, 10, 11, 10 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "idle"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=24]
-blend_point_0/node = SubResource( 20 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=11]
+blend_point_0/node = SubResource( 7 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 21 )
+blend_point_1/node = SubResource( 8 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 22 )
+blend_point_2/node = SubResource( 9 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 23 )
+blend_point_3/node = SubResource( 10 )
 blend_point_3/pos = Vector2( 0, -1 )
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "walk_down"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "walk_up"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "walk_left"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "walk_right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=18]
-blend_point_0/node = SubResource( 14 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=16]
+blend_point_0/node = SubResource( 12 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 15 )
+blend_point_1/node = SubResource( 13 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 16 )
+blend_point_2/node = SubResource( 14 )
 blend_point_2/pos = Vector2( -1.1, 0 )
-blend_point_3/node = SubResource( 17 )
+blend_point_3/node = SubResource( 15 )
 blend_point_3/pos = Vector2( 1.1, 0 )
 min_space = Vector2( -1.1, -1.1 )
 max_space = Vector2( 1.1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
-[sub_resource type="AnimationNodeStateMachine" id=12]
-states/Idle/node = SubResource( 24 )
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/Idle/node = SubResource( 11 )
 states/Idle/position = Vector2( 454, 108 )
-states/Walk/node = SubResource( 18 )
+states/Walk/node = SubResource( 16 )
 states/Walk/position = Vector2( 685, 108 )
-transitions = [ "Idle", "Walk", SubResource( 25 ), "Walk", "Idle", SubResource( 26 ) ]
+transitions = [ "Idle", "Walk", SubResource( 17 ), "Walk", "Idle", SubResource( 18 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -160,7 +160,7 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )
 current = true
-zoom = Vector2( 0.35, 0.35 )
+zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 smoothing_speed = 4.0
 
@@ -176,24 +176,21 @@ scale = Vector2( 0.999998, 0.999998 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 32 )
-anims/walk_down = SubResource( 28 )
-anims/walk_left = SubResource( 29 )
-anims/walk_right = SubResource( 30 )
-anims/walk_up = SubResource( 31 )
+anims/idle = SubResource( 2 )
+anims/walk_down = SubResource( 3 )
+anims/walk_left = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
+anims/walk_up = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 12 )
+tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 13 )
+parameters/playback = SubResource( 20 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( -0.00268078, 1.00517 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="GB_Filter" parent="CanvasLayer" instance=ExtResource( 4 )]
-visible = false
 
 [node name="Input" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.0
@@ -223,3 +220,5 @@ margin_right = 128.0
 margin_bottom = 35.0
 theme = ExtResource( 6 )
 text = "PAUSE"
+
+[node name="GB_Filter" parent="CanvasLayer" instance=ExtResource( 4 )]
