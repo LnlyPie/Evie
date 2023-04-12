@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/dialogue_manager/portrait_balloon/portraits_balloon.gd" type="Script" id=1]
-[ext_resource path="res://sprites/faces/Evie/Evie_normal.png" type="Texture" id=2]
+[ext_resource path="res://sprites/faces/Evie_normal.png" type="Texture" id=2]
 [ext_resource path="res://addons/dialogue_manager/portrait_balloon/font_normal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://addons/dialogue_manager/dialogue_label.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/dialogue_manager/portrait_balloon/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
