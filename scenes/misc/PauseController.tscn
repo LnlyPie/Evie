@@ -10,19 +10,19 @@
 [ext_resource path="res://addons/controller_icons/assets/ps3/circle.png" type="Texture" id=8]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.156863, 0.156863, 0.156863, 0.560784 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.2, 0.2, 0.2, 0.572549 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel/Buttons:modulate")
@@ -112,8 +112,7 @@ tracks/0/keys = {
 "values": [ Vector2( 256, -88 ), Vector2( 256, 257 ), Vector2( 256, 232 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "onload"
+[sub_resource type="Animation" id=7]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel/Buttons:modulate")
@@ -184,7 +183,7 @@ script = ExtResource( 1 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="Buttons" type="VBoxContainer" parent="Panel"]
 anchor_left = 0.5
@@ -202,11 +201,11 @@ margin_right = 192.0
 margin_bottom = 30.0
 focus_neighbour_bottom = NodePath("../QuitButton")
 theme = ExtResource( 2 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
 text = "RESUME"
 
 [node name="SettingsButton" type="Button" parent="Panel/Buttons"]
@@ -214,11 +213,11 @@ margin_top = 34.0
 margin_right = 192.0
 margin_bottom = 64.0
 theme = ExtResource( 2 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
 disabled = true
 text = "OPTIONS"
 
@@ -229,11 +228,11 @@ margin_bottom = 98.0
 focus_neighbour_top = NodePath("../ResumeButton")
 focus_neighbour_bottom = NodePath("../ResumeButton")
 theme = ExtResource( 2 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
 text = "EXIT"
 
 [node name="LevelInfoContainer" type="VBoxContainer" parent="Panel"]
@@ -250,13 +249,12 @@ valign = 1
 [node name="ActNumber" type="Label" parent="Panel/LevelInfoContainer"]
 margin_top = 34.0
 margin_right = 106.0
-margin_bottom = 47.0
+margin_bottom = 64.0
 theme = ExtResource( 3 )
 text = "ActNumber"
 valign = 1
 
 [node name="DateTime" type="HBoxContainer" parent="Panel"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -34.0
@@ -264,7 +262,7 @@ margin_right = 98.0
 alignment = 2
 
 [node name="Date" type="HBoxContainer" parent="Panel/DateTime"]
-margin_right = 60.0
+margin_right = 100.0
 margin_bottom = 34.0
 
 [node name="DateIcon" type="TextureRect" parent="Panel/DateTime/Date"]
@@ -275,15 +273,15 @@ stretch_mode = 4
 
 [node name="DateLabel" type="Label" parent="Panel/DateTime/Date"]
 margin_left = 20.0
-margin_top = 10.0
-margin_right = 60.0
-margin_bottom = 23.0
+margin_top = 2.0
+margin_right = 100.0
+margin_bottom = 32.0
 theme = ExtResource( 3 )
 text = "0.0.0000"
 
 [node name="Time" type="HBoxContainer" parent="Panel/DateTime"]
-margin_left = 64.0
-margin_right = 98.0
+margin_left = 104.0
+margin_right = 152.0
 margin_bottom = 34.0
 
 [node name="TimeIcon" type="TextureRect" parent="Panel/DateTime/Time"]
@@ -294,14 +292,13 @@ stretch_mode = 4
 
 [node name="TimeLabel" type="Label" parent="Panel/DateTime/Time"]
 margin_left = 20.0
-margin_top = 10.0
-margin_right = 34.0
-margin_bottom = 23.0
+margin_top = 2.0
+margin_right = 48.0
+margin_bottom = 32.0
 theme = ExtResource( 3 )
 text = "0:0"
 
 [node name="Input" type="HBoxContainer" parent="Panel"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -357,7 +354,7 @@ margin_bottom = 192.0
 margin_right = 192.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 192, 40 )
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -397,9 +394,10 @@ margin_left = 736.0
 margin_top = -88.0
 margin_right = 1184.0
 margin_bottom = -0.00012207
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="ExitLabel" type="Label" parent="QuitPanel"]
@@ -458,9 +456,9 @@ theme = ExtResource( 2 )
 text = "CANCEL"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 4 )
+anims/RESET = SubResource( 5 )
 anims/exit = SubResource( 6 )
-anims/onload = SubResource( 5 )
+anims/onload = SubResource( 7 )
 
 [connection signal="pressed" from="Panel/Buttons/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Panel/Buttons/SettingsButton" to="." method="_on_SettingsButton_pressed"]

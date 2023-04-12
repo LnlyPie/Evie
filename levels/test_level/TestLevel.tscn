@@ -11,16 +11,16 @@
 [ext_resource path="res://levels/test_level/level_scripts/logo1.gd" type="Script" id=9]
 [ext_resource path="res://levels/test_level/level_scripts/logo2.gd" type="Script" id=10]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 40.7922
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 12, 288 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 360, 12 )
 
 [node name="TestLevel-A*Test*Level_0-Some*Test*Act" type="Node2D"]
@@ -50,7 +50,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Logo1"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="ControllerSprite" type="Sprite" parent="Logo1"]
 position = Vector2( -3.8147e-06, -41 )
@@ -71,7 +71,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Logo2"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="ControllerSprite" type="Sprite" parent="Logo2"]
 position = Vector2( -3.8147e-06, -41 )
@@ -88,11 +88,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="NPCTest"]
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCTest"]
-shape = SubResource( 3 )
+position = Vector2( 0, 7 )
+shape = SubResource( 2 )
 
 [node name="ControllerSprite" type="Sprite" parent="NPCTest"]
 position = Vector2( 0, -48 )
@@ -108,19 +109,19 @@ position = Vector2( 249, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( -116, 256 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 628, 256 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 256, -20 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
 position = Vector2( 256, 532 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
