@@ -68,9 +68,11 @@ func _on_QuitButton_pressed():
 
 func _on_MenuButton_pressed():
 	pause(false)
+	Save.save_data(Save.slot_picked)
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 
 func _on_ExitButton_pressed():
+	Save.save_data(Save.slot_picked)
 	get_tree().quit()
 
 func _on_CancelButton_pressed():
