@@ -67,11 +67,7 @@ func debug():
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
 
 func _ready():
-	var locTim = Timer.new()
-	locTim.one_shot = false
-	locTim.connect("timeout", self, "_loctim_timout")
-	locTim.start(5)
-	
+	AchievementManager.init_achievements()
 	if Save.exists(Save.slot_picked):
 		Save.load_data(Save.slot_picked)
 		if Save.player_data["last_location"] != "":
@@ -80,6 +76,3 @@ func _ready():
 
 func _save_player_loc():
 	Save.player_data["last_location"] = position
-
-func _loctim_timout():
-	_save_player_loc()

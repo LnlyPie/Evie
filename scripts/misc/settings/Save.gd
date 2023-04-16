@@ -1,6 +1,6 @@
 extends Node
 
-var slot_picked:int = 0
+var slot_picked:int = 1
 var player_data = {
 	"name": "Evie", # How NPCs refer to you in-game
 	"health": 5,
@@ -13,6 +13,21 @@ var save_info = {
 	"save_creation": null, # When save was created
 	"last_saved": null # When save was last saved
 }
+
+func get_saves():
+	var dir = Directory.new()
+	var slots_saved = []
+	dir.open(Utils.savesFolder)
+	dir.list_dir_begin()
+	
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		if file.begins_with("save"):
+			var slotnum = file.replace("save", "")
+			slots_saved.append(slotnum)
+	return slots_saved
 
 func save_data(slot):
 	var file = File.new()
@@ -34,6 +49,8 @@ func save_data(slot):
 	cfg.set_value("Info", "created", save_info["save_creation"])
 	cfg.set_value("Info", "last_saved", save_info["last_saved"])
 	cfg.save(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
+	# Save achievements.json
+	AchievementManager.save_achievements()
 
 func load_data(slot):
 	var file = File.new()
@@ -59,3 +76,6 @@ func exists(slot, type = 0):
 			return true
 	else:
 		return false
+
+func get_slot_folder():
+	return (Utils.savesFolder + "save" + str(slot_picked) + "/")

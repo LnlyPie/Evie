@@ -129,6 +129,7 @@ ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
+AchievementManager="*res://scripts/misc/achievements/AchievementManager.gd"
 
 [debug]
 
@@ -292,10 +293,6 @@ translations=PoolStringArray( "res://localization/localizations.en.translation",
 translation_remaps={
 "res://sprites/gui/mods/mods.png": [ "res://sprites/gui/mods/mods.png:en", "res://sprites/locale_remaps/pl/gui/mods/mods.png:pl", "res://sprites/gui/mods/mods.png:de" ]
 }
-
-[network]
-
-ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
 
 [physics]
 
