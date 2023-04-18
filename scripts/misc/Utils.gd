@@ -9,7 +9,6 @@ var settingsFolder = "user://settings/"
 var modsFolder = "user://mods/"
 var savesFolder = "user://saves/"
 var settingsFile = settingsFolder + "settings.cfg"
-
 var execDir = OS.get_executable_path().get_base_dir() + "/"
 var portable = execDir + "portable"
 
