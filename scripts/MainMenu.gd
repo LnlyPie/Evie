@@ -11,6 +11,9 @@ func _ready():
 	$CanvasLayer/Settings/Panel.visible = false
 #	_list_mods()
 
+#	Notification.send_notification("Noti1", "Notification test 1", "quest")
+#	Notification.send_notification("Noti2", "Notification test 2", "quest")
+
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
 
