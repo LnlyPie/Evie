@@ -121,7 +121,6 @@ Save="*res://scripts/misc/settings/Save.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 SettingsGUI="*res://scenes/settings/Settings.tscn"
-Notification="*res://scenes/misc/other/Notification.tscn"
 Quests="*res://scripts/misc/Quests.gd"
 CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
@@ -130,6 +129,7 @@ ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 AchievementManager="*res://scripts/misc/achievements/AchievementManager.gd"
+Notification="*res://scenes/misc/other/Notification.tscn"
 
 [debug]
 
