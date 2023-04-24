@@ -109,21 +109,3 @@ func str_to_vector2(cords):
 	var x = cords.left(cords.find(" "))
 	var y = cords.right(cords.find(" "))
 	return Vector2(x,y)
-
-func give_trophy(id: String):
-	if !GameJoltAPI.username == "":
-		var fetch_achieved = GameJoltAPI.fetch_trophy({
-			"username": GameJoltAPI.username,
-			"user_token": GameJoltAPI.user_token,
-			"achieved": false,
-			"trophy_id": id
-		})
-		fetch_achieved.connect("api_request_completed", self, "_on_trophy_achieved")
-		var trophy = GameJoltAPI.add_achieved({
-			"username": GameJoltAPI.username,
-			"user_token": GameJoltAPI.user_token,
-			"trophy_id": id
-		})
-
-func _on_trophy_achieved(data: Array):
-	send_notification("Trophy Achieved!", data[0].title + "\n" + data[0].description, "gj")

@@ -39,7 +39,7 @@ func _on_BugsButton_pressed():
 	OS.shell_open("https://github.com/lnlypie/evie/issues")
 
 func _on_WebsiteButton_pressed():
-	OS.shell_open("https://lpie.andus.dev/")
+	OS.shell_open("https://lonelypie.net/")
 
 func get_ver(file):
 	var f = File.new()

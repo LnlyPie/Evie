@@ -3,8 +3,8 @@ extends Node
 var cfg = ConfigFile.new()
 
 # Screen
-var screen_width = 960
-var screen_height = 544
+var screen_width = 1920
+var screen_height = 1080
 var framerate_cap = 60
 var fullscreen = true
 

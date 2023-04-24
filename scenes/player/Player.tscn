@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=3]
 [ext_resource path="res://scenes/misc/other/gb_layer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/controller_icons/assets/ps3/start.png" type="Texture" id=5]
+[ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -214,7 +214,7 @@ rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 5 )
 expand = true
 script = ExtResource( 3 )
-path = "ps3/start"
+path = "debug_pause"
 
 [node name="Label" type="Label" parent="CanvasLayer/Input/Pause"]
 margin_left = 68.0
