@@ -114,7 +114,6 @@ config/icon="res://icon.png"
 
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
 Settings="*res://scripts/misc/settings/Settings.gd"
-Auth="*res://addons/gamejolt_api/auth/auth.gd"
 Utils="*res://scripts/misc/Utils.gd"
 Save="*res://scripts/misc/settings/Save.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
@@ -148,7 +147,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gamejolt_api/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg", "res://addons/onscreenkeyboard/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CheatCoder/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/localization_editor/plugin.cfg", "res://addons/onscreenkeyboard/plugin.cfg" )
 
 [gdnative]
 
@@ -291,6 +290,10 @@ translations=PoolStringArray( "res://localization/localizations.en.translation",
 translation_remaps={
 "res://sprites/gui/mods/mods.png": [ "res://sprites/gui/mods/mods.png:en", "res://sprites/locale_remaps/pl/gui/mods/mods.png:pl", "res://sprites/gui/mods/mods.png:de" ]
 }
+
+[mono]
+
+project/assembly_name="Evie"
 
 [physics]
 
