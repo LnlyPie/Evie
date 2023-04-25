@@ -5,7 +5,7 @@
 [ext_resource path="res://logo.png" type="Texture" id=3]
 [ext_resource path="res://sprites/icons/misc/godot_logo.svg" type="Texture" id=4]
 
-[node name="Control" type="Control"]
+[node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
