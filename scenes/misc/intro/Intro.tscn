@@ -5,7 +5,7 @@
 [ext_resource path="res://logo.png" type="Texture" id=3]
 [ext_resource path="res://sprites/icons/misc/godot_logo.svg" type="Texture" id=4]
 
-[node name="Control" type="Control"]
+[node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -15,10 +15,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -128.0
-margin_right = 128.0
-margin_bottom = 128.0
+margin_left = -256.0
+margin_top = -256.0
+margin_right = 256.0
+margin_bottom = 256.0
 texture = ExtResource( 3 )
 expand = true
 
@@ -27,11 +27,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -240.0
-margin_top = -144.0
-margin_right = 446.0
-margin_bottom = -53.0
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = -344.0
+margin_top = -208.0
+margin_right = 344.0
+margin_bottom = -120.0
 theme = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0.235294, 0.235294, 0.235294, 1 )
 custom_constants/shadow_offset_x = 2
@@ -44,7 +43,7 @@ scroll_active = false
 [node name="GodotLogo" type="TextureRect" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -96.0
-margin_right = 240.0
+margin_top = -128.0
+margin_right = 320.0
 texture = ExtResource( 4 )
 expand = true

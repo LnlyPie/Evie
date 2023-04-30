@@ -35,20 +35,20 @@
     {
       "title": "Todo",
       "tasks": [
-        8,
-        10,
-        11,
-        12,
-        13,
+        22,
+        7,
+        9,
         14,
         15,
-        16
+        13,
+        12,
+        11
       ]
     },
     {
       "title": "Doing",
       "tasks": [
-
+        10
       ]
     },
     {
@@ -59,26 +59,25 @@
         2,
         3,
         4,
-        5,
-        7,
-        17,
-        21,
         6,
-        22
+        16,
+        19,
+        5,
+        20,
+        21
       ]
     },
     {
       "title": "Waiting",
       "tasks": [
-        19,
-        9
+        18,
+        8
       ]
     },
     {
       "title": "Todo in future",
       "tasks": [
-        18,
-        20
+        17
       ]
     }
   ],
@@ -92,11 +91,6 @@
       "category": 0,
       "title": "Menus",
       "details": ""
-    },
-    {
-      "category": 0,
-      "title": "GameJolt Integration",
-      "details": "Logging in with GameJolt Account, Giving Trophies"
     },
     {
       "category": 0,
@@ -184,11 +178,6 @@
       "details": "Game pauses when using int in the commands"
     },
     {
-      "category": 1,
-      "title": "Check if actually connected with GameJolt Account",
-      "details": "When logging in there's no confirmation that credentials are valid"
-    },
-    {
       "category": 0,
       "title": "Chapter Selector",
       "details": ""
@@ -197,6 +186,16 @@
       "category": 0,
       "title": "Quests Progress",
       "details": "Show Quest progress in pause menu"
+    },
+    {
+      "category": 0,
+      "title": "Achievement System",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Inventory System",
+      "details": ""
     }
   ]
 }

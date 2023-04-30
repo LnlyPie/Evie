@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=2]
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=3]
+[ext_resource path="res://sprites/gui/chapters/test_thumbnail.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ChapterSelect.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -41,13 +41,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 48.0
 
+[node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Test Level"]
+margin_left = 8.0
+margin_top = 128.0
+margin_right = 888.0
+margin_bottom = 640.0
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Label" type="Label" parent="Panel/Chapters/Test Level"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -768.0
-margin_top = 8.0
-margin_bottom = 236.0
-theme = ExtResource( 3 )
+margin_left = -832.0
+margin_top = 128.0
+margin_right = -64.0
+margin_bottom = 640.0
+theme = ExtResource( 1 )
 text = "A level to test if quests, hearts, battles, cutscenes, scene transitions, movement, etc.
 
 If you found any bugs, make an issue on GitHub, or write it on our Discord Server.
@@ -61,8 +70,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -128.0
-margin_top = -64.0
+margin_top = -128.0
 margin_right = 128.0
+margin_bottom = -64.0
 theme = ExtResource( 2 )
 text = "Play"
 
@@ -71,6 +81,13 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 48.0
+
+[node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Prologue"]
+margin_left = 8.0
+margin_top = 128.0
+margin_right = 888.0
+margin_bottom = 640.0
+expand = true
 
 [node name="Label" type="Label" parent="Panel/Chapters/Prologue"]
 anchor_left = 1.0
