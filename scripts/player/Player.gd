@@ -11,12 +11,11 @@ var photoCam = false
 var gb_filter = false
 var debugInfo = false
 var blockMovement = false
-var debugTim = Timer.new()
 
 func _process(_delta):
 	var velocity = Vector2.ZERO
 	# Basic Movement
-	if !blockMovement:
+	if !blockMovement and !DialogueManager.is_dialogue_running:
 		if Input.is_action_pressed("player_right"):
 			velocity.x += 1.0
 		if Input.is_action_pressed("player_left"):

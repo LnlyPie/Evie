@@ -35,20 +35,20 @@
     {
       "title": "Todo",
       "tasks": [
+        22,
         7,
         9,
-        10,
-        11,
-        12,
-        13,
         14,
-        15
+        15,
+        13,
+        12,
+        11
       ]
     },
     {
       "title": "Doing",
       "tasks": [
-        21
+        10
       ]
     },
     {
@@ -63,7 +63,8 @@
         16,
         19,
         5,
-        20
+        20,
+        21
       ]
     },
     {
@@ -189,6 +190,11 @@
     {
       "category": 0,
       "title": "Achievement System",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Inventory System",
       "details": ""
     }
   ]
