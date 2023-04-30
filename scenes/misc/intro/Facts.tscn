@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=2]
-[ext_resource path="res://addons/controller_icons/assets/key/enter_alt.png" type="Texture" id=3]
+[ext_resource path="res://addons/controller_icons/assets/ps3/cross.png" type="Texture" id=3]
 [ext_resource path="res://scripts/misc/intro/Facts.gd" type="Script" id=4]
-[ext_resource path="res://addons/controller_icons/assets/mouse/left.png" type="Texture" id=5]
-[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -55,7 +53,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Facts" type="Control"]
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -82,7 +80,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -108.0
+margin_left = -48.0
 margin_top = -48.0
 margin_right = -8.0
 margin_bottom = -8.0
@@ -97,25 +95,7 @@ rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 3 )
 expand = true
 script = ExtResource( 2 )
-path = "ui_accept"
-
-[node name="Label" type="Label" parent="InputContainer"]
-margin_left = 44.0
-margin_top = 1.0
-margin_right = 56.0
-margin_bottom = 39.0
-theme = ExtResource( 6 )
-text = "/"
-
-[node name="ControllerTextureRect2" type="TextureRect" parent="InputContainer"]
-margin_left = 60.0
-margin_right = 100.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
-texture = ExtResource( 5 )
-expand = true
-script = ExtResource( 2 )
-path = "mouse_left"
+path = "ps3/cross"
 
 [node name="YouKnewIt\?" type="RichTextLabel" parent="."]
 margin_right = 384.0

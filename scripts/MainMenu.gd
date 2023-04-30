@@ -11,6 +11,9 @@ func _ready():
 	$CanvasLayer/Settings/Panel.visible = false
 #	_list_mods()
 
+#	Notification.send_notification("Noti1", "Notification test 1", "quest")
+#	Notification.send_notification("Noti2", "Notification test 2", "quest")
+
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
 
@@ -36,7 +39,7 @@ func _on_BugsButton_pressed():
 	OS.shell_open("https://github.com/lnlypie/evie/issues")
 
 func _on_WebsiteButton_pressed():
-	OS.shell_open("https://lonelypie.net/")
+	OS.shell_open("https://lpie.andus.dev/")
 
 func get_ver(file):
 	var f = File.new()

@@ -4,31 +4,40 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 30
+resource_version = 25
 syntax_version = 2
-raw_text = "~ npctest
+raw_text = "~ node
+
+Andus: Hi! This is some dialogue
+Andus: Here! Have some options
+- This is great!
+	Andus: Right!?
+- Start again => node
+- End the conversation => END
+
+~ npctest
 if has_talked_testnpc == false
 	NPC: Hi. Do you want a quest?
 	- Yeah!
 		do addquest()
-		set has_talked_testnpc = true
 	- Nah, not really. => END
 	NPC: Alright! To complete the quest find 2 LonelyPie logos.
 else
-	NPC: I gave you a quest already!
+	NPC: I gave you a quest already
 
 => END"
 errors = [  ]
 titles = {
-"npctest": "1"
+"node": "2",
+"npctest": "10"
 }
 lines = {
 "0": {
-"next_id": "1",
-"text": "npctest",
+"next_id": "2",
+"text": "node",
 "type": "title"
 },
-"1": {
+"10": {
 "condition": {
 "expression": [ {
 "type": "variable",
@@ -41,21 +50,17 @@ lines = {
 "value": false
 } ]
 },
-"next_conditional_id": "8",
-"next_id": "2",
-"next_id_after": "11",
+"next_conditional_id": "16",
+"next_id": "11",
+"next_id_after": "19",
 "type": "condition"
 },
 "11": {
-"next_id": "end",
-"type": "goto"
-},
-"2": {
 "character": "NPC",
 "character_replacements": [  ],
 "inline_mutations": [  ],
-"next_id": "3",
-"parent_id": "1",
+"next_id": "12",
+"parent_id": "10",
 "pauses": {
 },
 "replacements": [  ],
@@ -65,17 +70,17 @@ lines = {
 "translation_key": "Hi. Do you want a quest?",
 "type": "dialogue"
 },
-"3": {
-"next_id": "4",
-"next_id_after": "7",
-"parent_id": "1",
+"12": {
+"next_id": "13",
+"next_id_after": "15",
+"parent_id": "10",
 "replacements": [  ],
-"responses": PoolStringArray( "3", "6" ),
+"responses": PoolStringArray( "12", "14" ),
 "text": "Yeah!",
 "translation_key": "Yeah!",
 "type": "response"
 },
-"4": {
+"13": {
 "mutation": {
 "expression": [ {
 "function": "addquest",
@@ -83,42 +88,25 @@ lines = {
 "value": [  ]
 } ]
 },
-"next_id": "5",
-"parent_id": "3",
+"next_id": "15",
+"parent_id": "12",
 "type": "mutation"
 },
-"5": {
-"mutation": {
-"expression": [ {
-"type": "variable",
-"value": "has_talked_testnpc"
-}, {
-"type": "assignment",
-"value": "="
-}, {
-"type": "bool",
-"value": true
-} ]
-},
-"next_id": "7",
-"parent_id": "3",
-"type": "mutation"
-},
-"6": {
+"14": {
 "next_id": "end",
-"next_id_after": "7",
-"parent_id": "1",
+"next_id_after": "15",
+"parent_id": "10",
 "replacements": [  ],
 "text": "Nah, not really.",
 "translation_key": "Nah, not really.",
 "type": "response"
 },
-"7": {
+"15": {
 "character": "NPC",
 "character_replacements": [  ],
 "inline_mutations": [  ],
-"next_id": "11",
-"parent_id": "1",
+"next_id": "19",
+"parent_id": "10",
 "pauses": {
 },
 "replacements": [  ],
@@ -128,25 +116,102 @@ lines = {
 "translation_key": "Alright! To complete the quest find 2 LonelyPie logos.",
 "type": "dialogue"
 },
-"8": {
-"next_conditional_id": "11",
-"next_id": "9",
-"next_id_after": "11",
+"16": {
+"next_conditional_id": "19",
+"next_id": "17",
+"next_id_after": "19",
 "type": "condition"
 },
-"9": {
+"17": {
 "character": "NPC",
 "character_replacements": [  ],
 "inline_mutations": [  ],
-"next_id": "11",
-"parent_id": "8",
+"next_id": "19",
+"parent_id": "16",
 "pauses": {
 },
 "replacements": [  ],
 "speeds": [  ],
-"text": "I gave you a quest already!",
+"text": "I gave you a quest already",
 "time": null,
-"translation_key": "I gave you a quest already!",
+"translation_key": "I gave you a quest already",
 "type": "dialogue"
+},
+"19": {
+"next_id": "end",
+"type": "goto"
+},
+"2": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Hi! This is some dialogue",
+"time": null,
+"translation_key": "Hi! This is some dialogue",
+"type": "dialogue"
+},
+"3": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Here! Have some options",
+"time": null,
+"translation_key": "Here! Have some options",
+"type": "dialogue"
+},
+"4": {
+"next_id": "5",
+"next_id_after": "end!",
+"replacements": [  ],
+"responses": PoolStringArray( "4", "6", "7" ),
+"text": "This is great!",
+"translation_key": "This is great!",
+"type": "response"
+},
+"5": {
+"character": "Andus",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "end!",
+"parent_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Right!?",
+"time": null,
+"translation_key": "Right!?",
+"type": "dialogue"
+},
+"6": {
+"next_id": "2",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "Start again",
+"translation_key": "Start again",
+"type": "response"
+},
+"7": {
+"next_id": "end",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "End the conversation",
+"translation_key": "End the conversation",
+"type": "response"
+},
+"9": {
+"next_id": "10",
+"text": "npctest",
+"type": "title"
 }
 }
