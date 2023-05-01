@@ -25,6 +25,9 @@ func display_next_notification():
 	if notification["icon"] == "quest":
 		$Panel/Sprite.scale = Vector2(3.5, 3.5)
 		$Panel/Sprite.texture = load("res://sprites/icons/misc/quest.png")
+	elif notification["icon"] == "achievement":
+		$Panel/Sprite.scale = Vector2(3.5, 3.5)
+		$Panel/Sprite.texture = load("res://sprites/icons/misc/achievement.png")
 	$AnimationPlayer.play("Notification")
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play_backwards("Notification")

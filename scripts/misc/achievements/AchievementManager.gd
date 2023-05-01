@@ -13,8 +13,11 @@ func add_achievement(name: String, description: String):
 func unlock(name: String):
 	if achievements.has(name):
 		if !is_unlocked(name):
-			print("Achievement Unlocked")
 			achievements[name].unlocked = true
+			Utils.send_notification(
+				("\"" + achievements[name].name + "\" unlocked!"), 
+				achievements[name].description, 
+				"achievement")
 			save_achievements()
 
 func save_achievements():
@@ -34,9 +37,9 @@ func load_achievements():
 		var json_str = file.get_as_text()
 		var progress = parse_json(json_str)
 		
-		for achievement in achievements:
-			if progress.has(achievement):
-				achievements[achievement].unlocked = progress[achievement]
+		for achievement_name in achievements.keys():
+			if progress.has(achievement_name):
+				achievements[achievement_name].unlocked = progress[achievement_name]["unlocked"]
 		file.close()
 
 func is_unlocked(name: String) -> bool:
@@ -45,5 +48,4 @@ func is_unlocked(name: String) -> bool:
 	return false
 
 func init_achievements():
-	add_achievement("My Achievement", "Description of my achievement")
-	add_achievement("Achievement 2", "Another Achievement")
+	add_achievement("Test and Find", "Testing and Finding... That's a pretty basic skill actually.")

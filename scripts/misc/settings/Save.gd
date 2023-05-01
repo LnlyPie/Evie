@@ -55,16 +55,20 @@ func save_data(slot):
 func load_data(slot):
 	var file = File.new()
 	var cfg = ConfigFile.new()
+	# Load save.dat
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.dat"):
 		file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.READ)
 		var json = file.get_as_text()
 		player_data = JSON.parse(json).result
 		file.close()
+	# Load save.cfg
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
 		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
 		save_info["save_name"] = cfg.get_value("Info", "name")
 		save_info["save_creation"] = cfg.get_value("Info", "created")
 		save_info["last_saved"] = cfg.get_value("Info", "last_saved")
+	# Load achievements.json
+	AchievementManager.load_achievements()
 
 func exists(slot, type = 0):
 	var file = File.new()
