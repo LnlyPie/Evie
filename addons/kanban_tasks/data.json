@@ -35,19 +35,18 @@
     {
       "title": "Todo",
       "tasks": [
-        22,
         7,
         9,
         14,
         15,
         13,
-        12,
-        11
+        12
       ]
     },
     {
       "title": "Doing",
       "tasks": [
+        21,
         10
       ]
     },
@@ -61,16 +60,16 @@
         4,
         6,
         16,
-        19,
+        18,
         5,
+        19,
         20,
-        21
+        11
       ]
     },
     {
       "title": "Waiting",
       "tasks": [
-        18,
         8
       ]
     },
@@ -171,11 +170,6 @@
       "category": 0,
       "title": "Downloading Mods From In The Game",
       "details": "For now. Redirecting to GameBanana"
-    },
-    {
-      "category": 1,
-      "title": "Debug Console not working with int(s)",
-      "details": "Game pauses when using int in the commands"
     },
     {
       "category": 0,

@@ -8,7 +8,7 @@
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 12.5, 7.03126 )
+extents = Vector2( 8.50002, 25.5001 )
 
 [sub_resource type="Animation" id=28]
 length = 0.001
@@ -190,7 +190,7 @@ vframes = 4
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.499999, 20.0312 )
+position = Vector2( 0.5, 0.5 )
 scale = Vector2( 0.999998, 0.999998 )
 shape = SubResource( 27 )
 

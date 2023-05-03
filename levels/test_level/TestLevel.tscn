@@ -104,7 +104,7 @@ path = "player_interact"
 position = Vector2( 249, 146 )
 
 [node name="SurroundingsTileMap" parent="." instance=ExtResource( 11 )]
-tile_data = PoolIntArray( 7, 0, 0, 11, 0, 0, 655374, 0, 0, 655377, 0, 0, 720908, 0, 0, 720911, 0, 0, 720914, 0, 0, 786443, 0, 0, 786446, 0, 0, 786450, 0, 0, 851979, 0, 0, 851981, 0, 0, 851983, 0, 0, 851984, 0, 0, 851986, 0, 0 )
+tile_data = PoolIntArray( 7, 0, 0, 11, 0, 0, 655374, 0, 0, 655377, 0, 0, 720908, 0, 0, 720911, 0, 0, 720914, 0, 0, 786446, 0, 0, 851979, 0, 0, 851981, 0, 0, 851983, 0, 0, 851984, 0, 0, 851986, 0, 0 )
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 
