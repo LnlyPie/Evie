@@ -36,7 +36,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie from Godot menu in EmulationStation
 
 ## Credits:
-**LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
+**LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_, Ah (Art)</br>
 **Addons:** [GameJolt API Plugin](https://github.com/sarturodev/gamejolt-api-plugin), [Controller Icons](https://github.com/rsubtil/controller_icons), [CheatCoder](https://github.com/Hugo4IT/CheatCoder), [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager), [Localization Editor](https://github.com/VP-GAMES/LocalizationEditor)</br>
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
