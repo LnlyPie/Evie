@@ -4,13 +4,13 @@
 
 ## Contributing/Modding:
 ### Contributing:
-See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing)
+See [Evie/contributing](https://docs.lonelypie.net/evie/evie#contributing)
 ### Modding:
-See [Installing Mods](https://ldocs.andus.dev/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
-See [Modding Evie](https://ldocs.andus.dev/evie/evie-modding#making-mods-for-evie) for setting up modding environment
+See [Installing Mods](https://docs.lonelypie.net/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
+See [Modding Evie](https://docs.lonelypie.net/evie/evie-modding#making-mods-for-evie) for setting up modding environment
 
 ## How to install the game?
-Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
+Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases)
 ### Windows ![](https://img.shields.io/badge/-0078D6?style=for-the-badge&logo=windows&logoColor=white):
  - Download Evie_win.zip
  - Unpack
