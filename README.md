@@ -4,13 +4,13 @@
 
 ## Contributing/Modding:
 ### Contributing:
-See [Evie/contributing](https://docs.andus.dev/lonelypie-games/evie#contributing)
+See [Evie/contributing](https://docs.lonelypie.net/evie/evie#contributing)
 ### Modding:
-See [Installing Mods](https://ldocs.andus.dev/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
-See [Modding Evie](https://ldocs.andus.dev/evie/evie-modding#making-mods-for-evie) for setting up modding environment
+See [Installing Mods](https://docs.lonelypie.net/evie/evie-modding#installing-mods-in-evie) to install mods in Evie</br>
+See [Modding Evie](https://docs.lonelypie.net/evie/evie-modding#making-mods-for-evie) for setting up modding environment
 
 ## How to install the game?
-Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases) (older) or [GameJolt](https://gamejolt.com/games/projectevie/699766) (only newest)
+Download the game from [Github Releases](https://github.com/LnlyPie/Evie/releases)
 ### Windows ![](https://img.shields.io/badge/-0078D6?style=for-the-badge&logo=windows&logoColor=white):
  - Download Evie_win.zip
  - Unpack
@@ -36,7 +36,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
  - Run Evie from Godot menu in EmulationStation
 
 ## Credits:
-**LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_</br>
+**LonelyPie:** Andus _(Developer/Art)_, LucePric _(Story Writing)_, Creta _(Art)_, Ah (Art)</br>
 **Addons:** [GameJolt API Plugin](https://github.com/sarturodev/gamejolt-api-plugin), [Controller Icons](https://github.com/rsubtil/controller_icons), [CheatCoder](https://github.com/Hugo4IT/CheatCoder), [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager), [Localization Editor](https://github.com/VP-GAMES/LocalizationEditor)</br>
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
