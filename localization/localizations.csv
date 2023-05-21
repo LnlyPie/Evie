@@ -8,7 +8,6 @@ MM_BUGHATERS,We Hate Bugs >:(,Nie lubimy Błędów >:(,Wir hassen Fehler >:(
 EXTRAS,Extras,Dodatki,Extras
 MODS,Mods,Mody,Modifikationen
 CREDITS,Credits,Autorzy,Kredite
-GJLOGIN,GameJolt Login,Konto GameJolt,GameJolt-Anmeldung
 PAUSE,Pause,Pauza,Pause
 S_C_AUDIO,Audio,Audio,Audio
 S_C_VIDEO,Video,Grafika,Video
@@ -36,3 +35,4 @@ BACK,Back,Wstecz,Der Rücken
 AUTOSAVEMSG,This game uses Auto Save.\nWhen you'll see this image DON'T exit the game.,"Ta gra korzysta z automatycznego zapisywania.\nKiedy zobaczysz ten obraz, NIE wychodź z gry.","Dieses Spiel verwendet die automatische Speicherung.\nWenn Sie dieses Bild sehen, verlassen Sie das Spiel NICHT."
 MODS_LOAD,Load Mod,Wczytaj Mod,Mod anwenden
 MODS_DOWNLOAD,Download Mods,Pobierz Mody,Mods herunterladen
+MODS_WARN,Warning: LonelyPie is not responsible for errors related to mods,Ostrzeżenie: LonelyPie nie ponosi odpowiedzialności za błędy związane z modami,Warnung: LonelyPie ist nicht verantwortlich für Fehler im Zusammenhang mit Mods

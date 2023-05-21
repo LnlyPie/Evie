@@ -12,7 +12,6 @@ const MM_BUGHATERS = "MM_BUGHATERS"
 const EXTRAS = "EXTRAS"
 const MODS = "MODS"
 const CREDITS = "CREDITS"
-const GJLOGIN = "GJLOGIN"
 const PAUSE = "PAUSE"
 const S_C_AUDIO = "S_C_AUDIO"
 const S_C_VIDEO = "S_C_VIDEO"
@@ -40,6 +39,7 @@ const BACK = "BACK"
 const AUTOSAVEMSG = "AUTOSAVEMSG"
 const MODS_LOAD = "MODS_LOAD"
 const MODS_DOWNLOAD = "MODS_DOWNLOAD"
+const MODS_WARN = "MODS_WARN"
 
 const KEYS = [
  "PLAY",
@@ -51,7 +51,6 @@ const KEYS = [
  "EXTRAS",
  "MODS",
  "CREDITS",
- "GJLOGIN",
  "PAUSE",
  "S_C_AUDIO",
  "S_C_VIDEO",
@@ -78,5 +77,6 @@ const KEYS = [
  "BACK",
  "AUTOSAVEMSG",
  "MODS_LOAD",
- "MODS_DOWNLOAD"
+ "MODS_DOWNLOAD",
+ "MODS_WARN"
 ]
