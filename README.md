@@ -40,7 +40,7 @@ Download the game from [Github Releases](https://github.com/LnlyPie/Evie/release
 **Addons:** [GameJolt API Plugin](https://github.com/sarturodev/gamejolt-api-plugin), [Controller Icons](https://github.com/rsubtil/controller_icons), [CheatCoder](https://github.com/Hugo4IT/CheatCoder), [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager), [Localization Editor](https://github.com/VP-GAMES/LocalizationEditor)</br>
 **Made With** [Godot Engine v3.5.1](https://godotengine.org/)
 
-**Our Assets:**
+**Our Assets (Art, Music, etc.):**
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## Other:
