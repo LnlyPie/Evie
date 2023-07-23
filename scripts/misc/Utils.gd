@@ -12,6 +12,10 @@ var settingsFile = settingsFolder + "settings.cfg"
 var execDir = OS.get_executable_path().get_base_dir() + "/"
 var portable = execDir + "portable"
 
+func isHtml():
+	if OS.get_name() == "HTML5":
+		return true
+
 func isPortable():
 	if file.file_exists(portable):
 		photosFolder = execDir + "screenshots/"

@@ -1,5 +1,6 @@
 extends Node
 
+var shown = false
 var cfg = ConfigFile.new()
 
 # Screen
@@ -62,3 +63,11 @@ func apply():
 func apply_onstart():
 	Settings.load()
 	apply()
+
+func showhide():
+	if (!shown):
+		add_child(load("res://scenes/settings/Settings.tscn").instance())
+	else:
+		var settings_scene = get_node("Settings") # Replace "path/to/settings_scene" with the actual path to the settings scene node
+		if settings_scene != null:
+			settings_scene.queue_free()

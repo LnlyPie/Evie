@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
-[ext_resource path="res://scenes/settings/Settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
 [ext_resource path="res://addons/CheatCoder/Presets/Konami.tres" type="Resource" id=10]
@@ -240,10 +239,6 @@ margin_right = 112.0
 margin_bottom = 35.0
 theme = ExtResource( 6 )
 text = "USE"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Settings" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

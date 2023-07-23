@@ -7,7 +7,6 @@ export_presets.cfg
 .mono/
 data_*/
 
-# GameJolt Private Things
-addons/gamejolt_api/auth/auth.gd
-# Ridiculous addon.
-addons/ridiculous_coding/
+# I don't want to spoil you all the progress yet ;)
+levels/prologue/*
+tilesets/Prologue/*

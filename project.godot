@@ -54,6 +54,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogue_manager/dialogue_resource.gd"
 }, {
+"base": "Node",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://scripts/player/inventory/InventoryScript.gd"
+}, {
+"base": "Reference",
+"class": "ItemData",
+"language": "GDScript",
+"path": "res://scripts/player/inventory/items/ItemData.gd"
+}, {
 "base": "Resource",
 "class": "LocalizationData",
 "language": "GDScript",
@@ -94,6 +104,8 @@ _global_script_class_icons={
 "ControllerSprite3D": "",
 "ControllerTextureRect": "",
 "DialogueResource": "",
+"Inventory": "",
+"ItemData": "",
 "LocalizationData": "",
 "LocalizationKeys": "",
 "LocalizationPlaceholders": "",
@@ -115,10 +127,9 @@ config/icon="res://icon.png"
 SceneTransition="*res://scenes/misc/SceneTransition.tscn"
 Settings="*res://scripts/misc/settings/Settings.gd"
 Utils="*res://scripts/misc/Utils.gd"
-Save="*res://scripts/misc/settings/Save.gd"
+Save="*res://scripts/misc/saves/Save.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
-SettingsGUI="*res://scenes/settings/Settings.tscn"
 Quests="*res://scripts/misc/Quests.gd"
 CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
@@ -126,7 +137,7 @@ ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 ModVars="*res://ModVars.gd"
 Cursor="*res://scripts/Cursor.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
-AchievementManager="*res://scripts/misc/achievements/AchievementManager.gd"
+AchievementManager="*res://scripts/player/achievements/AchievementManager.gd"
 Notification="*res://scenes/misc/other/Notification.tscn"
 
 [debug]

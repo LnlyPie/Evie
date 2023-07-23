@@ -15,6 +15,8 @@ func _ready():
 	$Panel/DateTime/Date/DateLabel.text = String(date["day"]) + "." \
 	+ String(date["month"]) + "." + String(date["year"])
 	clockTimerInit()
+	if Utils.isHtml():
+		$QuitPanel/ButtonsContainer/ExitButton.hide()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause") || Input.is_action_just_pressed("ui_cancel"):

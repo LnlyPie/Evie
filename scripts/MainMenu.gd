@@ -8,14 +8,15 @@ func _ready():
 	$BugHaters.visible = false
 	$Splashes.text = splashtext()
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
-	$CanvasLayer/Settings/Panel.visible = false
+	if Utils.isHtml():
+		$MainButtons/QuitButton.hide()
 #	_list_mods()
 
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
 
 func _on_OptionsButton_pressed():
-	SettingsGUI.toggle()
+	Settings.showhide()
 
 func _on_QuitButton_pressed():
 	get_tree().quit()

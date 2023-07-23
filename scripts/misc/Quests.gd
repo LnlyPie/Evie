@@ -1,6 +1,7 @@
 extends Node
 
 var quests = {}
+var quests_done = {}
 
 # Quests.new("Some Quest", "A description for the quest")
 func new(name: String, description: String, maxprogress: int = 100):
