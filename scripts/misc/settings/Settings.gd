@@ -1,6 +1,5 @@
 extends Node
 
-var shown = false
 var cfg = ConfigFile.new()
 
 # Screen
@@ -8,6 +7,8 @@ var screen_width = 1920
 var screen_height = 1080
 var framerate_cap = 60
 var fullscreen = true
+var color1 = 0
+var color2 = 0
 
 # Audio
 var master_volume = 1 # ex. 0.5 = 50%
@@ -25,6 +26,8 @@ func save():
 	cfg.set_value("Screen", "height", screen_height)
 	cfg.set_value("Screen", "framerate", framerate_cap)
 	cfg.set_value("Screen", "fullscreen", fullscreen)
+	cfg.set_value("Screen", "color1", color1)
+	cfg.set_value("Screen", "color2", color2)
 	# Audio
 	cfg.set_value("Audio", "master", master_volume)
 	# Gameplay
@@ -41,6 +44,8 @@ func load():
 	screen_height = cfg.get_value("Screen", "height")
 	framerate_cap = cfg.get_value("Screen", "framerate")
 	fullscreen = cfg.get_value("Screen", "fullscreen")
+	color1 = cfg.get_value("Screen", "color1")
+	color2 = cfg.get_value("Screen", "color2")
 	# Audio
 	master_volume = cfg.get_value("Audio", "master")
 	# Gameplay
@@ -55,6 +60,7 @@ func apply():
 	 SceneTree.STRETCH_ASPECT_EXPAND, Vector2(screen_width, screen_height))
 	Engine.set_target_fps(framerate_cap)
 	OS.window_fullscreen = fullscreen
+	ColorFilter.set_color(color1, color2)
 	# Audio
 	
 	# Gameplay
@@ -63,11 +69,3 @@ func apply():
 func apply_onstart():
 	Settings.load()
 	apply()
-
-func showhide():
-	if (!shown):
-		add_child(load("res://scenes/settings/Settings.tscn").instance())
-	else:
-		var settings_scene = get_node("Settings") # Replace "path/to/settings_scene" with the actual path to the settings scene node
-		if settings_scene != null:
-			settings_scene.queue_free()

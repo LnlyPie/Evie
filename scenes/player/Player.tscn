@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/characters/player/player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=3]
-[ext_resource path="res://scenes/misc/other/gb_layer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/misc/other/ColorFilters.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=5]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 

@@ -97,7 +97,6 @@ align = 0
 margin_top = 42.0
 margin_right = 176.0
 margin_bottom = 80.0
-disabled = true
 text = "OPTIONS"
 flat = true
 align = 0
@@ -117,7 +116,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -168.0
+margin_left = -256.0
 margin_top = -178.0
 margin_right = -8.0
 margin_bottom = -56.0
@@ -127,7 +126,7 @@ __meta__ = {
 }
 
 [node name="ExtrasButton" type="Button" parent="ExtraButtons"]
-margin_right = 160.0
+margin_right = 248.0
 margin_bottom = 38.0
 disabled = true
 text = "EXTRAS"
@@ -135,7 +134,7 @@ align = 2
 
 [node name="ModsButton" type="Button" parent="ExtraButtons"]
 margin_top = 42.0
-margin_right = 160.0
+margin_right = 248.0
 margin_bottom = 80.0
 focus_neighbour_top = NodePath("../CreditsButton")
 focus_neighbour_bottom = NodePath("../CreditsButton")
@@ -144,7 +143,7 @@ align = 2
 
 [node name="CreditsButton" type="Button" parent="ExtraButtons"]
 margin_top = 84.0
-margin_right = 160.0
+margin_right = 248.0
 margin_bottom = 122.0
 focus_neighbour_top = NodePath("../ModsButton")
 focus_neighbour_bottom = NodePath("../ModsButton")
@@ -213,7 +212,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -120.0
+margin_left = -244.0
 margin_top = -46.0
 margin_right = -8.0
 margin_bottom = -6.0
@@ -223,8 +222,8 @@ __meta__ = {
 }
 
 [node name="ControllerTextureRect" type="TextureRect" parent="Input"]
-margin_left = 32.0
-margin_right = 72.0
+margin_left = 156.0
+margin_right = 196.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 11 )
@@ -233,9 +232,9 @@ script = ExtResource( 9 )
 path = "ui_accept"
 
 [node name="UseLabel" type="Label" parent="Input"]
-margin_left = 76.0
+margin_left = 200.0
 margin_top = 5.0
-margin_right = 112.0
+margin_right = 236.0
 margin_bottom = 35.0
 theme = ExtResource( 6 )
 text = "USE"

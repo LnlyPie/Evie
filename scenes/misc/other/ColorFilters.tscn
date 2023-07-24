@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/misc/other/ColorFilter.gd" type="Script" id=1]
+[ext_resource path="res://shaders/ColorFilters.gdshader" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/darkest = null
+shader_param/dark = null
+shader_param/light = null
+shader_param/lightest = null
+
+[node name="ColorFilter" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )

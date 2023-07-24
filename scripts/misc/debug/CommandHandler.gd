@@ -16,8 +16,6 @@ var valid_commands = [
 		[ARG_FLOAT]],
 	["photo_cam",
 		[]],
-	["gb_filter",
-		[]],
 	["debug_info",
 		[]],
 	["run_dialogue",
@@ -78,14 +76,6 @@ func run_dialogue(dialogueName, dialogueNode):
 func send_notification(title, desc, icon):
 	Utils.send_notification(title, desc, icon)
 	return "Close debug console to see the notification"
-
-func gb_filter():
-	if !player.gb_filter:
-		player.gb_filter = true
-		return "GameBoy Filter On"
-	else:
-		player.gb_filter = false
-		return "GameBoy Filter Off"
 
 func debug_info():
 	if !player.debugInfo:

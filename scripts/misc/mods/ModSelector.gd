@@ -44,4 +44,4 @@ func _on_ItemList_item_selected(index):
 	selected = $ItemList.get_item_metadata(index)
 
 func _on_DownloadButton_pressed():
-	OS.shell_open("https://gamebanana.com/mods/420144")
+	OS.shell_open("https://gamebanana.com/mods/games/17751")

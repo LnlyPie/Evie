@@ -16,7 +16,7 @@ func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
 
 func _on_OptionsButton_pressed():
-	Settings.showhide()
+	SceneTransition.change_scene("res://scenes/settings/Settings.tscn")
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
@@ -26,9 +26,6 @@ func _on_ModsButton_pressed():
 
 func _on_CreditsButton_pressed():
 	SceneTransition.change_scene("res://scenes/Credits.tscn")
-
-func _on_GameJoltButton_pressed():
-	SceneTransition.change_scene("res://scenes/GameJolt/GameJoltLogin.tscn")
 
 func _on_GithubButton_pressed():
 	OS.shell_open("https://github.com/lnlypie/evie")
