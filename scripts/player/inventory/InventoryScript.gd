@@ -9,7 +9,7 @@ var items: Array = []
 func add_item(item: ItemData) -> bool:
 	if items.size() >= maxCapacity:
 		return false
-
+	
 	items.append(item)
 	return true
 

@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/player/inventory/InventoryScript.gd"
 }, {
+"base": "Control",
+"class": "InventoryUI",
+"language": "GDScript",
+"path": "res://scripts/player/inventory/InventoryUI.gd"
+}, {
 "base": "Reference",
 "class": "ItemData",
 "language": "GDScript",
@@ -105,6 +110,7 @@ _global_script_class_icons={
 "ControllerTextureRect": "",
 "DialogueResource": "",
 "Inventory": "",
+"InventoryUI": "",
 "ItemData": "",
 "LocalizationData": "",
 "LocalizationKeys": "",
