@@ -32,7 +32,6 @@ func _on_ColorsOff_pressed():
 	Settings.color1 = 0
 	Settings.color2 = 0
 func _on_Protanopia_pressed():
-	ColorFilter.set_color(3, 0)
 	Settings.color1 = 3
 	Settings.color2 = 0
 func _on_Deuteranopia_pressed():

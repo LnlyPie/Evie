@@ -5,6 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
+shader_param/type = 0
+shader_param/cbmode = 0
 shader_param/darkest = null
 shader_param/dark = null
 shader_param/light = null

@@ -11,8 +11,8 @@ shader_type canvas_item;
 // - 1: Deuteranopia
 // - 2: Tritanopia
 
-const int type = 0;
-const int cbmode = 0;
+uniform int type = 0;
+uniform int cbmode = 0;
 
 uniform vec4 darkest : hint_color;
 uniform vec4 dark : hint_color;
@@ -23,6 +23,7 @@ void fragment() {
 	if (type == 0) {
 		COLOR = vec4(0.0, 0.0, 0.0, 0.0);
 	} else if (type == 1) {
+		// To be fixed
 		COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
 		float rgb_avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
 		if (rgb_avg < 0.25) {
