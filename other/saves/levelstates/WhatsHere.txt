@@ -1,0 +1,1 @@
+Level States are used for Dialogues (for example to check if Player already talked to the NPC etc.)

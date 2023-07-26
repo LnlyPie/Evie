@@ -18,6 +18,8 @@ var CONDITION_PARTS_REGEX := RegEx.new()
 var REPLACEMENTS_REGEX := RegEx.new()
 var GOTO_REGEX := RegEx.new()
 
+var WEIGHTED_RANDOM_SIBLINGS_REGEX: RegEx = RegEx.new()
+
 var TOKEN_DEFINITIONS: Dictionary = {}
 
 
@@ -26,9 +28,11 @@ func _init() -> void:
 	TRANSLATION_REGEX.compile("\\[TR:(?<tr>.*?)\\]")
 	MUTATION_REGEX.compile("(do|set) (?<mutation>.*)")
 	WRAPPED_CONDITION_REGEX.compile("\\[if (?<condition>.*)\\]")
-	CONDITION_REGEX.compile("(if|elif) (?<condition>.*)")
+	CONDITION_REGEX.compile("(if|elif|else if) (?<condition>.*)")
 	REPLACEMENTS_REGEX.compile("{{(.*?)}}")
 	GOTO_REGEX.compile("=><? (?<jump_to_title>.*)")
+	
+	WEIGHTED_RANDOM_SIBLINGS_REGEX.compile("^\\%(?<weight>\\d+)? ")
 	
 	# Build our list of tokeniser tokens
 	var tokens = {
@@ -65,6 +69,7 @@ func parse(content: String) -> Dictionary:
 	var errors: Array = []
 	
 	var titles: Dictionary = {}
+	var character_names: PoolStringArray = []
 	var known_translations = {}
 	
 	var parent_stack: Array = []
@@ -186,6 +191,8 @@ func parse(content: String) -> Dictionary:
 				first_child["text"] = PoolStringArray(bits).join(": ").replace("!ESCAPED_COLON!", ":")
 				
 				line["character"] = first_child.get("character")
+				if not line["character"] in character_names:
+					character_names.append(line["character"])
 				line["text"] = first_child.get("text")
 				
 				if first_child.get("translation_key") == null:
@@ -236,11 +243,18 @@ func parse(content: String) -> Dictionary:
 		
 		# Dialogue
 		else:
+			# Work out any weighted random siblings
+			if raw_line.begins_with("%"):
+				apply_weighted_random(id, raw_line, indent_size, line, raw_lines, dialogue)
+				raw_line = WEIGHTED_RANDOM_SIBLINGS_REGEX.sub(raw_line, "")
+			
 			line["type"] = DialogueConstants.TYPE_DIALOGUE
 			var l = raw_line.replace("\\:", "!ESCAPED_COLON!")
 			if ": " in l:
 				var bits = Array(l.strip_edges().split(": "))
 				line["character"] = bits.pop_front()
+				if not line["character"] in character_names:
+					character_names.append(line["character"])
 				# You can use variables in the character's name
 				line["character_replacements"] = extract_dialogue_replacements(line.get("character"))
 				if line.get("character_replacements").size() > 0 and line.get("character_replacements")[0].has("error"):
@@ -253,14 +267,6 @@ func parse(content: String) -> Dictionary:
 			line["replacements"] = extract_dialogue_replacements(line.get("text"))
 			if line.get("replacements").size() > 0 and line.get("replacements")[0].has("error"):
 				errors.append(error(id, "Invalid expression"))
-			
-			# Extract any BB style codes out of the text
-			var markers = extract_markers(line.get("text"))
-			line["text"] = markers.get("text")
-			line["pauses"] = markers.get("pauses")
-			line["speeds"] = markers.get("speeds")
-			line["inline_mutations"] = markers.get("mutations")
-			line["time"] = markers.get("time")
 			
 			# Unescape any newlines
 			line["text"] = line.get("text").replace("\\n", "\n")
@@ -324,6 +330,7 @@ func parse(content: String) -> Dictionary:
 	
 	return {
 		"titles": titles,
+		"character_names": character_names,
 		"lines": dialogue,
 		"errors": errors
 	}
@@ -349,7 +356,7 @@ func is_title_line(line: String) -> bool:
 
 func is_condition_line(line: String, include_else: bool = true) -> bool:
 	line = line.strip_edges()
-	if line.begins_with("if ") or line.begins_with("elif "): return true
+	if line.begins_with("if ") or line.begins_with("elif ") or line.begins_with("else if"): return true
 	if include_else and line.begins_with("else"): return true
 	return false
 
@@ -421,6 +428,40 @@ func get_line_after_line(id: int, indent_size: int, line: Dictionary, raw_lines:
 
 func get_indent(line: String) -> int:
 	return line.count("\t", 0, line.find(line.strip_edges()))
+
+
+func apply_weighted_random(id: int, raw_line: String, indent_size: int, line: Dictionary, raw_lines: Array, dialogue: Dictionary) -> void:
+	var weight: int = 1
+	var found = WEIGHTED_RANDOM_SIBLINGS_REGEX.search(raw_line)
+	if found and found.names.has("weight"):
+		weight = found.strings[found.names.weight].to_int()
+	
+	# Look back up the list to find the first weighted random line in this group
+	var original_random_line: Dictionary = {}
+	for i in range(id, 0, -1):
+		if not raw_lines[i].strip_edges().begins_with("%") or get_indent(raw_lines[i]) != indent_size:
+			break
+		elif dialogue.has(str(i)) and dialogue[str(i)].has("siblings"):
+			original_random_line = dialogue[str(i)]
+	
+	# Attach it to the original random line and work out where to go after the line
+	if original_random_line.size() > 0:
+		original_random_line["siblings"] += [{ weight = weight, id = str(id) }]
+		line["next_id"] = original_random_line.next_id
+	# Or set up this line as the original
+	else:
+		line["siblings"] = [{ weight = weight, id = str(id) }]
+		# Find the last weighted random line in this group
+		for i in range(id, raw_lines.size()):
+			if i + 1 >= raw_lines.size():
+				line["next_id"] = DialogueConstants.ID_END
+				break
+			if not raw_lines[i + 1].strip_edges().begins_with("%") or get_indent(raw_lines[i + 1]) != indent_size:
+				line["next_id"] = get_line_after_line(i, indent_size, line, raw_lines, dialogue)
+				break
+	
+	if line.next_id == DialogueConstants.ID_NULL:
+		line["next_id"] = DialogueConstants.ID_END
 
 
 func get_next_nonempty_line_id(line_number: int, all_lines: Array) -> String:
@@ -597,7 +638,7 @@ func extract_response_prompt(line: String) -> String:
 	if translation_key:
 		line = line.replace("[TR:%s]" % translation_key, "")
 	
-	return line.strip_edges()
+	return line.replace("\\n", "\n").strip_edges()
 
 
 func extract_mutation(line: String) -> Dictionary:
@@ -607,7 +648,7 @@ func extract_mutation(line: String) -> Dictionary:
 		return { "error": "Incomplete expression" }
 	
 	if found.names.has("mutation"):
-		var expression = tokenise(found.strings[found.names.get("mutation")])
+		var expression = tokenise(found.strings[found.names.get("mutation")], DialogueConstants.TYPE_MUTATION)
 		if expression[0].get("type") == DialogueConstants.TYPE_ERROR:
 			return { "error": "Invalid expression for value" }
 		else:
@@ -627,7 +668,7 @@ func extract_condition(raw_line: String, is_wrapped: bool = false) -> Dictionary
 		return { "error": "Incomplete condition" }
 	
 	var raw_condition = found.strings[found.names.get("condition")]
-	var expression = tokenise(raw_condition)
+	var expression = tokenise(raw_condition, DialogueConstants.TYPE_CONDITION)
 	
 	if expression[0].get("type") == DialogueConstants.TYPE_ERROR:
 		return { "error": expression[0].get("value") }
@@ -645,7 +686,7 @@ func extract_dialogue_replacements(text: String) -> Array:
 	for found in founds:
 		var replacement: Dictionary = {}
 		var value_in_text = found.strings[1]
-		var expression = tokenise(value_in_text)
+		var expression = tokenise(value_in_text, DialogueConstants.TYPE_DIALOGUE)
 		if expression[0].get("type") == DialogueConstants.TYPE_ERROR:
 			replacement = { "error": expression[0].get("value") }
 		else:
@@ -813,7 +854,7 @@ func find_bbcode_positions_in_string(string: String, find_all: bool = true) -> A
 	return positions
 
 
-func tokenise(text: String) -> Array:
+func tokenise(text: String, line_type_hint: String) -> Array:
 	var tokens = []
 	var limit = 0
 	while text.strip_edges() != "" and limit < 1000:
@@ -830,27 +871,27 @@ func tokenise(text: String) -> Array:
 		else:
 			return [{ "type": "error", "value": "Invalid expression" }]
 	
-	return build_token_tree(tokens)[0]
+	return build_token_tree(tokens, line_type_hint, "")[0]
 	
 
 func build_token_tree_error(message: String) -> Array:
 	return [{ "type": DialogueConstants.TOKEN_ERROR, "value": message}]
 
 
-func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array:
+func build_token_tree(tokens: Array, line_type_hint: String, expected_close_token: String) -> Array:
 	var tree = []
 	var limit = 0
 	while tokens.size() > 0 and limit < 1000:
 		limit += 1
 		var token = tokens.pop_front()
 		
-		var error = check_next_token(token, tokens)
+		var error = check_next_token(token, tokens, line_type_hint)
 		if error != "":
 			return [build_token_tree_error(error), tokens]
 		
 		match token.type:
 			DialogueConstants.TOKEN_FUNCTION:
-				var sub_tree = build_token_tree(tokens, DialogueConstants.TOKEN_PARENS_CLOSE)
+				var sub_tree = build_token_tree(tokens, line_type_hint, DialogueConstants.TOKEN_PARENS_CLOSE)
 				
 				if sub_tree[0].size() > 0 and sub_tree[0][0].get("type") == DialogueConstants.TOKEN_ERROR:
 					return [build_token_tree_error(sub_tree[0][0].get("value")), tokens]
@@ -864,7 +905,7 @@ func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array
 				tokens = sub_tree[1]
 			
 			DialogueConstants.TOKEN_DICTIONARY_REFERENCE:
-				var sub_tree = build_token_tree(tokens, DialogueConstants.TOKEN_BRACKET_CLOSE)
+				var sub_tree = build_token_tree(tokens, line_type_hint, DialogueConstants.TOKEN_BRACKET_CLOSE)
 				
 				if sub_tree[0].size() > 0 and sub_tree[0][0].get("type") == DialogueConstants.TOKEN_ERROR:
 					return [build_token_tree_error(sub_tree[0][0].get("value")), tokens]
@@ -882,7 +923,7 @@ func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array
 				tokens = sub_tree[1]
 			
 			DialogueConstants.TOKEN_BRACE_OPEN:
-				var sub_tree = build_token_tree(tokens, DialogueConstants.TOKEN_BRACE_CLOSE)
+				var sub_tree = build_token_tree(tokens, line_type_hint, DialogueConstants.TOKEN_BRACE_CLOSE)
 				
 				if sub_tree[0].size() > 0 and sub_tree[0][0].get("type") == DialogueConstants.TOKEN_ERROR:
 					return [build_token_tree_error(sub_tree[0][0].get("value")), tokens]
@@ -894,7 +935,7 @@ func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array
 				tokens = sub_tree[1]
 			
 			DialogueConstants.TOKEN_BRACKET_OPEN:
-				var sub_tree = build_token_tree(tokens, DialogueConstants.TOKEN_BRACKET_CLOSE)
+				var sub_tree = build_token_tree(tokens, line_type_hint, DialogueConstants.TOKEN_BRACKET_CLOSE)
 				
 				if sub_tree[0].size() > 0 and sub_tree[0][0].get("type") == DialogueConstants.TOKEN_ERROR:
 					return [build_token_tree_error(sub_tree[0][0].get("value")), tokens]
@@ -916,7 +957,7 @@ func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array
 				tokens = sub_tree[1]
 
 			DialogueConstants.TOKEN_PARENS_OPEN:
-				var sub_tree = build_token_tree(tokens, DialogueConstants.TOKEN_PARENS_CLOSE)
+				var sub_tree = build_token_tree(tokens, line_type_hint, DialogueConstants.TOKEN_PARENS_CLOSE)
 				
 				if sub_tree[0][0].get("type") == DialogueConstants.TOKEN_ERROR:
 					return [build_token_tree_error(sub_tree[0][0].get("value")), tokens]
@@ -985,10 +1026,13 @@ func build_token_tree(tokens: Array, expected_close_token: String = "") -> Array
 	return [tree, tokens]
 
 
-func check_next_token(token: Dictionary, next_tokens: Array) -> String:
+func check_next_token(token: Dictionary, next_tokens: Array, line_type_hint: String) -> String:
 	var next_token_type = null
 	if next_tokens.size() > 0:
 		next_token_type = next_tokens.front().get("type")
+	
+	if line_type_hint == DialogueConstants.TYPE_CONDITION and token.get("type") == DialogueConstants.TOKEN_ASSIGNMENT:
+		return "Unexpected assignment"
  
 	var unexpected_token_types = []
 	match token.get("type"):

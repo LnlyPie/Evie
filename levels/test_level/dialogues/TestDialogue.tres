@@ -53,15 +53,10 @@ lines = {
 "2": {
 "character": "NPC",
 "character_replacements": [  ],
-"inline_mutations": [  ],
 "next_id": "3",
 "parent_id": "1",
-"pauses": {
-},
 "replacements": [  ],
-"speeds": [  ],
 "text": "Hi. Do you want a quest?",
-"time": null,
 "translation_key": "Hi. Do you want a quest?",
 "type": "dialogue"
 },
@@ -116,15 +111,10 @@ lines = {
 "7": {
 "character": "NPC",
 "character_replacements": [  ],
-"inline_mutations": [  ],
 "next_id": "11",
 "parent_id": "1",
-"pauses": {
-},
 "replacements": [  ],
-"speeds": [  ],
 "text": "Alright! To complete the quest find 2 LonelyPie logos.",
-"time": null,
 "translation_key": "Alright! To complete the quest find 2 LonelyPie logos.",
 "type": "dialogue"
 },
@@ -137,15 +127,10 @@ lines = {
 "9": {
 "character": "NPC",
 "character_replacements": [  ],
-"inline_mutations": [  ],
 "next_id": "11",
 "parent_id": "8",
-"pauses": {
-},
 "replacements": [  ],
-"speeds": [  ],
 "text": "I gave you a quest already!",
-"time": null,
 "translation_key": "I gave you a quest already!",
 "type": "dialogue"
 }

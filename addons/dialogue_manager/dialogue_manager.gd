@@ -3,13 +3,11 @@ extends Node
 
 signal dialogue_started
 signal dialogue_finished
+signal bridge_get_next_dialogue_line_completed(line)
 
 
 const DialogueResource = preload("res://addons/dialogue_manager/dialogue_resource.gd")
 const DialogueConstants = preload("res://addons/dialogue_manager/constants.gd")
-const DialogueLine = preload("res://addons/dialogue_manager/dialogue_line.gd")
-const DialogueResponse = preload("res://addons/dialogue_manager/dialogue_response.gd")
-
 const DialogueSettings = preload("res://addons/dialogue_manager/components/settings.gd")
 const DialogueParser = preload("res://addons/dialogue_manager/components/parser.gd")
 
@@ -24,9 +22,7 @@ var settings: DialogueSettings = DialogueSettings.new()
 var is_dialogue_running := false setget set_is_dialogue_running
 
 var _node_properties: Array = []
-var _extra_game_states: Array = []
 var _resource_cache: Array = []
-var _trash: Node = Node.new()
 
 
 func _ready() -> void:
@@ -45,16 +41,11 @@ func _ready() -> void:
 		var state = get_node("/root/" + node_name)
 		if state:
 			game_states.append(state)
-	
-	# Add a node for cleaning up
-	add_child(_trash)
 
 
 # Step through lines and run any mutations until we either 
 # hit some dialogue or the end of the conversation
-func get_next_dialogue_line(key: String, override_resource: DialogueResource = null, extra_game_states: Array = []) -> DialogueLine:
-	cleanup()
-	
+func get_next_dialogue_line(key: String, override_resource: DialogueResource = null, extra_game_states: Array = []) -> Dictionary:
 	# Fix up any keys that have spaces in them
 	key = key.replace(" ", "_").strip_edges()
 	
@@ -64,9 +55,6 @@ func get_next_dialogue_line(key: String, override_resource: DialogueResource = n
 	var local_resource: DialogueResource = (override_resource if override_resource != null else resource)
 	
 	assert(local_resource.syntax_version == DialogueConstants.SYNTAX_VERSION, "This dialogue resource is older than the runtime expects.")
-	
-	# Temporarily add any extra game states that were passed in
-	_extra_game_states = extra_game_states
 	
 	var resource_path = local_resource.resource_path
 	if local_resource.lines.size() == 0:
@@ -83,44 +71,43 @@ func get_next_dialogue_line(key: String, override_resource: DialogueResource = n
 	
 	self.is_dialogue_running = true
 	
-	var dialogue = get_line(key, local_resource)
+	var dialogue = get_line(key, local_resource, extra_game_states)
 	
 	yield(get_tree(), "idle_frame")
 	
 	# If our dialogue is nothing then we hit the end
 	if not is_valid(dialogue):
 		self.is_dialogue_running = false
-		return null
+		return create_empty_dialogue_line()
 	
 	# Run the mutation if it is one
 	if dialogue.type == DialogueConstants.TYPE_MUTATION:
-		yield(mutate(dialogue.mutation), "completed")
-		if is_instance_valid(dialogue):
-			dialogue.queue_free()
-			var actual_next_id = Array(dialogue.next_id.split(",")).front()
-			if actual_next_id in [DialogueConstants.ID_END_CONVERSATION, DialogueConstants.ID_NULL, null]:
-				# End the conversation
-				self.is_dialogue_running = false
-				return null
-			else:
-				return get_next_dialogue_line(dialogue.next_id, local_resource, extra_game_states)
-		else:
+		yield(mutate(dialogue.mutation, extra_game_states), "completed")
+		var actual_next_id = Array(dialogue.next_id.split(",")).front()
+		if actual_next_id in [DialogueConstants.ID_END_CONVERSATION, DialogueConstants.ID_NULL, null]:
 			# End the conversation
 			self.is_dialogue_running = false
-			return null
+			return create_empty_dialogue_line()
+		else:
+			return get_next_dialogue_line(dialogue.next_id, local_resource, extra_game_states)
 	else:
 		return dialogue
 
 
-func replace_values(line_or_response) -> String:
-	if line_or_response is DialogueLine:
-		var line: DialogueLine = line_or_response
-		return get_with_replacements(line.dialogue, line.replacements)
-	elif line_or_response is DialogueResponse:
-		var response: DialogueResponse = line_or_response
-		return get_with_replacements(response.prompt, response.replacements)
-	else:
-		return ""
+# Replace any variables, etc in the dialogue with their state values
+func get_resolved_text(text: String, replacements: Array, extra_game_states: Array = []) -> String:
+	for replacement in replacements:
+		var value = resolve(replacement.get("expression").duplicate(true), extra_game_states)
+		text = text.replace(replacement.get("value_in_text"), str(value))
+	
+	# Resolve random groups
+	var random_regex: RegEx = RegEx.new()
+	random_regex.compile("\\[\\[(?<options>.*?)\\]\\]")
+	for found in random_regex.search_all(text):
+		var options = found.get_string("options").split("|")
+		text = text.replace("[[%s]]" % found.get_string("options"), options[rand_range(0, options.size())])
+	
+	return text
 
 
 func get_resource_from_text(text: String) -> DialogueResource:
@@ -140,13 +127,21 @@ func get_resource_from_text(text: String) -> DialogueResource:
 
 
 func show_example_dialogue_balloon(title: String, local_resource: DialogueResource = null, extra_game_states: Array = []) -> void:
-	var dialogue = yield(get_next_dialogue_line(title, local_resource, extra_game_states), "completed")
-	if dialogue != null:
+	var dialogue_line = yield(get_next_dialogue_line(title, local_resource, extra_game_states), "completed")
+	if dialogue_line != null:
 		var balloon = preload("res://addons/dialogue_manager/example_balloon/example_balloon.tscn").instance()
-		balloon.dialogue = dialogue
+		balloon.dialogue_line = dialogue_line
 		get_tree().current_scene.add_child(balloon)
 		show_example_dialogue_balloon(yield(balloon, "actioned"), local_resource, extra_game_states)
-	
+
+
+### Dotnet bridge
+
+
+func _bridge_get_next_dialogue_line(resource: Resource, key: String, extra_game_states: Array = []) -> void:
+	var line = yield(get_next_dialogue_line(key, resource, extra_game_states), "completed")
+	emit_signal("bridge_get_next_dialogue_line_completed", line)
+
 
 ### Helpers
 
@@ -169,7 +164,7 @@ func compile_resource(resource: DialogueResource) -> DialogueResource:
 
 
 # Get a line by its ID
-func get_line(key: String, local_resource: DialogueResource) -> DialogueLine:
+func get_line(key: String, local_resource: DialogueResource, extra_game_states: Array) -> Dictionary:
 	# See if we were given a stack instead of just the one key
 	var stack: Array = key.split(",")
 	key = stack.pop_front()
@@ -178,11 +173,11 @@ func get_line(key: String, local_resource: DialogueResource) -> DialogueLine:
 	# See if we just ended the conversation
 	if key in [DialogueConstants.ID_END, DialogueConstants.ID_NULL, null]:
 		if stack.size() > 0:
-			return get_line(PoolStringArray(stack).join(","), local_resource)
+			return get_line(PoolStringArray(stack).join(","), local_resource, extra_game_states)
 		else:
-			return null
+			return create_empty_dialogue_line()
 	elif key == DialogueConstants.ID_END_CONVERSATION:
-		return null
+		return create_empty_dialogue_line()
 	
 	# See if it is a title
 	if key.begins_with("~ "):
@@ -197,45 +192,120 @@ func get_line(key: String, local_resource: DialogueResource) -> DialogueLine:
 	
 	var data = local_resource.lines.get(key)
 	
+	# Check for weighted random lines
+	if data.has("siblings"):
+		var total = 0
+		for sibling in data.get("siblings"):
+			total += sibling.get("weight")
+		var result = randi() % total
+		var cummulative_weight = 0
+		for sibling in data.siblings:
+			if result < cummulative_weight + sibling.weight:
+				data = local_resource.lines.get(sibling.id)
+				break
+			else:
+				cummulative_weight += sibling.weight
+	
 	# Check condtiions
-	if data.get("type") == DialogueConstants.TYPE_CONDITION:
+	elif data.get("type") == DialogueConstants.TYPE_CONDITION:
 		# "else" will have no actual condition
-		if data.get("condition") == null or check(data.get("condition")):
-			return get_line(data.get("next_id") + id_trail, local_resource)
+		if check(data, extra_game_states):
+			return get_line(data.get("next_id") + id_trail, local_resource, extra_game_states)
 		else:
-			return get_line(data.get("next_conditional_id") + id_trail, local_resource)
+			return get_line(data.get("next_conditional_id") + id_trail, local_resource, extra_game_states)
 	
 	# Evaluate jumps
-	if data.get("type") == DialogueConstants.TYPE_GOTO:
+	elif data.get("type") == DialogueConstants.TYPE_GOTO:
 		if data.get("is_snippet"):
 			id_trail = "," + data.get("next_id_after") + id_trail
-		return get_line(data.get("next_id") + id_trail, local_resource)
+		return get_line(data.get("next_id") + id_trail, local_resource, extra_game_states)
 	
-	# Set up a line object
-	var line = DialogueLine.new(data, auto_translate)
-	line.dialogue_manager = self
+	# Set up a line
+	var line: Dictionary = create_dialogue_line(data, extra_game_states)
 	line.next_id += id_trail
-	
-	# Add as a child so that it gets cleaned up automatically
-	if line.get("type") != DialogueConstants.TYPE_MUTATION:
-		_trash.add_child(line)
 	
 	# If we are the first of a list of responses then get the other ones
 	if data.get("type") == DialogueConstants.TYPE_RESPONSE:
-		line.responses = get_responses(data.get("responses"), local_resource, id_trail, line)
+		line.responses = get_responses(data.get("responses"), local_resource, id_trail, extra_game_states)
 		return line
-	
-	# Replace any variables in the dialogue text
-	if data.get("type") == DialogueConstants.TYPE_DIALOGUE and data.has("replacements"):
-		line.character = get_with_replacements(line.character, line.character_replacements)
-		line.dialogue = get_with_replacements(line.dialogue, line.replacements)
 	
 	# Inject the next node's responses if they have any
 	var next_line = local_resource.lines.get(line.next_id)
 	if next_line != null and next_line.get("type") == DialogueConstants.TYPE_RESPONSE:
-		line.responses = get_responses(next_line.get("responses"), local_resource, id_trail, line)
+		line.responses = get_responses(next_line.get("responses"), local_resource, id_trail, extra_game_states)
 	
 	return line
+
+
+# Create a line of dialogue
+func create_dialogue_line(data: Dictionary, extra_game_states: Array) -> Dictionary:
+	match data.type:
+		DialogueConstants.TYPE_DIALOGUE:
+			# Our bbcodes need to be process after text has been resolved so that the markers are at the correct index
+			var text = get_resolved_text(tr(data.translation_key) if auto_translate else data.text, data.replacements, extra_game_states)
+			var parser = DialogueParser.new()
+			var markers = parser.extract_markers(text)
+			parser.free()
+			
+			return {
+				type = DialogueConstants.TYPE_DIALOGUE,
+				next_id = data.next_id,
+				character = get_resolved_text(data.character, data.get("character_replacements", []), extra_game_states),
+				character_replacements = data.get("character_replacements", []),
+				text = markers.text,
+				text_replacements = data.replacements,
+				translation_key = data.translation_key,
+				pauses = markers.pauses,
+				speeds = markers.speeds,
+				inline_mutations = markers.mutations,
+				time = markers.time,
+				responses = [],
+				extra_game_states = extra_game_states
+			}
+			
+		DialogueConstants.TYPE_RESPONSE:
+			return {
+				type = DialogueConstants.TYPE_DIALOGUE,
+				next_id = data.next_id,
+				character = "",
+				character_replacements = [],
+				text = "",
+				text_replacements = [],
+				translation_key = "",
+				pauses = {},
+				speeds = [],
+				inline_mutations = [],
+				time = null,
+				responses = [],
+				extra_game_states = extra_game_states
+			}
+			
+		DialogueConstants.TYPE_MUTATION:
+			return {
+				type = DialogueConstants.TYPE_MUTATION,
+				next_id = data.next_id,
+				mutation = data.mutation,
+				extra_game_states = extra_game_states
+			}
+		
+	return create_empty_dialogue_line()
+
+
+# Create a response
+func create_response(data: Dictionary, extra_game_states: Array) -> Dictionary:
+	return {
+		type = DialogueConstants.TYPE_RESPONSE,
+		next_id = data.next_id,
+		is_allowed = check(data, extra_game_states),
+		text = get_resolved_text(tr(data.translation_key) if auto_translate else data.text, data.replacements, extra_game_states),
+		text_replacements = data.replacements,
+		translation_key = data.translation_key
+	}
+
+
+# Create an empty line
+func create_empty_dialogue_line() -> Dictionary:
+	return {}
 
 
 func set_is_dialogue_running(is_running: bool) -> void:
@@ -248,38 +318,39 @@ func set_is_dialogue_running(is_running: bool) -> void:
 	is_dialogue_running = is_running
 
 
-func get_game_states() -> Array:
+func get_game_states(extra_game_states: Array) -> Array:
 	var current_scene = get_tree().current_scene
 	var unique_states = []
-	for state in _extra_game_states + [current_scene] + game_states:
+	for state in extra_game_states + [current_scene] + game_states:
 		if not unique_states.has(state):
 			unique_states.append(state)
 	return unique_states
 
 
 # Check if a condition is met
-func check(condition: Dictionary) -> bool:
-	if condition.size() == 0: return true
+func check(data: Dictionary, extra_game_states: Array) -> bool:
+	if data.get("condition", null) == null: return true
+	if data.get("condition").size() == 0: return true
 	
-	return resolve(condition.get("expression").duplicate(true))
+	return resolve(data.get("condition").get("expression").duplicate(true), extra_game_states)
 
 
 # Make a change to game state or run a method
-func mutate(mutation: Dictionary) -> void:
+func mutate(mutation: Dictionary, extra_game_states: Array) -> void:
 	assert(mutation != null and mutation.has("expression"), "Mutation is not valid. You might need to re-open the source dialogue file.")
 	
 	var expression = mutation.get("expression")
 	
 	# Handle built in mutations
 	if expression[0].get("type") == DialogueConstants.TOKEN_FUNCTION and expression[0].get("function") in ["wait", "emit", "debug"]:
-		var args = resolve_each(expression[0].get("value"))
+		var args = resolve_each(expression[0].get("value"), extra_game_states)
 		match expression[0].get("function"):
 			"wait":
 				yield(get_tree().create_timer(float(args[0])), "timeout")
 				return
 				
 			"emit":
-				for state in get_game_states():
+				for state in get_game_states(extra_game_states):
 					if state.has_signal(args[0]):
 						match args.size():
 							1:
@@ -304,7 +375,7 @@ func mutate(mutation: Dictionary) -> void:
 	
 	# Or pass through to the resolver
 	else:
-		var result = resolve(mutation.get("expression").duplicate(true))
+		var result = resolve(mutation.get("expression").duplicate(true), extra_game_states)
 		if result is GDScriptFunctionState and result.is_valid():
 			yield(result, "completed")
 			return
@@ -313,84 +384,68 @@ func mutate(mutation: Dictionary) -> void:
 	yield(get_tree(), "idle_frame")
 
 
-func resolve_each(array: Array) -> Array:
+func resolve_each(array: Array, extra_game_states: Array) -> Array:
 	var results = []
 	for item in array:
-		results.append(resolve(item.duplicate(true)))
+		results.append(resolve(item.duplicate(true), extra_game_states))
 	return results
-	
-
-# Replace any variables, etc in the dialogue with their state values
-func get_with_replacements(text: String, replacements: Array) -> String:
-	for replacement in replacements:
-		var value = resolve(replacement.get("expression").duplicate(true))
-		text = text.replace(replacement.get("value_in_text"), str(value))
-	
-	# Resolve random groups
-	var random_regex: RegEx = RegEx.new()
-	random_regex.compile("\\[\\[(?<options>.*?)\\]\\]")
-	for found in random_regex.search_all(text):
-		var options = found.get_string("options").split("|")
-		text = text.replace("[[%s]]" % found.get_string("options"), options[rand_range(0, options.size())])
-	
-	return text
 
 
 # Replace an array of line IDs with their response prompts
-func get_responses(ids: Array, local_resource: DialogueResource, id_trail: String, line: Node) -> Array:
+func get_responses(ids: Array, local_resource: DialogueResource, id_trail: String, extra_game_states: Array) -> Array:
 	var responses: Array = []
 	for id in ids:
 		var data = local_resource.lines.get(id)
-		if settings.get_runtime_value("include_all_responses", false) or data.get("condition") == null or check(data.get("condition")):
-			var response = DialogueResponse.new(data, auto_translate)
+		if settings.get_runtime_value("include_all_responses", false) or data.get("condition") == null or check(data, extra_game_states):
+			var response: Dictionary = create_response(data, extra_game_states)
 			response.next_id += id_trail
-			response.character = get_with_replacements(response.character, response.character_replacements)
-			response.prompt = get_with_replacements(response.prompt, response.replacements)
-			response.is_allowed = data.get("condition") == null or check(data.get("condition"))
-			# Add as a child so that it gets cleaned up automatically
-			line.add_child(response)
 			responses.append(response)
 	
 	return responses
 
 
 # Get a value on the current scene or game state
-func get_state_value(property: String):
+func get_state_value(property: String, extra_game_states: Array):
 	var expression = Expression.new()
 	if expression.parse(property) != OK:
 		printerr("'%s' is not a valid expression: %s" % [property, expression.get_error_text()])
 		assert(false, "Invalid expression. See Output for details.")
 	
-	for state in get_game_states():
+	for state in get_game_states(extra_game_states):
 		if typeof(state) == TYPE_DICTIONARY:
-			return state.get(property)
+			if state.has(property):
+				return state.get(property)
 		else:
 			var result = expression.execute([], state, false)
 			if not expression.has_execute_failed():
 				return result
 
-	printerr("'%s' is not a property on any game states (%s)." % [property, str(get_game_states())])
+	printerr("'%s' is not a property on any game states (%s)." % [property, str(get_game_states(extra_game_states))])
 	assert(false, "Missing property on current scene or game state. See Output for details.")
 
 
 # Set a value on the current scene or game state
-func set_state_value(property: String, value) -> void:
-	for state in get_game_states():
-		if has_property(state, property):
+func set_state_value(property: String, value, extra_game_states: Array) -> void:
+	for state in get_game_states(extra_game_states):
+		if typeof(state) == TYPE_DICTIONARY:
+			if state.has(property):
+				state[property] = value
+				return
+		elif has_property(state, property):
 			state.set(property, value)
 			return
 	
-	printerr("'%s' is not a property on any game states (%s)." % [property, str(get_game_states())])
+	printerr("'%s' is not a property on any game states (%s)." % [property, str(get_game_states(extra_game_states))])
 	assert(false, "Missing property on current scene or game state. See Output for details.")
 
 
 # Collapse any expressions
-func resolve(tokens: Array):
+func resolve(tokens: Array, extra_game_states: Array):
 	# Handle groups first
 	for token in tokens:
 		if token.get("type") == DialogueConstants.TOKEN_GROUP:
 			token["type"] = "value"
-			token["value"] = resolve(token.get("value"))
+			token["value"] = resolve(token.get("value"), extra_game_states)
 	
 	# Then variables/methods
 	var i = 0
@@ -400,7 +455,7 @@ func resolve(tokens: Array):
 		
 		if token.get("type") == DialogueConstants.TOKEN_FUNCTION:
 			var function_name = token.get("function")
-			var args = resolve_each(token.get("value"))
+			var args = resolve_each(token.get("value"), extra_game_states)
 			if function_name == "str":
 				token["type"] = "value"
 				token["value"] = str(args[0])
@@ -418,19 +473,19 @@ func resolve(tokens: Array):
 				i -= 2
 			else:
 				var found = false
-				for state in get_game_states():
+				for state in get_game_states(extra_game_states):
 					if state.has_method(function_name):
 						token["type"] = "value"
 						token["value"] = state.callv(function_name, args)
 						found = true
 				
 				if not found:
-					printerr("\"%s\" is not a method on any game states (%s)" % [function_name, str(get_game_states())])
+					printerr("\"%s\" is not a method on any game states (%s)" % [function_name, str(get_game_states(extra_game_states))])
 					assert(false, "Missing function on current scene or game state. See Output for details.")
 		
 		elif token.get("type") == DialogueConstants.TOKEN_DICTIONARY_REFERENCE:
-			var value = get_state_value(token.get("variable"))
-			var index = resolve(token.get("value"))
+			var value = get_state_value(token.get("variable"), extra_game_states)
+			var index = resolve(token.get("value"), extra_game_states)
 			if typeof(value) == TYPE_DICTIONARY:
 				if tokens.size() > i + 1 and tokens[i + 1].get("type") == DialogueConstants.TOKEN_ASSIGNMENT:
 					# If the next token is an assignment then we need to leave this as a reference
@@ -462,7 +517,7 @@ func resolve(tokens: Array):
 		
 		elif token.get("type") == DialogueConstants.TOKEN_DICTIONARY_NESTED_REFERENCE:
 			var dictionary = tokens[i - 1]
-			var index = resolve(token.get("value"))
+			var index = resolve(token.get("value"), extra_game_states)
 			var value = dictionary.get("value")
 			if typeof(value) == TYPE_DICTIONARY:
 				if tokens.size() > i + 1 and tokens[i + 1].get("type") == DialogueConstants.TOKEN_ASSIGNMENT:
@@ -501,14 +556,14 @@ func resolve(tokens: Array):
 		
 		elif token.get("type") == DialogueConstants.TOKEN_ARRAY:
 			token["type"] = "value"
-			token["value"] = resolve_each(token.get("value"))
+			token["value"] = resolve_each(token.get("value"), extra_game_states)
 			
 		elif token.get("type") == DialogueConstants.TOKEN_DICTIONARY:
 			token["type"] = "value"
 			var dictionary = {}
 			for key in token.get("value").keys():
-				var resolved_key = resolve([key])
-				var resolved_value = resolve([token.get("value").get(key)])
+				var resolved_key = resolve([key], extra_game_states)
+				var resolved_value = resolve([token.get("value").get(key)], extra_game_states)
 				dictionary[resolved_key] = resolved_value
 			token["value"] = dictionary
 			
@@ -538,7 +593,7 @@ func resolve(tokens: Array):
 				token["type"] = "variable"
 			else:
 				token["type"] = "value"
-				token["value"] = get_state_value(token.get("value"))
+				token["value"] = get_state_value(token.get("value"), extra_game_states)
 		
 		i += 1
 	
@@ -638,8 +693,8 @@ func resolve(tokens: Array):
 			
 			match lhs.get("type"):
 				"variable":
-					value = apply_operation(token.get("value"), get_state_value(lhs.get("value")), tokens[i+1].get("value"))
-					set_state_value(lhs.get("value"), value)
+					value = apply_operation(token.get("value"), get_state_value(lhs.get("value"), extra_game_states), tokens[i+1].get("value"))
+					set_state_value(lhs.get("value"), value, extra_game_states)
 				"property":
 					value = apply_operation(token.get("value"), lhs.get("value").get(lhs.get("property")), tokens[i+1].get("value"))
 					if typeof(lhs.get("value")) == TYPE_DICTIONARY:
@@ -741,8 +796,8 @@ func apply_operation(operator: String, first_value, second_value):
 
 
 # Check if a dialogue line contains meaningful information
-func is_valid(line: DialogueLine) -> bool:
-	if not line: 
+func is_valid(line: Dictionary) -> bool:
+	if not line:
 		return false
 	if line.type == DialogueConstants.TYPE_MUTATION and line.mutation == null:
 		return false
@@ -764,8 +819,3 @@ func has_property(thing: Object, name: String) -> bool:
 			return true
 	
 	return false
-
-
-func cleanup() -> void:
-	for line in _trash.get_children():
-		line.queue_free()

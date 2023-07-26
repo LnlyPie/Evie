@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m3x6/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/intro/Intro.gd" type="Script" id=2]
 [ext_resource path="res://logo.png" type="Texture" id=3]
 [ext_resource path="res://sprites/icons/misc/godot_logo.svg" type="Texture" id=4]
