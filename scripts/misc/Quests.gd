@@ -1,19 +1,20 @@
 extends Node
 
 var quests = {}
-var quests_done = {}
+var quests_completed = Save.player_data["quests_completed"]
 
 # Quests.new("Some Quest", "A description for the quest")
 func new(name: String, description: String, maxprogress: int = 100):
-	var quest = {
-		"name": name,
-		"description": description,
-		"progress": 0,
-		"max_progress": maxprogress,
-		"completed": false
-	}
-	quests[name] = quest
-	Utils.send_notification("New Quest Avaliable!", name + "\n" + description, "quest")
+	if (!quests_completed.has(name)):
+		var quest = {
+			"name": name,
+			"description": description,
+			"progress": 0,
+			"max_progress": maxprogress,
+			"completed": false
+		}
+		quests[name] = quest
+		Utils.send_notification("New Quest Avaliable!", name + "\n" + description, "quest")
 
 func add_progress(name, progress: int):
 	if quests[name]["progress"] != quests[name]["max_progress"]:
@@ -21,6 +22,8 @@ func add_progress(name, progress: int):
 
 func complete(name):
 	quests[name]["completed"] = true
+	Save.player_data["quests_completed"].append(name)
+	quests.erase(name)
 	Utils.send_notification("Quest completed", name, "quest")
 
 func is_completed(name):

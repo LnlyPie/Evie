@@ -1,15 +1,24 @@
 extends Node
 
 var slot_picked:int = 1
+const DEFAULT_PLAYER_DATA = {
+	"name": "Evie",
+	"health": 5,
+	"inventory": [],
+	"last_location": "",
+	"chapter": 0,
+	"quests_completed": []
+}
 var player_data = {
 	"name": "Evie", # How NPCs refer to you in-game
 	"health": 5,
 	"inventory": [],
 	"last_location": "",
+	"chapter": 0, # -1 - test level, 0 - prologue etc.
 	"quests_completed": []
 }
 var save_info = {
-	"save_name": "Evie", # Name in saves menu
+	"save_name": "Evie", # Name in saves menu (for recognition)
 	"save_creation": null, # When save was created
 	"last_saved": null # When save was last saved
 }
@@ -61,6 +70,11 @@ func load_data(slot):
 		var json = file.get_as_text()
 		player_data = JSON.parse(json).result
 		file.close()
+		# Check for any new data
+		for key in DEFAULT_PLAYER_DATA.keys():
+			if !player_data.has(key):
+				player_data[key] = DEFAULT_PLAYER_DATA[key]
+		save_data(slot)
 	# Load save.cfg
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
 		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
@@ -83,3 +97,12 @@ func exists(slot, type = 0):
 
 func get_slot_folder():
 	return (Utils.savesFolder + "save" + str(slot_picked) + "/")
+
+# For use in Save Select menu
+func get_save_info(slot: int):
+	var file = File.new()
+	var cfg = ConfigFile.new()
+	
+	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
+		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
+		return (cfg.get_value("Info", "name") + "-" + cfg.get_value("Info", "created") + "-" + cfg.get_value("Info", "last_saved"))
