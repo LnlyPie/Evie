@@ -1,19 +1,16 @@
 [gd_resource type="Theme" load_steps=4 format=2]
 
+[ext_resource path="res://fonts/m3x6/m3x6.ttf" type="DynamicFontData" id=1]
+
 [sub_resource type="StyleBoxFlat" id=1]
 draw_center = false
 
-[sub_resource type="DynamicFontData" id=2]
-antialiased = false
-font_path = "res://fonts/kenpixelmini/m3x6.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-size = 64
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
+[sub_resource type="DynamicFont" id=2]
+size = 46
+font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 3 )
+default_font = SubResource( 2 )
 Button/colors/font_color_focus = Color( 0.2, 0.192157, 0.988235, 1 )
 Button/colors/font_color_hover = Color( 0.2, 0.192157, 0.988235, 1 )
 Button/styles/disabled = SubResource( 1 )

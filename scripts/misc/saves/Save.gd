@@ -38,26 +38,27 @@ func get_saves():
 			slots_saved.append(slotnum)
 	return slots_saved
 
-func save_data(slot):
+func save_data(slot, data_only: bool = false):
 	var file = File.new()
 	var dir = Directory.new()
 	var cfg = ConfigFile.new()
 	if !dir.dir_exists(Utils.savesFolder + "save" + str(slot)):
 		dir.make_dir(Utils.savesFolder + "save" + str(slot))
 	
-	if save_info["save_creation"] == null:
-		save_info["save_creation"] = Utils.get_date_and_time(1)
-	save_info["last_saved"] = Utils.get_date_and_time()
+	if (!data_only):
+		if save_info["save_creation"] == null:
+			save_info["save_creation"] = Utils.get_date_and_time(1)
+		save_info["last_saved"] = Utils.get_date_and_time()
+		# Save save.cfg
+		cfg.set_value("Info", "name", save_info["save_name"])
+		cfg.set_value("Info", "created", save_info["save_creation"])
+		cfg.set_value("Info", "last_saved", save_info["last_saved"])
+		cfg.save(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
 	# Save save.dat
 	file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.WRITE)
 	var json = JSON.print(player_data)
 	file.store_string(json)
 	file.close()
-	# Save save.cfg
-	cfg.set_value("Info", "name", save_info["save_name"])
-	cfg.set_value("Info", "created", save_info["save_creation"])
-	cfg.set_value("Info", "last_saved", save_info["last_saved"])
-	cfg.save(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
 	# Save achievements.json
 	AchievementManager.save_achievements()
 
@@ -74,7 +75,7 @@ func load_data(slot):
 		for key in DEFAULT_PLAYER_DATA.keys():
 			if !player_data.has(key):
 				player_data[key] = DEFAULT_PLAYER_DATA[key]
-		save_data(slot)
+			save_data(slot, true)
 	# Load save.cfg
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
 		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
@@ -105,4 +106,6 @@ func get_save_info(slot: int):
 	
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
 		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
-		return (cfg.get_value("Info", "name") + "-" + cfg.get_value("Info", "created") + "-" + cfg.get_value("Info", "last_saved"))
+		return (cfg.get_value("Info", "name") + "*" + cfg.get_value("Info", "created") + "*" + cfg.get_value("Info", "last_saved"))
+	else:
+		return ("None*-*-")

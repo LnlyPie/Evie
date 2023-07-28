@@ -6,7 +6,7 @@
 draw_center = false
 
 [sub_resource type="DynamicFont" id=2]
-size = 72
+size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
