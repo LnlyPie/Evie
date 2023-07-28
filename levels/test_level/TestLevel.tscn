@@ -10,7 +10,7 @@
 [ext_resource path="res://logo.png" type="Texture" id=8]
 [ext_resource path="res://levels/test_level/level_scripts/logo1.gd" type="Script" id=9]
 [ext_resource path="res://levels/test_level/level_scripts/logo2.gd" type="Script" id=10]
-[ext_resource path="res://scenes/TileMaps/SurroundingsTileMap.tscn" type="PackedScene" id=11]
+[ext_resource path="res://tilesets/prefabs/surroundings/Tree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://tilesets/Ground.tres" type="TileSet" id=12]
 
 [sub_resource type="CircleShape2D" id=4]
@@ -25,7 +25,10 @@ extents = Vector2( 12, 288 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 360, 12 )
 
-[node name="TestLevel-A*Test*Level_0-Some*Test*Act" type="Node2D"]
+[node name="TestLevel-A*Test*Level_0-Some*Test*Act" type="YSort"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 249, 146 )
 
 [node name="GrassTileMap" parent="." instance=ExtResource( 3 )]
 tile_set = ExtResource( 12 )
@@ -102,11 +105,42 @@ texture = ExtResource( 4 )
 script = ExtResource( 6 )
 path = "player_interact"
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 249, 146 )
+[node name="Trees" type="YSort" parent="."]
 
-[node name="SurroundingsTileMap" parent="." instance=ExtResource( 11 )]
-tile_data = PoolIntArray( 7, 0, 0, 11, 0, 0, 655374, 0, 0, 655377, 0, 0, 720908, 0, 0, 720911, 0, 0, 720914, 0, 0, 786446, 0, 0, 851979, 0, 0, 851981, 0, 0, 851983, 0, 0, 851984, 0, 0, 851986, 0, 0 )
+[node name="Tree" parent="Trees" instance=ExtResource( 11 )]
+
+[node name="Tree2" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 320, 80 )
+
+[node name="Tree3" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 352, 480 )
+
+[node name="Tree4" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 392, 480 )
+
+[node name="Tree5" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 360, 432 )
+
+[node name="Tree6" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 408, 448 )
+
+[node name="Tree7" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 480, 496 )
+
+[node name="Tree8" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 440, 477 )
+
+[node name="Tree9" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 496, 456 )
+
+[node name="Tree10" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 552, 504 )
+
+[node name="Tree11" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 512, 485 )
+
+[node name="Tree12" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( 568, 464 )
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 
