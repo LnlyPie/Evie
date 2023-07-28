@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m3x6/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/misc/saves/SavesScreen.gd" type="Script" id=3]
 
@@ -37,4 +37,128 @@ margin_left = -640.0
 margin_top = -352.0
 margin_right = 640.0
 margin_bottom = 352.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="SaveSlot1" type="Panel" parent="Panel/Saves"]
+margin_top = 2.0
+margin_right = 1280.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot1"]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 360.0
+margin_bottom = 66.0
 theme = ExtResource( 1 )
+text = "PlayerName (CharName)"
+
+[node name="SaveDates" type="HBoxContainer" parent="Panel/Saves/SaveSlot1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -94.0
+margin_right = 640.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Created" type="Label" parent="Panel/Saves/SaveSlot1/SaveDates"]
+margin_left = 243.0
+margin_top = 21.0
+margin_right = 543.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Created: 25-05-2099"
+
+[node name="Saved" type="Label" parent="Panel/Saves/SaveSlot1/SaveDates"]
+margin_left = 593.0
+margin_top = 21.0
+margin_right = 1037.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Last Saved: 25-06-2099 10:50"
+
+[node name="SaveSlot2" type="Panel" parent="Panel/Saves"]
+margin_top = 252.0
+margin_right = 1280.0
+margin_bottom = 452.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot2"]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 360.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "PlayerName (CharName)"
+
+[node name="SaveDates" type="HBoxContainer" parent="Panel/Saves/SaveSlot2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -94.0
+margin_right = 640.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Created" type="Label" parent="Panel/Saves/SaveSlot2/SaveDates"]
+margin_left = 243.0
+margin_top = 21.0
+margin_right = 543.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Created: 25-05-2099"
+
+[node name="Saved" type="Label" parent="Panel/Saves/SaveSlot2/SaveDates"]
+margin_left = 593.0
+margin_top = 21.0
+margin_right = 1037.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Last Saved: 25-06-2099 10:50"
+
+[node name="SaveSlot3" type="Panel" parent="Panel/Saves"]
+margin_top = 502.0
+margin_right = 1280.0
+margin_bottom = 702.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot3"]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 360.0
+margin_bottom = 66.0
+theme = ExtResource( 1 )
+text = "PlayerName (CharName)"
+
+[node name="SaveDates" type="HBoxContainer" parent="Panel/Saves/SaveSlot3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -94.0
+margin_right = 640.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Created" type="Label" parent="Panel/Saves/SaveSlot3/SaveDates"]
+margin_left = 243.0
+margin_top = 21.0
+margin_right = 543.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Created: 25-05-2099"
+
+[node name="Saved" type="Label" parent="Panel/Saves/SaveSlot3/SaveDates"]
+margin_left = 593.0
+margin_top = 21.0
+margin_right = 1037.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+text = "Last Saved: 25-06-2099 10:50"

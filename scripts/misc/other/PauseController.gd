@@ -118,8 +118,7 @@ func _get_quests():
 			questInt += 1
 
 func _on_Timer_timeout():
-	$Panel/DateTime/Time/TimeLabel.text = String(OS.get_time()["hour"]) + ":" \
-	+ String(OS.get_time()["minute"])
+	$Panel/DateTime/Time/TimeLabel.text = Utils.get_date_and_time(2, true)
 
 func _on_ExitButton_focus_entered():
 	$QuitPanel/PleaseDont.visible = true

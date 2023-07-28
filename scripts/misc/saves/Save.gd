@@ -109,3 +109,18 @@ func get_save_info(slot: int):
 		return (cfg.get_value("Info", "name") + "*" + cfg.get_value("Info", "created") + "*" + cfg.get_value("Info", "last_saved"))
 	else:
 		return ("None*-*-")
+
+func get_character_name(slot: int):
+	var file = File.new()
+	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.dat"):
+		file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.READ)
+		var json = file.get_as_text()
+		var json_data = JSON.parse(json).result
+		file.close()
+		
+		if json_data.has("name"):
+			return json_data["name"]
+		else:
+			return "Name not found"
+	else:
+		return "None"

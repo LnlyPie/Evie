@@ -75,6 +75,10 @@ func get_date_and_time(onlyone:int = 0, removeseconds = false):
 	else:
 		return "failed"
 
+func readable_timedate(timedate):
+	var timedate_split = timedate.split("_", true, 1)
+	return (timedate_split[0] + " " + timedate_split[1])
+
 func showDialogue(dialogueFile: String, dialogueNode: String):
 	var file = load(dialogueFile)
 	DialogueManager.show_example_dialogue_balloon(\
