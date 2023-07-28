@@ -37,7 +37,7 @@ custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 bbcode_enabled = true
 bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LonelyPie Studio[/shake][/tornado][/rainbow][/center]"
-text = "[center][rainbow][tornado radius=5 freq=2][shake]LonelyPie Studio[/shake][/tornado][/rainbow][/center]"
+text = "LonelyPie Studio"
 scroll_active = false
 
 [node name="GodotLogo" type="TextureRect" parent="."]
