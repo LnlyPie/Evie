@@ -38,6 +38,5 @@ func save_load(slot: int):
 		Save.load_data(slot)
 		Save.get_chapter()
 	else:
-		# If save doesn't exist transition to Save Creator (to be made)
-		# SceneTransition.change_scene("res://scenes/saves/SaveCreator.tscn")
-		pass
+		Save.slot_picked = slot
+		SceneTransition.change_scene("res://scenes/saves/SaveCreator.tscn")

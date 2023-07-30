@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/m3x6/BigTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/misc/saves/SaveCreator.gd" type="Script" id=3]
+
+[node name="SaveCreator" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 432.0
+margin_right = 1920.0
+margin_bottom = 483.0
+text = "SAV_CR_CREATE"
+align = 1
+
+[node name="InfoContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 487.0
+margin_right = 1920.0
+margin_bottom = 538.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/InfoContainer"]
+margin_left = 647.0
+margin_right = 863.0
+margin_bottom = 51.0
+text = "SAV_CR_SVNAME"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InfoContainer"]
+margin_left = 873.0
+margin_right = 1273.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 400, 50 )
+theme = ExtResource( 1 )
+placeholder_text = "Name in the save menu"
+placeholder_alpha = 0.4
+
+[node name="GameContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 542.0
+margin_right = 1920.0
+margin_bottom = 593.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/GameContainer"]
+margin_left = 647.0
+margin_right = 863.0
+margin_bottom = 51.0
+text = "SAV_CR_PLNAME"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/GameContainer"]
+margin_left = 873.0
+margin_right = 1273.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 400, 50 )
+theme = ExtResource( 1 )
+text = "Evie"
+placeholder_text = "Name in the game"
+placeholder_alpha = 0.4
+
+[node name="DoneButton" type="Button" parent="VBoxContainer"]
+margin_top = 597.0
+margin_right = 1920.0
+margin_bottom = 648.0
+text = "SAV_CR_DONE"
+
+[connection signal="pressed" from="VBoxContainer/DoneButton" to="." method="_on_DoneButton_pressed"]
