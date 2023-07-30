@@ -172,6 +172,12 @@ margin_bottom = -32.0
 theme = ExtResource( 2 )
 text = "Back"
 
+[node name="EditSaveButton" type="TextureButton" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_bottom = 96.0
+
 [connection signal="pressed" from="Panel/Saves/SaveSlot1" to="." method="_on_SaveSlot1_pressed"]
 [connection signal="pressed" from="Panel/Saves/SaveSlot2" to="." method="_on_SaveSlot2_pressed"]
 [connection signal="pressed" from="Panel/Saves/SaveSlot3" to="." method="_on_SaveSlot3_pressed"]
