@@ -13,7 +13,7 @@ func _ready():
 #	_list_mods()
 
 func _on_StartButton_pressed():
-	SceneTransition.change_scene("res://scenes/ChapterSelect.tscn")
+	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
 
 func _on_OptionsButton_pressed():
 	SceneTransition.change_scene("res://scenes/settings/Settings.tscn")

@@ -1,5 +1,6 @@
 extends Control
 
+# Will be used later
 func _ready():
 	$"Panel/Chapters/Test Level/PlayButton".grab_focus()
 

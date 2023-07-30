@@ -7,6 +7,7 @@ const DEFAULT_PLAYER_DATA = {
 	"inventory": [],
 	"last_location": "",
 	"chapter": 0,
+	"chapter_scene": 1,
 	"quests_completed": []
 }
 var player_data = {
@@ -14,7 +15,8 @@ var player_data = {
 	"health": 5,
 	"inventory": [],
 	"last_location": "",
-	"chapter": 0, # -1 - test level, 0 - prologue etc.
+	"chapter": 0, # 0 - prologue, 1 - chapter 1 etc.
+	"chapter_scene": 1,
 	"quests_completed": []
 }
 var save_info = {
@@ -84,20 +86,19 @@ func load_data(slot):
 		save_info["last_saved"] = cfg.get_value("Info", "last_saved")
 	# Load achievements.json
 	AchievementManager.load_achievements()
+	slot_picked = slot
 
-func exists(slot, type = 0):
+func exists(slot):
 	var file = File.new()
-	if type == 0:
-		if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.dat"):
-			return true
-	if type == 1:
-		if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
-			return true
+	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.dat") && file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
+		return true
 	else:
 		return false
 
 func get_slot_folder():
 	return (Utils.savesFolder + "save" + str(slot_picked) + "/")
+
+
 
 # For use in Save Select menu
 func get_save_info(slot: int):
@@ -124,3 +125,18 @@ func get_character_name(slot: int):
 			return "Name not found"
 	else:
 		return "None"
+
+
+
+func get_chapter():
+	if (player_data["chapter"] == -1):
+		if (player_data["chapter_scene"] == 1):
+			SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn", "Scale")
+	if (player_data["chapter"] == 0):
+		if (player_data["chapter_scene"] == 1):
+			# SceneTransition.change_scene("res://levels/prologue/Prologue_1.tscn")
+			SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn", "Scale")
+
+func set_chapter(chapter: int, scene: int):
+	player_data["chapter"] = chapter
+	player_data["chapter_scene"] = scene
