@@ -32,9 +32,9 @@ const S_LANG_DE = "S_LANG_DE"
 const S_SAVE = "S_SAVE"
 const S_SAVE_SAE = "S_SAVE_SAE"
 const S_SAVE_EXIT = "S_SAVE_EXIT"
-const SAV_NAME: = "SAV_NAME:"
-const SAV_SAVEAT: = "SAV_SAVEAT:"
-const SAV_TIME: = "SAV_TIME:"
+const SAV_CHOOSE = "SAV_CHOOSE"
+const SAV_CREATED = "SAV_CREATED"
+const SAV_SAVEAT = "SAV_SAVEAT"
 const RESUME = "RESUME"
 const SAE = "SAE"
 const PLEASED = "PLEASED"
@@ -78,9 +78,9 @@ const KEYS = [
  "S_SAVE",
  "S_SAVE_SAE",
  "S_SAVE_EXIT",
- "SAV_NAME:",
- "SAV_SAVEAT:",
- "SAV_TIME:",
+ "SAV_CHOOSE",
+ "SAV_CREATED",
+ "SAV_SAVEAT",
  "RESUME",
  "SAE",
  "PLEASED",

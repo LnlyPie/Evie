@@ -28,9 +28,9 @@ S_LANG_DE,German (de),Niemiecki (de),Deutsch (de)
 S_SAVE,Save,Zapisz,Speichern
 S_SAVE_SAE,Save & Close,Zapisz i Zamknij,Speichern & schließen
 S_SAVE_EXIT,Close,Zamknij,Nahe
-SAV_NAME:,Name:,Nazwa:,Name:
-SAV_SAVEAT:,Saved at:,Zapisano:,Gespeichert bei:
-SAV_TIME:,Time played:,Czas gry:,Spielzeit:
+SAV_CHOOSE,Choose your save:,Wybierz swój zapis:,Wählen Sie Ihren Speicherstand:
+SAV_CREATED,Created:,Utworzony:,Erstellt:
+SAV_SAVEAT,Last Saved:,Zapisano:,Gespeichert bei:
 RESUME,Resume,Wznów,Fortsetzen
 SAE,Save and Exit to:,Zapisz i Wyjdź do:,Speichern und beenden zu:
 PLEASED,please dont,prosze nie,bitte nicht
