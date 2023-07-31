@@ -13,7 +13,7 @@ func set_save_info(num: int):
 	
 	var save_node = get_node("Panel").get_node("Saves").get_node("SaveSlot" + str(num))
 	
-	save_node.get_node("SaveName").text = save_split[0] + " (" + Save.get_character_name(1) + ")"
+	save_node.get_node("SaveName").text = save_split[0] + " (" + Save.get_character_name(num) + ")"
 	save_node.get_node("SaveDates").get_node("Created").text = "Created: " + save_split[1]
 	if (!save_split[2] == "-"):
 		save_node.get_node("SaveDates").get_node("Saved").text = "Last Saved: " + Utils.readable_timedate(save_split[2])
