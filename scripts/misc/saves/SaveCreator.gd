@@ -21,3 +21,6 @@ func _on_DoneButton_pressed():
 	if (notempty):
 		Save.save_data(slot)
 		Save.get_chapter()
+
+func _on_Back_pressed():
+	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

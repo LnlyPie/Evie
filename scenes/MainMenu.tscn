@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/icons/gui/EvieLogoText.png" type="Texture" id=2]
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/m3x6/SmallTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 [ext_resource path="res://addons/CheatCoder/CheatCodeListener.gd" type="Script" id=8]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=9]
@@ -248,8 +249,9 @@ anchor_bottom = 0.5
 margin_left = -256.0
 margin_top = -92.0
 margin_bottom = 116.0
-theme = ExtResource( 6 )
+theme = ExtResource( 4 )
 max_text_lines = 2
+auto_height = true
 
 [connection signal="cheat_activated" from="Splash/SplashCheatCode" to="." method="_on_SplashCheatCode_cheat_activated"]
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_StartButton_pressed"]

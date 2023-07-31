@@ -21,6 +21,8 @@ func _ready():
 
 	var evie = ItemData.new("Evie", "An Evie", load("res://icon.png"))
 	add_item_to_inventory(evie)
+	var lp = ItemData.new("LonelyPie", "A really lonely pie :c", load("res://sprites/logo-egg.png"))
+	add_item_to_inventory(lp)
 
 	update_inventory_ui()
 

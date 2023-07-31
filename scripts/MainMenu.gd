@@ -10,7 +10,7 @@ func _ready():
 	$GameInfo/GameVersion.text = get_ver(gameVerFile)
 	if Utils.isHtml():
 		$MainButtons/QuitButton.hide()
-#	_list_mods()
+	_list_mods()
 
 func _on_StartButton_pressed():
 	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
@@ -56,14 +56,17 @@ func _on_BugsButton_focus_entered() -> void:
 func _on_BugsButton_focus_exited() -> void:
 	$BugHaters.visible = false
 
-#func _list_mods(): # For future versions
-#	var modid = 0
-#
-#	if !ModLoader.mods_loaded.empty():
-#		while true:
-#			if ModLoader.mods_loaded.size() > modid:
-#				break
-#			else:
-#				var mod = ModLoader.mods_loaded[modid]
-#				$ModList.add_item(ModLoader.mods_loaded[modid])
-#				modid += 1
+func _list_mods():
+	var modid = 0
+
+	if !ModLoader.mods_loaded.empty():
+		while true:
+			if modid >= ModLoader.mods_loaded.size():
+				break
+			else:
+				var mod = ModLoader.mods_loaded[modid]
+				$ModList.add_item(mod)
+				modid += 1
+		$ModList.visible = true
+	else:
+		$ModList.visible = false
