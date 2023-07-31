@@ -11,6 +11,14 @@ var photoCam = false
 var debugInfo = false
 var blockMovement = false
 
+func _ready():
+	AchievementManager.init_achievements()
+	if Save.exists(Save.slot_picked):
+		Save.load_data(Save.slot_picked)
+		if Save.player_data["last_location"] != "":
+			set_position(Utils.str_to_vector2(Save.player_data["last_location"]))
+		health = Save.player_data["health"]
+
 func _process(_delta):
 	var velocity = Vector2.ZERO
 	# Basic Movement
@@ -56,14 +64,6 @@ func debug():
 			yield(get_tree().create_timer(0.5), "timeout")
 			Utils.screenshot()
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
-
-func _ready():
-	AchievementManager.init_achievements()
-	if Save.exists(Save.slot_picked):
-		Save.load_data(Save.slot_picked)
-		if Save.player_data["last_location"] != "":
-			set_position(Utils.str_to_vector2(Save.player_data["last_location"]))
-		health = Save.player_data["health"]
 
 func _save_player_loc():
 	Save.player_data["last_location"] = position
