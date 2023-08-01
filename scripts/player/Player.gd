@@ -10,6 +10,7 @@ var health = 5
 var photoCam = false
 var debugInfo = false
 var blockMovement = false
+var inventoryopen = false
 
 func _ready():
 	AchievementManager.init_achievements()
@@ -44,6 +45,9 @@ func _process(_delta):
 	# Debug
 	debug()
 	
+	# Inventory
+	open_inventory()
+	
 	# Animations
 	if velocity == Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("Idle")
@@ -64,6 +68,15 @@ func debug():
 			yield(get_tree().create_timer(0.5), "timeout")
 			Utils.screenshot()
 			get_parent().get_node("PhotoCam").get_node("UseText").visible = true
+
+func open_inventory():
+	if Input.is_action_just_pressed("inventory"):
+		if !inventoryopen:
+			Inv.show_inventory()
+			inventoryopen = true
+		else:
+			Inv.hide_inventory()
+			inventoryopen = false
 
 func _save_player_loc():
 	Save.player_data["last_location"] = position

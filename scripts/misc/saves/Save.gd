@@ -57,6 +57,7 @@ func save_data(slot, data_only: bool = false):
 		cfg.set_value("Info", "last_saved", save_info["last_saved"])
 		cfg.save(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
 	# Save save.dat
+	player_data["inventory"] = Inv.get_items_from_array()
 	file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.WRITE)
 	var json = JSON.print(player_data)
 	file.store_string(json)
@@ -78,6 +79,7 @@ func load_data(slot):
 			if !player_data.has(key):
 				player_data[key] = DEFAULT_PLAYER_DATA[key]
 			save_data(slot, true)
+		Inv.set_items_to_array(player_data["inventory"])
 	# Load save.cfg
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):
 		cfg.load(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
@@ -97,8 +99,6 @@ func exists(slot):
 
 func get_slot_folder():
 	return (Utils.savesFolder + "save" + str(slot_picked) + "/")
-
-
 
 # For use in Save Select menu
 func get_save_info(slot: int):
@@ -125,8 +125,6 @@ func get_character_name(slot: int):
 			return "Name not found"
 	else:
 		return "None"
-
-
 
 func get_chapter():
 	if (player_data["chapter"] == -1):
