@@ -61,7 +61,6 @@ func _on_SettingsButton_pressed():
 func _on_QuitButton_pressed():
 	if !exitscreen:
 		$QuitPanel.visible = true
-		$QuitPanel/PleaseDont.visible = false
 		$QuitPanel/ButtonsContainer/MenuButton.grab_focus()
 		$AnimationPlayer.play("exit")
 	else:
@@ -119,9 +118,3 @@ func _get_quests():
 
 func _on_Timer_timeout():
 	$Panel/DateTime/Time/TimeLabel.text = Utils.get_date_and_time(2, true)
-
-func _on_ExitButton_focus_entered():
-	$QuitPanel/PleaseDont.visible = true
-
-func _on_ExitButton_focus_exited():
-	$QuitPanel/PleaseDont.visible = false

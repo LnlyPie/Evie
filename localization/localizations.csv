@@ -11,8 +11,9 @@ CREDITS,Credits,Autorzy,Kredite
 PAUSE,Pause,Pauza,Pause
 S_C_AUDIO,Audio,Audio,Audio
 S_C_VIDEO,Video,Grafika,Video
+S_C_OTHER,Other,Inne,Andere
 S_FULLSCREEN,Fullscreen,Pełny Ekran,Ganzer Bildschirm
-S_RES,Screen Resolution,Rozdzielczość Ekranu,Bildschirmauflösung
+S_RES,Screen Resolution (Not supported for now),Rozdzielczość Ekranu (Nie wspierane na teraz),Bildschirmauflösung (derzeit nicht unterstützt)
 S_COLORS,Color Options,Opcje Kolorów,Farboptionen
 S_COLORS_P,Protanopia,Protanopia,Protanopie
 S_COLORS_D,Deuteranopia,Deuteranopia,Deuteranopie
@@ -20,7 +21,6 @@ S_COLORS_T,Tritanopia,Tritanopia,Tritanopie
 S_COLORS_GRAY,Grayscale,Skala szarości,Graustufen
 S_COLORS_RETRO,Retro,Retro,Retro
 S_COLORS_OFF,Off,Wył.,Aus
-S_C_OTHER,Other,Inne,Sonstiges
 S_LANG,Language,Język,Sprache
 S_LANG_EN,English (en),Angielski (en),Englisch (en)
 S_LANG_PL,Polish (pl),Polski (pl),Polieren (pl)

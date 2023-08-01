@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/comfortaa/SmallerTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/mods/ModSelector.gd" type="Script" id=2]
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://sprites/gui/mods/mods.png" type="Texture" id=4]
+[ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -23,7 +23,7 @@ margin_left = -896.0
 margin_top = -476.0
 margin_right = 896.0
 margin_bottom = 484.0
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_styles/bg_focus = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 auto_height = true
@@ -45,7 +45,7 @@ margin_left = 16.0
 margin_top = -48.0
 margin_right = 82.0
 margin_bottom = -8.0
-theme = ExtResource( 1 )
+theme = ExtResource( 5 )
 text = "BACK"
 
 [node name="ApplyButton" type="Button" parent="."]
@@ -57,7 +57,7 @@ margin_left = -80.0
 margin_top = -56.0
 margin_right = 80.0
 margin_bottom = -16.0
-theme = ExtResource( 1 )
+theme = ExtResource( 5 )
 text = "MODS_LOAD"
 __meta__ = {
 "_editor_description_": ""
@@ -68,13 +68,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -264.0
+margin_left = -344.0
 margin_top = -56.0
 margin_right = -16.0
 margin_bottom = -16.0
-theme = ExtResource( 1 )
+theme = ExtResource( 5 )
 text = "MODS_DOWNLOAD"
-align = 0
 
 [node name="WarningLabel" type="Label" parent="."]
 anchor_left = 0.5
@@ -82,7 +81,7 @@ anchor_right = 0.5
 margin_left = -508.0
 margin_right = 508.0
 margin_bottom = 30.0
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MODS_WARN"
 align = 1

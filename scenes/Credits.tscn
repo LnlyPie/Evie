@@ -1,144 +1,62 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=1]
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=2]
-[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/comfortaa/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/comfortaa/BigTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://logo.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=4]
+[ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=5]
+[ext_resource path="res://sprites/credits/pixel-godot.png" type="Texture" id=6]
+[ext_resource path="res://sprites/credits/addons.png" type="Texture" id=7]
+[ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=8]
+[ext_resource path="res://sprites/credits/fonts.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 draw_center = false
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CreditsContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 672, 1080 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "roll"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CreditsContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 29.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 584, 1080 ), Vector2( 584, -1800 ) ]
+}
 
 [node name="CreditsScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="CreditsText" type="Label" parent="."]
-margin_right = 115.0
-margin_bottom = 42.0
-theme = ExtResource( 1 )
-text = "CREDITS"
-align = 1
-valign = 1
-
-[node name="CreditContainer" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -128.0
-margin_bottom = 72.0
-rect_pivot_offset = Vector2( 720, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Name" type="Label" parent="CreditContainer"]
-margin_right = 128.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-
-[node name="Job" type="Label" parent="CreditContainer"]
-margin_top = 42.0
-margin_right = 128.0
-margin_bottom = 72.0
-theme = ExtResource( 2 )
-
-[node name="Andus" type="VBoxContainer" parent="."]
-margin_top = 128.0
-margin_right = 128.0
-margin_bottom = 200.0
-rect_pivot_offset = Vector2( 720, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Name" type="Label" parent="Andus"]
-margin_right = 140.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-text = "Andus"
-
-[node name="Job" type="Label" parent="Andus"]
-margin_top = 42.0
-margin_right = 140.0
-margin_bottom = 72.0
-theme = ExtResource( 2 )
-text = "Developer/Art"
-
-[node name="LucePric" type="VBoxContainer" parent="."]
-margin_top = 256.0
-margin_right = 128.0
-margin_bottom = 328.0
-rect_pivot_offset = Vector2( 720, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Name" type="Label" parent="LucePric"]
-margin_right = 128.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-text = "LucePric"
-
-[node name="Job" type="Label" parent="LucePric"]
-margin_top = 42.0
-margin_right = 128.0
-margin_bottom = 72.0
-theme = ExtResource( 2 )
-text = "Story"
-
-[node name="Creta" type="VBoxContainer" parent="."]
-margin_top = 384.0
-margin_right = 128.0
-margin_bottom = 456.0
-rect_pivot_offset = Vector2( 720, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Name" type="Label" parent="Creta"]
-margin_right = 128.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-text = "Creta"
-
-[node name="Job" type="Label" parent="Creta"]
-margin_top = 42.0
-margin_right = 128.0
-margin_bottom = 72.0
-theme = ExtResource( 2 )
-text = "Art"
-
-[node name="FontCreator" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -168.0
-margin_top = -72.0
-rect_pivot_offset = Vector2( 720, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Name" type="Label" parent="FontCreator"]
-margin_right = 168.0
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-text = "@managore"
-
-[node name="Job" type="Label" parent="FontCreator"]
-margin_top = 42.0
-margin_right = 168.0
-margin_bottom = 72.0
-theme = ExtResource( 2 )
-text = "m5x7 font"
-
 [node name="BackButton" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -32.0
-margin_right = 64.0
-theme = ExtResource( 2 )
+margin_left = 16.0
+margin_top = -69.0
+margin_right = 148.0
+margin_bottom = -16.0
+theme = ExtResource( 1 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
@@ -147,5 +65,281 @@ custom_styles/normal = SubResource( 1 )
 text = "Back"
 flat = true
 align = 0
+
+[node name="CreditsContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 1080.0
+margin_right = 1424.0
+margin_bottom = 3016.0
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": "- Change \"betatester\" to \"player\" on release"
+}
+
+[node name="LonelyPieCredits" type="VBoxContainer" parent="CreditsContainer"]
+margin_top = 142.0
+margin_right = 752.0
+margin_bottom = 810.0
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="CreditsContainer/LonelyPieCredits"]
+margin_right = 752.0
+margin_bottom = 192.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits"]
+margin_top = 196.0
+margin_right = 752.0
+margin_bottom = 268.0
+theme = ExtResource( 2 )
+text = "LonelyPie"
+align = 1
+valign = 1
+
+[node name="DevelopersContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
+margin_top = 272.0
+margin_right = 752.0
+margin_bottom = 368.0
+
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/DevelopersContainer"]
+margin_right = 752.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "Developers"
+align = 1
+valign = 1
+
+[node name="Andus" type="Label" parent="CreditsContainer/LonelyPieCredits/DevelopersContainer"]
+margin_top = 59.0
+margin_right = 752.0
+margin_bottom = 96.0
+theme = ExtResource( 5 )
+text = "Andus - Main Developer"
+align = 1
+valign = 1
+
+[node name="ArtistsContainer2" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
+margin_top = 372.0
+margin_right = 752.0
+margin_bottom = 509.0
+
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+margin_right = 752.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "Artists"
+align = 1
+valign = 1
+
+[node name="Creta" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+margin_top = 59.0
+margin_right = 752.0
+margin_bottom = 96.0
+theme = ExtResource( 5 )
+text = "Creta"
+align = 1
+valign = 1
+
+[node name="LucePric" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+margin_top = 100.0
+margin_right = 752.0
+margin_bottom = 137.0
+theme = ExtResource( 5 )
+text = "LucePric"
+align = 1
+valign = 1
+
+[node name="StoryContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
+margin_top = 513.0
+margin_right = 752.0
+margin_bottom = 609.0
+
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/StoryContainer"]
+margin_right = 752.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "Story Writers"
+align = 1
+valign = 1
+
+[node name="LucePric" type="Label" parent="CreditsContainer/LonelyPieCredits/StoryContainer"]
+margin_top = 59.0
+margin_right = 752.0
+margin_bottom = 96.0
+theme = ExtResource( 5 )
+text = "LucePric - Main Writer"
+align = 1
+valign = 1
+
+[node name="TestersContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
+margin_top = 613.0
+margin_right = 752.0
+margin_bottom = 668.0
+
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/TestersContainer"]
+margin_right = 752.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "Playtesters (?)"
+align = 1
+valign = 1
+
+[node name="SpecialCredits" type="VBoxContainer" parent="CreditsContainer"]
+margin_top = 814.0
+margin_right = 752.0
+margin_bottom = 1614.0
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="CreditsContainer/SpecialCredits"]
+margin_right = 752.0
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="CreditsContainer/SpecialCredits"]
+margin_top = 4.0
+margin_right = 752.0
+margin_bottom = 76.0
+theme = ExtResource( 2 )
+text = "Special Thanks"
+align = 1
+valign = 1
+
+[node name="GodotContainer" type="VBoxContainer" parent="CreditsContainer/SpecialCredits"]
+margin_top = 80.0
+margin_right = 752.0
+margin_bottom = 235.0
+
+[node name="Logo" type="TextureRect" parent="CreditsContainer/SpecialCredits/GodotContainer"]
+margin_right = 752.0
+margin_bottom = 96.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="CreditsContainer/SpecialCredits/GodotContainer"]
+margin_top = 100.0
+margin_right = 752.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+text = "Godot Engine"
+align = 1
+valign = 1
+
+[node name="FontsContainer" type="VBoxContainer" parent="CreditsContainer/SpecialCredits"]
+margin_top = 239.0
+margin_right = 752.0
+margin_bottom = 477.0
+
+[node name="Logo" type="TextureRect" parent="CreditsContainer/SpecialCredits/FontsContainer"]
+margin_right = 752.0
+margin_bottom = 96.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="CreditsContainer/SpecialCredits/FontsContainer"]
+margin_top = 100.0
+margin_right = 752.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+text = "Fonts"
+align = 1
+valign = 1
+
+[node name="Comfortaa" type="Label" parent="CreditsContainer/SpecialCredits/FontsContainer"]
+margin_top = 159.0
+margin_right = 752.0
+margin_bottom = 196.0
+theme = ExtResource( 5 )
+text = "Johan Aakerlund - Comfortaa"
+align = 1
+valign = 1
+
+[node name="m35x67" type="Label" parent="CreditsContainer/SpecialCredits/FontsContainer"]
+margin_top = 200.0
+margin_right = 752.0
+margin_bottom = 238.0
+theme = ExtResource( 8 )
+text = "Daniel Linssen - m3x6 & m5x7"
+align = 1
+valign = 1
+
+[node name="AddonsContainer" type="VBoxContainer" parent="CreditsContainer/SpecialCredits"]
+margin_top = 481.0
+margin_right = 752.0
+margin_bottom = 800.0
+
+[node name="Logo" type="TextureRect" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_right = 752.0
+margin_bottom = 96.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_top = 100.0
+margin_right = 752.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+text = "Addons"
+align = 1
+valign = 1
+
+[node name="DialogueMan" type="Label" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_top = 159.0
+margin_right = 752.0
+margin_bottom = 196.0
+theme = ExtResource( 5 )
+text = "Nathan Hoad - Dialogue Manager"
+align = 1
+valign = 1
+
+[node name="CheatCoder" type="Label" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_top = 200.0
+margin_right = 752.0
+margin_bottom = 237.0
+theme = ExtResource( 5 )
+text = "Hugo4IT - CheatCoder"
+align = 1
+valign = 1
+
+[node name="Localization" type="Label" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_top = 241.0
+margin_right = 752.0
+margin_bottom = 278.0
+theme = ExtResource( 5 )
+text = "VP-GAMES - Localization Editor"
+align = 1
+valign = 1
+
+[node name="ControllerIcons" type="Label" parent="CreditsContainer/SpecialCredits/AddonsContainer"]
+margin_top = 282.0
+margin_right = 752.0
+margin_bottom = 319.0
+theme = ExtResource( 5 )
+text = "Ricardo Subtil - Controller Icons"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="CreditsContainer"]
+margin_top = 1618.0
+margin_right = 752.0
+margin_bottom = 1718.0
+custom_constants/separation = 100
+
+[node name="Community" type="Label" parent="CreditsContainer"]
+margin_top = 1722.0
+margin_right = 752.0
+margin_bottom = 1794.0
+theme = ExtResource( 2 )
+text = "And you, betatester <3"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/roll = SubResource( 2 )
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

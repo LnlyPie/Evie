@@ -1,16 +1,46 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m3x6/BigTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/misc/intro/Intro.gd" type="Script" id=2]
 [ext_resource path="res://logo.png" type="Texture" id=3]
-[ext_resource path="res://sprites/icons/misc/godot_logo.svg" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="LonelyPieLogo" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -22,7 +52,7 @@ margin_bottom = 256.0
 texture = ExtResource( 3 )
 expand = true
 
-[node name="LonelyPieLabel" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -36,14 +66,15 @@ custom_colors/font_color_shadow = Color( 0.235294, 0.235294, 0.235294, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 bbcode_enabled = true
-bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LonelyPie Studio[/shake][/tornado][/rainbow][/center]"
+bbcode_text = "[center][rainbow freq=0.3][tornado radius=5 freq=2]LonelyPie Studio[/tornado][/rainbow][/center]"
 text = "LonelyPie Studio"
 scroll_active = false
 
-[node name="GodotLogo" type="TextureRect" parent="."]
-anchor_top = 1.0
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -128.0
-margin_right = 320.0
-texture = ExtResource( 4 )
-expand = true
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fade = SubResource( 1 )
+anims/RESET = SubResource( 2 )

@@ -6,13 +6,32 @@ func _ready():
 	randomize()
 	var prob = randi()%100+1
 	if prob == 1:
-		$LonelyPieLogo.texture = load("res://sprites/logo-egg.png")
-		$LonelyPieLabel.bbcode_text = "[center][rainbow][tornado radius=5 freq=2][shake]LaughingPie and Co.[/shake][/tornado][/rainbow][/center]\n"
-	yield(get_tree().create_timer(1), "timeout")
-	randomize()
-	var facts = randi()%3+1
-	if facts == 1:
-		SceneTransition.change_scene("res://scenes/misc/intro/Facts.tscn")
-	else:
-		ModLoader.apply_check()
-		SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+		$Logo.texture = load("res://sprites/logo-egg.png")
+		$Label.bbcode_text = "[center][rainbow freq=0.3][tornado radius=5 freq=2]LaughingPie and Co.[/tornado][/rainbow][/center]"
+	_play_anim()
+
+func _play_anim():
+	$AnimationPlayer.play("Fade")
+	yield($AnimationPlayer, "animation_finished")
+	$AnimationPlayer.play_backwards("Fade")
+	yield($AnimationPlayer, "animation_finished")
+	_godot_credits()
+	$AnimationPlayer.play("Fade")
+	yield($AnimationPlayer, "animation_finished")
+	$AnimationPlayer.play_backwards("Fade")
+	yield($AnimationPlayer, "animation_finished")
+	ModLoader.apply_check()
+	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+
+func _godot_credits():
+	$Logo.texture = load("res://sprites/icons/misc/godot_logo.svg")
+	$Label.bbcode_text = "[center][tornado radius=5 freq=2]Made with Godot[/tornado][/center]"
+
+#func _facts():
+#	randomize()
+#	var facts = randi()%3+1
+#	if facts == 1:
+#		SceneTransition.change_scene("res://scenes/misc/intro/Facts.tscn")
+#	else:
+#		ModLoader.apply_check()
+#		SceneTransition.change_scene("res://scenes/MainMenu.tscn")

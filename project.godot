@@ -126,6 +126,7 @@ config/name="Evie"
 run/main_scene="res://scenes/misc/intro/Intro.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="EvieGame"
+boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [autoload]
@@ -141,12 +142,12 @@ CommandHistory="*res://scripts/misc/debug/CommandHistory.gd"
 TestlevelStates="*res://levels/test_level/testlevel_states.gd"
 ModLoader="*res://scripts/misc/mods/ModLoader.gd"
 ModVars="*res://ModVars.gd"
-Cursor="*res://scripts/Cursor.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 AchievementManager="*res://scripts/player/achievements/AchievementManager.gd"
 Notification="*res://scenes/misc/other/Notification.tscn"
 ColorFilters="*res://scenes/misc/other/ColorFilters.tscn"
 ColorFilter="*res://scripts/misc/other/ColorFilter.gd"
+Cursor="*res://scripts/Cursor.gd"
 
 [debug]
 
@@ -158,9 +159,9 @@ window/size/width=1920
 window/size/height=1080
 window/size/fullscreen=true
 window/vsync/use_vsync=false
-mouse_cursor/custom_image="res://arrow.png"
 mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 

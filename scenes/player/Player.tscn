@@ -1,14 +1,13 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://sprites/characters/player/player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://addons/controller_icons/objects/TextureRect.gd" type="Script" id=3]
-[ext_resource path="res://scenes/misc/other/ColorFilters.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/comfortaa/SmallerTextTheme.tres" type="Theme" id=4]
 [ext_resource path="res://addons/controller_icons/assets/key/esc.png" type="Texture" id=5]
-[ext_resource path="res://fonts/m5x7/SmallTextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 8.50002, 9.00004 )
+extents = Vector2( 8.50002, 11 )
 
 [sub_resource type="Animation" id=28]
 length = 0.001
@@ -172,9 +171,6 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )
@@ -184,13 +180,14 @@ smoothing_enabled = true
 smoothing_speed = 4.0
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -16 )
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 4
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 17 )
+position = Vector2( 0, -3.57628e-07 )
 scale = Vector2( 0.999998, 0.999998 )
 shape = SubResource( 27 )
 
@@ -212,9 +209,6 @@ parameters/Walk/blend_position = Vector2( -0.00268078, 1.00517 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GB_Filter" parent="CanvasLayer" instance=ExtResource( 4 )]
-visible = false
-
 [node name="Input" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -227,8 +221,8 @@ margin_bottom = 40.0
 alignment = 2
 
 [node name="ControllerTextureRect" type="TextureRect" parent="CanvasLayer/Input/Pause"]
-margin_left = 24.0
-margin_right = 64.0
+margin_left = 28.0
+margin_right = 68.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 5 )
@@ -237,9 +231,9 @@ script = ExtResource( 3 )
 path = "debug_pause"
 
 [node name="Label" type="Label" parent="CanvasLayer/Input/Pause"]
-margin_left = 68.0
-margin_top = 5.0
+margin_left = 72.0
+margin_top = 10.0
 margin_right = 128.0
-margin_bottom = 35.0
-theme = ExtResource( 6 )
+margin_bottom = 29.0
+theme = ExtResource( 4 )
 text = "PAUSE"

@@ -15,6 +15,7 @@ const CREDITS = "CREDITS"
 const PAUSE = "PAUSE"
 const S_C_AUDIO = "S_C_AUDIO"
 const S_C_VIDEO = "S_C_VIDEO"
+const S_C_OTHER = "S_C_OTHER"
 const S_FULLSCREEN = "S_FULLSCREEN"
 const S_RES = "S_RES"
 const S_COLORS = "S_COLORS"
@@ -24,7 +25,6 @@ const S_COLORS_T = "S_COLORS_T"
 const S_COLORS_GRAY = "S_COLORS_GRAY"
 const S_COLORS_RETRO = "S_COLORS_RETRO"
 const S_COLORS_OFF = "S_COLORS_OFF"
-const S_C_OTHER = "S_C_OTHER"
 const S_LANG = "S_LANG"
 const S_LANG_EN = "S_LANG_EN"
 const S_LANG_PL = "S_LANG_PL"
@@ -65,6 +65,7 @@ const KEYS = [
  "PAUSE",
  "S_C_AUDIO",
  "S_C_VIDEO",
+ "S_C_OTHER",
  "S_FULLSCREEN",
  "S_RES",
  "S_COLORS",
@@ -74,7 +75,6 @@ const KEYS = [
  "S_COLORS_GRAY",
  "S_COLORS_RETRO",
  "S_COLORS_OFF",
- "S_C_OTHER",
  "S_LANG",
  "S_LANG_EN",
  "S_LANG_PL",

@@ -56,7 +56,7 @@ func load():
 
 func apply():
 	# Screen
-	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,\
+	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,\
 	 SceneTree.STRETCH_ASPECT_EXPAND, Vector2(screen_width, screen_height))
 	Engine.set_target_fps(framerate_cap)
 	OS.window_fullscreen = fullscreen

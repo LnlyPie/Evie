@@ -50,12 +50,15 @@ func _on_Grayscale_pressed():
 # Languages
 func _on_English_pressed() -> void:
 	Settings.language = "en"
+	TranslationServer.set_locale("en")
 
 func _on_Polish_pressed() -> void:
 	Settings.language = "pl"
+	TranslationServer.set_locale("pl")
 
 func _on_German_pressed() -> void:
 	Settings.language = "de"
+	TranslationServer.set_locale("de")
 
 # Exit Buttons
 func _on_SaveExitButton_pressed() -> void:
@@ -65,4 +68,6 @@ func _on_SaveExitButton_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 
 func _on_ExitButton_pressed() -> void:
+	Settings.load()
+	Settings.apply()
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

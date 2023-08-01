@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/m5x7/TextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/m5x7/BigTextTheme.tres" type="Theme" id=2]
 [ext_resource path="res://sprites/gui/chapters/test_thumbnail.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ChapterSelect.gd" type="Script" id=4]
+[ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=5]
+[ext_resource path="res://fonts/comfortaa/TextTheme.tres" type="Theme" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="ChapterSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 script = ExtResource( 4 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -19,10 +22,9 @@ anchor_bottom = 1.0
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -156.0
-margin_right = 156.0
-margin_bottom = 51.0
-theme = ExtResource( 2 )
+margin_left = -191.0
+margin_right = 191.0
+margin_bottom = 55.0
 text = "Select Chapter:"
 
 [node name="Chapters" type="TabContainer" parent="Panel"]
@@ -32,14 +34,14 @@ margin_left = 64.0
 margin_top = 144.0
 margin_right = -64.0
 margin_bottom = -56.0
-theme = ExtResource( 1 )
+theme = ExtResource( 5 )
 custom_constants/hseparation = 20
 custom_styles/panel = SubResource( 1 )
 
 [node name="Test Level" type="Tabs" parent="Panel/Chapters"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 48.0
+margin_top = 47.0
 
 [node name="Thumbnail" type="TextureRect" parent="Panel/Chapters/Test Level"]
 margin_left = 8.0
@@ -56,7 +58,6 @@ margin_left = -832.0
 margin_top = 128.0
 margin_right = -64.0
 margin_bottom = 640.0
-theme = ExtResource( 1 )
 text = "A level to test if quests, hearts, battles, cutscenes, scene transitions, movement, etc.
 
 If you found any bugs, make an issue on GitHub, or write it on our Discord Server.
@@ -73,7 +74,6 @@ margin_left = -128.0
 margin_top = -128.0
 margin_right = 128.0
 margin_bottom = -64.0
-theme = ExtResource( 2 )
 text = "Play"
 
 [node name="Prologue" type="Tabs" parent="Panel/Chapters"]

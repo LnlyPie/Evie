@@ -76,12 +76,12 @@ func _on_item_icon_mouse_entered(item_data: ItemData):
 
 	var name_label = Label.new()
 	name_label.text = item_data.name
-	name_label.set_theme(load("res://fonts/m5x7/BigTextTheme.tres"))
+	name_label.set_theme(load("res://fonts/comfortaa/SmallTextTheme.tres"))
 	vbox.add_child(name_label)
 
 	var desc_label = Label.new()
 	desc_label.text = item_data.description
-	desc_label.set_theme(load("res://fonts/m5x7/TextTheme.tres"))
+	desc_label.set_theme(load("res://fonts/comfortaa/SmallerTextTheme.tres"))
 	vbox.add_child(desc_label)
 
 	current_hover_vbox = vbox
