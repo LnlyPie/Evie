@@ -70,3 +70,6 @@ func _list_mods():
 		$ModList.visible = true
 	else:
 		$ModList.visible = false
+
+func _on_AccountButton_pressed():
+	SceneTransition.change_scene("res://scenes/account/Account.tscn")

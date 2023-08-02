@@ -57,6 +57,17 @@ text = "Splash Text"
 script = ExtResource( 8 )
 code = ExtResource( 10 )
 
+[node name="AccountButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -456.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 48.0
+theme = ExtResource( 3 )
+text = "ACC"
+align = 2
+
 [node name="MainButtons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -238,6 +249,7 @@ max_text_lines = 2
 auto_height = true
 
 [connection signal="cheat_activated" from="Splash/SplashCheatCode" to="." method="_on_SplashCheatCode_cheat_activated"]
+[connection signal="pressed" from="AccountButton" to="." method="_on_AccountButton_pressed"]
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MainButtons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_QuitButton_pressed"]

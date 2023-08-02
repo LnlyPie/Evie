@@ -47,3 +47,17 @@ AUTOSAVEMSG,This game uses Auto Save.\nWhen you'll see this image DON'T exit the
 MODS_LOAD,Load Mod,Wczytaj Mod,Mod anwenden
 MODS_DOWNLOAD,Download Mods,Pobierz Mody,Mods herunterladen
 MODS_WARN,Warning: LonelyPie is not responsible for errors related to mods,Ostrzeżenie: LonelyPie nie ponosi odpowiedzialności za błędy związane z modami,Warnung: LonelyPie ist nicht verantwortlich für Fehler im Zusammenhang mit Mods
+ACC,LonelyPie Account,Konto LonelyPie,LonelyPie-Konto
+ACC_LOGININFO,Log into your LonelyPie Account,Zaloguj się na swoje konto LonelyPie,Melden Sie sich bei Ihrem LonelyPie-Konto an
+ACC_LOGIN,Login,Zaloguj się,Anmeldung
+ACC_EMAIL,Your Email: ,Twój email:,Deine E-Mail:
+ACC_PASS,Your Password: ,Twoje hasło:,Ihr Passwort:
+ACC_EMAILHINT,Account Email,Email konta,Konto-E-Mail
+ACC_PASSHINT,Account Password,Hasło do konta,Konto Passwort
+ACC_REG_TEXT,Don't have an account yet?,Nie masz jeszcze konta?,Sie haben noch kein Konto?
+ACC_REG_BTN,Register Here,Zarejestruj się tu,Hier registrieren
+ACC_MAN_DOWNSAVES,Download saves from the cloud,Pobierz zapisy z chmury,Laden Sie Spielstände aus der Cloud herunter
+ACC_MAN_UPSAVES,Upload saves to the cloud,Prześlij zapisy do chmury,Laden Sie Spielstände in die Cloud hoch
+ACC_MAN_WEB,Open LonelyPie Account Website,Otwórz stronę LonelyPie Account,Öffnen Sie die LonelyPie-Konto-Website
+ACC_MAN,Manage Your LonelyPie Account,Zarządzaj swoim kontem LonelyPie,Verwalten Sie Ihr LonelyPie-Konto
+ACC_LOGOUT,Logout,Wyloguj się,Ausloggen

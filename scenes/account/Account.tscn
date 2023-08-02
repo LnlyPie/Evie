@@ -1,0 +1,180 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/comfortaa/TextTheme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/account/Account.gd" type="Script" id=3]
+
+[node name="Account" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="LoginLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -406.0
+margin_right = 406.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "ACC_LOGININFO"
+align = 1
+
+[node name="ManageLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -896.0
+margin_right = 896.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "ACC_MAN"
+align = 1
+
+[node name="Login" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1856.0
+margin_bottom = 1016.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Register" type="HBoxContainer" parent="Login"]
+margin_top = 233.0
+margin_right = 1792.0
+margin_bottom = 270.0
+theme = ExtResource( 2 )
+alignment = 1
+
+[node name="Label" type="Label" parent="Login/Register"]
+margin_left = 547.0
+margin_right = 1013.0
+margin_bottom = 37.0
+text = "Don't have an account yet? "
+
+[node name="RegisterButton" type="Button" parent="Login/Register"]
+margin_left = 1017.0
+margin_right = 1244.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 1, 0.690196, 0, 1 )
+text = "Register Here"
+
+[node name="Email" type="HBoxContainer" parent="Login"]
+margin_top = 370.0
+margin_right = 1792.0
+margin_bottom = 417.0
+theme = ExtResource( 2 )
+alignment = 1
+
+[node name="Label" type="Label" parent="Login/Email"]
+margin_left = 622.0
+margin_top = 5.0
+margin_right = 815.0
+margin_bottom = 42.0
+text = "ACC_EMAIL"
+
+[node name="Value" type="LineEdit" parent="Login/Email"]
+margin_left = 819.0
+margin_right = 1169.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 350, 41 )
+placeholder_text = "ACC_EMAILHINT"
+
+[node name="Password" type="HBoxContainer" parent="Login"]
+margin_top = 517.0
+margin_right = 1792.0
+margin_bottom = 564.0
+theme = ExtResource( 2 )
+alignment = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="Login/Password"]
+margin_left = 632.0
+margin_top = 5.0
+margin_right = 805.0
+margin_bottom = 42.0
+text = "ACC_PASS"
+
+[node name="Value" type="LineEdit" parent="Login/Password"]
+margin_left = 809.0
+margin_right = 1159.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 350, 41 )
+placeholder_text = "ACC_PASSHINT"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LoginButton" type="Button" parent="Login"]
+margin_top = 664.0
+margin_right = 1792.0
+margin_bottom = 719.0
+theme = ExtResource( 1 )
+text = "ACC_LOGIN"
+
+[node name="Manage" type="VBoxContainer" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1856.0
+margin_bottom = 1016.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="LoggedInAs" type="Label" parent="Manage"]
+margin_top = 220.0
+margin_right = 1792.0
+margin_bottom = 257.0
+theme = ExtResource( 2 )
+text = "Logged in as:"
+align = 1
+valign = 1
+
+[node name="ManageButton" type="Button" parent="Manage"]
+margin_top = 307.0
+margin_right = 1792.0
+margin_bottom = 362.0
+theme = ExtResource( 1 )
+text = "ACC_MAN_WEB"
+
+[node name="DownloadButton" type="Button" parent="Manage"]
+margin_top = 412.0
+margin_right = 1792.0
+margin_bottom = 467.0
+theme = ExtResource( 1 )
+text = "ACC_MAN_DOWNSAVES"
+
+[node name="UploadButton" type="Button" parent="Manage"]
+margin_top = 517.0
+margin_right = 1792.0
+margin_bottom = 572.0
+theme = ExtResource( 1 )
+text = "ACC_MAN_UPSAVES"
+
+[node name="HSeparator" type="HSeparator" parent="Manage"]
+margin_top = 622.0
+margin_right = 1792.0
+margin_bottom = 626.0
+
+[node name="LogoutButton" type="Button" parent="Manage"]
+margin_top = 676.0
+margin_right = 1792.0
+margin_bottom = 731.0
+theme = ExtResource( 1 )
+text = "ACC_LOGOUT"
+
+[node name="BackButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -64.0
+margin_right = 113.0
+margin_bottom = -24.0
+theme = ExtResource( 2 )
+text = "Back"
+
+[connection signal="pressed" from="Login/Register/RegisterButton" to="." method="_on_RegisterButton_pressed"]
+[connection signal="pressed" from="Login/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="Manage/ManageButton" to="." method="_on_ManageButton_pressed"]
+[connection signal="pressed" from="Manage/LogoutButton" to="." method="_on_LogoutButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
