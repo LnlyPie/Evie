@@ -31,6 +31,11 @@ func _on_LogoutButton_pressed():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
 func _on_ManageButton_pressed():
 	OS.shell_open("https://account.lonelypie.net/account")
+func _on_UploadButton_pressed():
+	CloudSaving.upload_saves()
+func _on_DownloadButton_pressed():
+	CloudSaving.download_saves()
+
 
 
 func _on_userdata_received(userdata) -> void:
@@ -47,7 +52,5 @@ func _on_userdata_received(userdata) -> void:
 		else:
 			username = "Name not found"
 	username = "Name not found"
-
-
 func _on_BackButton_pressed():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

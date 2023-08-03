@@ -331,6 +331,7 @@ ColorFilter="*res://scripts/misc/other/ColorFilter.gd"
 CursorOptions="*res://scripts/Cursor.gd"
 Inv="*res://scenes/inventory/Inventory.tscn"
 FirebaseLogin="*res://scripts/account/FirebaseLogin.gd"
+CloudSaving="*res://scripts/account/CloudSaving.gd"
 
 [debug]
 

@@ -101,6 +101,7 @@ margin_left = 809.0
 margin_right = 1159.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 350, 41 )
+secret = true
 placeholder_text = "ACC_PASSHINT"
 __meta__ = {
 "_editor_description_": ""
@@ -176,5 +177,7 @@ text = "BACK"
 [connection signal="pressed" from="Login/Register/RegisterButton" to="." method="_on_RegisterButton_pressed"]
 [connection signal="pressed" from="Login/LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Manage/ManageButton" to="." method="_on_ManageButton_pressed"]
+[connection signal="pressed" from="Manage/DownloadButton" to="." method="_on_DownloadButton_pressed"]
+[connection signal="pressed" from="Manage/UploadButton" to="." method="_on_UploadButton_pressed"]
 [connection signal="pressed" from="Manage/LogoutButton" to="." method="_on_LogoutButton_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
