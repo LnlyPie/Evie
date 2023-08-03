@@ -22,7 +22,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("debug_pause") || Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().paused:
 			if $QuitPanel.visible == false:
-				Cursor.show_cursor(false)
+				CursorOptions.show_cursor(false)
 				pause(false)
 			else:
 				$AnimationPlayer.play_backwards("exit")
@@ -31,7 +31,7 @@ func _process(_delta):
 				$Panel/Buttons/ResumeButton.grab_focus()
 	if Input.is_action_just_pressed("debug_pause"):
 		if !get_tree().paused:
-			Cursor.show_cursor(true)
+			CursorOptions.show_cursor(true)
 			pause(true)
 
 func pause(pause: bool):

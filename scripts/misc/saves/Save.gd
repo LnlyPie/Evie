@@ -90,6 +90,18 @@ func load_data(slot):
 	AchievementManager.load_achievements()
 	slot_picked = slot
 
+func download_save(slot, dat, cfg, ach):
+	var file = File.new()
+	file.open(Utils.savesFolder + slot + "/save.dat", File.WRITE)
+	file.store_string(str(dat))
+	file.close()
+	file.open(Utils.savesFolder + slot + "/save.cfg", File.WRITE)
+	file.store_string(str(cfg))
+	file.close()
+	file.open(Utils.savesFolder + slot + "/achievements.json", File.WRITE)
+	file.store_string(str(ach))
+	file.close()
+
 func exists(slot):
 	var file = File.new()
 	if file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.dat") && file.file_exists(Utils.savesFolder + "save" + str(slot) + "/save.cfg"):

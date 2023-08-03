@@ -17,5 +17,12 @@ func upload_saves():
 			print("Save " + str(save_index) + " doesn't exist! It will not be saved to the cloud.")
 
 func download_saves():
-	# To be made
 	pass
+#	var num_saves = 3
+#	for save_index in range(1, num_saves + 1):
+#		var save_folder = "save" + str(save_index)
+#
+#		var dat_file = Firebase.Storage.ref("users/" + Firebase.Auth.auth["localid"] + "/games/evie/saves/" + save_folder + "/save.dat").get_data()
+#		var cfg_file = Firebase.Storage.ref("users/" + Firebase.Auth.auth["localid"] + "/games/evie/saves/" + save_folder + "/save.cfg").get_data()
+#		var ach_file = Firebase.Storage.ref("users/" + Firebase.Auth.auth["localid"] + "/games/evie/saves/" + save_folder + "/achievements.json").get_data()
+#		Save.download_save(save_folder, dat_file, cfg_file, ach_file)
