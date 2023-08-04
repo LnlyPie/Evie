@@ -10,3 +10,5 @@ data_*/
 # I don't want to spoil you all the progress yet ;)
 levels/prologue/*
 tilesets/Prologue/*
+
+addons/godot-firebase/.env

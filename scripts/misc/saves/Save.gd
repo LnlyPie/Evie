@@ -91,16 +91,22 @@ func load_data(slot):
 	slot_picked = slot
 
 func download_save(slot, dat, cfg, ach):
-	var file = File.new()
-	file.open(Utils.savesFolder + slot + "/save.dat", File.WRITE)
-	file.store_string(str(dat))
-	file.close()
-	file.open(Utils.savesFolder + slot + "/save.cfg", File.WRITE)
-	file.store_string(str(cfg))
-	file.close()
-	file.open(Utils.savesFolder + slot + "/achievements.json", File.WRITE)
-	file.store_string(str(ach))
-	file.close()
+	var dir = Directory.new()
+	var path = Utils.savesFolder + slot
+	var file_dat = File.new()
+	var file_cfg = File.new()
+	var file_ach = File.new()
+	dir.make_dir_recursive(path)
+	
+	file_dat.open(path + "/save.dat", File.WRITE)
+	file_dat.store_string(dat)
+	file_dat.close()
+	file_cfg.open(path + "/save.cfg", File.WRITE)
+	file_cfg.store_string(cfg)
+	file_cfg.close()
+	file_ach.open(path + "/achievements.json", File.WRITE)
+	file_ach.store_string(ach)
+	file_ach.close()
 
 func exists(slot):
 	var file = File.new()
