@@ -13,11 +13,13 @@ func _ready():
 func _play_anim():
 	$AnimationPlayer.play("Fade")
 	yield($AnimationPlayer, "animation_finished")
+	yield(get_tree().create_timer(1), "timeout")
 	$AnimationPlayer.play_backwards("Fade")
 	yield($AnimationPlayer, "animation_finished")
 	_godot_credits()
 	$AnimationPlayer.play("Fade")
 	yield($AnimationPlayer, "animation_finished")
+	yield(get_tree().create_timer(1), "timeout")
 	$AnimationPlayer.play_backwards("Fade")
 	yield($AnimationPlayer, "animation_finished")
 	ModLoader.apply_check()
