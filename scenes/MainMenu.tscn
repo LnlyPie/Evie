@@ -81,7 +81,7 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="MainButtons"]
-margin_right = 155.0
+margin_right = 166.0
 margin_bottom = 37.0
 focus_neighbour_top = NodePath("../QuitButton")
 text = "PLAY"
@@ -90,15 +90,15 @@ align = 0
 
 [node name="OptionsButton" type="Button" parent="MainButtons"]
 margin_top = 41.0
-margin_right = 155.0
+margin_right = 166.0
 margin_bottom = 78.0
-text = "OPTIONS"
+text = "SETTINGS"
 flat = true
 align = 0
 
 [node name="QuitButton" type="Button" parent="MainButtons"]
 margin_top = 82.0
-margin_right = 155.0
+margin_right = 166.0
 margin_bottom = 119.0
 focus_neighbour_bottom = NodePath("../StartButton")
 text = "EXIT"

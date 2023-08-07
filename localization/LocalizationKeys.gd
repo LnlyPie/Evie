@@ -4,7 +4,7 @@ tool
 class_name LocalizationKeys
 
 const PLAY = "PLAY"
-const OPTIONS = "OPTIONS"
+const SETTINGS = "SETTINGS"
 const EXIT = "EXIT"
 const MM_BUGS = "MM_BUGS"
 const MM_WEB = "MM_WEB"
@@ -68,7 +68,7 @@ const ACC_LOGOUT = "ACC_LOGOUT"
 
 const KEYS = [
  "PLAY",
- "OPTIONS",
+ "SETTINGS",
  "EXIT",
  "MM_BUGS",
  "MM_WEB",
