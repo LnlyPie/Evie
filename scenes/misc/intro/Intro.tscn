@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 1.5 ),
+"times": PoolRealArray( 0.4, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -66,7 +66,7 @@ custom_colors/font_color_shadow = Color( 0.235294, 0.235294, 0.235294, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 bbcode_enabled = true
-bbcode_text = "[center][rainbow freq=0.3][tornado radius=5 freq=2]LonelyPie Studio[/tornado][/rainbow][/center]"
+bbcode_text = "[center][rainbow freq=0.6][tornado radius=5 freq=4]LonelyPie Studio[/tornado][/rainbow][/center]"
 text = "LonelyPie Studio"
 scroll_active = false
 

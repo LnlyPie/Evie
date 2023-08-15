@@ -332,6 +332,7 @@ CursorOptions="*res://scripts/Cursor.gd"
 Inv="*res://scenes/inventory/Inventory.tscn"
 FirebaseLogin="*res://scripts/account/FirebaseLogin.gd"
 CloudSaving="*res://scripts/account/CloudSaving.gd"
+EarlyWatermark="*res://EarlyWatermark.tscn"
 
 [debug]
 
@@ -506,6 +507,7 @@ translations=PoolStringArray( "res://localization/localizations.en.translation",
 translation_remaps={
 "res://sprites/gui/mods/mods.png": [ "res://sprites/gui/mods/mods.png:en", "res://sprites/locale_remaps/pl/gui/mods/mods.png:pl", "res://sprites/gui/mods/mods.png:de" ]
 }
+locale_filter=[ 0, [ "de", "en", "pl" ] ]
 
 [network]
 

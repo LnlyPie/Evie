@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=1]
+
+[node name="EarlyWatermark" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 256.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.403922 )
+text = "0.5.0 Early Test"
+align = 1
+valign = 1

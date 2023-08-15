@@ -71,10 +71,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 672.0
-margin_top = 1080.0
-margin_right = 1424.0
-margin_bottom = 3016.0
+margin_left = -288.0
+margin_right = 464.0
+margin_bottom = 1936.0
 alignment = 1
 __meta__ = {
 "_edit_group_": true,
@@ -82,9 +81,9 @@ __meta__ = {
 }
 
 [node name="LonelyPieCredits" type="VBoxContainer" parent="CreditsContainer"]
-margin_top = 142.0
+margin_top = 121.0
 margin_right = 752.0
-margin_bottom = 810.0
+margin_bottom = 830.0
 alignment = 1
 
 [node name="Logo" type="TextureRect" parent="CreditsContainer/LonelyPieCredits"]
@@ -124,12 +123,12 @@ text = "Andus - Main Developer"
 align = 1
 valign = 1
 
-[node name="ArtistsContainer2" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
+[node name="ArtistsContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
 margin_top = 372.0
 margin_right = 752.0
-margin_bottom = 509.0
+margin_bottom = 550.0
 
-[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+[node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer"]
 margin_right = 752.0
 margin_bottom = 55.0
 theme = ExtResource( 1 )
@@ -137,28 +136,37 @@ text = "Artists"
 align = 1
 valign = 1
 
-[node name="Creta" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+[node name="Creta" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer"]
 margin_top = 59.0
 margin_right = 752.0
 margin_bottom = 96.0
 theme = ExtResource( 5 )
-text = "Creta"
+text = "Creta - Main Artist"
 align = 1
 valign = 1
 
-[node name="LucePric" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer2"]
+[node name="LucePric" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer"]
 margin_top = 100.0
 margin_right = 752.0
 margin_bottom = 137.0
 theme = ExtResource( 5 )
-text = "LucePric"
+text = "LucePric - Main Artist"
+align = 1
+valign = 1
+
+[node name="Andus" type="Label" parent="CreditsContainer/LonelyPieCredits/ArtistsContainer"]
+margin_top = 141.0
+margin_right = 752.0
+margin_bottom = 178.0
+theme = ExtResource( 5 )
+text = "Andus - UI Artist"
 align = 1
 valign = 1
 
 [node name="StoryContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
-margin_top = 513.0
+margin_top = 554.0
 margin_right = 752.0
-margin_bottom = 609.0
+margin_bottom = 650.0
 
 [node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/StoryContainer"]
 margin_right = 752.0
@@ -178,22 +186,22 @@ align = 1
 valign = 1
 
 [node name="TestersContainer" type="VBoxContainer" parent="CreditsContainer/LonelyPieCredits"]
-margin_top = 613.0
+margin_top = 654.0
 margin_right = 752.0
-margin_bottom = 668.0
+margin_bottom = 709.0
 
 [node name="Name" type="Label" parent="CreditsContainer/LonelyPieCredits/TestersContainer"]
 margin_right = 752.0
 margin_bottom = 55.0
 theme = ExtResource( 1 )
-text = "Playtesters (?)"
+text = "Playtesters"
 align = 1
 valign = 1
 
 [node name="SpecialCredits" type="VBoxContainer" parent="CreditsContainer"]
-margin_top = 814.0
+margin_top = 834.0
 margin_right = 752.0
-margin_bottom = 1614.0
+margin_bottom = 1634.0
 alignment = 1
 
 [node name="Logo" type="TextureRect" parent="CreditsContainer/SpecialCredits"]
@@ -324,15 +332,15 @@ align = 1
 valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="CreditsContainer"]
-margin_top = 1618.0
+margin_top = 1638.0
 margin_right = 752.0
-margin_bottom = 1718.0
+margin_bottom = 1738.0
 custom_constants/separation = 100
 
 [node name="Community" type="Label" parent="CreditsContainer"]
-margin_top = 1722.0
+margin_top = 1742.0
 margin_right = 752.0
-margin_bottom = 1794.0
+margin_bottom = 1814.0
 theme = ExtResource( 2 )
 text = "And you, betatester <3"
 align = 1

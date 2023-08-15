@@ -1,0 +1,18 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Hi. Do you want a quest?"
+msgstr "Hi. Do you want a quest?"
+
+msgid "Yeah!"
+msgstr "Yeah!"
+
+msgid "Nah, not really."
+msgstr "Nah, not really."
+
+msgid "Alright! To complete the quest find 2 LonelyPie logos."
+msgstr "Alright! To complete the quest find 2 LonelyPie logos."
+
+msgid "I gave you a quest already!"
+msgstr "I gave you a quest already!"

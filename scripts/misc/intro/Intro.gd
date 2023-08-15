@@ -7,7 +7,7 @@ func _ready():
 	var prob = randi()%100+1
 	if prob == 1:
 		$Logo.texture = load("res://sprites/logo-egg.png")
-		$Label.bbcode_text = "[center][rainbow freq=0.3][tornado radius=5 freq=2]LaughingPie and Co.[/tornado][/rainbow][/center]"
+		$Label.bbcode_text = "[center][rainbow freq=0.6][tornado radius=5 freq=4]LaughingPie and Co.[/tornado][/rainbow][/center]"
 	_play_anim()
 
 func _play_anim():
@@ -27,7 +27,7 @@ func _play_anim():
 
 func _godot_credits():
 	$Logo.texture = load("res://sprites/icons/misc/godot_logo.svg")
-	$Label.bbcode_text = "[center][tornado radius=5 freq=2]Made with Godot[/tornado][/center]"
+	$Label.bbcode_text = "[center][tornado radius=5 freq=4]Made with Godot[/tornado][/center]"
 
 #func _facts():
 #	randomize()
