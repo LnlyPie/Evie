@@ -8,7 +8,7 @@ func _ready():
 
 func _on_DoneButton_pressed():
 	if ($VBoxContainer/InfoContainer/LineEdit.text != ""):
-		Save.save_info["save_name"] = $VBoxContainer/GameContainer/LineEdit.text
+		Save.save_info["save_name"] = $VBoxContainer/InfoContainer/LineEdit.text
 		notempty = true
 	else:
 		notempty = false
