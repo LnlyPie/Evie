@@ -40,3 +40,15 @@ func save_load(slot: int):
 	else:
 		Save.slot_picked = slot
 		SceneTransition.change_scene("res://scenes/saves/SaveCreator.tscn")
+
+func _on_Delete1_pressed():
+	Save.delete_save(1)
+	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
+
+func _on_Delete2_pressed():
+	Save.delete_save(2)
+	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
+
+func _on_Delete3_pressed():
+	Save.delete_save(3)
+	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")

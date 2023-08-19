@@ -31,6 +31,7 @@ S_SAVE_EXIT,Close,Zamknij,Nahe
 SAV_CHOOSE,Choose your save:,Wybierz swój zapis:,Wählen Sie Ihren Speicherstand:
 SAV_CREATED,Created:,Utworzony:,Erstellt:
 SAV_SAVEAT,Last Saved:,Zapisano:,Gespeichert bei:
+SAV_DEL,Delete Save(s),Usuń zapis(y),Speicherung(en) löschen
 SAV_CR_CREATE,Create your save:,Stwórz swój zapis:,Erstellen Sie Ihren Speicher:
 SAV_CR_SVNAME,Save Name:,Nazwa Zapisu:,Name speichern:
 SAV_CR_PLNAME,Character Name:,Nazwa Postaci:,Charaktername:

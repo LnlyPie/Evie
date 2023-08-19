@@ -117,3 +117,27 @@ func str_to_vector2(cords):
 	var x = cords.left(cords.find(" "))
 	var y = cords.right(cords.find(" "))
 	return Vector2(x,y)
+
+func removeDirectoryWithFiles(directory_path: String):
+	var dir = Directory.new()
+	if dir.open(directory_path) == OK:
+		dir.list_dir_begin()
+		while true:
+			var file_name = dir.get_next()
+			if file_name == "":
+				break
+			var file_path = directory_path + "/" + file_name
+			var file = File.new()
+			if file.open(file_path, File.READ) == OK:
+				file.close()
+				if dir.remove(file_path) != OK:
+					print("Could not remove file:", file_path)
+			else:
+				print("Could not open file:", file_path)
+		dir.list_dir_end()
+		if dir.remove(directory_path) == OK:
+			print("Directory and files removed successfully.")
+		else:
+			print("Failed to remove directory:", directory_path)
+	else:
+		print("Directory not found:", directory_path)

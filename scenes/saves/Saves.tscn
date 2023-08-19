@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/comfortaa/TextTheme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/misc/saves/SavesScreen.gd" type="Script" id=3]
+[ext_resource path="res://sprites/gui/saves/remove-focus.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/saves/remove-normal.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -32,17 +34,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -640.0
-margin_top = -352.0
-margin_right = 640.0
-margin_bottom = 352.0
+margin_left = -639.0
+margin_top = -356.0
+margin_right = 639.0
+margin_bottom = 356.0
 custom_constants/separation = 50
 alignment = 1
 
 [node name="SaveSlot1" type="Button" parent="Panel/Saves"]
-margin_top = 2.0
-margin_right = 1280.0
-margin_bottom = 202.0
+margin_top = 6.0
+margin_right = 1278.0
+margin_bottom = 206.0
 rect_min_size = Vector2( 0, 200 )
 
 [node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot1"]
@@ -81,9 +83,9 @@ theme = ExtResource( 1 )
 text = "Last Saved: 25-06-2099 10:50"
 
 [node name="SaveSlot2" type="Button" parent="Panel/Saves"]
-margin_top = 252.0
-margin_right = 1280.0
-margin_bottom = 452.0
+margin_top = 256.0
+margin_right = 1278.0
+margin_bottom = 456.0
 rect_min_size = Vector2( 0, 200 )
 
 [node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot2"]
@@ -122,9 +124,9 @@ theme = ExtResource( 1 )
 text = "Last Saved: 25-06-2099 10:50"
 
 [node name="SaveSlot3" type="Button" parent="Panel/Saves"]
-margin_top = 502.0
-margin_right = 1280.0
-margin_bottom = 702.0
+margin_top = 506.0
+margin_right = 1278.0
+margin_bottom = 706.0
 rect_min_size = Vector2( 0, 200 )
 
 [node name="SaveName" type="Label" parent="Panel/Saves/SaveSlot3"]
@@ -162,6 +164,46 @@ margin_bottom = 65.0
 theme = ExtResource( 1 )
 text = "Last Saved: 25-06-2099 10:50"
 
+[node name="DeleteButtons" type="VBoxContainer" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -356.0
+margin_right = -64.0
+margin_bottom = 356.0
+custom_constants/separation = 65
+
+[node name="Delete1" type="TextureButton" parent="Panel/DeleteButtons"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
+expand = true
+
+[node name="Delete2" type="TextureButton" parent="Panel/DeleteButtons"]
+margin_top = 257.0
+margin_right = 192.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
+expand = true
+
+[node name="Delete3" type="TextureButton" parent="Panel/DeleteButtons"]
+margin_top = 514.0
+margin_right = 192.0
+margin_bottom = 706.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
+expand = true
+
 [node name="Back" type="Button" parent="Panel"]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -175,4 +217,7 @@ text = "BACK"
 [connection signal="pressed" from="Panel/Saves/SaveSlot1" to="." method="_on_SaveSlot1_pressed"]
 [connection signal="pressed" from="Panel/Saves/SaveSlot2" to="." method="_on_SaveSlot2_pressed"]
 [connection signal="pressed" from="Panel/Saves/SaveSlot3" to="." method="_on_SaveSlot3_pressed"]
+[connection signal="pressed" from="Panel/DeleteButtons/Delete1" to="." method="_on_Delete1_pressed"]
+[connection signal="pressed" from="Panel/DeleteButtons/Delete2" to="." method="_on_Delete2_pressed"]
+[connection signal="pressed" from="Panel/DeleteButtons/Delete3" to="." method="_on_Delete3_pressed"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_Back_pressed"]

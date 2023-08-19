@@ -153,6 +153,10 @@ func get_chapter():
 			# SceneTransition.change_scene("res://levels/prologue/Prologue_1.tscn")
 			SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn", "Scale")
 
-func set_chapter(chapter: int, scene: int):
-	player_data["chapter"] = chapter
-	player_data["chapter_scene"] = scene
+func delete_save(slot: int):
+	var savePath = Utils.savesFolder + "save" + str(slot)
+	var dir = Directory.new()
+	if dir.dir_exists(savePath):
+		Utils.removeDirectoryWithFiles(savePath)
+	else:
+		print("Save slot", slot, "doesn't exist.")
