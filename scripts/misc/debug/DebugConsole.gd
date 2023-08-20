@@ -8,11 +8,11 @@ var commandHistoryLine = CommandHistory.history.size()
 
 func _ready():
 	input_box.grab_focus()
-	Cursor.show_cursor(true)
+	CursorOptions.show_cursor(true)
 
 func _process(delta):
 	if Input.is_action_just_pressed("debug_console"):
-		Cursor.show_cursor(false)
+		CursorOptions.show_cursor(false)
 		get_tree().paused = false
 		queue_free()
 		

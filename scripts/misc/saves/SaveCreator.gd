@@ -19,7 +19,7 @@ func _on_DoneButton_pressed():
 		notempty = false
 	
 	if (notempty):
-		Save.save_data(slot)
+		Save.new_save(slot)
 		Save.get_chapter()
 
 func _on_Back_pressed():

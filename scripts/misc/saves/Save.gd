@@ -40,6 +40,25 @@ func get_saves():
 			slots_saved.append(slotnum)
 	return slots_saved
 
+func new_save(slot):
+	var file = File.new()
+	var dir = Directory.new()
+	var cfg = ConfigFile.new()
+	if !dir.dir_exists(Utils.savesFolder + "save" + str(slot)):
+		dir.make_dir(Utils.savesFolder + "save" + str(slot))
+	save_info["save_creation"] = Utils.get_date_and_time(1)
+	save_info["last_saved"] = Utils.get_date_and_time()
+	# Save save.cfg
+	cfg.set_value("Info", "name", save_info["save_name"])
+	cfg.set_value("Info", "created", save_info["save_creation"])
+	cfg.set_value("Info", "last_saved", save_info["last_saved"])
+	cfg.save(Utils.savesFolder + "save" + str(slot) + "/save.cfg")
+	# Save save.dat
+	file.open(Utils.savesFolder + "save" + str(slot) + "/save.dat", File.WRITE)
+	var json = JSON.print(DEFAULT_PLAYER_DATA)
+	file.store_string(json)
+	file.close()
+
 func save_data(slot, data_only: bool = false):
 	var file = File.new()
 	var dir = Directory.new()
@@ -66,6 +85,7 @@ func save_data(slot, data_only: bool = false):
 	AchievementManager.save_achievements()
 
 func load_data(slot):
+	player_data = ""
 	var file = File.new()
 	var cfg = ConfigFile.new()
 	# Load save.dat
@@ -152,6 +172,10 @@ func get_chapter():
 		if (player_data["chapter_scene"] == 1):
 			# SceneTransition.change_scene("res://levels/prologue/Prologue_1.tscn")
 			SceneTransition.change_scene("res://levels/test_level/TestLevel.tscn", "Scale")
+
+func set_chapter(chapter: int, scene: int):
+	player_data["chapter"] = chapter
+	player_data["chapter_scene"] = scene
 
 func delete_save(slot: int):
 	var savePath = Utils.savesFolder + "save" + str(slot)

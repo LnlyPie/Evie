@@ -27,24 +27,40 @@ func complete(name):
 	Utils.send_notification("Quest completed", name, "quest")
 
 func is_completed(name):
-	return quests[name]["completed"]
+	if quests_completed.has(name):
+		return true
+	else:
+		return false
 
 func exists(name):
 	return quests.has(name)
 
 func get_desc(name):
-	return quests[name]["description"]
+	if Quests.exists(name):
+		return quests[name]["description"]
+	else:
+		return false
 
 func get_progress(name):
-	return quests[name]["progress"]
+	if Quests.exists(name):
+		return quests[name]["progress"]
+	else:
+		return false
 
 func get_max_progress(name):
-	return quests[name]["max_progress"]
+	if Quests.exists(name):
+		return quests[name]["max_progress"]
+	else:
+		return false
 
 func get_progress_now_max(name):
-	return str(quests[name]["progress"]) + "/" + str(quests[name]["max_progress"])
+	if Quests.exists(name):
+		return str(quests[name]["progress"]) + "/" + str(quests[name]["max_progress"])
+	else:
+		return false
 
 func _process(delta):
+	quests_completed = Save.player_data["quests_completed"]
 	_check_quests()
 
 func _check_quests():
