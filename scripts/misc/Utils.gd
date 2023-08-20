@@ -126,6 +126,9 @@ func removeDirectoryWithFiles(directory_path: String):
 			var file_name = dir.get_next()
 			if file_name == "":
 				break
+			# Skip "." and ".."
+			if file_name == "." or file_name == "..":
+				continue
 			var file_path = directory_path + "/" + file_name
 			var file = File.new()
 			if file.open(file_path, File.READ) == OK:

@@ -1,5 +1,7 @@
 extends Control
 
+var savedel = 1
+
 func _ready():
 	$Panel/Saves/SaveSlot1.grab_focus()
 	for num in range(1, 4):
@@ -42,13 +44,17 @@ func save_load(slot: int):
 		SceneTransition.change_scene("res://scenes/saves/SaveCreator.tscn")
 
 func _on_Delete1_pressed():
-	Save.delete_save(1)
-	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
+	$ConfirmationDialog.popup()
+	savedel = 1
 
 func _on_Delete2_pressed():
-	Save.delete_save(2)
-	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")
+	$ConfirmationDialog.popup()
+	savedel = 2
 
 func _on_Delete3_pressed():
-	Save.delete_save(3)
+	$ConfirmationDialog.popup()
+	savedel = 3
+
+func _on_ConfirmationDialog_confirmed():
+	Save.delete_save(savedel)
 	SceneTransition.change_scene("res://scenes/saves/Saves.tscn")

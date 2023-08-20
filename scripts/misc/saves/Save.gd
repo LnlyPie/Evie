@@ -159,4 +159,4 @@ func delete_save(slot: int):
 	if dir.dir_exists(savePath):
 		Utils.removeDirectoryWithFiles(savePath)
 	else:
-		print("Save slot", slot, "doesn't exist.")
+		print("Save slot ", slot, " doesn't exist.")
