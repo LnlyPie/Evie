@@ -11,6 +11,6 @@ margin_top = -40.0
 margin_right = 256.0
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 0.403922 )
-text = "0.5.0 Early Test"
+text = "0.5.0 Early Test (2)"
 align = 1
 valign = 1

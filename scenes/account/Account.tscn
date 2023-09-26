@@ -30,7 +30,6 @@ text = "ACC_MAN"
 align = 1
 
 [node name="Login" type="VBoxContainer" parent="."]
-visible = false
 margin_left = 64.0
 margin_top = 64.0
 margin_right = 1856.0
@@ -55,7 +54,10 @@ text = "Don't have an account yet? "
 margin_left = 1017.0
 margin_right = 1244.0
 margin_bottom = 37.0
+custom_colors/font_color_focus = Color( 0.54902, 0.380392, 0, 1 )
 custom_colors/font_color = Color( 1, 0.690196, 0, 1 )
+custom_colors/font_color_hover = Color( 0.54902, 0.380392, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.363281, 0.251702, 0, 1 )
 text = "Register Here"
 
 [node name="Email" type="HBoxContainer" parent="Login"]
@@ -115,6 +117,7 @@ theme = ExtResource( 1 )
 text = "ACC_LOGIN"
 
 [node name="Manage" type="VBoxContainer" parent="."]
+visible = false
 margin_left = 64.0
 margin_top = 64.0
 margin_right = 1856.0
@@ -164,6 +167,19 @@ margin_bottom = 731.0
 theme = ExtResource( 1 )
 text = "ACC_LOGOUT"
 
+[node name="FailedDialog" type="AcceptDialog" parent="."]
+margin_left = 640.0
+margin_top = 384.0
+margin_right = 1280.0
+margin_bottom = 768.0
+window_title = "Login Failed"
+dialog_text = "Please check your credentials and try again.
+
+Error Code: xxxxxx
+
+Error Message:"
+dialog_autowrap = true
+
 [node name="BackButton" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -180,4 +196,6 @@ text = "BACK"
 [connection signal="pressed" from="Manage/DownloadButton" to="." method="_on_DownloadButton_pressed"]
 [connection signal="pressed" from="Manage/UploadButton" to="." method="_on_UploadButton_pressed"]
 [connection signal="pressed" from="Manage/LogoutButton" to="." method="_on_LogoutButton_pressed"]
+[connection signal="confirmed" from="FailedDialog" to="." method="_on_LoginFailed_interact"]
+[connection signal="hide" from="FailedDialog" to="." method="_on_LoginFailed_interact"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

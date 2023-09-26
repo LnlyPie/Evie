@@ -23,18 +23,33 @@ func _ready():
 func _on_RegisterButton_pressed():
 	OS.shell_open("https://account.lonelypie.net/register")
 func _on_LoginButton_pressed():
+	Firebase.Auth.connect("login_failed", self, "_login_failed")
 	FirebaseLogin.login($Login/Email/Value.text, $Login/Password/Value.text)
+
+func _login_failed(code, message: String):
+	$FailedDialog.window_title = "Login Failed"
+	$FailedDialog.dialog_text = "Logging in failed. Please check your credentials and try again." \
+	+ "\n\nError Code: " + str(code) \
+	+ "\nError Message: " + message
+	$FailedDialog.show()
 
 # Manage Account
 func _on_LogoutButton_pressed():
 	Firebase.Auth.logout()
-	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+	SceneTransition.change_scene("res://scenes/account/Account.tscn")
 func _on_ManageButton_pressed():
 	OS.shell_open("https://account.lonelypie.net/account")
 func _on_UploadButton_pressed():
 	CloudSaving.upload_saves()
 func _on_DownloadButton_pressed():
-	CloudSaving.download_saves()
+	var result = CloudSaving.download_saves()
+	if result:
+		print("Saves downloaded successfully!")
+	else:
+		$FailedDialog.window_title = "Saves Download Failed"
+		$FailedDialog.dialog_text = "Downloading saves has failed."
+		$FailedDialog.show()
+		print("Failed to download saves.")
 
 
 
@@ -53,4 +68,7 @@ func _on_userdata_received(userdata) -> void:
 			username = "Name not found"
 	username = "Name not found"
 func _on_BackButton_pressed():
+	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+
+func _on_LoginFailed_interact():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

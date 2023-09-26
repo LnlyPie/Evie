@@ -12,4 +12,7 @@ func login(email: String, passwd: String):
 
 func _login_success(auth):
 	Firebase.Auth.save_auth(auth)
+	SceneTransition.change_scene("res://scenes/account/Account.tscn")
+
+func _closed_popup():
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

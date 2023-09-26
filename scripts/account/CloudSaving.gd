@@ -31,6 +31,8 @@ func download_saves():
 		var ach_result = yield(task_to_save(ach_file, save_folder), "completed")
 		if (dat_result != "error" || cfg_result != "error" || ach_result != "error"):
 			Save.download_save(save_folder, dat_result, cfg_result, ach_result)
+		else:
+			return false
 
 func task_to_save(task: StorageTask, sav) -> String:
 	var text_content: String = ""
