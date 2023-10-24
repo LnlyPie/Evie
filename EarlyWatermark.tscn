@@ -3,6 +3,7 @@
 [ext_resource path="res://fonts/comfortaa/SmallTextTheme.tres" type="Theme" id=1]
 
 [node name="EarlyWatermark" type="CanvasLayer"]
+visible = false
 
 [node name="Label" type="Label" parent="."]
 anchor_top = 1.0
