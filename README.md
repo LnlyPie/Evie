@@ -1,5 +1,6 @@
 # Evie
 ## A Top-Down Adventure Game
+## Moved to: [CelestialFox](https://github.com/CFoxStudio/Evie)
 ![GitHub Downloads](https://img.shields.io/github/downloads-pre/lnlypie/evie/latest/total?color=lightblue&label=downloads%20%28latest%29&logo=github&style=for-the-badge) 
 
 ![Main Menu](https://github.com/LnlyPie/Evie/assets/30293380/03ce4678-ef99-4a29-b8a2-951eabf54fc7)
